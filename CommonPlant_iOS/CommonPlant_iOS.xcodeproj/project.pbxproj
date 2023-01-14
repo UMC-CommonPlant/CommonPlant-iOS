@@ -13,6 +13,7 @@
 		F9C48C77296D7AD100C76863 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9C48C75296D7AD100C76863 /* Main.storyboard */; };
 		F9C48C79296D7AD200C76863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9C48C78296D7AD200C76863 /* Assets.xcassets */; };
 		F9C48C7C296D7AD200C76863 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9C48C7A296D7AD200C76863 /* LaunchScreen.storyboard */; };
+		F9C48C872972782100C76863 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C48C862972782100C76863 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F9C48C78296D7AD200C76863 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9C48C7B296D7AD200C76863 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9C48C7D296D7AD200C76863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9C48C862972782100C76863 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		F9C48C83296D7D8D00C76863 /* MyGarden */ = {
 			isa = PBXGroup;
 			children = (
+				F9C48C862972782100C76863 /* MainViewController.swift */,
 			);
 			path = MyGarden;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9C48C872972782100C76863 /* MainViewController.swift in Sources */,
 				F9C48C70296D7AD100C76863 /* AppDelegate.swift in Sources */,
 				6274C3BB296ED78C00172941 /* InfoViewController.swift in Sources */,
 				F9C48C72296D7AD100C76863 /* SceneDelegate.swift in Sources */,
