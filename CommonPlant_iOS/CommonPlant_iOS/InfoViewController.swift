@@ -7,7 +7,9 @@
 
 import UIKit
 
-class InfoViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+
+
+class InfoViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var popularResetTime: UILabel!
     @IBOutlet weak var popularTableView: UITableView!
@@ -15,11 +17,35 @@ class InfoViewController: UIViewController,UITableViewDelegate, UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSearchLabel()
         setupTableView()
         // Do any additional setup after loading the view.
     }
     
     
+    //=======검색 후 다음 페이지로 넘김==========
+    func setupSearchLabel(){
+        self.searchLabel.delegate=self
+    }
+    
+    var delegate: TextFieldSearchDelegate?
+    
+
+    
+    //UITextDelegate return key 이벤트 함수 -> 엔터 눌렀을 때 검색 이벤트
+    func textFieldReturn(_ textField : UITextField) -> Bool{
+        if textField == self.searchLabel{
+            //액션 지정
+            
+        }
+        return true
+    }
+    
+    
+    
+    
+    //=======인기검색어=======
+    //인기 검색어 table view setup
     func setupTableView(){
         popularTableView.delegate = self
         popularTableView.dataSource = self

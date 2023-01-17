@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EV5-CV-GcC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1ix-Xu-ZhH">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vRC-NN-p8Q">
-                                <rect key="frame" x="0.0" y="35" width="390" height="183.33333333333334"/>
+                                <rect key="frame" x="0.0" y="35" width="390" height="183"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="커먼플랜트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zt-1O-4SZ">
                                         <rect key="frame" x="24" y="17" width="70" height="20"/>
@@ -60,7 +60,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dK-8j-htb">
-                                <rect key="frame" x="20" y="242.33333333333334" width="335" height="28.666666666666657"/>
+                                <rect key="frame" x="20" y="242" width="335" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -89,7 +89,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Plant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCN-BN-Gcw">
-                                <rect key="frame" x="20" y="491" width="335" height="28.666666666666629"/>
+                                <rect key="frame" x="20" y="491" width="335" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -105,7 +105,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdM-or-W0B">
-                                <rect key="frame" x="344" y="519.66666666666663" width="24" height="24"/>
+                                <rect key="frame" x="344" y="520" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="XdM-or-W0B" secondAttribute="height" multiplier="1:1" id="wYs-5m-3hF"/>
                                 </constraints>
@@ -115,7 +115,7 @@
                                 </buttonConfiguration>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MEG-2R-XFH">
-                                <rect key="frame" x="0.0" y="551.66666666666663" width="240" height="184.33333333333337"/>
+                                <rect key="frame" x="0.0" y="552" width="240" height="184"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rod-xm-Ee0">
                                     <size key="itemSize" width="128" height="128"/>
@@ -480,22 +480,22 @@
             </objects>
             <point key="canvasLocation" x="-80.152671755725194" y="-794.36619718309862"/>
         </scene>
-        <!--View Controller-->
+        <!--Info Search View Controller-->
         <scene sceneID="8M4-bP-dHv">
             <objects>
-                <viewController id="4qi-7o-Xch" sceneMemberID="viewController">
+                <viewController id="4qi-7o-Xch" customClass="InfoSearchViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cIf-vr-9Oq">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CWV-k8-Tax" customClass="plant">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CWV-k8-Tax">
                                 <rect key="frame" x="0.0" y="159" width="390" height="356"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="356" id="RTB-mY-FbI"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlantTableViewCell" id="NCP-ca-UNp" customClass="PlantTableViewCell" customModule="CommonPlant_iOS">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlantTableViewCell" id="NCP-ca-UNp" customClass="InfoSearchTableViewCell" customModule="CommonPlant_iOS">
                                         <rect key="frame" x="0.0" y="50" width="390" height="92.333335876464844"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NCP-ca-UNp" id="lr8-Td-uSn">
@@ -510,13 +510,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="몬스테라" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spD-3t-MKW">
-                                                    <rect key="frame" x="126" y="23" width="56" height="18.666666666666671"/>
+                                                    <rect key="frame" x="126" y="23" width="56" height="19.666666666666671"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monstera deliciosa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EqK-Dl-FEV">
-                                                    <rect key="frame" x="126" y="49.666666666666664" width="93.666666666666686" height="14"/>
+                                                    <rect key="frame" x="126" y="50.666666666666664" width="94" height="13.999999999999993"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -533,9 +533,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="nameLabel" destination="spD-3t-MKW" id="j77-gH-yO1"/>
-                                            <outlet property="plantImageView" destination="0zt-lo-L60" id="NcE-i9-HNf"/>
-                                            <outlet property="scientificNameLabel" destination="EqK-Dl-FEV" id="bfA-qd-bpj"/>
+                                            <outlet property="nameLabel" destination="spD-3t-MKW" id="sic-pM-pJb"/>
+                                            <outlet property="plantImageView" destination="0zt-lo-L60" id="pHz-YS-Riq"/>
+                                            <outlet property="scientificNameLabel" destination="EqK-Dl-FEV" id="BQ6-dc-2mk"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -605,6 +605,10 @@
                             <constraint firstItem="WYC-BT-vgt" firstAttribute="top" secondItem="7mq-0f-erO" secondAttribute="top" constant="40" id="yaU-Jy-4C5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchInputLabel" destination="S6t-jb-NKF" id="fC4-9s-rX7"/>
+                        <outlet property="searchTableView" destination="CWV-k8-Tax" id="JNr-mL-pmt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWi-Kq-4df" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
