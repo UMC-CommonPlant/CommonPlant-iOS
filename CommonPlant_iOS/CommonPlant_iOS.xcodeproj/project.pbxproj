@@ -14,6 +14,7 @@
 		48A5EF4E2974DCBA00779443 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5EF4C2974DCBA00779443 /* LoginViewController.swift */; };
 		48A5EF512974DD0E00779443 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5EF4F2974DD0E00779443 /* MyPageViewController.swift */; };
 		48A5EF552974E65100779443 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5EF542974E65100779443 /* StartViewController.swift */; };
+		48BD658C2976350D0062E2F6 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BD658B2976350D0062E2F6 /* NicknameViewController.swift */; };
 		F9C48C70296D7AD100C76863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C48C6F296D7AD100C76863 /* AppDelegate.swift */; };
 		F9C48C72296D7AD100C76863 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C48C71296D7AD100C76863 /* SceneDelegate.swift */; };
 		F9C48C77296D7AD100C76863 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9C48C75296D7AD100C76863 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		48A5EF4D2974DCBA00779443 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = CommonPlant_iOS/Base.lproj/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		48A5EF502974DD0E00779443 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = CommonPlant_iOS/Base.lproj/MyPageViewController.swift; sourceTree = SOURCE_ROOT; };
 		48A5EF542974E65100779443 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StartViewController.swift; path = CommonPlant_iOS/StartViewController.swift; sourceTree = SOURCE_ROOT; };
+		48BD658B2976350D0062E2F6 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NicknameViewController.swift; path = CommonPlant_iOS/NicknameViewController.swift; sourceTree = SOURCE_ROOT; };
 		F9C48C6C296D7AD100C76863 /* CommonPlant_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommonPlant_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C48C6F296D7AD100C76863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9C48C71296D7AD100C76863 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				48A5EF4C2974DCBA00779443 /* LoginViewController.swift */,
 				48A5EF4F2974DD0E00779443 /* MyPageViewController.swift */,
 				48A5EF542974E65100779443 /* StartViewController.swift */,
+				48BD658B2976350D0062E2F6 /* NicknameViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				F9C48C70296D7AD100C76863 /* AppDelegate.swift in Sources */,
 				F9C48C72296D7AD100C76863 /* SceneDelegate.swift in Sources */,
 				48A5EF512974DD0E00779443 /* MyPageViewController.swift in Sources */,
+				48BD658C2976350D0062E2F6 /* NicknameViewController.swift in Sources */,
 				48A5EF552974E65100779443 /* StartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,9 +20,8 @@ class StartViewController: UIViewController {
         guard let tologin = self.storyboard?.instantiateViewController(withIdentifier: "LoginView") else {
             return
         }
-        
         //화면 전환 애니메이션을 설정
-        //tologin.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        tologin.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         tologin.modalPresentationStyle = .fullScreen
         //coverVertical
         

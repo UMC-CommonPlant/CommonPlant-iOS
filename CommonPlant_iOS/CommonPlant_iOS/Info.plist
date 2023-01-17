@@ -65,5 +65,7 @@
 	<string>${BASE_URL}</string>
 	<key>KAKAO_NATIVE_APP_KEY</key>
 	<string>${KAKAO_NATIVE_APP_KEY}</string>
+	<key>privacy - Photo Library Usage Description</key>
+	<string>프로필 사진, 장소, 식물을 등록하거나, 식물에 관한 메모를 등록할 때 사용합니다.</string>
 </dict>
 </plist>
