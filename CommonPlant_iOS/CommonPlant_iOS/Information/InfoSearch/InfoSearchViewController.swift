@@ -16,9 +16,16 @@ class InfoSearchViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var searchTableView: UITableView!
     @IBOutlet weak var searchInputLabel: UITextField!
     
+    let cellIdentifier: String = "infoSearchCell"
+    let performSegueIdentifire: String = "infoSearchPerformSegue"
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+//        performSegue(withIdentifier: self.performSegueIdentifire, sender: nil)
         // Do any additional setup after loading the view.
     }
     
@@ -26,6 +33,25 @@ class InfoSearchViewController: UIViewController, UITableViewDelegate, UITableVi
     func onChange(text: String){
         searchInputLabel.text = text
     }
+    
+    
+    
+    //InfoDetailViewController의 textLabel로 데이터 넘기기
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let nextViewController: InfoDetailViewController = segue.destination as? InfoDetailViewController else{
+            return
+        }
+        
+        guard let cell: InfoSearchTableViewCell = sender as? InfoSearchTableViewCell else {
+            return
+        }
+        
+        nextViewController.textToSet = cell.nameLabel?.text
+    }
+
+
     
     
     
@@ -42,7 +68,7 @@ class InfoSearchViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "InfoSearchTableViewCell", for: indexPath) as? InfoSearchTableViewCell else {return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as? InfoSearchTableViewCell else {return UITableViewCell()}
         
         let item = plantInitialData[indexPath.row]
         cell.setupData(

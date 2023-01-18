@@ -51,14 +51,18 @@ class InfoViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         popularTableView.dataSource = self
     }
     
-    
+    //table view row 갯수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return plantInitialData.count
     }
     
+    //table view에 넘겨줄 데이터
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        //dequeue 재사용
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlantTableViewCell", for: indexPath) as? PlantTableViewCell else {return UITableViewCell()}
         
+        //cell에 들어갈 내용 정의
         let item = plantInitialData[indexPath.row]
         cell.setupData(
             item.plantImage,
