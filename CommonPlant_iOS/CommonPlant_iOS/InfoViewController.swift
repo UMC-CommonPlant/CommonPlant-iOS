@@ -102,7 +102,26 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
         let color : UIColor?
     }
     
+    //=======카테고리 컬렉션 선택시 다음 화면으로 데이터 넘기기========
     
+    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let nextViewController: InfoRecoViewController = segue.destination as? InfoRecoViewController else{
+            return
+        }
+        
+        guard let cell: PlantCollectionViewCell = sender as? PlantCollectionViewCell else {
+            return
+        }
+        
+        nextViewController.recoText = cell.titleLabel?.text
+        nextViewController.recoColor = cell.categoryView?.backgroundColor
+        nextViewController.recoImage = cell.categoryImageView?.image
+        
+    }
     
     
     //=======인기검색어=======

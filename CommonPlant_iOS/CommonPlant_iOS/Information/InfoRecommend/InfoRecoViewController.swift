@@ -7,23 +7,90 @@
 
 import UIKit
 
-class InfoRecoViewController: UIViewController {
+class InfoRecoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var recoView: UIView!
+    var recoColor: UIColor?
+    
+    @IBOutlet weak var recoImageView: UIImageView!
+    var recoImage : UIImage?
+    
+    @IBOutlet weak var recoLabel: UILabel!
+    var recoText : String?
+    
+    @IBOutlet weak var recoTableView: UITableView!
+    var cellIdentifier:String = "recoCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupTableView()
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //======카테고리 정보 넘겨받기======
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.recoLabel.text = self.recoText
+        self.recoView.backgroundColor = self.recoColor
+        self.recoImageView.image = self.recoImage
     }
-    */
+    
+    
+    
+    
+    
+    
+    
+    
+    //=========추천식물 table view========
+    
+    func setupTableView(){
+        recoTableView.delegate = self
+        recoTableView.dataSource = self
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return plantInitialData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as? InfoRecoTableViewCell else {return UITableViewCell()}
+        
+        let item = plantInitialData[indexPath.row]
+        cell.setupData(
+            item.plantImage,
+            item.name,
+            item.scientificName
+        )
+        return cell
+    }
+    
+    
+    
+    
+    
+    
+    //데이터 모델
+    let plantInitialData:[plantInitialModel] = [
+        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera"),
+        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera"),
+        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera"),
+        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera"),
+        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera"),
+        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera")
+    ]
+    
+    //셀의 각 요소를 들고 있는 구조체
+    struct plantInitialModel{
+        let plantImage : UIImage?
+        let name : String
+        let scientificName : String
+    }
+    
+    
+
 
 }

@@ -9,6 +9,12 @@ import UIKit
 
 class InfoRecoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var plantImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var scientificNameLabel: UILabel!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,6 +24,24 @@ class InfoRecoTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    
+    func setupData(
+        _ plantImage: UIImage?,
+        _ name: String,
+        _ scientificName: String
+    ){
+        if let plantImage = plantImage{
+            plantImageView.image = plantImage
+        }else{
+            plantImageView.image = UIImage(named: "InfoPlantImg")
+        }
+        
+        nameLabel.text = name
+        
+        scientificNameLabel.text = scientificName
+        
     }
 
 }
