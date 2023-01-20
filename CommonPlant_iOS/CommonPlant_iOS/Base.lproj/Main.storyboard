@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0S6-dQ-X6h">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1ix-Xu-ZhH">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -266,8 +266,31 @@
                                     <constraint firstItem="xoV-Ud-Hwe" firstAttribute="leading" secondItem="udv-He-0R0" secondAttribute="trailing" constant="8" id="yj0-5W-AIn"/>
                                 </constraints>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Krz-Yk-nqt">
+                                <rect key="frame" x="20" y="176" width="374" height="176"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="176" id="NZO-0J-bRN"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JeU-LT-VeG">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6py-7h-HoP">
+                                        <rect key="frame" x="0.0" y="24" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZJ0-Oz-c40">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rze-ku-Dv3">
-                                <rect key="frame" x="0.0" y="401" width="414" height="408"/>
+                                <rect key="frame" x="0.0" y="392" width="414" height="408"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6Lp-FG-73T" customClass="plant">
                                         <rect key="frame" x="18" y="52" width="378" height="356"/>
@@ -355,12 +378,12 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="jSP-JC-BfP" firstAttribute="top" secondItem="1VN-a9-zEn" secondAttribute="top" constant="12" id="CZo-mp-Skn"/>
-                                            <constraint firstItem="bYK-xJ-pzk" firstAttribute="top" secondItem="1VN-a9-zEn" secondAttribute="top" constant="10" id="GG1-Il-Ugr"/>
+                                            <constraint firstItem="jSP-JC-BfP" firstAttribute="top" secondItem="1VN-a9-zEn" secondAttribute="top" constant="12" id="1kf-fs-eAw"/>
+                                            <constraint firstAttribute="bottom" secondItem="jSP-JC-BfP" secondAttribute="bottom" constant="12" id="4lJ-Fz-ImN"/>
+                                            <constraint firstItem="bYK-xJ-pzk" firstAttribute="top" secondItem="1VN-a9-zEn" secondAttribute="top" constant="10" id="GTk-yC-n0e"/>
                                             <constraint firstItem="bYK-xJ-pzk" firstAttribute="leading" secondItem="1VN-a9-zEn" secondAttribute="leading" constant="20" id="Rug-p2-8r1"/>
                                             <constraint firstAttribute="height" constant="44" id="iPe-EE-loH"/>
-                                            <constraint firstAttribute="bottom" secondItem="jSP-JC-BfP" secondAttribute="bottom" constant="12" id="oif-5F-lOL"/>
-                                            <constraint firstAttribute="bottom" secondItem="bYK-xJ-pzk" secondAttribute="bottom" constant="10" id="p1t-sR-ZxT"/>
+                                            <constraint firstAttribute="bottom" secondItem="bYK-xJ-pzk" secondAttribute="bottom" constant="10" id="iqr-b2-lyW"/>
                                             <constraint firstAttribute="trailing" secondItem="jSP-JC-BfP" secondAttribute="trailing" constant="20" id="rDU-5L-3Mh"/>
                                         </constraints>
                                     </view>
@@ -373,18 +396,21 @@
                                     <constraint firstAttribute="bottom" secondItem="6Lp-FG-73T" secondAttribute="bottom" id="O6u-dn-YtQ"/>
                                     <constraint firstAttribute="height" constant="408" id="Zbd-Y1-Kal"/>
                                     <constraint firstAttribute="trailing" secondItem="1VN-a9-zEn" secondAttribute="trailing" id="ae9-K6-VxQ"/>
-                                    <constraint firstItem="1VN-a9-zEn" firstAttribute="top" secondItem="rze-ku-Dv3" secondAttribute="top" id="sU3-Jf-dNx"/>
+                                    <constraint firstItem="1VN-a9-zEn" firstAttribute="top" secondItem="rze-ku-Dv3" secondAttribute="top" id="xUv-ln-6Eh"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KGi-wg-qpJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="KGi-wg-qpJ" firstAttribute="bottom" secondItem="rze-ku-Dv3" secondAttribute="bottom" constant="4" id="Lqf-uJ-q74"/>
+                            <constraint firstItem="Krz-Yk-nqt" firstAttribute="leading" secondItem="KGi-wg-qpJ" secondAttribute="leading" constant="20" id="Ba8-mL-1MF"/>
+                            <constraint firstItem="rze-ku-Dv3" firstAttribute="top" secondItem="Krz-Yk-nqt" secondAttribute="bottom" constant="40" id="E55-IE-iXf"/>
                             <constraint firstItem="rze-ku-Dv3" firstAttribute="leading" secondItem="KGi-wg-qpJ" secondAttribute="leading" id="To1-cz-tml"/>
                             <constraint firstItem="99o-q7-b1f" firstAttribute="top" secondItem="KGi-wg-qpJ" secondAttribute="top" id="XMQ-9E-LSp"/>
                             <constraint firstItem="KGi-wg-qpJ" firstAttribute="trailing" secondItem="rze-ku-Dv3" secondAttribute="trailing" id="dPl-58-KkJ"/>
                             <constraint firstItem="KGi-wg-qpJ" firstAttribute="trailing" secondItem="99o-q7-b1f" secondAttribute="trailing" id="fLV-No-6XV"/>
+                            <constraint firstItem="Krz-Yk-nqt" firstAttribute="top" secondItem="99o-q7-b1f" secondAttribute="bottom" constant="24" id="msw-lQ-ZAe"/>
+                            <constraint firstItem="KGi-wg-qpJ" firstAttribute="trailing" secondItem="Krz-Yk-nqt" secondAttribute="trailing" constant="20" id="qFB-HE-kDy"/>
                             <constraint firstItem="99o-q7-b1f" firstAttribute="leading" secondItem="KGi-wg-qpJ" secondAttribute="leading" id="x43-mn-AOI"/>
                         </constraints>
                     </view>
@@ -392,7 +418,7 @@
                     <connections>
                         <outlet property="popularResetTime" destination="jSP-JC-BfP" id="WQ0-fk-Alz"/>
                         <outlet property="popularTableView" destination="6Lp-FG-73T" id="XlU-x5-MJj"/>
-                        <outlet property="searchLabel" destination="xoV-Ud-Hwe" id="tJc-I3-uWd"/>
+                        <outlet property="searchTextField" destination="xoV-Ud-Hwe" id="pfl-f5-Ghb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D38-eu-8Ar" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -525,7 +551,7 @@
                                     <constraint firstAttribute="height" constant="356" id="RTB-mY-FbI"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlantTableViewCell" id="NCP-ca-UNp" customClass="InfoSearchTableViewCell" customModule="CommonPlant_iOS">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoSearchCell" id="NCP-ca-UNp" customClass="InfoSearchTableViewCell" customModule="CommonPlant_iOS">
                                         <rect key="frame" x="0.0" y="50" width="414" height="92.333335876464844"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NCP-ca-UNp" id="lr8-Td-uSn">
