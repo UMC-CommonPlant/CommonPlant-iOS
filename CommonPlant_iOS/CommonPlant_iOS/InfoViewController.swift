@@ -9,9 +9,13 @@ import UIKit
 
 
 
-class InfoViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+//class InfoViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate,
+//                          UICollectionViewDelegate, UICollectionViewDataSource{
+
+class InfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     var searchTextFieldIdentifire = "searchTextFieldIdentifire"
+    var collectionViewCellIdentifire = "collectionViewCellIdentifire"
 
     @IBOutlet weak var popularResetTime: UILabel!
     @IBOutlet weak var popularTableView: UITableView!
@@ -27,7 +31,7 @@ class InfoViewController: UIViewController,UITableViewDelegate, UITableViewDataS
     
     //=======검색 후 다음 페이지로 넘김==========
     func setupSearchLabel(){
-        self.searchTextField.delegate=self
+//        self.searchTextField.delegate=self
     }
     
     var delegate: TextFieldSearchDelegate?
@@ -47,8 +51,45 @@ class InfoViewController: UIViewController,UITableViewDelegate, UITableViewDataS
 //    }
 
 
+    //=======카테고리 컬렉션 뷰========
+//    func setupCollectionView(){
+//
+//    }
+//
+//    private let cellWidth: CGFloat = 101
+//    private let cellHeight: CGFloat = 76
+//
+//
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return categoryData.count
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        <#code#>
+//    }
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    let categoryData:[categoryInitialModel] = [
+        categoryInitialModel(categoryImage: UIImage(named: "InfoPlantImg"), name: "원룸"),
+        categoryInitialModel(categoryImage: UIImage(named: "InfoPlantImg"), name: "공기정화"),
+        categoryInitialModel(categoryImage: UIImage(named: "InfoPlantImg"), name: "초보집사"),
+        categoryInitialModel(categoryImage: UIImage(named: "InfoPlantImg"), name: "채광"),
+        categoryInitialModel(categoryImage: UIImage(named: "InfoPlantImg"), name: "물 좋아함"),
+        categoryInitialModel(categoryImage: UIImage(named: "InfoPlantImg"), name: "인테리어"),
+    ]
+    
+    struct categoryInitialModel{
+        let categoryImage : UIImage?
+        let name : String
+    }
     
     //=======인기검색어=======
     //인기 검색어 table view setup
