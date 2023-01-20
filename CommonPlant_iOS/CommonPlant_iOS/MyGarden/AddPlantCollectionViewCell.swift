@@ -8,8 +8,6 @@
 import UIKit
 
 class AddPlantCollectionViewCell: UICollectionViewCell {
-
-    @IBOutlet weak var hiLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

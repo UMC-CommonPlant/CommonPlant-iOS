@@ -98,27 +98,17 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addPlace" translatesAutoresizingMaskIntoConstraints="NO" id="KYb-k1-e9w">
                                                     <rect key="frame" x="0.0" y="0.0" width="250" height="156"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스윗 홈_거실" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5x3-qz-ho1">
-                                                    <rect key="frame" x="14" y="124" width="79" height="20"/>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="KYb-k1-e9w" firstAttribute="leading" secondItem="XTI-LZ-Ixd" secondAttribute="leading" id="3vb-ug-goK"/>
                                                 <constraint firstItem="KYb-k1-e9w" firstAttribute="leading" secondItem="XTI-LZ-Ixd" secondAttribute="leading" id="IjI-AY-BMy"/>
-                                                <constraint firstAttribute="bottom" secondItem="5x3-qz-ho1" secondAttribute="bottom" constant="12" id="TPJ-b1-dFE"/>
                                                 <constraint firstItem="KYb-k1-e9w" firstAttribute="top" secondItem="XTI-LZ-Ixd" secondAttribute="top" id="Y5E-2k-bG1"/>
-                                                <constraint firstItem="5x3-qz-ho1" firstAttribute="leading" secondItem="XTI-LZ-Ixd" secondAttribute="leading" constant="14" id="dgQ-m2-s8O"/>
                                                 <constraint firstItem="KYb-k1-e9w" firstAttribute="top" secondItem="XTI-LZ-Ixd" secondAttribute="top" id="rND-Sc-PB1"/>
-                                                <constraint firstItem="5x3-qz-ho1" firstAttribute="top" secondItem="XTI-LZ-Ixd" secondAttribute="top" constant="124" id="rxa-5c-1ei"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="250" height="156"/>
                                         <connections>
                                             <outlet property="addPlaceImg" destination="KYb-k1-e9w" id="xzw-8i-RpG"/>
-                                            <outlet property="placeLabel" destination="5x3-qz-ho1" id="vBJ-M3-MBY"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -169,22 +159,55 @@
                                     <outlet property="delegate" destination="0S6-dQ-X6h" id="SVn-Ge-rKV"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vjj-IH-N7t">
+                                <rect key="frame" x="260" y="254" width="96" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="96" id="Ibd-6h-Q2J"/>
+                                    <constraint firstAttribute="height" constant="36" id="tNQ-FJ-qDr"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="mainRequestBtn"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCX-Nw-mPv">
+                                <rect key="frame" x="364" y="254" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="9dC-bM-ash"/>
+                                    <constraint firstAttribute="width" secondItem="OCX-Nw-mPv" secondAttribute="height" multiplier="1:1" id="IqH-8a-Olg"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="mainAddBtn"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oX-yc-tX1">
+                                <rect key="frame" x="364" y="506" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="KDb-6H-GcI"/>
+                                    <constraint firstAttribute="width" secondItem="9oX-yc-tX1" secondAttribute="height" multiplier="1:1" id="qfN-yq-dmZ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="mainAddBtn"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aHb-4i-zUz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cCN-BN-Gcw" firstAttribute="leading" secondItem="3dK-8j-htb" secondAttribute="leading" id="68i-1P-5ce"/>
+                            <constraint firstItem="aHb-4i-zUz" firstAttribute="trailing" secondItem="OCX-Nw-mPv" secondAttribute="trailing" constant="14" id="EuF-pI-Ei5"/>
                             <constraint firstItem="vRC-NN-p8Q" firstAttribute="leading" secondItem="aHb-4i-zUz" secondAttribute="leading" id="F1b-A5-to6"/>
+                            <constraint firstItem="OCX-Nw-mPv" firstAttribute="top" secondItem="vRC-NN-p8Q" secondAttribute="bottom" constant="36" id="G7r-I2-ehp"/>
                             <constraint firstItem="aHb-4i-zUz" firstAttribute="trailing" secondItem="MEG-2R-XFH" secondAttribute="trailing" id="GEl-d1-uf8"/>
                             <constraint firstItem="cCN-BN-Gcw" firstAttribute="top" secondItem="Xg6-sE-y0t" secondAttribute="bottom" constant="32" id="KGF-I1-8QA"/>
+                            <constraint firstItem="MEG-2R-XFH" firstAttribute="top" secondItem="9oX-yc-tX1" secondAttribute="bottom" constant="10" id="OH5-sk-BBn"/>
                             <constraint firstItem="Xg6-sE-y0t" firstAttribute="trailing" secondItem="aHb-4i-zUz" secondAttribute="trailing" id="QRj-Cv-CE2"/>
                             <constraint firstItem="vRC-NN-p8Q" firstAttribute="top" secondItem="VK6-Z1-609" secondAttribute="top" constant="35" id="Snu-hX-x1e"/>
                             <constraint firstItem="aHb-4i-zUz" firstAttribute="trailing" secondItem="cCN-BN-Gcw" secondAttribute="trailing" constant="35" id="YOW-S5-XGQ"/>
                             <constraint firstItem="MEG-2R-XFH" firstAttribute="leading" secondItem="aHb-4i-zUz" secondAttribute="leading" constant="20" id="aGO-sL-VdO"/>
+                            <constraint firstItem="OCX-Nw-mPv" firstAttribute="leading" secondItem="Vjj-IH-N7t" secondAttribute="trailing" constant="8" id="aMG-0J-Jhr"/>
                             <constraint firstItem="3dK-8j-htb" firstAttribute="leading" secondItem="aHb-4i-zUz" secondAttribute="leading" constant="20" id="cPR-h9-n1l"/>
                             <constraint firstItem="Xg6-sE-y0t" firstAttribute="leading" secondItem="aHb-4i-zUz" secondAttribute="leading" constant="20" id="eUr-Xk-cOY"/>
+                            <constraint firstItem="aHb-4i-zUz" firstAttribute="trailing" secondItem="9oX-yc-tX1" secondAttribute="trailing" constant="14" id="ejI-xr-tAI"/>
                             <constraint firstItem="MEG-2R-XFH" firstAttribute="top" secondItem="cCN-BN-Gcw" secondAttribute="bottom" constant="32" id="f0c-tA-mxm"/>
                             <constraint firstItem="vRC-NN-p8Q" firstAttribute="trailing" secondItem="aHb-4i-zUz" secondAttribute="trailing" id="kLv-8C-uD0"/>
+                            <constraint firstItem="Vjj-IH-N7t" firstAttribute="top" secondItem="vRC-NN-p8Q" secondAttribute="bottom" constant="36" id="lNX-gG-753"/>
                             <constraint firstItem="aHb-4i-zUz" firstAttribute="trailing" secondItem="3dK-8j-htb" secondAttribute="trailing" constant="35" id="oIE-hm-775"/>
                             <constraint firstItem="3dK-8j-htb" firstAttribute="top" secondItem="vRC-NN-p8Q" secondAttribute="bottom" constant="24" id="ohm-BY-WrD"/>
                             <constraint firstItem="aHb-4i-zUz" firstAttribute="bottom" secondItem="MEG-2R-XFH" secondAttribute="bottom" constant="153" id="pd6-h4-R4v"/>
@@ -651,6 +674,8 @@
         <image name="addPlace" width="250" height="156"/>
         <image name="addPlant" width="164.33332824707031" height="108.33333587646484"/>
         <image name="infoSearch" width="24" height="24"/>
+        <image name="mainAddBtn" width="36" height="36.333332061767578"/>
+        <image name="mainRequestBtn" width="97" height="36"/>
         <image name="myGarden" width="20.333333969116211" height="20"/>
         <namedColor name="Gray3">
             <color red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
