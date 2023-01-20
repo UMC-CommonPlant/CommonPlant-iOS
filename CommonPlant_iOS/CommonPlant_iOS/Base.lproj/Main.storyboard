@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1ix-Xu-ZhH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EV5-CV-GcC">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -15,7 +15,7 @@
             <objects>
                 <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0S6-dQ-X6h" customClass="MainViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VK6-Z1-609">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vRC-NN-p8Q">
@@ -229,7 +229,7 @@
             <objects>
                 <viewController id="Ixe-SS-HI3" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EwW-4L-1LX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="cKR-8g-om4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -245,7 +245,7 @@
             <objects>
                 <viewController id="1ix-Xu-ZhH" customClass="InfoViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vuJ-lh-Jg2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99o-q7-b1f">
@@ -451,11 +451,11 @@
         <!--Tab Bar Controller-->
         <scene sceneID="cZW-0c-kdK">
             <objects>
-                <tabBarController id="EV5-CV-GcC" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rRI-Bh-b2P">
+                <tabBarController storyboardIdentifier="TabBarController" id="EV5-CV-GcC" customClass="TabBarController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="rRI-Bh-b2P">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="eGt-MB-Qqb" kind="relationship" relationship="viewControllers" id="1rQ-mg-T1H"/>
@@ -473,7 +473,7 @@
             <objects>
                 <viewController id="Nqa-Pb-11l" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yde-ow-h3r">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="7GG-7Q-Xqj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -484,11 +484,11 @@
             </objects>
             <point key="canvasLocation" x="810" y="529"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="TJd-P6-3IC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6lq-at-HxT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="vs2-MM-dYc"/>
+                    <tabBarItem key="tabBarItem" title="" image="calendar" selectedImage="calendarActive" id="vs2-MM-dYc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eYm-Nj-j4q">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -503,11 +503,11 @@
             </objects>
             <point key="canvasLocation" x="-80.152671755725194" y="528.87323943661977"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="pyD-rn-zla">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mXL-le-efa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="O7z-c5-5PW"/>
+                    <tabBarItem key="tabBarItem" title="" image="profile" selectedImage="profileActive" id="O7z-c5-5PW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zFP-Sv-Xhi">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -522,11 +522,11 @@
             </objects>
             <point key="canvasLocation" x="-80" y="1196"/>
         </scene>
-        <!--Item 2-->
+        <!--Navigation Controller-->
         <scene sceneID="Yxx-CB-0Cy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="U7i-s9-4VR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" selectedImage="myGarden" id="wAt-hX-Q2R"/>
+                    <tabBarItem key="tabBarItem" title="" image="myGarden" selectedImage="myGardenActive" id="wAt-hX-Q2R"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DLX-cn-0FL">
                         <autoresizingMask key="autoresizingMask"/>
@@ -540,11 +540,11 @@
             </objects>
             <point key="canvasLocation" x="-80.152671755725194" y="-128.16901408450704"/>
         </scene>
-        <!--Item 1-->
+        <!--Navigation Controller-->
         <scene sceneID="g1w-PW-VqH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eGt-MB-Qqb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="TS9-Wo-Tyu"/>
+                    <tabBarItem key="tabBarItem" title="" image="info" selectedImage="infoActive" id="TS9-Wo-Tyu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9pe-ru-XIo">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -699,10 +699,17 @@
         <image name="InfoSearchCancel" width="24.333333969116211" height="24.333333969116211"/>
         <image name="addPlace" width="250" height="156"/>
         <image name="addPlant" width="164.33332824707031" height="108.33333587646484"/>
+        <image name="calendar" width="24.333333969116211" height="24"/>
+        <image name="calendarActive" width="19" height="33.333332061767578"/>
+        <image name="info" width="19" height="20"/>
+        <image name="infoActive" width="24.333333969116211" height="38"/>
         <image name="infoSearch" width="24" height="24"/>
         <image name="mainAddBtn" width="36" height="36.333332061767578"/>
         <image name="mainRequestBtn" width="97" height="36"/>
         <image name="myGarden" width="20.333333969116211" height="20"/>
+        <image name="myGardenActive" width="24.333333969116211" height="38"/>
+        <image name="profile" width="20.333333969116211" height="20"/>
+        <image name="profileActive" width="24.333333969116211" height="38"/>
         <namedColor name="Gray3">
             <color red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
