@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MUY-ve-Hml">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4qi-7o-Xch">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -589,11 +589,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CWV-k8-Tax">
-                                <rect key="frame" x="0.0" y="159" width="390" height="356"/>
+                                <rect key="frame" x="0.0" y="159" width="390" height="651"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="356" id="RTB-mY-FbI"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoSearchCell" id="NCP-ca-UNp" customClass="InfoSearchTableViewCell" customModule="CommonPlant_iOS">
                                         <rect key="frame" x="0.0" y="50" width="390" height="92.333335876464844"/>
@@ -636,6 +633,7 @@
                                             <outlet property="nameLabel" destination="spD-3t-MKW" id="sic-pM-pJb"/>
                                             <outlet property="plantImageView" destination="0zt-lo-L60" id="pHz-YS-Riq"/>
                                             <outlet property="scientificNameLabel" destination="EqK-Dl-FEV" id="BQ6-dc-2mk"/>
+                                            <segue destination="MUY-ve-Hml" kind="show" id="cWJ-EO-Cuw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -701,6 +699,7 @@
                             <constraint firstItem="WYC-BT-vgt" firstAttribute="leading" secondItem="7mq-0f-erO" secondAttribute="leading" id="YJm-0t-1qf"/>
                             <constraint firstItem="WYC-BT-vgt" firstAttribute="trailing" secondItem="7mq-0f-erO" secondAttribute="trailing" id="c1O-LZ-HIw"/>
                             <constraint firstItem="CWV-k8-Tax" firstAttribute="top" secondItem="WYC-BT-vgt" secondAttribute="bottom" constant="8" id="rvu-l2-mdf"/>
+                            <constraint firstItem="7mq-0f-erO" firstAttribute="bottom" secondItem="CWV-k8-Tax" secondAttribute="bottom" id="vqJ-Mb-6Vk"/>
                             <constraint firstItem="CWV-k8-Tax" firstAttribute="leading" secondItem="7mq-0f-erO" secondAttribute="leading" id="xO5-lO-kfc"/>
                             <constraint firstItem="WYC-BT-vgt" firstAttribute="top" secondItem="7mq-0f-erO" secondAttribute="top" constant="40" id="yaU-Jy-4C5"/>
                         </constraints>
@@ -825,16 +824,16 @@
             </objects>
             <point key="canvasLocation" x="1947.6923076923076" y="-1531.2796208530806"/>
         </scene>
-        <!--View Controller-->
+        <!--Info Detail View Controller-->
         <scene sceneID="iwU-Zb-DQh">
             <objects>
-                <viewController id="MUY-ve-Hml" sceneMemberID="viewController">
+                <viewController id="MUY-ve-Hml" customClass="InfoDetailViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DD9-Qh-I1T">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aj3-ZI-Lcc">
-                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                                <rect key="frame" x="0.0" y="47" width="390" height="740"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gXH-Yw-mo0">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="1500"/>
@@ -1120,15 +1119,49 @@
                                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
-                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8NI-uP-BGO">
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="infoTipCell" id="8NI-uP-BGO" customClass="TipCollectionViewCell" customModule="CommonPlant_iOS" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="164" height="121"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CG5-vD-qaL">
+                                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jIg-Vg-lmi">
                                                                     <rect key="frame" x="0.0" y="0.0" width="164" height="121"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0O-V6-rUD">
+                                                                            <rect key="frame" x="14" y="16" width="136" height="22"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="136" id="GAU-rv-irX"/>
+                                                                                <constraint firstAttribute="height" constant="22" id="Zpu-un-uVy"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGi-0M-ZvV">
+                                                                            <rect key="frame" x="14" y="38" width="136" height="64"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="136" id="RYd-60-ph9"/>
+                                                                                <constraint firstAttribute="height" constant="60" id="mf3-qe-89l"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="R0O-V6-rUD" firstAttribute="leading" secondItem="jIg-Vg-lmi" secondAttribute="leading" constant="14" id="I12-Ro-DAu"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="rGi-0M-ZvV" secondAttribute="bottom" constant="19" id="SQe-x1-mN5"/>
+                                                                        <constraint firstItem="rGi-0M-ZvV" firstAttribute="leading" secondItem="jIg-Vg-lmi" secondAttribute="leading" constant="14" id="dIs-Y4-pui"/>
+                                                                        <constraint firstItem="R0O-V6-rUD" firstAttribute="top" secondItem="jIg-Vg-lmi" secondAttribute="top" constant="16" id="nNp-Hx-EtS"/>
+                                                                        <constraint firstItem="rGi-0M-ZvV" firstAttribute="top" secondItem="R0O-V6-rUD" secondAttribute="bottom" id="qBp-7H-bVo"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="R0O-V6-rUD" secondAttribute="trailing" constant="14" id="rtL-VN-ez0"/>
+                                                                    </constraints>
                                                                 </collectionViewCellContentView>
                                                                 <color key="backgroundColor" name="Gray5"/>
                                                                 <size key="customSize" width="164" height="121"/>
+                                                                <connections>
+                                                                    <outlet property="contentLabel" destination="rGi-0M-ZvV" id="VJ1-aU-s6N"/>
+                                                                    <outlet property="titleLabel" destination="R0O-V6-rUD" id="w8h-Ve-Jf6"/>
+                                                                </connections>
                                                             </collectionViewCell>
                                                         </cells>
                                                     </collectionView>
@@ -1186,6 +1219,12 @@
                             <constraint firstItem="aj3-ZI-Lcc" firstAttribute="trailing" secondItem="LJD-Jb-l0L" secondAttribute="trailing" id="jsD-Uq-Y5A"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="oX4-gG-Uar"/>
+                    <connections>
+                        <outlet property="plantImageView" destination="89n-WU-3cW" id="KG3-Zd-TsU"/>
+                        <outlet property="textLabel" destination="YGV-tQ-7B0" id="XYO-9V-lFB"/>
+                        <outlet property="tipCollectionView" destination="DTB-aI-zwa" id="uWg-3u-OjU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ew-O1-WId" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

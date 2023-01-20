@@ -87,9 +87,9 @@ class InfoSearchViewController: UIViewController, UITableViewDelegate, UITableVi
     //데이터 모델
     let plantInitialData:[plantInitialModel] = [
         plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera"),
-        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera"),
-        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera"),
-        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera"),
+        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라 델리시오사", scientificName: "Monstera"),
+        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라 알보 바리에가타", scientificName: "Monstera"),
+        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라 보르시지아나", scientificName: "Monstera"),
         plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera"),
         plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera")
     ]

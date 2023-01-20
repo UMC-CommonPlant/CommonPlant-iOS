@@ -157,8 +157,8 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
     //데이터 모델
     let plantInitialData:[plantInitialModel] = [
         plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색"),
-        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색"),
-        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색"),
+        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라 델리시오사", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색"),
+        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라 알보 바리에가타", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색"),
         plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색"),
         plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색")
     ]
