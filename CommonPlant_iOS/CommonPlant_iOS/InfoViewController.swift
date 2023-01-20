@@ -10,10 +10,12 @@ import UIKit
 
 
 class InfoViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+    
+    var searchTextFieldIdentifire = "searchTextFieldIdentifire"
 
     @IBOutlet weak var popularResetTime: UILabel!
     @IBOutlet weak var popularTableView: UITableView!
-    @IBOutlet weak var searchLabel: UITextField!
+    @IBOutlet weak var searchTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,7 @@ class InfoViewController: UIViewController,UITableViewDelegate, UITableViewDataS
     
     //=======검색 후 다음 페이지로 넘김==========
     func setupSearchLabel(){
-        self.searchLabel.delegate=self
+        self.searchTextField.delegate=self
     }
     
     var delegate: TextFieldSearchDelegate?
@@ -33,14 +35,18 @@ class InfoViewController: UIViewController,UITableViewDelegate, UITableViewDataS
 
     
     //UITextDelegate return key 이벤트 함수 -> 엔터 눌렀을 때 검색 이벤트
-    func textFieldReturn(_ textField : UITextField) -> Bool{
-        if textField == self.searchLabel{
-            //액션 지정
-            
-        }
-        return true
-    }
-    
+//    func textFieldShouldReturn(_ textField : UITextField) -> Bool{
+//
+//        guard let result = self.storyboard?.instantiateViewController(withIdentifier: "InfoSearchViewController") as? InfoSearchViewController else{
+//            return true
+//        }
+//        result.textToSet = searchTextField.text
+//        self.present(result, animated: false)
+//
+//        return true
+//    }
+
+
     
     
     
@@ -51,14 +57,18 @@ class InfoViewController: UIViewController,UITableViewDelegate, UITableViewDataS
         popularTableView.dataSource = self
     }
     
-    
+    //table view row 갯수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return plantInitialData.count
     }
     
+    //table view에 넘겨줄 데이터
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        //dequeue 재사용
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PlantTableViewCell", for: indexPath) as? PlantTableViewCell else {return UITableViewCell()}
         
+        //cell에 들어갈 내용 정의
         let item = plantInitialData[indexPath.row]
         cell.setupData(
             item.plantImage,
