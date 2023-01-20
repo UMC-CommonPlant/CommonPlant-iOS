@@ -26,5 +26,6 @@ class InfoDetailViewController: UIViewController {
         self.textLabel.text = self.textToSet
         print(textToSet)
     }
+    
 
 }
