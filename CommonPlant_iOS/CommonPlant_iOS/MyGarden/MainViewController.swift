@@ -24,7 +24,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         addPlantCollectionView.register(UINib(nibName: "AddPlantCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AddPlantCollectionViewCell")
     }
     
-
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == addPlaceCollectionView {
