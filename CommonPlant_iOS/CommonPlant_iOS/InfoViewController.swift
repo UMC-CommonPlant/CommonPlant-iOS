@@ -63,9 +63,13 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
     func setupCollectionView(){
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
-//        let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-//        flowLayout.itemSize = CGSize(width: 100, height: 100)
-//        categoryCollectionView.collectionViewLayout = flowLayout
+        
+        let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        flowLayout.sectionInset = UIEdgeInsets.zero
+        
+        var width:CGFloat = UIScreen.main.bounds.width / 3.0
+        flowLayout.itemSize = CGSize(width: width-32, height: 76)
+        categoryCollectionView.collectionViewLayout = flowLayout
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

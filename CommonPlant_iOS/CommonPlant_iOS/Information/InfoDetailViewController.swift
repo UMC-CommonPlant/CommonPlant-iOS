@@ -19,6 +19,9 @@ class InfoDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var tipCollectionView: UICollectionView!
     var collectionIdentifire = "infoTipCell"
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         plantDataSetting()
@@ -45,9 +48,15 @@ class InfoDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     func setupCollectionView(){
         tipCollectionView.delegate = self
         tipCollectionView.dataSource = self
-//        let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-//        flowLayout.itemSize = CGSize(width: 100, height: 100)
-//        categoryCollectionView.collectionViewLayout = flowLayout
+        
+        let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        flowLayout.sectionInset = UIEdgeInsets.zero
+        
+//        var width:CGFloat = UIScreen.main.bounds.width / 3.0
+        
+        flowLayout.itemSize = CGSize(width: 164, height: 121)
+        tipCollectionView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 4)
+        tipCollectionView.collectionViewLayout = flowLayout
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
