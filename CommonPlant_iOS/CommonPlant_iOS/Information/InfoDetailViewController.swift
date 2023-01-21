@@ -51,11 +51,11 @@ class InfoDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         
         let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         flowLayout.sectionInset = UIEdgeInsets.zero
-        
-//        var width:CGFloat = UIScreen.main.bounds.width / 3.0
-        
         flowLayout.itemSize = CGSize(width: 164, height: 121)
-        tipCollectionView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 4)
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.minimumLineSpacing = 8.0 // <- 셀 간격 설정
+        flowLayout.minimumInteritemSpacing = 0
+        
         tipCollectionView.collectionViewLayout = flowLayout
     }
 
@@ -72,7 +72,20 @@ class InfoDetailViewController: UIViewController, UICollectionViewDelegate, UICo
             item.title,
             item.content
         )
+
+
+//        cell.layer.masksToBounds = true
+        cell.layer.cornerRadius = 16
+        cell.layer.borderWidth = 1.0
+        cell.layer.borderColor = UIColor(named: "Gray2")?.cgColor
         
+//        cell.layer.shadowColor = UIColor.black.cgColor
+//        cell.layer.masksToBounds = false
+//        cell.layer.shadowOpacity = 0.7
+//        cell.layer.shadowOffset = CGSize(width: -2, height: 2)
+//        cell.layer.shadowRadius = 16
+        
+
         return cell
     }
     

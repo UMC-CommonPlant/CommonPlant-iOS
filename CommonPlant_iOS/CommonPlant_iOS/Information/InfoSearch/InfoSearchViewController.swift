@@ -18,6 +18,9 @@ class InfoSearchViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var searchTableView: UITableView!
     @IBOutlet weak var searchInputLabel: UITextField!
     
+    
+    
+    
     let cellIdentifier: String = "infoSearchCell"
 //    let performSegueIdentifire: String = "infoSearchPerformSegue"
     
