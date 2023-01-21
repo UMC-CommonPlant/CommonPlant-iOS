@@ -9,6 +9,9 @@ import UIKit
 
 class AddPlantCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var myPlantImg: UIImageView!
+    @IBOutlet weak var addPlantLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

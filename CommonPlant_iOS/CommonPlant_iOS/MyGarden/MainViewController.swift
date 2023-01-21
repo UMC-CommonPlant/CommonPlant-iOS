@@ -41,6 +41,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 return placeCell
         } else {
             guard let plantCell = addPlantCollectionView.dequeueReusableCell(withReuseIdentifier: "AddPlantCollectionViewCell", for: indexPath) as? AddPlantCollectionViewCell else { return UICollectionViewCell() }
+            plantCell.addPlantLabel.text = "My Plant"
             return plantCell
         }
     }
