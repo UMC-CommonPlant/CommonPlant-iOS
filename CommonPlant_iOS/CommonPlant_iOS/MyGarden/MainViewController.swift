@@ -9,14 +9,11 @@ import UIKit
 
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    @IBOutlet weak var requestBtn: UIButton!
     @IBOutlet weak var addPlaceCollectionView: UICollectionView!
     @IBOutlet weak var addPlantCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-      //  requestBtn.titleLabel.font = UIFont(name: <#T##String#>, size: <#T##CGFloat#>)
         
         addPlaceCollectionView.delegate = self
         addPlaceCollectionView.dataSource = self
@@ -27,6 +24,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         addPlantCollectionView.register(UINib(nibName: "AddPlantCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AddPlantCollectionViewCell")
     }
     
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == addPlaceCollectionView {
@@ -44,7 +42,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 return placeCell
         } else {
             guard let plantCell = addPlantCollectionView.dequeueReusableCell(withReuseIdentifier: "AddPlantCollectionViewCell", for: indexPath) as? AddPlantCollectionViewCell else { return UICollectionViewCell() }
-            plantCell.addPlantLabel.text = "My Plant"
             return plantCell
         }
     }
