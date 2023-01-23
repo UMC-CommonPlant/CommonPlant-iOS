@@ -9,21 +9,22 @@ import UIKit
 
 
 
-//class InfoViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate,
-//                          UICollectionViewDelegate, UICollectionViewDataSource{
+class InfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UICollectionViewDelegate, UICollectionViewDataSource{
 
-class InfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     var searchTextFieldIdentifire = "searchTextFieldIdentifire"
-    var collectionViewCellIdentifire = "collectionViewCellIdentifire"
-
+    var collectionViewCellIdentifire = "collectionViewCell"
     @IBOutlet weak var popularResetTime: UILabel!
     @IBOutlet weak var popularTableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
     
+    @IBOutlet weak var categoryCollectionView: UICollectionView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchLabel()
+        setupCollectionView()
         setupTableView()
         // Do any additional setup after loading the view.
     }
@@ -50,46 +51,78 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
 //        return true
 //    }
 
+    
+    
+    
 
     //=======카테고리 컬렉션 뷰========
-//    func setupCollectionView(){
-//
-//    }
-//
-//    private let cellWidth: CGFloat = 101
-//    private let cellHeight: CGFloat = 76
-//
-//
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return categoryData.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        <#code#>
-//    }
-    
-    
-    
-    
-    
-    
-    
+    func setupCollectionView(){
+        categoryCollectionView.delegate = self
+        categoryCollectionView.dataSource = self
+        
+        let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        flowLayout.sectionInset = UIEdgeInsets.zero
+        
+        var width:CGFloat = UIScreen.main.bounds.width / 3.0
+        flowLayout.itemSize = CGSize(width: width-32, height: 76)
+        categoryCollectionView.collectionViewLayout = flowLayout
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return categoryData.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell : PlantCollectionViewCell = categoryCollectionView.dequeueReusableCell(withReuseIdentifier: self.collectionViewCellIdentifire, for: indexPath) as! PlantCollectionViewCell
+        
+        let item = categoryData[indexPath.row]
+        cell.setupData(
+            item.categoryImage,
+            item.title,
+            item.color
+        )
+        
+        return cell
+    }
     
     
     
     let categoryData:[categoryInitialModel] = [
-        categoryInitialModel(categoryImage: UIImage(named: "InfoPlantImg"), name: "원룸"),
-        categoryInitialModel(categoryImage: UIImage(named: "InfoPlantImg"), name: "공기정화"),
-        categoryInitialModel(categoryImage: UIImage(named: "InfoPlantImg"), name: "초보집사"),
-        categoryInitialModel(categoryImage: UIImage(named: "InfoPlantImg"), name: "채광"),
-        categoryInitialModel(categoryImage: UIImage(named: "InfoPlantImg"), name: "물 좋아함"),
-        categoryInitialModel(categoryImage: UIImage(named: "InfoPlantImg"), name: "인테리어"),
+        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory1"), title: "원룸", color: UIColor(named: "infoCategoryColor1")),
+        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory2"), title: "공기정화", color: UIColor(named: "infoCategoryColor2")),
+        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory3"), title: "초보집사", color: UIColor(named: "infoCategoryColor3")),
+        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory4"), title: "채광", color: UIColor(named: "infoCategoryColor4")),
+        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory5"), title: "물 좋아함", color: UIColor(named: "infoCategoryColor5")),
+        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory6"), title: "인테리어", color: UIColor(named: "infoCategoryColor6")),
     ]
     
     struct categoryInitialModel{
         let categoryImage : UIImage?
-        let name : String
+        let title : String
+        let color : UIColor?
     }
+    
+    //=======카테고리 컬렉션 선택시 다음 화면으로 데이터 넘기기========
+    
+    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let nextViewController: InfoRecoViewController = segue.destination as? InfoRecoViewController else{
+            return
+        }
+        
+        guard let cell: PlantCollectionViewCell = sender as? PlantCollectionViewCell else {
+            return
+        }
+        
+        nextViewController.recoText = cell.titleLabel?.text
+        nextViewController.recoColor = cell.categoryView?.backgroundColor
+        nextViewController.recoImage = cell.categoryImageView?.image
+        
+    }
+    
     
     //=======인기검색어=======
     //인기 검색어 table view setup
@@ -124,8 +157,8 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
     //데이터 모델
     let plantInitialData:[plantInitialModel] = [
         plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색"),
-        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색"),
-        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색"),
+        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라 델리시오사", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색"),
+        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라 알보 바리에가타", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색"),
         plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색"),
         plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색")
     ]
@@ -137,5 +170,6 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
         let scientificName : String
         let lastMonthCount : String
     }
+
 
 }
