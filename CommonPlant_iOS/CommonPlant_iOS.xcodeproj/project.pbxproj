@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
+		489585FA296E438D0035C292 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 489585F9296E438D0035C292 /* KakaoSDK */; };
+		489585FD296E4C940035C292 /* NaverThirdPartyLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 489585FC296E4C940035C292 /* NaverThirdPartyLogin */; };
+		48958600296E4D280035C292 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 489585FF296E4D280035C292 /* GoogleSignIn */; };
+		48958602296E4D280035C292 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 48958601296E4D280035C292 /* GoogleSignInSwift */; };
+		48A5EF4E2974DCBA00779443 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5EF4C2974DCBA00779443 /* LoginViewController.swift */; };
+		48A5EF512974DD0E00779443 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5EF4F2974DD0E00779443 /* MyPageViewController.swift */; };
+		48A5EF552974E65100779443 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5EF542974E65100779443 /* StartViewController.swift */; };
+		48BD658C2976350D0062E2F6 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BD658B2976350D0062E2F6 /* NicknameViewController.swift */; };
+
 		6263F8A629755ECF002B5871 /* InfoSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6263F8A529755ECF002B5871 /* InfoSearchViewController.swift */; };
 		6263F8A829755EF1002B5871 /* InfoSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6263F8A729755EF1002B5871 /* InfoSearchTableViewCell.swift */; };
 		6263F8AB29783AD4002B5871 /* InfoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6263F8AA29783AD4002B5871 /* InfoDetailViewController.swift */; };
@@ -19,6 +29,7 @@
 		F96C9C0E2979A2A9008627FA /* AddPlantCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96C9C0C2979A2A9008627FA /* AddPlantCollectionViewCell.xib */; };
 		F96C9C11297A6A80008627FA /* MyGardenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C9C10297A6A80008627FA /* MyGardenModel.swift */; };
 		F96C9C1D297AEE04008627FA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C9C1C297AEE04008627FA /* TabBarController.swift */; };
+
 		F9C48C70296D7AD100C76863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C48C6F296D7AD100C76863 /* AppDelegate.swift */; };
 		F9C48C72296D7AD100C76863 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C48C71296D7AD100C76863 /* SceneDelegate.swift */; };
 		F9C48C77296D7AD100C76863 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9C48C75296D7AD100C76863 /* Main.storyboard */; };
@@ -28,6 +39,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+
+		48958603296E4F350035C292 /* CommonPlant_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CommonPlant_iOS.entitlements; sourceTree = "<group>"; };
+		48A5EF4D2974DCBA00779443 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = CommonPlant_iOS/Base.lproj/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
+		48A5EF502974DD0E00779443 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = CommonPlant_iOS/Base.lproj/MyPageViewController.swift; sourceTree = SOURCE_ROOT; };
+		48A5EF542974E65100779443 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StartViewController.swift; path = CommonPlant_iOS/StartViewController.swift; sourceTree = SOURCE_ROOT; };
+		48BD658B2976350D0062E2F6 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NicknameViewController.swift; path = CommonPlant_iOS/NicknameViewController.swift; sourceTree = SOURCE_ROOT; };
+
 		6263F8A529755ECF002B5871 /* InfoSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSearchViewController.swift; sourceTree = "<group>"; };
 		6263F8A729755EF1002B5871 /* InfoSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSearchTableViewCell.swift; sourceTree = "<group>"; };
 		6263F8AA29783AD4002B5871 /* InfoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InfoDetailViewController.swift; path = CommonPlant_iOS/Information/InfoDetailViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -40,6 +58,7 @@
 		F96C9C0C2979A2A9008627FA /* AddPlantCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPlantCollectionViewCell.xib; sourceTree = "<group>"; };
 		F96C9C10297A6A80008627FA /* MyGardenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGardenModel.swift; sourceTree = "<group>"; };
 		F96C9C1C297AEE04008627FA /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+
 		F9C48C6C296D7AD100C76863 /* CommonPlant_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommonPlant_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C48C6F296D7AD100C76863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9C48C71296D7AD100C76863 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +74,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				489585FD296E4C940035C292 /* NaverThirdPartyLogin in Frameworks */,
+				489585FA296E438D0035C292 /* KakaoSDK in Frameworks */,
+				48958600296E4D280035C292 /* GoogleSignIn in Frameworks */,
+				48958602296E4D280035C292 /* GoogleSignInSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +121,11 @@
 		F9C48C6E296D7AD100C76863 /* CommonPlant_iOS */ = {
 			isa = PBXGroup;
 			children = (
+
+				48958603296E4F350035C292 /* CommonPlant_iOS.entitlements */,
+
 				F96C9C0F297A69EF008627FA /* Model */,
+
 				F9C48C85296D7DD800C76863 /* Information */,
 				F9C48C84296D7DCB00C76863 /* User */,
 				F9C48C83296D7D8D00C76863 /* MyGarden */,
@@ -128,6 +155,10 @@
 		F9C48C84296D7DCB00C76863 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				48A5EF4C2974DCBA00779443 /* LoginViewController.swift */,
+				48A5EF4F2974DD0E00779443 /* MyPageViewController.swift */,
+				48A5EF542974E65100779443 /* StartViewController.swift */,
+				48BD658B2976350D0062E2F6 /* NicknameViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -159,6 +190,12 @@
 			dependencies = (
 			);
 			name = CommonPlant_iOS;
+			packageProductDependencies = (
+				489585F9296E438D0035C292 /* KakaoSDK */,
+				489585FC296E4C940035C292 /* NaverThirdPartyLogin */,
+				489585FF296E4D280035C292 /* GoogleSignIn */,
+				48958601296E4D280035C292 /* GoogleSignInSwift */,
+			);
 			productName = CommonPlant_iOS;
 			productReference = F9C48C6C296D7AD100C76863 /* CommonPlant_iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -187,6 +224,11 @@
 				Base,
 			);
 			mainGroup = F9C48C63296D7AD100C76863;
+			packageReferences = (
+				489585F8296E438D0035C292 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+				489585FB296E4C940035C292 /* XCRemoteSwiftPackageReference "naveridlogin-sdk-ios-spm" */,
+				489585FE296E4D280035C292 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			productRefGroup = F9C48C6D296D7AD100C76863 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -216,25 +258,51 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
+				48A5EF4E2974DCBA00779443 /* LoginViewController.swift in Sources */,
+
 				F96C9C092979A29A008627FA /* AddPlaceCollectionViewCell.swift in Sources */,
 				6263F8A629755ECF002B5871 /* InfoSearchViewController.swift in Sources */,
 				F96C9C0D2979A2A9008627FA /* AddPlantCollectionViewCell.swift in Sources */,
 				F9C48C872972782100C76863 /* MainViewController.swift in Sources */,
 				62A334B529746AEA007747E7 /* PlantTableViewCell.swift in Sources */,
 				6263F8A829755EF1002B5871 /* InfoSearchTableViewCell.swift in Sources */,
+
 				F9C48C70296D7AD100C76863 /* AppDelegate.swift in Sources */,
 				6274C3BB296ED78C00172941 /* InfoViewController.swift in Sources */,
 				F9C48C72296D7AD100C76863 /* SceneDelegate.swift in Sources */,
+
+				48A5EF512974DD0E00779443 /* MyPageViewController.swift in Sources */,
+				48BD658C2976350D0062E2F6 /* NicknameViewController.swift in Sources */,
+				48A5EF552974E65100779443 /* StartViewController.swift in Sources */,
+
 				F96C9C11297A6A80008627FA /* MyGardenModel.swift in Sources */,
 				F96C9C1D297AEE04008627FA /* TabBarController.swift in Sources */,
 				62801545297A89A500732E21 /* PlantCollectionViewCell.swift in Sources */,
 				6263F8AB29783AD4002B5871 /* InfoDetailViewController.swift in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		48A5EF4C2974DCBA00779443 /* LoginViewController.swift */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48A5EF4D2974DCBA00779443 /* Base */,
+			);
+			name = LoginViewController.swift;
+			sourceTree = "<group>";
+		};
+		48A5EF4F2974DD0E00779443 /* MyPageViewController.swift */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48A5EF502974DD0E00779443 /* Base */,
+			);
+			name = MyPageViewController.swift;
+			sourceTree = "<group>";
+		};
 		F9C48C75296D7AD100C76863 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -373,9 +441,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = CommonPlant_iOS/CommonPlant_iOS.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9HP6SS4WYV;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CommonPlant_iOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -390,6 +459,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yaewon.CommonPlant-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -401,9 +471,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = CommonPlant_iOS/CommonPlant_iOS.entitlements;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9HP6SS4WYV;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CommonPlant_iOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -418,6 +489,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yaewon.CommonPlant-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -446,6 +518,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		489585F8296E438D0035C292 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		489585FB296E4C940035C292 /* XCRemoteSwiftPackageReference "naveridlogin-sdk-ios-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jaemyeong/naveridlogin-sdk-ios-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		489585FE296E4D280035C292 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		489585F9296E438D0035C292 /* KakaoSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 489585F8296E438D0035C292 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDK;
+		};
+		489585FC296E4C940035C292 /* NaverThirdPartyLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 489585FB296E4C940035C292 /* XCRemoteSwiftPackageReference "naveridlogin-sdk-ios-spm" */;
+			productName = NaverThirdPartyLogin;
+		};
+		489585FF296E4D280035C292 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 489585FE296E4D280035C292 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		48958601296E4D280035C292 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 489585FE296E4D280035C292 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F9C48C64296D7AD100C76863 /* Project object */;
 }
