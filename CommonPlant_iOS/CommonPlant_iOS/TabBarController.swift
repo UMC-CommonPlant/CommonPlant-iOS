@@ -28,11 +28,4 @@ class TabBarController: UITabBarController {
         
         self.view.layoutIfNeeded()
     }
-    
-//
-//    func sizeThatFits(_ size: CGSize) -> CGSize {
-//        var sizeThatFits =  super.sizeThatFits(size)
-//        sizeThatFits.height = 64
-//        return sizeThatFits
-//    }
 }

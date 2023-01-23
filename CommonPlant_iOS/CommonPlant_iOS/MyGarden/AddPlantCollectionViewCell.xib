@@ -20,18 +20,27 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dMb-m3-k8I">
                         <rect key="frame" x="0.0" y="0.0" width="164" height="132"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addPlant" translatesAutoresizingMaskIntoConstraints="NO" id="7JT-Nj-cgL">
-                                <rect key="frame" x="0.0" y="0.0" width="164" height="108.33333333333333"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Plant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttw-SY-Ah9">
-                                <rect key="frame" x="0.0" y="112.33333333333333" width="164" height="16.999999999999986"/>
+                                <rect key="frame" x="0.0" y="112" width="164" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="BXZ-83-qqX"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addPlant" translatesAutoresizingMaskIntoConstraints="NO" id="7JT-Nj-cgL">
+                                <rect key="frame" x="0.0" y="0.0" width="164" height="108"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="108" id="S3T-0G-9ES"/>
+                                    <constraint firstAttribute="width" constant="164" id="Z02-LZ-DEG"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="height" constant="132" id="3d7-KI-pLL"/>
+                            <constraint firstAttribute="width" constant="164" id="MyQ-3D-Kfr"/>
                             <constraint firstAttribute="trailing" secondItem="7JT-Nj-cgL" secondAttribute="trailing" id="ZG0-Bm-dko"/>
                             <constraint firstItem="7JT-Nj-cgL" firstAttribute="leading" secondItem="dMb-m3-k8I" secondAttribute="leading" id="afE-fC-81n"/>
                             <constraint firstItem="7JT-Nj-cgL" firstAttribute="top" secondItem="dMb-m3-k8I" secondAttribute="top" id="afz-6c-XpI"/>
@@ -50,7 +59,11 @@
                 <constraint firstAttribute="bottom" secondItem="dMb-m3-k8I" secondAttribute="bottom" id="akq-IH-Wuv"/>
             </constraints>
             <size key="customSize" width="197" height="160"/>
-            <point key="canvasLocation" x="148.85496183206106" y="35.211267605633807"/>
+            <connections>
+                <outlet property="addPlantImg" destination="7JT-Nj-cgL" id="1We-uP-aYK"/>
+                <outlet property="myPlant" destination="Ttw-SY-Ah9" id="ka9-gP-nuh"/>
+            </connections>
+            <point key="canvasLocation" x="148.09160305343511" y="35.211267605633807"/>
         </collectionViewCell>
     </objects>
     <resources>
