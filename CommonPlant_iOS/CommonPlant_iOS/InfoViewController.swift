@@ -40,19 +40,50 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     
     //UITextDelegate return key 이벤트 함수 -> 엔터 눌렀을 때 검색 이벤트
-//    func textFieldShouldReturn(_ textField : UITextField) -> Bool{
-//
+    func textFieldShouldReturn(_ textField : UITextField) -> Bool{
+
 //        guard let result = self.storyboard?.instantiateViewController(withIdentifier: "InfoSearchViewController") as? InfoSearchViewController else{
 //            return true
 //        }
 //        result.textToSet = searchTextField.text
 //        self.present(result, animated: false)
-//
-//        return true
-//    }
+        if textField == self.searchTextField {
+            print(textField)
+        }
+
+
+        return true
+    }
 
     
-    
+    //=======collection & table 다음화면으로 데이터 넘기기=======
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //카테고리 컬렉션 선택시 InfoRecoViewController 화면으로 데이터 넘기기
+        if segue.destination is InfoRecoViewController{
+            //카테고리 컬렉션 선택
+            guard let nextViewController: InfoRecoViewController = segue.destination as? InfoRecoViewController else{
+                return
+            }
+            
+            guard let cell: PlantCollectionViewCell = sender as? PlantCollectionViewCell else {
+                return
+            }
+            
+            nextViewController.recoText = cell.titleLabel?.text
+            nextViewController.recoColor = cell.categoryView?.backgroundColor
+            nextViewController.recoImage = cell.categoryImageView?.image
+        }
+        //인기검색어 클릭시 info detail 화면으로 데이터 넘기기
+        else{
+            guard let nextViewController :InfoDetailViewController = segue.destination as? InfoDetailViewController else{
+                return
+            }
+            guard let cell: PlantTableViewCell = sender as? PlantTableViewCell else{
+                return
+            }
+            nextViewController.textToSet = cell.nameLabel?.text
+        }
+    }
     
 
     //=======카테고리 컬렉션 뷰========
@@ -102,26 +133,7 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
         let color : UIColor?
     }
     
-    //=======카테고리 컬렉션 선택시 다음 화면으로 데이터 넘기기========
-    
-    
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let nextViewController: InfoRecoViewController = segue.destination as? InfoRecoViewController else{
-            return
-        }
-        
-        guard let cell: PlantCollectionViewCell = sender as? PlantCollectionViewCell else {
-            return
-        }
-        
-        nextViewController.recoText = cell.titleLabel?.text
-        nextViewController.recoColor = cell.categoryView?.backgroundColor
-        nextViewController.recoImage = cell.categoryImageView?.image
-        
-    }
     
     
     //=======인기검색어=======
@@ -153,7 +165,6 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
-
     //데이터 모델
     let plantInitialData:[plantInitialModel] = [
         plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색"),

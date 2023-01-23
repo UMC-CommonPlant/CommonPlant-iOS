@@ -28,13 +28,20 @@ class InfoRecoViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
 
-    //======카테고리 정보 넘겨받기======
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.recoLabel.text = self.recoText
-        self.recoView.backgroundColor = self.recoColor
-        self.recoImageView.image = self.recoImage
+    
+    
+    //=======collection & table 다음화면으로 데이터 넘기기=======
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //카테고리 컬렉션 선택시 InfoRecoViewController 화면으로 데이터 넘기기
+        if segue.destination is InfoDetailViewController{
+            guard let nextViewController :InfoDetailViewController = segue.destination as? InfoDetailViewController else{
+                return
+            }
+            guard let cell: InfoRecoTableViewCell = sender as? InfoRecoTableViewCell else{
+                return
+            }
+            nextViewController.textToSet = cell.nameLabel?.text
+        }
     }
     
     
@@ -42,7 +49,17 @@ class InfoRecoViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     
+
     
+    //======info 메인에서 카테고리 정보 넘겨받기======
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.recoLabel.text = self.recoText
+        self.recoView.backgroundColor = self.recoColor
+        self.recoImageView.image = self.recoImage
+    }
+   
     
     //=========추천식물 table view========
     

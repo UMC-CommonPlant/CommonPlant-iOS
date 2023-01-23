@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4qi-7o-Xch">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1ix-Xu-ZhH">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -321,12 +321,9 @@
                                             <constraint firstAttribute="height" constant="24" id="CEY-i9-4YF"/>
                                             <constraint firstAttribute="width" constant="219" id="efg-4e-Wxg"/>
                                         </constraints>
-                                        <color key="textColor" name="Gray3"/>
+                                        <color key="textColor" name="Gray6"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <segue destination="4qi-7o-Xch" kind="show" id="VZM-x0-r8D"/>
-                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -401,6 +398,7 @@
                                                     <outlet property="nameLabel" destination="eNe-xM-qTu" id="rIM-uY-9I5"/>
                                                     <outlet property="plantImageView" destination="M2y-Xm-mYx" id="1zU-1a-nMG"/>
                                                     <outlet property="scientificNameLabel" destination="tR7-HT-Bn7" id="4TA-g7-IdA"/>
+                                                    <segue destination="WRE-KZ-XGl" kind="show" id="XCl-vg-efJ"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -662,11 +660,11 @@
             <objects>
                 <viewController id="4qi-7o-Xch" customClass="InfoSearchViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cIf-vr-9Oq">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CWV-k8-Tax">
-                                <rect key="frame" x="0.0" y="175" width="393" height="554"/>
+                                <rect key="frame" x="0.0" y="131" width="393" height="647"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoSearchCell" id="NCP-ca-UNp" customClass="InfoSearchTableViewCell" customModule="CommonPlant_iOS">
@@ -716,7 +714,7 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYC-BT-vgt">
-                                <rect key="frame" x="0.0" y="103" width="393" height="64"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="64"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GWD-0K-f14">
                                         <rect key="frame" x="0.0" y="63" width="393" height="1"/>
@@ -732,14 +730,14 @@
                                             <constraint firstAttribute="height" constant="24" id="ycR-2h-OWK"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="식물을 입력해 주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S6t-jb-NKF">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S6t-jb-NKF">
                                         <rect key="frame" x="52" y="20" width="219" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="5im-XN-XYp"/>
                                             <constraint firstAttribute="width" constant="219" id="9uI-9M-8dR"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="NgB-Kv-Tpw"/>
                                         </constraints>
-                                        <color key="textColor" name="Gray3"/>
+                                        <color key="textColor" name="Gray6"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -1308,6 +1306,7 @@
                                             <outlet property="nameLabel" destination="YVU-06-0CI" id="7QB-Lh-X5i"/>
                                             <outlet property="plantImageView" destination="sqQ-RU-zFm" id="flQ-BG-Mlq"/>
                                             <outlet property="scientificNameLabel" destination="fHU-xE-g7R" id="AuC-lm-5LT"/>
+                                            <segue destination="WRE-KZ-XGl" kind="show" id="qds-Hn-n6U"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1338,6 +1337,9 @@
             <point key="canvasLocation" x="1947.6923076923076" y="-1531.2796208530806"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="qds-Hn-n6U"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="InfoCategory4" width="24" height="24.333333969116211"/>
         <image name="InfoCategory5" width="24" height="24.333333969116211"/>
@@ -1360,9 +1362,6 @@
         <image name="profileActive" width="24.333333969116211" height="38"/>
         <namedColor name="Gray1">
             <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Gray3">
-            <color red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Gray4">
             <color red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
