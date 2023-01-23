@@ -9,6 +9,8 @@ import UIKit
 
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var mainRequestBtn: UIButton!
+    @IBOutlet weak var gradationView: UIView!
     @IBOutlet weak var addPlaceCollectionView: UICollectionView!
     @IBOutlet weak var addPlantCollectionView: UICollectionView!
     
@@ -31,7 +33,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setUpGradient()
         addPlaceCollectionView.delegate = self
         addPlaceCollectionView.dataSource = self
         addPlaceCollectionView.register(UINib(nibName: "AddPlaceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AddPlaceCollectionViewCell")
@@ -41,7 +43,27 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         addPlantCollectionView.register(UINib(nibName: "AddPlantCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AddPlantCollectionViewCell")
     }
     
-
+    func setUpRequestBtn() {
+        mainRequestBtn.tintColor = UIColor(named: "SeaGreenDark1")
+    }
+    
+    func setUpGradient() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = gradationView.bounds
+        let colors: [CGColor] = [
+            UIColor(red: 0.847, green: 0.871, blue: 0.867, alpha: 1).cgColor,
+            UIColor(red: 0.847, green: 0.871, blue: 0.867, alpha: 0).cgColor
+        ]
+        gradientLayer.colors = colors
+        gradientLayer.locations = [0, 1]
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
+        gradientLayer.transform = CATransform3DMakeAffineTransform(CGAffineTransform(a: 0, b: 1, c: -1, d: 0, tx: 1, ty: 0))
+        gradientLayer.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: gradationView.frame.width, height: gradationView.frame.height))
+        //gradientLayer.bounds = gradationView.bounds.insetBy(dx: -0.5*gradationView.bounds.size.width, dy: -0.5*gradationView.bounds.size.height)
+        //gradientLayer.position = gradationView.center
+        gradationView.layer.addSublayer(gradientLayer)
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == addPlaceCollectionView {

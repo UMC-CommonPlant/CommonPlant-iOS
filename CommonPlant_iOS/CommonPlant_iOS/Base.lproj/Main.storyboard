@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EV5-CV-GcC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0S6-dQ-X6h">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -207,22 +207,41 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="mainAddBtn"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nC3-TR-f4A">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUg-y8-cxd">
                                         <rect key="frame" x="239" y="236" width="96" height="36"/>
-                                        <color key="backgroundColor" name="SeaGreenDark1"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="gdv-fy-tag"/>
-                                            <constraint firstAttribute="width" constant="96" id="smd-v7-ng1"/>
+                                            <constraint firstAttribute="height" constant="36" id="Mp7-ab-CbQ"/>
+                                            <constraint firstAttribute="width" constant="96" id="Yzy-CH-VXP"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
-                                        <color key="tintColor" name="SeaGreenDark1"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="요청5건">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <buttonConfiguration key="configuration" style="filled" title="요청5건">
-                                            <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
-                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" cornerStyle="large">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="요청">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="14" name="AppleSDGothicNeo-SemiBold"/>
+                                                        <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content=" ">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="14" name="AppleSDGothicNeo-SemiBold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="5건">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="14" name="AppleSDGothicNeo-SemiBold"/>
+                                                        <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseBackgroundColor" name="SeaGreenDark1"/>
                                         </buttonConfiguration>
                                     </button>
                                 </subviews>
@@ -233,6 +252,8 @@
                                     <constraint firstItem="Xg6-sE-y0t" firstAttribute="leading" secondItem="3dK-8j-htb" secondAttribute="leading" id="3b4-n9-ATI"/>
                                     <constraint firstItem="Xg6-sE-y0t" firstAttribute="trailing" secondItem="Dub-3r-3u8" secondAttribute="trailing" id="9Il-EO-vLd"/>
                                     <constraint firstItem="Xg6-sE-y0t" firstAttribute="top" secondItem="3dK-8j-htb" secondAttribute="bottom" constant="32" id="AFE-Uk-YCc"/>
+                                    <constraint firstItem="OCX-Nw-mPv" firstAttribute="leading" secondItem="rUg-y8-cxd" secondAttribute="trailing" constant="8" id="F7L-tF-kdt"/>
+                                    <constraint firstItem="rUg-y8-cxd" firstAttribute="top" secondItem="vRC-NN-p8Q" secondAttribute="bottom" constant="36" id="FFs-Am-qCB"/>
                                     <constraint firstAttribute="bottom" secondItem="cCN-BN-Gcw" secondAttribute="bottom" constant="223" id="MJY-jt-2xC"/>
                                     <constraint firstAttribute="trailing" secondItem="Xg6-sE-y0t" secondAttribute="trailing" id="Mma-KE-0Vl"/>
                                     <constraint firstItem="vRC-NN-p8Q" firstAttribute="leading" secondItem="Dub-3r-3u8" secondAttribute="leading" id="Mt7-PN-nIm"/>
@@ -246,9 +267,7 @@
                                     <constraint firstItem="MEG-2R-XFH" firstAttribute="trailing" secondItem="Dub-3r-3u8" secondAttribute="trailing" id="jaz-AB-TaE"/>
                                     <constraint firstItem="vRC-NN-p8Q" firstAttribute="top" secondItem="BEc-hG-cyl" secondAttribute="top" id="kJJ-ej-syd"/>
                                     <constraint firstItem="vRC-NN-p8Q" firstAttribute="trailing" secondItem="Dub-3r-3u8" secondAttribute="trailing" id="mJi-oE-Ow6"/>
-                                    <constraint firstItem="nC3-TR-f4A" firstAttribute="top" secondItem="vRC-NN-p8Q" secondAttribute="bottom" constant="36" id="oTe-UF-cy9"/>
                                     <constraint firstItem="3dK-8j-htb" firstAttribute="leading" secondItem="Dub-3r-3u8" secondAttribute="leading" constant="20" id="rdZ-mv-xOw"/>
-                                    <constraint firstItem="OCX-Nw-mPv" firstAttribute="leading" secondItem="nC3-TR-f4A" secondAttribute="trailing" constant="8" id="vCc-7b-hlq"/>
                                     <constraint firstItem="MEG-2R-XFH" firstAttribute="top" secondItem="cCN-BN-Gcw" secondAttribute="bottom" constant="32" id="vye-J6-sbT"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="HtF-Ke-Qr7"/>
@@ -268,6 +287,7 @@
                     <connections>
                         <outlet property="addPlaceCollectionView" destination="Xg6-sE-y0t" id="pcf-sR-LSj"/>
                         <outlet property="addPlantCollectionView" destination="MEG-2R-XFH" id="S1w-Z4-0Ut"/>
+                        <outlet property="gradationView" destination="M8r-p7-TgF" id="VJe-7s-vph"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Re-0f-TgO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
