@@ -33,6 +33,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.isNavigationBarHidden = true
         setUpGradient()
         addPlaceCollectionView.delegate = self
         addPlaceCollectionView.dataSource = self
@@ -56,10 +58,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         ]
         gradientLayer.colors = colors
         gradientLayer.locations = [0, 1]
-        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
-        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
+        gradientLayer.startPoint = CGPoint(x: 0.25, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 0.75, y: 0.5)
         gradientLayer.transform = CATransform3DMakeAffineTransform(CGAffineTransform(a: 0, b: 1, c: -1, d: 0, tx: 1, ty: 0))
-        gradientLayer.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: gradationView.frame.width, height: gradationView.frame.height))
+        gradientLayer.frame = gradationView.bounds
         //gradientLayer.bounds = gradationView.bounds.insetBy(dx: -0.5*gradationView.bounds.size.width, dy: -0.5*gradationView.bounds.size.height)
         //gradientLayer.position = gradationView.center
         gradationView.layer.addSublayer(gradientLayer)
