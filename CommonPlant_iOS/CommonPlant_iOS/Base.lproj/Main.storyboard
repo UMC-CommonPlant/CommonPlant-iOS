@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EV5-CV-GcC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iud-OM-UBV">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -282,7 +282,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mypage" translatesAutoresizingMaskIntoConstraints="NO" id="XpQ-ql-RoP">
-                                <rect key="frame" x="149" y="185" width="95" height="88"/>
+                                <rect key="frame" x="149" y="184" width="95" height="88"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting" translatesAutoresizingMaskIntoConstraints="NO" id="E6T-DB-Arm">
@@ -700,6 +700,80 @@
             </objects>
             <point key="canvasLocation" x="1605" y="-889"/>
         </scene>
+        <!--Start View Controller-->
+        <scene sceneID="KHm-3b-EZZ">
+            <objects>
+                <viewController storyboardIdentifier="StartView" id="iud-OM-UBV" customClass="StartViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SLR-Aq-GY3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="식물을 내 공간으로, 공간은 내 폰으로" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VT3-8S-7Xd">
+                                <rect key="frame" x="104" y="522.33333333333337" width="185" height="57.666666666666629"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUa-G0-ROk">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="334.66666666666669"/>
+                                <color key="backgroundColor" name="startViewColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="334.70999999999998" id="8AC-oC-gAT"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo1" translatesAutoresizingMaskIntoConstraints="NO" id="6El-W8-DPk">
+                                <rect key="frame" x="84.666666666666671" y="233.66666666666663" width="223.66666666666663" height="253"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="253.25" id="2NI-zX-iuz"/>
+                                    <constraint firstAttribute="width" constant="223.69999999999999" id="g97-Xg-hWY"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1c3-kg-8Mq">
+                                <rect key="frame" x="29" y="762" width="335" height="48"/>
+                                <color key="backgroundColor" name="SeaGreenDark1"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="335" id="2MM-Zt-jCt"/>
+                                    <constraint firstAttribute="height" constant="48" id="iQE-DU-hEO"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="시작하기">
+                                    <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                    <color key="baseForegroundColor" name="Gray1"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Kcs-TG-Pb1" kind="showDetail" id="Z6T-fk-Ge1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RrM-2h-CdW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6El-W8-DPk" firstAttribute="top" secondItem="SLR-Aq-GY3" secondAttribute="topMargin" constant="174.52000000000001" id="0LE-Qo-qvA"/>
+                            <constraint firstItem="VT3-8S-7Xd" firstAttribute="centerX" secondItem="SLR-Aq-GY3" secondAttribute="centerX" id="24Z-BS-cy2"/>
+                            <constraint firstItem="RrM-2h-CdW" firstAttribute="bottom" secondItem="1c3-kg-8Mq" secondAttribute="bottom" constant="8" id="8P2-nj-XmU"/>
+                            <constraint firstItem="RrM-2h-CdW" firstAttribute="trailing" secondItem="BUa-G0-ROk" secondAttribute="trailing" id="8pc-bF-rpV"/>
+                            <constraint firstItem="6El-W8-DPk" firstAttribute="centerX" secondItem="SLR-Aq-GY3" secondAttribute="centerX" id="ARP-Bt-UPJ"/>
+                            <constraint firstItem="VT3-8S-7Xd" firstAttribute="top" secondItem="6El-W8-DPk" secondAttribute="bottom" constant="35.530000000000001" id="Evm-8R-5hI"/>
+                            <constraint firstItem="BUa-G0-ROk" firstAttribute="leading" secondItem="RrM-2h-CdW" secondAttribute="leading" id="KP0-51-hcA"/>
+                            <constraint firstItem="BUa-G0-ROk" firstAttribute="top" secondItem="SLR-Aq-GY3" secondAttribute="top" id="X1j-o1-TqY"/>
+                            <constraint firstItem="1c3-kg-8Mq" firstAttribute="centerX" secondItem="SLR-Aq-GY3" secondAttribute="centerX" id="gX9-de-pQW"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RQs-2A-YtD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-80" y="-1644"/>
+        </scene>
+        <!--1-2 Login-->
+        <scene sceneID="NfH-mM-Tqm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" referencedIdentifier="1-2 Login" id="Kcs-TG-Pb1" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="rqh-cD-4hr"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uVC-ci-mYO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="653" y="-1666"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Base" width="376" height="171"/>
@@ -711,6 +785,7 @@
         <image name="info" width="19" height="20"/>
         <image name="infoActive" width="24.333333969116211" height="38"/>
         <image name="infoSearch" width="24" height="24"/>
+        <image name="logo1" width="224" height="254.33332824707031"/>
         <image name="mainAddBtn" width="36" height="36.333332061767578"/>
         <image name="mainPod" width="87.666664123535156" height="64"/>
         <image name="myGarden" width="20.333333969116211" height="20"/>
@@ -720,6 +795,9 @@
         <image name="profileActive" width="24.333333969116211" height="38"/>
         <image name="setting" width="28" height="28"/>
         <image name="square.and.pencil" catalog="system" width="128" height="113"/>
+        <namedColor name="Gray1">
+            <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Gray3">
             <color red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -739,6 +817,9 @@
             <color red="0.30196078431372547" green="0.37254901960784315" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="mainTopView">
+            <color red="0.95294117647058818" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="startViewColor">
             <color red="0.95294117647058818" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
