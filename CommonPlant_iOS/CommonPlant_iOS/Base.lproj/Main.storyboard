@@ -281,32 +281,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mypage" translatesAutoresizingMaskIntoConstraints="NO" id="XpQ-ql-RoP">
-                                <rect key="frame" x="149" y="184" width="95" height="88"/>
-                                <autoresizingMask key="autoresizingMask" heightSizable="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setting" translatesAutoresizingMaskIntoConstraints="NO" id="E6T-DB-Arm">
-                                <rect key="frame" x="322" y="121" width="26.666666666666664" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="square.and.pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="GGK-Md-Hy5">
-                                <rect key="frame" x="262" y="306.33333333333394" width="19.666666666666664" height="20.666666666666664"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30j-N8-Kvw">
-                                <rect key="frame" x="140" y="306" width="113" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Base" translatesAutoresizingMaskIntoConstraints="NO" id="nHA-12-ckR">
-                                <rect key="frame" x="9" y="121" width="375" height="187"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udz-IW-QLW">
+                                <rect key="frame" x="0.0" y="111" width="393" height="217"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileview" translatesAutoresizingMaskIntoConstraints="NO" id="mgy-A3-v4O">
+                                        <rect key="frame" x="0.0" y="30" width="393" height="187"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImage" translatesAutoresizingMaskIntoConstraints="NO" id="83p-Az-EeK">
+                                        <rect key="frame" x="149" y="85" width="95" height="95"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="95" id="IIA-IW-Gw5"/>
+                                            <constraint firstAttribute="width" constant="95" id="jPR-CB-DMX"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="217" id="09Z-fd-swQ"/>
+                                    <constraint firstItem="83p-Az-EeK" firstAttribute="centerX" secondItem="udz-IW-QLW" secondAttribute="centerX" id="2Z6-1e-bL9"/>
+                                    <constraint firstItem="mgy-A3-v4O" firstAttribute="leading" secondItem="udz-IW-QLW" secondAttribute="leading" id="Dse-1q-jXR"/>
+                                    <constraint firstAttribute="trailing" secondItem="mgy-A3-v4O" secondAttribute="trailing" id="MWZ-QL-wNq"/>
+                                    <constraint firstAttribute="bottom" secondItem="83p-Az-EeK" secondAttribute="bottom" constant="37" id="QRQ-84-79K"/>
+                                    <constraint firstAttribute="bottom" secondItem="mgy-A3-v4O" secondAttribute="bottom" id="oOn-qk-uu8"/>
+                                    <constraint firstItem="mgy-A3-v4O" firstAttribute="top" secondItem="udz-IW-QLW" secondAttribute="top" constant="30" id="qvt-26-6dM"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tig-hi-0Mz">
+                                <rect key="frame" x="0.0" y="328" width="393" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38a-2w-6h5">
+                                        <rect key="frame" x="165.33333333333334" y="25" width="62.666666666666657" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="31" id="Hd0-Q9-gLh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fm-7n-Bgb">
+                                        <rect key="frame" x="180.66666666666666" y="60" width="31.666666666666657" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="mOh-FZ-9le"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                        <color key="textColor" name="Gray5"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="5kj-aN-XZ4"/>
+                                    <constraint firstItem="38a-2w-6h5" firstAttribute="centerX" secondItem="Tig-hi-0Mz" secondAttribute="centerX" id="H32-dP-YaI"/>
+                                    <constraint firstItem="5fm-7n-Bgb" firstAttribute="centerX" secondItem="Tig-hi-0Mz" secondAttribute="centerX" id="HkA-dL-C35"/>
+                                    <constraint firstItem="5fm-7n-Bgb" firstAttribute="top" secondItem="38a-2w-6h5" secondAttribute="bottom" constant="4" id="l5m-ca-qPe"/>
+                                    <constraint firstItem="38a-2w-6h5" firstAttribute="top" secondItem="Tig-hi-0Mz" secondAttribute="top" constant="25" id="tDB-cb-V3U"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cKR-8g-om4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Tig-hi-0Mz" firstAttribute="leading" secondItem="cKR-8g-om4" secondAttribute="leading" id="0JS-Ak-Loy"/>
+                            <constraint firstItem="cKR-8g-om4" firstAttribute="trailing" secondItem="udz-IW-QLW" secondAttribute="trailing" id="5W0-Mr-GDq"/>
+                            <constraint firstItem="udz-IW-QLW" firstAttribute="top" secondItem="cKR-8g-om4" secondAttribute="top" constant="8" id="BMj-vQ-kI7"/>
+                            <constraint firstItem="udz-IW-QLW" firstAttribute="leading" secondItem="cKR-8g-om4" secondAttribute="leading" id="DPs-O4-uWq"/>
+                            <constraint firstItem="Tig-hi-0Mz" firstAttribute="top" secondItem="udz-IW-QLW" secondAttribute="bottom" id="wS3-bQ-9om"/>
+                            <constraint firstItem="cKR-8g-om4" firstAttribute="trailing" secondItem="Tig-hi-0Mz" secondAttribute="trailing" id="whS-UT-3D9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="mypage" id="Mup-0i-eB6"/>
                 </viewController>
@@ -437,9 +478,6 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="np6-rC-QS9" customClass="plant">
                                         <rect key="frame" x="18" y="52" width="357" height="356"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="356" id="5a5-5P-k4n"/>
-                                        </constraints>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlantTableViewCell" id="QOt-kr-0yO" customClass="PlantTableViewCell" customModule="CommonPlant_iOS">
                                                 <rect key="frame" x="0.0" y="50" width="357" height="108.33333587646484"/>
@@ -539,6 +577,7 @@
                                     <constraint firstAttribute="height" constant="408" id="Zl6-Xp-pBp"/>
                                     <constraint firstItem="LZW-Qo-lU7" firstAttribute="top" secondItem="aZB-zf-gU9" secondAttribute="top" id="bDx-9U-aHS"/>
                                     <constraint firstItem="LZW-Qo-lU7" firstAttribute="leading" secondItem="aZB-zf-gU9" secondAttribute="leading" id="j18-Kg-9R5"/>
+                                    <constraint firstItem="np6-rC-QS9" firstAttribute="top" secondItem="LZW-Qo-lU7" secondAttribute="bottom" constant="8" id="oxy-t1-Rz7"/>
                                     <constraint firstAttribute="bottom" secondItem="np6-rC-QS9" secondAttribute="bottom" id="wvW-pf-lHf"/>
                                 </constraints>
                             </view>
@@ -776,7 +815,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Base" width="376" height="171"/>
         <image name="InfoPlantImg" width="114" height="88.333335876464844"/>
         <image name="addPlace" width="250" height="156"/>
         <image name="addPlant" width="164.33332824707031" height="108.33333587646484"/>
@@ -790,11 +828,10 @@
         <image name="mainPod" width="87.666664123535156" height="64"/>
         <image name="myGarden" width="20.333333969116211" height="20"/>
         <image name="myGardenActive" width="24.333333969116211" height="38"/>
-        <image name="mypage" width="95" height="95"/>
         <image name="profile" width="20.333333969116211" height="20"/>
         <image name="profileActive" width="24.333333969116211" height="38"/>
-        <image name="setting" width="28" height="28"/>
-        <image name="square.and.pencil" catalog="system" width="128" height="113"/>
+        <image name="profileImage" width="95.333335876464844" height="95.333335876464844"/>
+        <image name="profileview" width="375.33334350585938" height="170.33332824707031"/>
         <namedColor name="Gray1">
             <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
