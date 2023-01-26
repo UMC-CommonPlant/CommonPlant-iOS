@@ -1,69 +1,71 @@
 //
-//  InfoSearchViewController.swift
+//  InfoRecoViewController.swift
 //  CommonPlant_iOS
 //
-//  Created by hweyoung on 2023/01/16.
+//  Created by hweyoung on 2023/01/23.
 //
 
 import UIKit
 
-protocol TextFieldSearchDelegate{
-    func onChange(text: String)
-}
+class InfoRecoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-class InfoSearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var recoView: UIView!
+    var recoColor: UIColor?
     
-    var textToSet: String!
-
-    @IBOutlet weak var searchTableView: UITableView!
-    @IBOutlet weak var searchInputLabel: UITextField!
+    @IBOutlet weak var recoImageView: UIImageView!
+    var recoImage : UIImage?
     
-    let cellIdentifier: String = "infoSearchCell"
-//    let performSegueIdentifire: String = "infoSearchPerformSegue"
+    @IBOutlet weak var recoLabel: UILabel!
+    var recoText : String?
     
-    
-    
+    @IBOutlet weak var recoTableView: UITableView!
+    var cellIdentifier:String = "recoCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //이전의 검색 텍스트 받아오기
-//        self.searchInputLabel.text = textToSet
         setupTableView()
-//        performSegue(withIdentifier: self.performSegueIdentifire, sender: nil)
         // Do any additional setup after loading the view.
     }
     
-    
-//    func onChange(text: String){
-//        searchInputLabel.text = text
-//    }
+
     
     
-    
-    //InfoDetailViewController의 textLabel로 데이터 넘기기
-    // MARK: - Navigation
+    //=======collection & table 다음화면으로 데이터 넘기기=======
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        guard let nextViewController: InfoDetailViewController = segue.destination as? InfoDetailViewController else{
-            return
+        //카테고리 컬렉션 선택시 InfoRecoViewController 화면으로 데이터 넘기기
+        if segue.destination is InfoDetailViewController{
+            guard let nextViewController :InfoDetailViewController = segue.destination as? InfoDetailViewController else{
+                return
+            }
+            guard let cell: InfoRecoTableViewCell = sender as? InfoRecoTableViewCell else{
+                return
+            }
+            nextViewController.textToSet = cell.nameLabel?.text
         }
-        
-        guard let cell: InfoSearchTableViewCell = sender as? InfoSearchTableViewCell else {
-            return
-        }
-        
-        nextViewController.textToSet = cell.nameLabel?.text
     }
+    
+    
+    
+    
+    
+    
 
-
     
+    //======info 메인에서 카테고리 정보 넘겨받기======
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.recoLabel.text = self.recoText
+        self.recoView.backgroundColor = self.recoColor
+        self.recoImageView.image = self.recoImage
+    }
+   
     
+    //=========추천식물 table view========
     
-    
-    //========검색 결과 리스트 table========
     func setupTableView(){
-        searchTableView.delegate = self
-        searchTableView.dataSource = self
+        recoTableView.delegate = self
+        recoTableView.dataSource = self
     }
     
     
@@ -72,7 +74,7 @@ class InfoSearchViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as? InfoSearchTableViewCell else {return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as? InfoRecoTableViewCell else {return UITableViewCell()}
         
         let item = plantInitialData[indexPath.row]
         cell.setupData(
@@ -83,7 +85,11 @@ class InfoSearchViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
-
+    
+    
+    
+    
+    
     //데이터 모델
     let plantInitialData:[plantInitialModel] = [
         plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera"),
@@ -100,4 +106,8 @@ class InfoSearchViewController: UIViewController, UITableViewDelegate, UITableVi
         let name : String
         let scientificName : String
     }
+    
+    
+
+
 }
