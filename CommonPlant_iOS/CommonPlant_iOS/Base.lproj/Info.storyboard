@@ -13,7 +13,7 @@
         <!--Info Search View Controller-->
         <scene sceneID="buS-Ce-5Hj">
             <objects>
-                <viewController id="ard-xb-ms7" customClass="InfoSearchViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="3-3 검색리스트" id="ard-xb-ms7" customClass="InfoSearchViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C1u-Jf-edV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,7 +148,7 @@
         <!--Info Detail View Controller-->
         <scene sceneID="WjM-HV-dCO">
             <objects>
-                <viewController id="GbP-Ua-B2p" customClass="InfoDetailViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="3-4 결과리스트" id="GbP-Ua-B2p" customClass="InfoDetailViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K2g-w7-QpG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -579,10 +579,10 @@
             </objects>
             <point key="canvasLocation" x="2944.6153846153843" y="-795.4976303317535"/>
         </scene>
-        <!--Info Reco View Controller-->
+        <!--식물 추천-->
         <scene sceneID="p2h-yF-smF">
             <objects>
-                <viewController id="RQH-vr-H3A" customClass="InfoRecoViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="3-2 식물추천" title="식물 추천" id="RQH-vr-H3A" customClass="InfoRecoViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IOf-J7-xu6">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
