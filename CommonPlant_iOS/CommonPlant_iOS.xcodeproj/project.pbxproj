@@ -15,6 +15,7 @@
 		48A5EF512974DD0E00779443 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5EF4F2974DD0E00779443 /* MyPageViewController.swift */; };
 		48A5EF552974E65100779443 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5EF542974E65100779443 /* StartViewController.swift */; };
 		48BD658C2976350D0062E2F6 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BD658B2976350D0062E2F6 /* NicknameViewController.swift */; };
+		6202486C29827E6600C26F9C /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6202486A29827E6600C26F9C /* Info.storyboard */; };
 		6263F8A629755ECF002B5871 /* InfoSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6263F8A529755ECF002B5871 /* InfoSearchViewController.swift */; };
 		6263F8A829755EF1002B5871 /* InfoSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6263F8A729755EF1002B5871 /* InfoSearchTableViewCell.swift */; };
 		6263F8AB29783AD4002B5871 /* InfoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6263F8AA29783AD4002B5871 /* InfoDetailViewController.swift */; };
@@ -42,6 +43,7 @@
 		48A5EF502974DD0E00779443 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = CommonPlant_iOS/Base.lproj/MyPageViewController.swift; sourceTree = SOURCE_ROOT; };
 		48A5EF542974E65100779443 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StartViewController.swift; path = CommonPlant_iOS/StartViewController.swift; sourceTree = SOURCE_ROOT; };
 		48BD658B2976350D0062E2F6 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NicknameViewController.swift; path = CommonPlant_iOS/NicknameViewController.swift; sourceTree = SOURCE_ROOT; };
+		6202486B29827E6600C26F9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Info.storyboard; sourceTree = "<group>"; };
 		6263F8A529755ECF002B5871 /* InfoSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSearchViewController.swift; sourceTree = "<group>"; };
 		6263F8A729755EF1002B5871 /* InfoSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSearchTableViewCell.swift; sourceTree = "<group>"; };
 		6263F8AA29783AD4002B5871 /* InfoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InfoDetailViewController.swift; path = CommonPlant_iOS/Information/InfoDetailViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -130,6 +132,7 @@
 				F9C48C7A296D7AD200C76863 /* LaunchScreen.storyboard */,
 				F9C48C7D296D7AD200C76863 /* Info.plist */,
 				62B9B6BB298257AE00500155 /* Login.storyboard */,
+				6202486A29827E6600C26F9C /* Info.storyboard */,
 			);
 			path = CommonPlant_iOS;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F96C9C0A2979A29A008627FA /* AddPlaceCollectionViewCell.xib in Resources */,
+				6202486C29827E6600C26F9C /* Info.storyboard in Resources */,
 				F9C48C7C296D7AD200C76863 /* LaunchScreen.storyboard in Resources */,
 				62B9B6BD298257AE00500155 /* Login.storyboard in Resources */,
 				F96C9C0E2979A2A9008627FA /* AddPlantCollectionViewCell.xib in Resources */,
@@ -290,6 +294,14 @@
 				48A5EF502974DD0E00779443 /* Base */,
 			);
 			name = MyPageViewController.swift;
+			sourceTree = "<group>";
+		};
+		6202486A29827E6600C26F9C /* Info.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6202486B29827E6600C26F9C /* Base */,
+			);
+			name = Info.storyboard;
 			sourceTree = "<group>";
 		};
 		62B9B6BB298257AE00500155 /* Login.storyboard */ = {
