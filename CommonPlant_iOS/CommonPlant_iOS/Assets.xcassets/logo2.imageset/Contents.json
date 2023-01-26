@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "logo2.png",
+      "filename" : "Common Plant.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Common Plant@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Common Plant@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
