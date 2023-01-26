@@ -67,7 +67,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="loginKakao"/>
                                 <connections>
-                                    <segue destination="la1-7y-QaV" kind="show" id="TsP-lC-rOI"/>
+                                    <action selector="kakaoLoginAction:" destination="ZNQ-Vo-UT7" eventType="touchUpInside" id="FcL-Ef-vhg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -238,9 +238,6 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="backBtn"/>
-                                <connections>
-                                    <segue destination="ZNQ-Vo-UT7" kind="show" id="zWP-CW-869"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3oK-0a-lsA"/>

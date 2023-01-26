@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import KakaoSDKAuth
+import KakaoSDKUser
+
 
 class LoginViewController: UIViewController {
 
@@ -14,6 +17,30 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func kakaoLoginAction(_ sender: UIButton){
+        print("kakao Login")
+        //카카오 계정으로 로그인할 때
+        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("loginWithKakaoAccount() success.")
+                    guard let accessToken = oauthToken?.accessToken else {
+                        return
+                    }
+                    //accessToken
+                    print(accessToken)
+                }
+            }
+        print("test")
+    }
+    
+    
+    
+    
+    
     @IBAction func setnickname(_ sender: Any) {
         //로그인 화면의 storyboard ID를 참조하여 뷰 컨트롤러를 가져오기
         guard let toset = self.storyboard?.instantiateViewController(withIdentifier: "NicknameView") else {

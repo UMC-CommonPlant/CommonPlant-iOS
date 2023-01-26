@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>BASE_URL</key>
+	<string>${BASE_URL}</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -11,7 +13,7 @@
 			<string>kakaologin</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>740ee7bf595c5acfcbf21ce506160841</string>
+				<string>kakao740ee7bf595c5acfcbf21ce506160841</string>
 			</array>
 		</dict>
 		<dict>
@@ -35,6 +37,8 @@
 			</array>
 		</dict>
 	</array>
+	<key>KAKAO_NATIVE_APP_KEY</key>
+	<string>${KAKAO_NATIVE_APP_KEY}</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>kakaokompassauth</string>
@@ -61,10 +65,6 @@
 			</array>
 		</dict>
 	</dict>
-	<key>BASE_URL</key>
-	<string>${BASE_URL}</string>
-	<key>KAKAO_NATIVE_APP_KEY</key>
-	<string>${KAKAO_NATIVE_APP_KEY}</string>
 	<key>privacy - Photo Library Usage Description</key>
 	<string>프로필 사진, 장소, 식물을 등록하거나, 식물에 관한 메모를 등록할 때 사용합니다.</string>
 </dict>
