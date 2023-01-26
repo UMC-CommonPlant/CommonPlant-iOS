@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Start View Controller-->
+        <scene sceneID="K9M-Vs-CCj">
+            <objects>
+                <viewController storyboardIdentifier="StartView" id="gT2-pr-Ps3" customClass="StartViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yGC-fa-sza">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainbackground" translatesAutoresizingMaskIntoConstraints="NO" id="ubZ-Sg-U8J">
+                                <rect key="frame" x="9" y="69" width="375" height="334.66666666666669"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="334.66666666666663" id="UGq-hA-VMc"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CWJ-OG-Pqf">
+                                <rect key="frame" x="29" y="696" width="335" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="start"/>
+                                <connections>
+                                    <action selector="moveLogin:" destination="gT2-pr-Ps3" eventType="touchUpInside" id="hYy-Xo-oop"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="V3c-R2-fQA">
+                                <rect key="frame" x="85" y="239" width="223" height="253.33333333333331"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="253.33333333333331" id="paJ-JV-qD9"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="식물을 내 공간으로, 공간은 내 폰으로" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H32-ZG-eJC">
+                                <rect key="frame" x="29" y="549" width="335" height="64"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="a2Y-nZ-hvl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="V3c-R2-fQA" firstAttribute="leading" secondItem="a2Y-nZ-hvl" secondAttribute="leading" constant="84.999999999999986" id="alg-Ve-0bk"/>
+                            <constraint firstItem="ubZ-Sg-U8J" firstAttribute="top" secondItem="a2Y-nZ-hvl" secondAttribute="top" constant="10" id="bx4-Gm-mcd"/>
+                            <constraint firstItem="H32-ZG-eJC" firstAttribute="top" secondItem="V3c-R2-fQA" secondAttribute="bottom" constant="79.666666666666742" id="eP5-qH-XYS"/>
+                            <constraint firstItem="H32-ZG-eJC" firstAttribute="leading" secondItem="a2Y-nZ-hvl" secondAttribute="leading" constant="141" id="gzN-Xh-zVC"/>
+                            <constraint firstItem="V3c-R2-fQA" firstAttribute="centerX" secondItem="CWJ-OG-Pqf" secondAttribute="centerX" id="i6Y-nG-Fcz"/>
+                            <constraint firstItem="CWJ-OG-Pqf" firstAttribute="top" secondItem="H32-ZG-eJC" secondAttribute="bottom" constant="90" id="pQO-pM-qWw"/>
+                            <constraint firstItem="V3c-R2-fQA" firstAttribute="centerX" secondItem="ubZ-Sg-U8J" secondAttribute="centerX" id="wlt-Jk-zoE"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oyv-4F-4hy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5308" y="-757"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="6em-0m-yW9">
+            <objects>
+                <viewController storyboardIdentifier="LoginView" id="ZNQ-Vo-UT7" customClass="LoginViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5tW-pd-0hq">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo2" translatesAutoresizingMaskIntoConstraints="NO" id="GJh-kA-xRO">
+                                <rect key="frame" x="103" y="200" width="186" height="186"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Common Plant" translatesAutoresizingMaskIntoConstraints="NO" id="GVc-mo-7Li">
+                                <rect key="frame" x="88" y="137" width="217" height="24.666666666666664"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2F-d3-Qbz">
+                                <rect key="frame" x="29" y="517" width="335" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="kakaologin"/>
+                                <connections>
+                                    <action selector="setnickname:" destination="ZNQ-Vo-UT7" eventType="touchUpInside" id="N6d-pa-dS9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zV-cu-Av4">
+                                <rect key="frame" x="29" y="587" width="335" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="naverlogin"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qg2-Ym-hrp">
+                                <rect key="frame" x="29" y="653" width="335" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="googlelogin"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8GJ-pF-2jI">
+                                <rect key="frame" x="186" y="761" width="24" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQZ-C3-AO3">
+                                <rect key="frame" x="29" y="724" width="335" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="applelogin"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XeJ-p6-hft"/>
+                        <color key="backgroundColor" red="0.96099999999999997" green="0.96099999999999997" blue="0.96099999999999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YvX-Xo-LvI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4644" y="-757"/>
+        </scene>
+        <!--Nickname View Controller-->
+        <scene sceneID="tKO-Db-2xs">
+            <objects>
+                <viewController storyboardIdentifier="NicknameView" id="la1-7y-QaV" customClass="NicknameViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s2c-LI-ela">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHU-Ak-QOA">
+                                <rect key="frame" x="155" y="146" width="83.333333333333329" height="83.333333333333329"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="profileimage"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THk-fX-HOB">
+                                <rect key="frame" x="0.0" y="627" width="400" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="agree"/>
+                                <connections>
+                                    <action selector="goagree:" destination="la1-7y-QaV" eventType="touchUpInside" id="6wn-oS-hPG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rl6-jK-RdV">
+                                <rect key="frame" x="29" y="718" width="335" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="complete0"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Db-ud-eWz">
+                                <rect key="frame" x="16" y="101" width="35" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="back"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3oK-0a-lsA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ISt-ch-auq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3982.4427480916029" y="-757.04225352112678"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7UN-Bg-c4H">
+            <objects>
+                <viewController storyboardIdentifier="AgreeView" id="KlU-kG-x5f" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oi4-Yh-I9P">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stM-es-r30">
+                                <rect key="frame" x="16" y="93" width="35" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="back"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="개인정보 이용약관" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWl-dr-Yri">
+                                <rect key="frame" x="135" y="99" width="122" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="18" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40E-t1-Nci">
+                                <rect key="frame" x="27" y="195" width="325" height="366"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">LLorem ipsum dolor sit amet consectetur. Ut scelerisque aliquet nisl facilisi molestie porttitor risus eget. Erat mattis gravida quis consequat. Leo aenean scelerisque at dolor ultrices pellentesque  est fermentum aliquam. Eget viverra  risus ac sem lacus sed pellentesque nibh.  Neque et vel urna tortor et proin. Sollicitudin at tempor pharetra eget. Faucibus ipsum faucibus risus odio aliquam tristique non enim amet. Quam quam ullamcorper semper proin quis sed velit nunc curabitur. Ultrices ullamcorper nisi sed dignissim amet facilisis viverra tempor in. Mollis facilisi euismod sed ligula euismod duis commodo suspendisse. Commodo tellus  convallis ac quis.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1y-xX-tMY">
+                                <rect key="frame" x="0.0" y="659" width="400" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="agree2" imagePadding="0.0"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vx3-RO-CeI">
+                                <rect key="frame" x="21" y="726" width="359" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="okay"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="c5o-gf-n6n"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ona-09-9Be" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3306" y="-757"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Common Plant" width="217" height="25"/>
+        <image name="agree" width="376" height="57"/>
+        <image name="agree2" width="376" height="57"/>
+        <image name="applelogin" width="336" height="45"/>
+        <image name="back" width="11" height="19"/>
+        <image name="complete0" width="335" height="49"/>
+        <image name="googlelogin" width="336" height="44"/>
+        <image name="kakaologin" width="336" height="44"/>
+        <image name="logo" width="225" height="255"/>
+        <image name="logo2" width="187" height="187"/>
+        <image name="mainbackground" width="375" height="336"/>
+        <image name="naverlogin" width="336" height="44"/>
+        <image name="okay" width="335" height="49"/>
+        <image name="profileimage" width="73" height="73"/>
+        <image name="start" width="335" height="49"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
