@@ -16,6 +16,7 @@
 		62C25B13297E7EDF0013DFFB /* InfoRecoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C25B12297E7EDF0013DFFB /* InfoRecoTableViewCell.swift */; };
 		62C25B15297E7F030013DFFB /* InfoRecoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C25B14297E7F030013DFFB /* InfoRecoViewController.swift */; };
 		62C25B17297E825C0013DFFB /* TipCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C25B16297E825C0013DFFB /* TipCollectionViewCell.swift */; };
+		62D9340D29826744005248C8 /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62D9340B29826744005248C8 /* Info.storyboard */; };
 		F96C9C092979A29A008627FA /* AddPlaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C9C072979A29A008627FA /* AddPlaceCollectionViewCell.swift */; };
 		F96C9C0A2979A29A008627FA /* AddPlaceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96C9C082979A29A008627FA /* AddPlaceCollectionViewCell.xib */; };
 		F96C9C0D2979A2A9008627FA /* AddPlantCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C9C0B2979A2A9008627FA /* AddPlantCollectionViewCell.swift */; };
@@ -40,6 +41,7 @@
 		62C25B12297E7EDF0013DFFB /* InfoRecoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRecoTableViewCell.swift; sourceTree = "<group>"; };
 		62C25B14297E7F030013DFFB /* InfoRecoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRecoViewController.swift; sourceTree = "<group>"; };
 		62C25B16297E825C0013DFFB /* TipCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCollectionViewCell.swift; sourceTree = "<group>"; };
+		62D9340C29826744005248C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Info.storyboard; sourceTree = "<group>"; };
 		F96C9C072979A29A008627FA /* AddPlaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceCollectionViewCell.swift; sourceTree = "<group>"; };
 		F96C9C082979A29A008627FA /* AddPlaceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPlaceCollectionViewCell.xib; sourceTree = "<group>"; };
 		F96C9C0B2979A2A9008627FA /* AddPlantCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				F9C48C78296D7AD200C76863 /* Assets.xcassets */,
 				F9C48C7A296D7AD200C76863 /* LaunchScreen.storyboard */,
 				F9C48C7D296D7AD200C76863 /* Info.plist */,
+				62D9340B29826744005248C8 /* Info.storyboard */,
 			);
 			path = CommonPlant_iOS;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62D9340D29826744005248C8 /* Info.storyboard in Resources */,
 				F96C9C0A2979A29A008627FA /* AddPlaceCollectionViewCell.xib in Resources */,
 				F9C48C7C296D7AD200C76863 /* LaunchScreen.storyboard in Resources */,
 				F96C9C0E2979A2A9008627FA /* AddPlantCollectionViewCell.xib in Resources */,
@@ -255,6 +259,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		62D9340B29826744005248C8 /* Info.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				62D9340C29826744005248C8 /* Base */,
+			);
+			name = Info.storyboard;
+			sourceTree = "<group>";
+		};
 		F9C48C75296D7AD100C76863 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

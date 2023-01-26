@@ -70,8 +70,8 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             
             nextViewController.recoText = cell.titleLabel?.text
-            nextViewController.recoColor = cell.categoryView?.backgroundColor
-            nextViewController.recoImage = cell.categoryImageView?.image
+            nextViewController.recoColor = cell.categoryColor
+            nextViewController.recoImage = cell.categoryImage
         }
         //인기검색어 클릭시 info detail 화면으로 데이터 넘기기
         else{
@@ -95,6 +95,7 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
         flowLayout.sectionInset = UIEdgeInsets.zero
         
         var width:CGFloat = UIScreen.main.bounds.width / 3.0
+//        var height:CGFloat = UIScreen.main.bounds.height / 3.0
         flowLayout.itemSize = CGSize(width: width-32, height: 76)
         categoryCollectionView.collectionViewLayout = flowLayout
     }
@@ -109,6 +110,7 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
         let item = categoryData[indexPath.row]
         cell.setupData(
             item.categoryImage,
+            item.cellImage,
             item.title,
             item.color
         )
@@ -119,16 +121,17 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     let categoryData:[categoryInitialModel] = [
-        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory1"), title: "원룸", color: UIColor(named: "infoCategoryColor1")),
-        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory2"), title: "공기정화", color: UIColor(named: "infoCategoryColor2")),
-        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory3"), title: "초보집사", color: UIColor(named: "infoCategoryColor3")),
-        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory4"), title: "채광", color: UIColor(named: "infoCategoryColor4")),
-        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory5"), title: "물 좋아함", color: UIColor(named: "infoCategoryColor5")),
-        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory6"), title: "인테리어", color: UIColor(named: "infoCategoryColor6")),
+        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory1"),cellImage: UIImage(named: "infoCellImage1"), title: "원룸", color: UIColor(named: "infoCategoryColor1")),
+        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory2"),cellImage: UIImage(named: "infoCellImage2"), title: "공기정화", color: UIColor(named: "infoCategoryColor2")),
+        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory3"),cellImage: UIImage(named: "infoCellImage3"), title: "초보집사", color: UIColor(named: "infoCategoryColor3")),
+        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory4"),cellImage: UIImage(named: "infoCellImage4"), title: "채광", color: UIColor(named: "infoCategoryColor4")),
+        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory5"),cellImage: UIImage(named: "infoCellImage5"), title: "물 좋아함", color: UIColor(named: "infoCategoryColor5")),
+        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory6"),cellImage: UIImage(named: "infoCellImage6"), title: "인테리어", color: UIColor(named: "infoCategoryColor6")),
     ]
     
     struct categoryInitialModel{
         let categoryImage : UIImage?
+        let cellImage:UIImage?
         let title : String
         let color : UIColor?
     }
