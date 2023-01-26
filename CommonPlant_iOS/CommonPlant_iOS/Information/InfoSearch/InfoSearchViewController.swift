@@ -34,9 +34,9 @@ class InfoSearchViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     
-//    func onChange(text: String){
-//        searchInputLabel.text = text
-//    }
+    func onChange(text: String){
+        searchInputLabel.text = text
+    }
     
     
     

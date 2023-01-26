@@ -29,9 +29,6 @@ class PlantTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-
-    
-    
     func setupData(
         _ plantImage: UIImage?,
         _ name: String,
