@@ -16,6 +16,9 @@
 		48A5EF552974E65100779443 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5EF542974E65100779443 /* StartViewController.swift */; };
 		48BD658C2976350D0062E2F6 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BD658B2976350D0062E2F6 /* NicknameViewController.swift */; };
 		6202486C29827E6600C26F9C /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6202486A29827E6600C26F9C /* Info.storyboard */; };
+		6202486E29827F2400C26F9C /* TipCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6202486D29827F2400C26F9C /* TipCollectionViewCell.swift */; };
+		6202487129827F9500C26F9C /* InfoRecoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6202487029827F9500C26F9C /* InfoRecoViewController.swift */; };
+		6202487329827FBB00C26F9C /* InfoRecoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6202487229827FBB00C26F9C /* InfoRecoTableViewCell.swift */; };
 		6263F8A629755ECF002B5871 /* InfoSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6263F8A529755ECF002B5871 /* InfoSearchViewController.swift */; };
 		6263F8A829755EF1002B5871 /* InfoSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6263F8A729755EF1002B5871 /* InfoSearchTableViewCell.swift */; };
 		6263F8AB29783AD4002B5871 /* InfoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6263F8AA29783AD4002B5871 /* InfoDetailViewController.swift */; };
@@ -44,6 +47,9 @@
 		48A5EF542974E65100779443 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StartViewController.swift; path = CommonPlant_iOS/StartViewController.swift; sourceTree = SOURCE_ROOT; };
 		48BD658B2976350D0062E2F6 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NicknameViewController.swift; path = CommonPlant_iOS/NicknameViewController.swift; sourceTree = SOURCE_ROOT; };
 		6202486B29827E6600C26F9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Info.storyboard; sourceTree = "<group>"; };
+		6202486D29827F2400C26F9C /* TipCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCollectionViewCell.swift; sourceTree = "<group>"; };
+		6202487029827F9500C26F9C /* InfoRecoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRecoViewController.swift; sourceTree = "<group>"; };
+		6202487229827FBB00C26F9C /* InfoRecoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRecoTableViewCell.swift; sourceTree = "<group>"; };
 		6263F8A529755ECF002B5871 /* InfoSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSearchViewController.swift; sourceTree = "<group>"; };
 		6263F8A729755EF1002B5871 /* InfoSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSearchTableViewCell.swift; sourceTree = "<group>"; };
 		6263F8AA29783AD4002B5871 /* InfoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InfoDetailViewController.swift; path = CommonPlant_iOS/Information/InfoDetailViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -82,12 +88,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6202486F29827F6200C26F9C /* infoRecommend */ = {
+			isa = PBXGroup;
+			children = (
+				6202487029827F9500C26F9C /* InfoRecoViewController.swift */,
+				6202487229827FBB00C26F9C /* InfoRecoTableViewCell.swift */,
+			);
+			path = infoRecommend;
+			sourceTree = "<group>";
+		};
 		6263F8A429755E9B002B5871 /* InfoSearch */ = {
 			isa = PBXGroup;
 			children = (
 				6263F8A529755ECF002B5871 /* InfoSearchViewController.swift */,
 				6263F8A729755EF1002B5871 /* InfoSearchTableViewCell.swift */,
 				6263F8AA29783AD4002B5871 /* InfoDetailViewController.swift */,
+				6202486D29827F2400C26F9C /* TipCollectionViewCell.swift */,
 			);
 			path = InfoSearch;
 			sourceTree = "<group>";
@@ -163,6 +179,7 @@
 		F9C48C85296D7DD800C76863 /* Information */ = {
 			isa = PBXGroup;
 			children = (
+				6202486F29827F6200C26F9C /* infoRecommend */,
 				6263F8A429755E9B002B5871 /* InfoSearch */,
 				6274C3BA296ED78C00172941 /* InfoViewController.swift */,
 				62A334B429746AEA007747E7 /* PlantTableViewCell.swift */,
@@ -259,12 +276,15 @@
 			files = (
 				48A5EF4E2974DCBA00779443 /* LoginViewController.swift in Sources */,
 				F96C9C092979A29A008627FA /* AddPlaceCollectionViewCell.swift in Sources */,
+				6202486E29827F2400C26F9C /* TipCollectionViewCell.swift in Sources */,
 				6263F8A629755ECF002B5871 /* InfoSearchViewController.swift in Sources */,
 				F96C9C0D2979A2A9008627FA /* AddPlantCollectionViewCell.swift in Sources */,
+				6202487129827F9500C26F9C /* InfoRecoViewController.swift in Sources */,
 				F9C48C872972782100C76863 /* MainViewController.swift in Sources */,
 				62A334B529746AEA007747E7 /* PlantTableViewCell.swift in Sources */,
 				6263F8A829755EF1002B5871 /* InfoSearchTableViewCell.swift in Sources */,
 				F9C48C70296D7AD100C76863 /* AppDelegate.swift in Sources */,
+				6202487329827FBB00C26F9C /* InfoRecoTableViewCell.swift in Sources */,
 				6274C3BB296ED78C00172941 /* InfoViewController.swift in Sources */,
 				F9C48C72296D7AD100C76863 /* SceneDelegate.swift in Sources */,
 				48A5EF512974DD0E00779443 /* MyPageViewController.swift in Sources */,

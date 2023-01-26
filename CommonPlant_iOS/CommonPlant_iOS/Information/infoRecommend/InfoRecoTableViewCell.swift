@@ -1,23 +1,20 @@
 //
-//  PlantTableViewCell.swift
+//  InfoRecoTableViewCell.swift
 //  CommonPlant_iOS
 //
-//  Created by hweyoung on 2023/01/16.
+//  Created by hweyoung on 2023/01/23.
 //
 
 import UIKit
 
-class PlantTableViewCell: UITableViewCell {
-    
-//    let plantImage : UIImage?
-//    let name : String
-//    let scientificName : String
-//    let lastMonthCountLabel : String
-    @IBOutlet weak var plantImageView : UIImageView!
-    @IBOutlet weak var nameLabel : UILabel!
-    @IBOutlet weak var scientificNameLabel : UILabel!
-    @IBOutlet weak var lastMonthCountLabel : UILabel!
+class InfoRecoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var plantImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var scientificNameLabel: UILabel!
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,14 +26,11 @@ class PlantTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-
-    
     
     func setupData(
         _ plantImage: UIImage?,
         _ name: String,
-        _ scientificName: String,
-        _ lastMonthCount: String
+        _ scientificName: String
     ){
         if let plantImage = plantImage{
             plantImageView.image = plantImage
@@ -48,8 +42,6 @@ class PlantTableViewCell: UITableViewCell {
         
         scientificNameLabel.text = scientificName
         
-        lastMonthCountLabel.text = lastMonthCount
     }
 
-    
 }
