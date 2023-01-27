@@ -210,19 +210,6 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="mainAddBtn"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nC3-TR-f4A">
-                                        <rect key="frame" x="291" y="236" width="44" height="36"/>
-                                        <color key="backgroundColor" name="SeaGreenDark1"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="gdv-fy-tag"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
-                                        <color key="tintColor" name="SeaGreenDark1"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="요청5건">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -244,9 +231,7 @@
                                     <constraint firstItem="3dK-8j-htb" firstAttribute="centerX" secondItem="cCN-BN-Gcw" secondAttribute="centerX" id="f3D-mQ-BqR"/>
                                     <constraint firstItem="MEG-2R-XFH" firstAttribute="trailing" secondItem="Dub-3r-3u8" secondAttribute="trailing" id="jaz-AB-TaE"/>
                                     <constraint firstItem="vRC-NN-p8Q" firstAttribute="trailing" secondItem="Dub-3r-3u8" secondAttribute="trailing" id="mJi-oE-Ow6"/>
-                                    <constraint firstItem="nC3-TR-f4A" firstAttribute="top" secondItem="vRC-NN-p8Q" secondAttribute="bottom" constant="36" id="oTe-UF-cy9"/>
                                     <constraint firstItem="3dK-8j-htb" firstAttribute="leading" secondItem="Dub-3r-3u8" secondAttribute="leading" constant="20" id="rdZ-mv-xOw"/>
-                                    <constraint firstItem="OCX-Nw-mPv" firstAttribute="leading" secondItem="nC3-TR-f4A" secondAttribute="trailing" constant="8" id="szb-nr-ndg"/>
                                     <constraint firstItem="MEG-2R-XFH" firstAttribute="top" secondItem="cCN-BN-Gcw" secondAttribute="bottom" constant="32" id="vye-J6-sbT"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="HtF-Ke-Qr7"/>
@@ -266,7 +251,6 @@
                     <connections>
                         <outlet property="addPlaceCollectionView" destination="Xg6-sE-y0t" id="pcf-sR-LSj"/>
                         <outlet property="addPlantCollectionView" destination="MEG-2R-XFH" id="S1w-Z4-0Ut"/>
-                        <outlet property="requestBtn" destination="nC3-TR-f4A" id="Dzc-jQ-aYw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Re-0f-TgO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -359,7 +343,7 @@
         <scene sceneID="Ms9-NS-NfR">
             <objects>
                 <viewController storyboardIdentifier="3 식물검색" id="1ix-Xu-ZhH" customClass="InfoViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vuJ-lh-Jg2">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="vuJ-lh-Jg2">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
