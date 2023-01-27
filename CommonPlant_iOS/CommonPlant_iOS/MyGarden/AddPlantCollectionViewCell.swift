@@ -12,7 +12,6 @@ class AddPlantCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var addPlantImg: UIImageView!
     @IBOutlet weak var myPlantLabel: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
