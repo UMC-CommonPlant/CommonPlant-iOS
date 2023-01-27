@@ -26,8 +26,8 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장소정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGw-c3-5oH">
                                 <rect key="frame" x="14" y="126" width="56" height="20"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -48,8 +48,8 @@
             </constraints>
             <size key="customSize" width="259" height="164"/>
             <connections>
-                <outlet property="addPlaceImg" destination="alp-VM-oXP" id="xxq-ff-OQj"/>
-                <outlet property="placeLabel" destination="YGw-c3-5oH" id="3Ce-ov-She"/>
+                <outlet property="addPlaceImg" destination="alp-VM-oXP" id="S1h-kC-ctk"/>
+                <outlet property="placeLabel" destination="YGw-c3-5oH" id="ih4-he-HyK"/>
             </connections>
             <point key="canvasLocation" x="225.19083969465649" y="30.281690140845072"/>
         </collectionViewCell>
