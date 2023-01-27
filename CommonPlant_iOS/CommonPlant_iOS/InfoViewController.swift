@@ -94,8 +94,14 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
         let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         flowLayout.sectionInset = UIEdgeInsets.zero
         
-        var width:CGFloat = UIScreen.main.bounds.width / 3.0
-        flowLayout.itemSize = CGSize(width: width-32, height: 76)
+        var width:CGFloat = (categoryCollectionView.bounds.width ) / 3.0
+        var height: CGFloat = width * 0.7524
+        print("========collection view==========",width,"  ",height)
+        print("========collection==========",categoryCollectionView.bounds.width,"  ",categoryCollectionView.bounds.height)
+//        print("========collection margin==========",categoryCollectionView.layer.)
+
+
+        flowLayout.itemSize = CGSize(width: width, height: height)
         categoryCollectionView.collectionViewLayout = flowLayout
     }
 
