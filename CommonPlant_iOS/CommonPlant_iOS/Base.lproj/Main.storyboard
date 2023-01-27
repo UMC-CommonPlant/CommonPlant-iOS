@@ -56,7 +56,7 @@
                                                 <rect key="frame" x="20" y="117" width="70" height="7"/>
                                                 <color key="backgroundColor" name="mainBack"/>
                                             </view>
-                                            <view contentMode="scaleToFill" horizontalHuggingPriority="248" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="M8r-p7-TgF">
+                                            <view contentMode="scaleToFill" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="M8r-p7-TgF">
                                                 <rect key="frame" x="20" y="160.66666666666669" width="353" height="27.333333333333343"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="27.5" id="o4t-Kd-wIs"/>

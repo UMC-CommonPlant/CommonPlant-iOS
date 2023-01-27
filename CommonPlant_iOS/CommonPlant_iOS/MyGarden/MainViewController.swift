@@ -51,6 +51,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func setUpGradient() {
         let gradientLayer = CAGradientLayer()
+        
         gradientLayer.frame = gradationView.bounds
         let colors: [CGColor] = [
             UIColor(red: 0.847, green: 0.871, blue: 0.867, alpha: 1).cgColor,
@@ -58,12 +59,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         ]
         gradientLayer.colors = colors
         gradientLayer.locations = [0, 1]
-        gradientLayer.startPoint = CGPoint(x: 0.25, y: 0.5)
-        gradientLayer.endPoint = CGPoint(x: 0.75, y: 0.5)
-        gradientLayer.transform = CATransform3DMakeAffineTransform(CGAffineTransform(a: 0, b: 1, c: -1, d: 0, tx: 1, ty: 0))
-        gradientLayer.frame = gradationView.bounds
-        //gradientLayer.bounds = gradationView.bounds.insetBy(dx: -0.5*gradationView.bounds.size.width, dy: -0.5*gradationView.bounds.size.height)
-        //gradientLayer.position = gradationView.center
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
+        
+        gradationView.layer.masksToBounds = true
         gradationView.layer.addSublayer(gradientLayer)
     }
     
