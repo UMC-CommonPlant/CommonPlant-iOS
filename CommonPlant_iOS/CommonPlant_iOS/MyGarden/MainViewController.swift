@@ -54,7 +54,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         gradientLayer.frame = gradationView.bounds
         let colors: [CGColor] = [
-            UIColor(red: 0.847, green: 0.871, blue: 0.867, alpha: 1).cgColor,
+            UIColor(red: 0.847, green: 0.871, blue: 0.867, alpha: 0.6).cgColor,
             UIColor(red: 0.847, green: 0.871, blue: 0.867, alpha: 0).cgColor
         ]
         gradientLayer.colors = colors
@@ -84,6 +84,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         } else {
             guard let plantCell = addPlantCollectionView.dequeueReusableCell(withReuseIdentifier: "AddPlantCollectionViewCell", for: indexPath) as? AddPlantCollectionViewCell else { return UICollectionViewCell() }
             plantCell.addPlantImg.image = plantImgArray[indexPath.row]
+            plantCell.myPlantLabel.text = "My Plant"
             return plantCell
         }
     }
