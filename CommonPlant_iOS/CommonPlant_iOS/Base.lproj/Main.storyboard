@@ -92,6 +92,7 @@
             </objects>
             <point key="canvasLocation" x="809.92366412213732" y="1195.0704225352113"/>
         </scene>
+
         <!--식물 정보-->
         <scene sceneID="Ms9-NS-NfR">
             <objects>
@@ -355,6 +356,7 @@
             </objects>
             <point key="canvasLocation" x="-178" y="-168"/>
         </scene>
+
         <!--Tab Bar Controller-->
         <scene sceneID="cZW-0c-kdK">
             <objects>
@@ -441,32 +443,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="1ix-Xu-ZhH" kind="relationship" relationship="rootViewController" id="AZx-vu-XQX"/>
+                        <segue destination="qHa-mr-8sd" kind="relationship" relationship="rootViewController" id="iLR-9N-l9S"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0Q-L5-qyj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-80.152671755725194" y="-794.36619718309862"/>
-        </scene>
-        <!--3-4 결과리스트-->
-        <scene sceneID="hz8-do-Izc">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Info" referencedIdentifier="3-4 결과리스트" id="ZJy-Kz-bcm" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="ahj-rv-b32"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8e0-aZ-RYd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1605" y="-721"/>
-        </scene>
-        <!--3-2 식물추천-->
-        <scene sceneID="6VV-Sy-Tcc">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Info" referencedIdentifier="3-2 식물추천" id="8cg-E0-bnY" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="psf-IP-Z21"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TNX-xK-bbH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1605" y="-889"/>
         </scene>
         <!--Start View Controller-->
         <scene sceneID="KHm-3b-EZZ">
@@ -542,14 +524,28 @@
             </objects>
             <point key="canvasLocation" x="653" y="-1666"/>
         </scene>
+        <!--3 식물검색-->
+        <scene sceneID="OrT-IC-KcR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Info" referencedIdentifier="3 식물검색" id="qHa-mr-8sd" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="phH-hy-OIV"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4PF-gw-wO3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="573" y="-820"/>
+        </scene>
     </scenes>
     <resources>
+
+        <image name="addPlace" width="250" height="156"/>
+        <image name="addPlant" width="164.33332824707031" height="108.33333587646484"/>
+
         <image name="InfoPlantImg" width="114" height="88.333335876464844"/>
+
         <image name="calendar" width="24.333333969116211" height="24"/>
         <image name="calendarActive" width="19" height="33.333332061767578"/>
         <image name="info" width="19" height="20"/>
         <image name="infoActive" width="24.333333969116211" height="38"/>
-        <image name="infoSearch" width="24" height="24"/>
         <image name="logo1" width="224" height="254.33332824707031"/>
         <image name="myGardenActive" width="24.333333969116211" height="38"/>
         <image name="profile" width="20.333333969116211" height="20"/>
@@ -558,12 +554,6 @@
         <image name="profileview" width="375.33334350585938" height="170.33332824707031"/>
         <namedColor name="Gray1">
             <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Gray3">
-            <color red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Gray4">
-            <color red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Gray5">
             <color red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -576,9 +566,6 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
