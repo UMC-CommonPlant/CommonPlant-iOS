@@ -22,6 +22,7 @@
 		6263F8A629755ECF002B5871 /* InfoSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6263F8A529755ECF002B5871 /* InfoSearchViewController.swift */; };
 		6263F8A829755EF1002B5871 /* InfoSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6263F8A729755EF1002B5871 /* InfoSearchTableViewCell.swift */; };
 		6263F8AB29783AD4002B5871 /* InfoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6263F8AA29783AD4002B5871 /* InfoDetailViewController.swift */; };
+		626D081F2984022D00B1D782 /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 626D081D2984022D00B1D782 /* UserProfile.storyboard */; };
 		6274C3BB296ED78C00172941 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6274C3BA296ED78C00172941 /* InfoViewController.swift */; };
 		62801545297A89A500732E21 /* PlantCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62801544297A89A500732E21 /* PlantCollectionViewCell.swift */; };
 		62A334B529746AEA007747E7 /* PlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A334B429746AEA007747E7 /* PlantTableViewCell.swift */; };
@@ -54,6 +55,7 @@
 		6263F8A529755ECF002B5871 /* InfoSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSearchViewController.swift; sourceTree = "<group>"; };
 		6263F8A729755EF1002B5871 /* InfoSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSearchTableViewCell.swift; sourceTree = "<group>"; };
 		6263F8AA29783AD4002B5871 /* InfoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InfoDetailViewController.swift; path = CommonPlant_iOS/Information/InfoDetailViewController.swift; sourceTree = SOURCE_ROOT; };
+		626D081E2984022D00B1D782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserProfile.storyboard; sourceTree = "<group>"; };
 		6274C3BA296ED78C00172941 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InfoViewController.swift; path = CommonPlant_iOS/InfoViewController.swift; sourceTree = SOURCE_ROOT; };
 		62801544297A89A500732E21 /* PlantCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlantCollectionViewCell.swift; path = CommonPlant_iOS/PlantCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		62A334B429746AEA007747E7 /* PlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlantTableViewCell.swift; path = CommonPlant_iOS/Info/PlantTableViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -151,6 +153,7 @@
 				F9C48C7D296D7AD200C76863 /* Info.plist */,
 				62B9B6BB298257AE00500155 /* Login.storyboard */,
 				6202486A29827E6600C26F9C /* Info.storyboard */,
+				626D081D2984022D00B1D782 /* UserProfile.storyboard */,
 			);
 			path = CommonPlant_iOS;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				F96C9C0A2979A29A008627FA /* AddPlaceCollectionViewCell.xib in Resources */,
 				6202486C29827E6600C26F9C /* Info.storyboard in Resources */,
 				F9C48C7C296D7AD200C76863 /* LaunchScreen.storyboard in Resources */,
+				626D081F2984022D00B1D782 /* UserProfile.storyboard in Resources */,
 				62B9B6BD298257AE00500155 /* Login.storyboard in Resources */,
 				F96C9C0E2979A2A9008627FA /* AddPlantCollectionViewCell.xib in Resources */,
 				F99AC6E92983D30B0009E3DE /* MyGarden.storyboard in Resources */,
@@ -326,6 +330,14 @@
 				6202486B29827E6600C26F9C /* Base */,
 			);
 			name = Info.storyboard;
+			sourceTree = "<group>";
+		};
+		626D081D2984022D00B1D782 /* UserProfile.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				626D081E2984022D00B1D782 /* Base */,
+			);
+			name = UserProfile.storyboard;
 			sourceTree = "<group>";
 		};
 		62B9B6BB298257AE00500155 /* Login.storyboard */ = {
