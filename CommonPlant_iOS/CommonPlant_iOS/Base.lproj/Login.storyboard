@@ -57,9 +57,6 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="loginNaver"/>
-                                <connections>
-                                    <segue destination="la1-7y-QaV" kind="show" id="ftz-8n-EiA"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c90-HG-tYq">
                                 <rect key="frame" x="29" y="566" width="335" height="44"/>
@@ -105,6 +102,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHU-Ak-QOA">
+                                <rect key="frame" x="146.66666666666666" y="156" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="UG0-Tr-3sY"/>
+                                    <constraint firstAttribute="height" constant="100" id="oDn-kk-HfA"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="loginProfileImage"/>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7fZ-TG-IRT">
                                 <rect key="frame" x="20" y="272" width="353" height="56"/>
                                 <subviews>
@@ -233,32 +239,24 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="backBtn"/>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lle-tb-96I">
-                                <rect key="frame" x="146.66666666666666" y="156" width="100" height="100"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="a25-zs-yZx"/>
-                                    <constraint firstAttribute="height" constant="100" id="eAr-03-cS8"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3oK-0a-lsA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7fZ-TG-IRT" firstAttribute="leading" secondItem="3oK-0a-lsA" secondAttribute="leading" constant="20" id="2d8-LX-LFs"/>
                             <constraint firstItem="7fZ-TG-IRT" firstAttribute="centerX" secondItem="s2c-LI-ela" secondAttribute="centerX" id="8g5-It-LiB"/>
-                            <constraint firstItem="7fZ-TG-IRT" firstAttribute="top" secondItem="lle-tb-96I" secondAttribute="bottom" constant="16" id="AOg-8M-yIx"/>
                             <constraint firstItem="3oK-0a-lsA" firstAttribute="trailing" secondItem="qmW-X8-k2p" secondAttribute="trailing" constant="20" id="AlO-aP-YTc"/>
+                            <constraint firstItem="YHU-Ak-QOA" firstAttribute="centerX" secondItem="s2c-LI-ela" secondAttribute="centerX" id="B66-ml-Lff"/>
                             <constraint firstItem="yTX-m5-ueH" firstAttribute="leading" secondItem="3oK-0a-lsA" secondAttribute="leading" id="HOs-yj-iZx"/>
-                            <constraint firstItem="lle-tb-96I" firstAttribute="top" secondItem="s2c-LI-ela" secondAttribute="topMargin" constant="97" id="LHK-GS-uQx"/>
                             <constraint firstItem="3oK-0a-lsA" firstAttribute="trailing" secondItem="7fZ-TG-IRT" secondAttribute="trailing" constant="20" id="VYk-Sn-avt"/>
-                            <constraint firstItem="lle-tb-96I" firstAttribute="centerX" secondItem="s2c-LI-ela" secondAttribute="centerX" id="XUa-PG-muN"/>
+                            <constraint firstItem="7fZ-TG-IRT" firstAttribute="top" secondItem="YHU-Ak-QOA" secondAttribute="bottom" constant="16" id="Wgb-nL-yFz"/>
                             <constraint firstItem="4iE-9X-tmU" firstAttribute="leading" secondItem="3oK-0a-lsA" secondAttribute="leading" id="XiE-E4-Zps"/>
                             <constraint firstItem="3oK-0a-lsA" firstAttribute="trailing" secondItem="yTX-m5-ueH" secondAttribute="trailing" id="YFN-Gc-V46"/>
                             <constraint firstItem="pm2-QQ-plT" firstAttribute="top" secondItem="7fZ-TG-IRT" secondAttribute="bottom" constant="8" id="aDZ-S8-MXY"/>
                             <constraint firstItem="4iE-9X-tmU" firstAttribute="top" secondItem="s2c-LI-ela" secondAttribute="top" constant="13" id="fxu-xI-BIL"/>
                             <constraint firstItem="qmW-X8-k2p" firstAttribute="top" secondItem="yTX-m5-ueH" secondAttribute="bottom" constant="16" id="gcK-Bx-OeO"/>
                             <constraint firstItem="qmW-X8-k2p" firstAttribute="leading" secondItem="3oK-0a-lsA" secondAttribute="leading" constant="20" id="heF-It-iDO"/>
+                            <constraint firstItem="YHU-Ak-QOA" firstAttribute="top" secondItem="s2c-LI-ela" secondAttribute="topMargin" constant="97" id="nst-gc-jd6"/>
                             <constraint firstItem="qmW-X8-k2p" firstAttribute="centerX" secondItem="s2c-LI-ela" secondAttribute="centerX" id="qOs-BW-gFT"/>
                             <constraint firstItem="3oK-0a-lsA" firstAttribute="bottom" secondItem="qmW-X8-k2p" secondAttribute="bottom" constant="32" id="sNl-yd-ODD"/>
                             <constraint firstItem="pm2-QQ-plT" firstAttribute="leading" secondItem="3oK-0a-lsA" secondAttribute="leading" constant="20" id="vWH-GO-tpy"/>
@@ -285,7 +283,7 @@
                                     <constraint firstAttribute="height" constant="48" id="jRJ-QG-8nm"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="확인">
+                                <buttonConfiguration key="configuration" style="plain" title="완료">
                                     <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                     <color key="baseForegroundColor" name="Gray3"/>
                                 </buttonConfiguration>
@@ -377,7 +375,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ftz-8n-EiA"/>
+        <segue reference="Xsk-v6-Bcb"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="backBtn" width="56" height="56.333332061767578"/>
@@ -386,6 +384,7 @@
         <image name="loginGoogle" width="335.33334350585938" height="44.333332061767578"/>
         <image name="loginKakao" width="335.33334350585938" height="44.333332061767578"/>
         <image name="loginNaver" width="335.33334350585938" height="44.333332061767578"/>
+        <image name="loginProfileImage" width="100.33333587646484" height="100.33333587646484"/>
         <image name="login보기" width="27.333333969116211" height="15"/>
         <image name="logo2" width="217.33332824707031" height="25.333333969116211"/>
         <image name="logo3" width="186.33332824707031" height="186.33332824707031"/>

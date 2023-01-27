@@ -66,8 +66,6 @@
 		</dict>
 	</dict>
 	<key>privacy - Photo Library Usage Description</key>
-	<string>please allow to use Camera</string>
-	<key>NSCameraUsageDescription</key>
-	<string>please allow access to select a photo</string>
+	<string>프로필 사진, 장소, 식물을 등록하거나, 식물에 관한 메모를 등록할 때 사용합니다.</string>
 </dict>
 </plist>
