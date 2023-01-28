@@ -6,10 +6,28 @@
 //
 
 import Foundation
-struct kakaoLogin:Decodable{
+struct kakaoLogin: Codable{
     let id: Int
     let connected_at: String
-    let properties: [String]
-    let kakao_account: [String]
+    let properties: Properties
+    let kakao_account: Account
     
 }
+
+struct Properties: Codable{
+    let nickname: String
+    let profile_image: String
+    let thumbnail_image: String
+}
+
+struct Account: Codable{
+    let profile: Profile
+    let email: String
+}
+
+struct Profile: Codable{
+    let nickname: String
+    let profile_image_url: String
+}
+
+

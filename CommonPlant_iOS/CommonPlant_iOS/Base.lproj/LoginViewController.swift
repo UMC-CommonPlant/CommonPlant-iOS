@@ -44,16 +44,30 @@ class LoginViewController: UIViewController {
                 
                 //accessToken으로 kakao 유저 데이터 가져오기
                 let url = "https://kapi.kakao.com/v2/user/me"
-                AF.request(url,
+                let request = AF.request(url,
                                    method: .get,
                                    parameters: nil,
-                                   encoding: URLEncoding.default,
+                                   encoding: JSONEncoding.default,
                            headers: ["Content-Type":"application/x-www-form-urlencoded;charset=utf-8", "Authorization":"Bearer "+accessToken])
                             .validate(statusCode: 200..<300) //요청에 대한 유효성 검사 200<=300 상태만 허용
-                            .responseJSON { (json) in
+                
+                request.responseJSON { (response) in
                                 //여기서 가져온 데이터를 자유롭게 활용하세요.
-                                print(json)
-                                print(json.result.success.)
+                                print(response)
+                                
+                                switch response.result{
+                                case .success(let obj):
+                                    do{
+                                        let dataJson = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
+                                        let getData = try JSONDecoder().decode(kakaoLogin.self, from: dataJson)
+                                        let nickname: String = getData.properties.nickname as! String
+                                        print(nickname)
+                                    }catch{
+                                        print(error.localizedDescription)
+                                    }
+                                default : return
+                                }
+                                
                         }
                 
             }
