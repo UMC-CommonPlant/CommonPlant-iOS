@@ -25,6 +25,7 @@
 		626D081F2984022D00B1D782 /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 626D081D2984022D00B1D782 /* UserProfile.storyboard */; };
 		6274C3BB296ED78C00172941 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6274C3BA296ED78C00172941 /* InfoViewController.swift */; };
 		62801545297A89A500732E21 /* PlantCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62801544297A89A500732E21 /* PlantCollectionViewCell.swift */; };
+		62A2FAB829850CC400CF0DAB /* kakaoLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A2FAB729850CC400CF0DAB /* kakaoLogin.swift */; };
 		62A334B529746AEA007747E7 /* PlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A334B429746AEA007747E7 /* PlantTableViewCell.swift */; };
 		62B9B6BD298257AE00500155 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62B9B6BB298257AE00500155 /* Login.storyboard */; };
 		F96C9C092979A29A008627FA /* AddPlaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C9C072979A29A008627FA /* AddPlaceCollectionViewCell.swift */; };
@@ -58,6 +59,7 @@
 		626D081E2984022D00B1D782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserProfile.storyboard; sourceTree = "<group>"; };
 		6274C3BA296ED78C00172941 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InfoViewController.swift; path = CommonPlant_iOS/InfoViewController.swift; sourceTree = SOURCE_ROOT; };
 		62801544297A89A500732E21 /* PlantCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlantCollectionViewCell.swift; path = CommonPlant_iOS/PlantCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		62A2FAB729850CC400CF0DAB /* kakaoLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kakaoLogin.swift; sourceTree = "<group>"; };
 		62A334B429746AEA007747E7 /* PlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlantTableViewCell.swift; path = CommonPlant_iOS/Info/PlantTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		62B9B6BC298257AE00500155 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		F96C9C072979A29A008627FA /* AddPlaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -110,6 +112,14 @@
 				6202486D29827F2400C26F9C /* TipCollectionViewCell.swift */,
 			);
 			path = InfoSearch;
+			sourceTree = "<group>";
+		};
+		62A2FAB629850CA900CF0DAB /* networking */ = {
+			isa = PBXGroup;
+			children = (
+				62A2FAB729850CC400CF0DAB /* kakaoLogin.swift */,
+			);
+			path = networking;
 			sourceTree = "<group>";
 		};
 		F96C9C0F297A69EF008627FA /* Model */ = {
@@ -174,6 +184,7 @@
 		F9C48C84296D7DCB00C76863 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				62A2FAB629850CA900CF0DAB /* networking */,
 				48A5EF4C2974DCBA00779443 /* LoginViewController.swift */,
 				48A5EF4F2974DD0E00779443 /* MyPageViewController.swift */,
 				48A5EF542974E65100779443 /* StartViewController.swift */,
@@ -302,6 +313,7 @@
 				F96C9C1D297AEE04008627FA /* TabBarController.swift in Sources */,
 				62801545297A89A500732E21 /* PlantCollectionViewCell.swift in Sources */,
 				6263F8AB29783AD4002B5871 /* InfoDetailViewController.swift in Sources */,
+				62A2FAB829850CC400CF0DAB /* kakaoLogin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
