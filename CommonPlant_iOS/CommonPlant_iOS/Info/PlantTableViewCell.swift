@@ -17,6 +17,8 @@ class PlantTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel : UILabel!
     @IBOutlet weak var scientificNameLabel : UILabel!
     @IBOutlet weak var lastMonthCountLabel : UILabel!
+    
+//    @IBOutlet weak var tableContentView : UITableViewCell!
 
     override func awakeFromNib() {
         super.awakeFromNib()

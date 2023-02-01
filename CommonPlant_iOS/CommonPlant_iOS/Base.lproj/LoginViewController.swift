@@ -52,23 +52,23 @@ class LoginViewController: UIViewController {
                             .validate(statusCode: 200..<300) //요청에 대한 유효성 검사 200<=300 상태만 허용
                 
                 request.responseJSON { (response) in
-                                //여기서 가져온 데이터를 자유롭게 활용하세요.
-                                print(response)
-                                
-                                switch response.result{
-                                case .success(let obj):
-                                    do{
-                                        let dataJson = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
-                                        let getData = try JSONDecoder().decode(kakaoLogin.self, from: dataJson)
-                                        let nickname: String = getData.properties.nickname as! String
-                                        print(nickname)
-                                    }catch{
-                                        print(error.localizedDescription)
-                                    }
-                                default : return
-                                }
-                                
+                    //여기서 가져온 데이터를 자유롭게 활용하세요.
+                    print(response)
+                    
+                    switch response.result{
+                    case .success(let obj):
+                        do{
+                            let dataJson = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
+                            let getData = try JSONDecoder().decode(kakaoLogin.self, from: dataJson)
+                            let nickname: String = getData.properties.nickname as! String
+                            print(nickname)
+                        }catch{
+                            print(error.localizedDescription)
                         }
+                    default : return
+                    }
+                                
+                }
                 
             }
         }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 
 class InfoDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
@@ -27,6 +28,7 @@ class InfoDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         super.viewDidLoad()
         plantDataSetting()
         setupCollectionView()
+        setData(name: textToSet)
         // Do any additional setup after loading the view.
     }
     
@@ -92,6 +94,43 @@ class InfoDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     
     
     
+    
+    //========== 식물 정보 조회 API ===========
+    func setData(name: String?){
+        print("========== 식물 정보 조회 API ===========")
+        //accessToken으로 kakao 유저 데이터 가져오기
+        let url = "http://localhost:8080/hello"
+        let request = AF.request(url,
+                                 method: .get,
+//                                 parameters: ["name":"몬스테라"],
+                                 encoding: JSONEncoding.default
+//                                 headers: ["Content-Type":"application/json"]
+        )
+                        .validate()
+        print("test")
+        
+        request.responseDecodable(of: InfoDetailModel.self){(response) in
+                print(response)
+                guard let data = response.value else {return}
+                print(data)
+
+            }
+//        request.responseJSON{(response) in
+//            print(response)
+//        }
+        print("========== 식물 정보 조회 API ===========")
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //cell data
     let tipData:[tipInitialModel] = [
         tipInitialModel(title: "가울철 물주기", content: "흙을 촉촉하게 유지"),
         tipInitialModel(title: "배치 장소", content: "거실 내측, 거실 창측"),
