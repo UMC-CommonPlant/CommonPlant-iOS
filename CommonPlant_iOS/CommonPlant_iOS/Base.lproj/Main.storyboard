@@ -19,10 +19,10 @@
             </objects>
             <point key="canvasLocation" x="-178" y="-168"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--tabbar-->
         <scene sceneID="cZW-0c-kdK">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" id="EV5-CV-GcC" customClass="TabBarController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" title="tabbar" id="EV5-CV-GcC" customClass="TabBarController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" itemPositioning="centered" itemWidth="64" id="rRI-Bh-b2P">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -143,4 +143,6 @@ class InfoDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
 
+
+    
 }

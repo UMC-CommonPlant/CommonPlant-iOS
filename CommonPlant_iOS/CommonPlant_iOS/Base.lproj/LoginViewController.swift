@@ -62,6 +62,13 @@ class LoginViewController: UIViewController {
                             let getData = try JSONDecoder().decode(kakaoLogin.self, from: dataJson)
                             let nickname: String = getData.properties.nickname as! String
                             print(nickname)
+                            
+                            guard let result = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") else{
+                                return
+                            }
+                //            self.present(result, animated: false)
+                            self.navigationController?.pushViewController(result, animated: true)
+                            
                         }catch{
                             print(error.localizedDescription)
                         }

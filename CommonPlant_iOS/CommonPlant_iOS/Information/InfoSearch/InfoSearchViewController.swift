@@ -27,7 +27,7 @@ class InfoSearchViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         //이전의 검색 텍스트 받아오기
-//        self.searchInputLabel.text = textToSet
+        self.searchInputLabel.text = textToSet
         setupTableView()
 //        performSegue(withIdentifier: self.performSegueIdentifire, sender: nil)
         // Do any additional setup after loading the view.

@@ -26,6 +26,7 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
         setupSearchLabel()
         setupCollectionView()
         setupTableView()
+        self.searchTextField.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -52,6 +53,7 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
             guard let result = self.storyboard?.instantiateViewController(withIdentifier: "InfoSearchViewController") as? InfoSearchViewController else{
                 return true
             }
+            print(self.searchTextField.text)
             result.textToSet = self.searchTextField.text
 //            self.present(result, animated: false)
             self.navigationController?.pushViewController(result, animated: true)

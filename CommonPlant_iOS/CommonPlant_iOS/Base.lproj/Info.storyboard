@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Info Search View Controller-->
+        <!--식물 정보-->
         <scene sceneID="buS-Ce-5Hj">
             <objects>
-                <viewController storyboardIdentifier="3-3 검색리스트" id="ard-xb-ms7" customClass="InfoSearchViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoSearchViewController" id="ard-xb-ms7" customClass="InfoSearchViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C1u-Jf-edV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,6 +63,7 @@
                                             <outlet property="nameLabel" destination="Ena-wI-bKC" id="skn-L3-F7y"/>
                                             <outlet property="plantImageView" destination="VYA-tj-03t" id="gw2-fX-PDo"/>
                                             <outlet property="scientificNameLabel" destination="wbM-o2-D08" id="zHA-PU-5mE"/>
+                                            <segue destination="GbP-Ua-B2p" kind="show" id="doe-OG-TRv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -134,7 +135,7 @@
                             <constraint firstItem="7co-M8-RvM" firstAttribute="top" secondItem="k0P-Jd-3iV" secondAttribute="bottom" constant="8" id="yfS-Rq-JVf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="FcM-1o-Gb3"/>
+                    <navigationItem key="navigationItem" title="식물 정보" largeTitleDisplayMode="always" style="editor" id="FcM-1o-Gb3"/>
                     <connections>
                         <outlet property="searchInputLabel" destination="HAi-sb-zUh" id="yOM-aV-EWN"/>
                         <outlet property="searchTableView" destination="7co-M8-RvM" id="eb1-lB-pbz"/>
@@ -567,7 +568,7 @@
                             <constraint firstItem="v4G-NG-9g5" firstAttribute="leading" secondItem="4HM-8Q-1Aw" secondAttribute="leading" id="mGC-Z3-5fn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="GYE-p4-v9c"/>
+                    <navigationItem key="navigationItem" style="editor" id="GYE-p4-v9c"/>
                     <connections>
                         <outlet property="plantImageView" destination="JcS-lP-AAv" id="CHH-9x-2aP"/>
                         <outlet property="textLabel" destination="SyL-AZ-sTY" id="zLb-v4-h9i"/>
@@ -672,7 +673,7 @@
                                             <outlet property="nameLabel" destination="1Wm-m1-haI" id="2sF-hQ-8ZC"/>
                                             <outlet property="plantImageView" destination="xDx-50-tSy" id="yC3-nZ-vfK"/>
                                             <outlet property="scientificNameLabel" destination="hWS-Zh-qAy" id="IzJ-Yb-Ydl"/>
-                                            <segue destination="GbP-Ua-B2p" kind="show" id="TTd-mD-LWa"/>
+                                            <segue destination="GbP-Ua-B2p" kind="show" id="IuZ-us-S17"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -690,7 +691,7 @@
                             <constraint firstItem="d9L-Sw-o0x" firstAttribute="top" secondItem="spS-qO-MLU" secondAttribute="bottom" id="vAk-m7-Idd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KcK-SR-uaV"/>
+                    <navigationItem key="navigationItem" title="식물 추천" largeTitleDisplayMode="never" style="editor" id="KcK-SR-uaV"/>
                     <connections>
                         <outlet property="recoImageView" destination="Ebd-xE-G5E" id="t98-Rf-ojo"/>
                         <outlet property="recoLabel" destination="c4g-FM-Q7C" id="PWa-31-fLY"/>
@@ -734,7 +735,6 @@
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="g9y-EL-cLT"/>
                                             <constraint firstAttribute="height" constant="24" id="kC1-kT-HVm"/>
                                         </constraints>
-                                        <color key="textColor" name="Gray3"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -984,7 +984,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9oL-d6-UCU"/>
+        <segue reference="IuZ-us-S17"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="InfoCategory4" width="24" height="24.333333969116211"/>
@@ -996,9 +996,6 @@
         <image name="infoSearch" width="24" height="24"/>
         <namedColor name="Gray1">
             <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Gray3">
-            <color red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Gray4">
             <color red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
