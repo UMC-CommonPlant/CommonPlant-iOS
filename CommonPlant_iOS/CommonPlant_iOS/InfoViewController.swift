@@ -197,11 +197,11 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //데이터 모델
     let plantInitialData:[plantInitialModel] = [
-        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색"),
-        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라 델리시오사", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색"),
-        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라 알보 바리에가타", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색"),
-        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색"),
-        plantInitialModel(plantImage: UIImage(named: "InfoPlantImg"), name: "몬스테라", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색")
+        plantInitialModel(plantImage: UIImage(named: "plant1"), name: "몬스테라", scientificName: "Monstera", lastMonthCount: "지난달 107명이 검색"),
+        plantInitialModel(plantImage: UIImage(named: "plant2"), name: "몬스테라 델리시오사", scientificName: "Monstera", lastMonthCount: "지난달 84명이 검색"),
+        plantInitialModel(plantImage: UIImage(named: "plant3"), name: "몬스테라 알보 바리에가타", scientificName: "Monstera", lastMonthCount: "지난달 52명이 검색"),
+        plantInitialModel(plantImage: UIImage(named: "plant4"), name: "몬스테라", scientificName: "Monstera deliociosa", lastMonthCount: "지난달 100명이 검색"),
+        plantInitialModel(plantImage: UIImage(named: "plant5"), name: "델리시오사", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색")
     ]
     
     //셀의 각 요소를 들고 있는 구조체

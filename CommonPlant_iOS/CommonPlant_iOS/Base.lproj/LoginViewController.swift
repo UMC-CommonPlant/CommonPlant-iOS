@@ -63,12 +63,14 @@ class LoginViewController: UIViewController {
                             let nickname: String = getData.properties.nickname as! String
                             print(nickname)
                             
-                            guard let result = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController") else{
-                                return
-                            }
-                //            self.present(result, animated: false)
-                            self.navigationController?.pushViewController(result, animated: true)
                             
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            guard let vc = storyboard.instantiateViewController(withIdentifier: "TabBarController") as? TabBarController  else { return }
+//                            self.navigationController?.pushViewController(vc, animated: true)
+//                            self.show(vc, sender: self)
+                            vc.modalPresentationStyle = .fullScreen
+                            self.present(vc, animated: true, completion: nil)
+
                         }catch{
                             print(error.localizedDescription)
                         }
