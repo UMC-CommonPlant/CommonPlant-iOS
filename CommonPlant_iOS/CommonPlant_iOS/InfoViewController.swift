@@ -42,15 +42,21 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
     //UITextDelegate return key 이벤트 함수 -> 엔터 눌렀을 때 검색 이벤트
     func textFieldShouldReturn(_ textField : UITextField) -> Bool{
 
-//        guard let result = self.storyboard?.instantiateViewController(withIdentifier: "InfoSearchViewController") as? InfoSearchViewController else{
-//            return true
-//        }
-//        result.textToSet = searchTextField.text
-//        self.present(result, animated: false)
+        
+        print("hello")
+        textField.resignFirstResponder()
+        
         if textField == self.searchTextField {
-            print(textField)
+            
+            print(self.searchTextField.text)
+            guard let result = self.storyboard?.instantiateViewController(withIdentifier: "InfoSearchViewController") as? InfoSearchViewController else{
+                return true
+            }
+            result.textToSet = self.searchTextField.text
+//            self.present(result, animated: false)
+            self.navigationController?.pushViewController(result, animated: true)
         }
-
+        print("test")
 
         return true
     }
@@ -174,10 +180,13 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.contentView.layer.borderWidth = 0.5
         cell.contentView.layer.borderColor = UIColor(red: 0.879, green: 0.879, blue: 0.879, alpha: 1).cgColor
         
-        cell.contentView.layer.shadowColor = UIColor(red: 0.471, green: 0.471, blue: 0.471, alpha: 0.25).cgColor
-        cell.contentView.layer.shadowOpacity = 1
-        cell.contentView.layer.shadowRadius = 4
-        cell.contentView.layer.shadowOffset = CGSize(width: 0, height: 1)
+//        cell.contentView.layer.shadowColor = UIColor(red: 0.471, green: 0.471, blue: 0.471, alpha: 0.25).cgColor
+//        cell.contentView.layer.shadowOpacity = 1
+//        cell.contentView.layer.shadowRadius = 4
+//        cell.contentView.layer.shadowOffset = CGSize(width: 0, height: 1)
+        
+        cell.selectionStyle = .none
+
         cell.contentView.layer.masksToBounds = false
         
         
