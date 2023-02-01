@@ -118,7 +118,7 @@
             </objects>
             <point key="canvasLocation" x="809.92366412213732" y="1195.0704225352113"/>
         </scene>
-        <!--View Controller-->
+        <!--설정-->
         <scene sceneID="3h1-si-HJR">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="XNl-LT-dtQ" sceneMemberID="viewController">
@@ -127,7 +127,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hjQ-L8-1BT">
-                                <rect key="frame" x="0.0" y="119" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="69" width="393" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알람설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LoG-K8-HDS">
                                         <rect key="frame" x="20.000000000000004" y="10" width="62.333333333333343" height="24"/>
@@ -147,7 +147,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2NL-op-aSe">
-                                <rect key="frame" x="20" y="167" width="353" height="79"/>
+                                <rect key="frame" x="20" y="117" width="353" height="79"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PhV-Gk-CxQ">
                                         <rect key="frame" x="16" y="21" width="60" height="20"/>
@@ -181,7 +181,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MtJ-rK-SPQ">
-                                <rect key="frame" x="0.0" y="246" width="393" height="196"/>
+                                <rect key="frame" x="0.0" y="196" width="393" height="196"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C9j-Tm-3Cr">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="8"/>
@@ -239,56 +239,22 @@
                                     <constraint firstAttribute="height" constant="196" id="s1v-JA-wl4"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZ2-97-JnP">
-                                <rect key="frame" x="0.0" y="59" width="393" height="56"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APB-8E-plb">
-                                        <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="56" id="Poo-FP-IoR"/>
-                                            <constraint firstAttribute="width" constant="56" id="RKs-Ab-WHN"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="backBtn"/>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G17-Fh-E5D">
-                                        <rect key="frame" x="181" y="16" width="31.333333333333343" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="24" id="d6L-2t-ppq"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="APB-8E-plb" firstAttribute="leading" secondItem="zZ2-97-JnP" secondAttribute="leading" id="9bD-xT-hd6"/>
-                                    <constraint firstItem="G17-Fh-E5D" firstAttribute="top" secondItem="zZ2-97-JnP" secondAttribute="top" constant="16" id="Sn8-pa-e2D"/>
-                                    <constraint firstItem="G17-Fh-E5D" firstAttribute="centerX" secondItem="zZ2-97-JnP" secondAttribute="centerX" id="Uma-1j-Ts9"/>
-                                    <constraint firstAttribute="height" constant="56" id="jJ0-wb-nBU"/>
-                                    <constraint firstItem="APB-8E-plb" firstAttribute="top" secondItem="zZ2-97-JnP" secondAttribute="top" id="oZy-kC-nDc"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kDJ-1f-lLO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="kDJ-1f-lLO" firstAttribute="trailing" secondItem="2NL-op-aSe" secondAttribute="trailing" constant="20" id="2Xr-DW-cH1"/>
                             <constraint firstItem="kDJ-1f-lLO" firstAttribute="trailing" secondItem="MtJ-rK-SPQ" secondAttribute="trailing" id="4QJ-LU-XYm"/>
+                            <constraint firstItem="hjQ-L8-1BT" firstAttribute="top" secondItem="kDJ-1f-lLO" secondAttribute="top" constant="10" id="5iV-4n-9z4"/>
                             <constraint firstItem="MtJ-rK-SPQ" firstAttribute="top" secondItem="2NL-op-aSe" secondAttribute="bottom" id="Dmp-5I-25k"/>
                             <constraint firstItem="MtJ-rK-SPQ" firstAttribute="leading" secondItem="kDJ-1f-lLO" secondAttribute="leading" id="JVC-Oy-o4u"/>
-                            <constraint firstItem="zZ2-97-JnP" firstAttribute="leading" secondItem="kDJ-1f-lLO" secondAttribute="leading" id="MVI-Gi-Bvh"/>
                             <constraint firstItem="2NL-op-aSe" firstAttribute="leading" secondItem="kDJ-1f-lLO" secondAttribute="leading" constant="20" id="b0c-A3-XdB"/>
-                            <constraint firstItem="zZ2-97-JnP" firstAttribute="top" secondItem="kDJ-1f-lLO" secondAttribute="top" id="bei-cU-IaJ"/>
-                            <constraint firstItem="kDJ-1f-lLO" firstAttribute="trailing" secondItem="zZ2-97-JnP" secondAttribute="trailing" id="cYy-Xp-Zll"/>
                             <constraint firstItem="kDJ-1f-lLO" firstAttribute="trailing" secondItem="hjQ-L8-1BT" secondAttribute="trailing" id="fhL-jR-v0O"/>
                             <constraint firstItem="hjQ-L8-1BT" firstAttribute="leading" secondItem="kDJ-1f-lLO" secondAttribute="leading" id="fsz-uw-5fU"/>
-                            <constraint firstItem="hjQ-L8-1BT" firstAttribute="top" secondItem="zZ2-97-JnP" secondAttribute="bottom" constant="4" id="kmf-3h-WZs"/>
                             <constraint firstItem="2NL-op-aSe" firstAttribute="top" secondItem="hjQ-L8-1BT" secondAttribute="bottom" constant="4" id="vbf-Kh-bgH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="A1K-At-AQQ"/>
+                    <navigationItem key="navigationItem" title="설정" largeTitleDisplayMode="always" style="editor" id="A1K-At-AQQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hI-0n-SMl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
