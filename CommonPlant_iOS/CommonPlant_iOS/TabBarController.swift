@@ -13,6 +13,7 @@ class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.selectedIndex = 1
     }
     
     override func viewDidLayoutSubviews() {
@@ -28,11 +29,4 @@ class TabBarController: UITabBarController {
         
         self.view.layoutIfNeeded()
     }
-    
-//
-//    func sizeThatFits(_ size: CGSize) -> CGSize {
-//        var sizeThatFits =  super.sizeThatFits(size)
-//        sizeThatFits.height = 64
-//        return sizeThatFits
-//    }
 }

@@ -7,9 +7,9 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class MainViewController: UIViewController {
     
-    @IBOutlet weak var mainRequestBtn: UIButton!
+    @IBOutlet weak var requestBtn: UIButton!
     @IBOutlet weak var gradationView: UIView!
     @IBOutlet weak var addPlaceCollectionView: UICollectionView!
     @IBOutlet weak var addPlantCollectionView: UICollectionView!
@@ -45,10 +45,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         addPlantCollectionView.register(UINib(nibName: "AddPlantCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AddPlantCollectionViewCell")
     }
     
-    func setUpRequestBtn() {
-        mainRequestBtn.tintColor = UIColor(named: "SeaGreenDark1")
-    }
-    
     func setUpGradient() {
         let gradientLayer = CAGradientLayer()
         
@@ -65,6 +61,12 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         gradationView.layer.masksToBounds = true
         gradationView.layer.addSublayer(gradientLayer)
     }
+}
+
+
+
+    
+extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == addPlaceCollectionView {
@@ -72,7 +74,14 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         } else {
             return plantImgArray.count
         }
-        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == addPlaceCollectionView {
+            performSegue(withIdentifier: "addPlaceToMyPlace", sender: nil)
+        } else {
+            performSegue(withIdentifier: "myGardenToMyPlant", sender: nil)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -88,7 +97,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             return plantCell
         }
     }
-       
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == addPlaceCollectionView {
             return CGSize(width: 250, height: 156)
@@ -96,11 +105,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             return CGSize(width: 164, height: 108)
         }
     }
-}
-
     
-   
-
+}
 
 
 

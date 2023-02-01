@@ -24,17 +24,25 @@
                                 <rect key="frame" x="0.0" y="0.0" width="250" height="156"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jIW-va-Qr7">
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="156"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장소정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGw-c3-5oH">
                                 <rect key="frame" x="14" y="126" width="56" height="20"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="YGw-c3-5oH" secondAttribute="bottom" constant="10" id="5dT-97-imP"/>
+                            <constraint firstAttribute="bottom" secondItem="jIW-va-Qr7" secondAttribute="bottom" id="9er-nN-7PD"/>
+                            <constraint firstItem="jIW-va-Qr7" firstAttribute="top" secondItem="NiN-du-fEK" secondAttribute="top" id="Otx-k9-VrO"/>
                             <constraint firstItem="YGw-c3-5oH" firstAttribute="leading" secondItem="NiN-du-fEK" secondAttribute="leading" constant="14" id="V6V-nG-7v8"/>
+                            <constraint firstItem="jIW-va-Qr7" firstAttribute="leading" secondItem="NiN-du-fEK" secondAttribute="leading" id="VKg-bC-Gbg"/>
+                            <constraint firstAttribute="trailing" secondItem="jIW-va-Qr7" secondAttribute="trailing" id="mth-oB-0w2"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -49,6 +57,7 @@
             <size key="customSize" width="259" height="164"/>
             <connections>
                 <outlet property="addPlaceImg" destination="alp-VM-oXP" id="S1h-kC-ctk"/>
+                <outlet property="placeGradationView" destination="jIW-va-Qr7" id="Tnr-AV-365"/>
                 <outlet property="placeLabel" destination="YGw-c3-5oH" id="ih4-he-HyK"/>
             </connections>
             <point key="canvasLocation" x="225.19083969465649" y="30.281690140845072"/>

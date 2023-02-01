@@ -92,17 +92,4 @@ class LoginViewController: UIViewController {
         //인자값으로 다음 뷰 컨트롤러를 넣고 present 메소드를 호출
         self.present(toset, animated: true)
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
