@@ -94,11 +94,12 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
         let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         flowLayout.sectionInset = UIEdgeInsets.zero
         
-        var width:CGFloat = (categoryCollectionView.bounds.width ) / 3.0
+        var margin: Int = 16
+        var width:CGFloat = (UIScreen.main.bounds.width - 32 - 40 ) / 3.0
         var height: CGFloat = width * 0.7524
         print("========collection view==========",width,"  ",height)
-        print("========collection==========",categoryCollectionView.bounds.width,"  ",categoryCollectionView.bounds.height)
-//        print("========collection margin==========",categoryCollectionView.layer.)
+        print("========collection view bound==========",categoryCollectionView.bounds.width," ",categoryCollectionView.bounds.height)
+        print("========collection==========",UIScreen.main.bounds.width,"  ",UIScreen.main.bounds.height)
 
 
         flowLayout.itemSize = CGSize(width: width, height: height)
@@ -121,7 +122,6 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return cell
     }
-    
     
     
     let categoryData:[categoryInitialModel] = [
@@ -168,6 +168,19 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
             item.scientificName,
             item.lastMonthCount
         )
+        
+        
+        cell.contentView.layer.cornerRadius = 16
+        cell.contentView.layer.borderWidth = 0.5
+        cell.contentView.layer.borderColor = UIColor(red: 0.879, green: 0.879, blue: 0.879, alpha: 1).cgColor
+        
+        cell.contentView.layer.shadowColor = UIColor(red: 0.471, green: 0.471, blue: 0.471, alpha: 0.25).cgColor
+        cell.contentView.layer.shadowOpacity = 1
+        cell.contentView.layer.shadowRadius = 4
+        cell.contentView.layer.shadowOffset = CGSize(width: 0, height: 1)
+        cell.contentView.layer.masksToBounds = false
+        
+        
         return cell
     }
     

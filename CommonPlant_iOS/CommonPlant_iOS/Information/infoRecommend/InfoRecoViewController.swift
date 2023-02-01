@@ -56,7 +56,8 @@ class InfoRecoViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewWillAppear(animated)
         
         self.recoLabel.text = self.recoText
-        self.recoView.backgroundColor = self.recoColor
+//        self.view.backgroundColor = UIColor(named: "infoCategoryColor1")
+        self.view.backgroundColor = self.recoColor
         self.recoImageView.image = self.recoImage
     }
    

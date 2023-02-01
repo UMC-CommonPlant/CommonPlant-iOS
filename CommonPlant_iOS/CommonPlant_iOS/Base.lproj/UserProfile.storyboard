@@ -12,7 +12,7 @@
         <!--mypage-->
         <scene sceneID="d2m-kt-Es8">
             <objects>
-                <viewController storyboardIdentifier="5 마이페이지" hidesBottomBarWhenPushed="YES" id="2RX-cC-Fgb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="5 마이페이지" id="2RX-cC-Fgb" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nXh-cL-HFa">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
