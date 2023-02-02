@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Info Search View Controller-->
+        <!--식물 정보-->
         <scene sceneID="buS-Ce-5Hj">
             <objects>
-                <viewController storyboardIdentifier="3-3 검색리스트" id="ard-xb-ms7" customClass="InfoSearchViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoSearchViewController" id="ard-xb-ms7" customClass="InfoSearchViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C1u-Jf-edV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,6 +63,7 @@
                                             <outlet property="nameLabel" destination="Ena-wI-bKC" id="skn-L3-F7y"/>
                                             <outlet property="plantImageView" destination="VYA-tj-03t" id="gw2-fX-PDo"/>
                                             <outlet property="scientificNameLabel" destination="wbM-o2-D08" id="zHA-PU-5mE"/>
+                                            <segue destination="GbP-Ua-B2p" kind="show" id="doe-OG-TRv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -134,7 +135,7 @@
                             <constraint firstItem="7co-M8-RvM" firstAttribute="top" secondItem="k0P-Jd-3iV" secondAttribute="bottom" constant="8" id="yfS-Rq-JVf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="FcM-1o-Gb3"/>
+                    <navigationItem key="navigationItem" title="식물 정보" largeTitleDisplayMode="always" style="editor" id="FcM-1o-Gb3"/>
                     <connections>
                         <outlet property="searchInputLabel" destination="HAi-sb-zUh" id="yOM-aV-EWN"/>
                         <outlet property="searchTableView" destination="7co-M8-RvM" id="eb1-lB-pbz"/>
@@ -149,11 +150,11 @@
             <objects>
                 <viewController storyboardIdentifier="3-4 결과리스트" hidesBottomBarWhenPushed="YES" id="GbP-Ua-B2p" customClass="InfoDetailViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K2g-w7-QpG">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="1431"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v4G-NG-9g5">
-                                <rect key="frame" x="0.0" y="59" width="393" height="724"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="1372"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lpl-tD-xas">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="883"/>
@@ -176,8 +177,8 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcX-wt-WdI">
-                                                        <rect key="frame" x="158.66666666666666" y="248" width="36" height="22"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monstera deliciosa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcX-wt-WdI">
+                                                        <rect key="frame" x="114" y="248" width="125" height="22"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="22" id="5k4-bT-ehK"/>
                                                         </constraints>
@@ -241,8 +242,8 @@
                                                                             <constraint firstAttribute="width" constant="24" id="gRE-Lj-wb0"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYB-Wu-yqH">
-                                                                        <rect key="frame" x="32" y="2" width="31.666666666666671" height="20"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYB-Wu-yqH">
+                                                                        <rect key="frame" x="32" y="2" width="40" height="20"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="20" id="KlM-1d-wxw"/>
                                                                         </constraints>
@@ -250,8 +251,8 @@
                                                                         <color key="textColor" name="Gray6"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jte-kw-uDk">
-                                                                        <rect key="frame" x="30" y="26" width="27" height="20"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="물을 좋아하나 과습에 주의하세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jte-kw-uDk">
+                                                                        <rect key="frame" x="30" y="26" width="158" height="20"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="he4-jL-huI"/>
                                                                             <constraint firstAttribute="height" constant="20" id="qfx-YE-S1L"/>
@@ -261,7 +262,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstItem="eYB-Wu-yqH" firstAttribute="leading" secondItem="DzZ-4w-tkp" secondAttribute="trailing" constant="8" id="POs-XE-fBh"/>
                                                                     <constraint firstItem="jte-kw-uDk" firstAttribute="leading" secondItem="Wjh-NL-B10" secondAttribute="leading" constant="30" id="Yu1-jZ-R1L"/>
@@ -283,8 +284,8 @@
                                                                             <constraint firstAttribute="width" constant="24" id="ngh-Xd-oIF"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atW-be-l3R">
-                                                                        <rect key="frame" x="32" y="2" width="31.666666666666671" height="20"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="밝은곳을 좋아해요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atW-be-l3R">
+                                                                        <rect key="frame" x="32" y="2" width="105" height="20"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="20" id="h5d-kq-gDw"/>
                                                                         </constraints>
@@ -293,7 +294,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="137" id="O0R-QP-zPc"/>
                                                                     <constraint firstItem="atW-be-l3R" firstAttribute="leading" secondItem="Ykg-xO-eMY" secondAttribute="trailing" constant="8" id="P4C-L9-sqh"/>
@@ -313,8 +314,8 @@
                                                                             <constraint firstAttribute="height" constant="24" id="Q9f-kr-bBn"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohj-r2-9jb">
-                                                                        <rect key="frame" x="32" y="2" width="31.666666666666671" height="20"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16~20C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohj-r2-9jb">
+                                                                        <rect key="frame" x="32" y="2" width="45" height="20"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="20" id="F0r-dR-sR0"/>
                                                                         </constraints>
@@ -323,7 +324,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstItem="gCT-f3-BoI" firstAttribute="leading" secondItem="qtx-cH-0e3" secondAttribute="leading" id="1Ty-L3-4uu"/>
                                                                     <constraint firstItem="Ohj-r2-9jb" firstAttribute="top" secondItem="qtx-cH-0e3" secondAttribute="top" constant="2" id="3ZD-jN-ioW"/>
@@ -344,8 +345,8 @@
                                                                             <constraint firstAttribute="height" constant="24" id="b3v-xe-oKE"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWC-cN-C9y">
-                                                                        <rect key="frame" x="32" y="2" width="31.666666666666671" height="20"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70% 이상" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWC-cN-C9y">
+                                                                        <rect key="frame" x="32" y="2" width="56" height="20"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="20" id="8wF-Ui-iA0"/>
                                                                         </constraints>
@@ -354,7 +355,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstItem="4Q8-AV-wyq" firstAttribute="leading" secondItem="MZb-kO-Act" secondAttribute="leading" id="5mr-MP-BLc"/>
                                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="24" id="63h-6V-vqn"/>
@@ -458,17 +459,17 @@
                                                                                                 <constraint firstAttribute="width" constant="136" id="7Fw-8h-ikf"/>
                                                                                                 <constraint firstAttribute="height" constant="22" id="Yp8-Ki-Cox"/>
                                                                                             </constraints>
-                                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                                                             <nil key="textColor"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJM-wy-T7M">
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="clip" numberOfLines="3" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJM-wy-T7M">
                                                                                             <rect key="frame" x="14" y="38" width="136" height="60"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="width" constant="136" id="O5w-D6-npq"/>
                                                                                                 <constraint firstAttribute="height" constant="60" id="q92-Hb-i2c"/>
                                                                                             </constraints>
-                                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                                                             <nil key="textColor"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
@@ -567,7 +568,8 @@
                             <constraint firstItem="v4G-NG-9g5" firstAttribute="leading" secondItem="4HM-8Q-1Aw" secondAttribute="leading" id="mGC-Z3-5fn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="GYE-p4-v9c"/>
+                    <navigationItem key="navigationItem" style="editor" id="GYE-p4-v9c"/>
+                    <size key="freeformSize" width="393" height="1500"/>
                     <connections>
                         <outlet property="plantImageView" destination="JcS-lP-AAv" id="CHH-9x-2aP"/>
                         <outlet property="textLabel" destination="SyL-AZ-sTY" id="zLb-v4-h9i"/>
@@ -672,7 +674,7 @@
                                             <outlet property="nameLabel" destination="1Wm-m1-haI" id="2sF-hQ-8ZC"/>
                                             <outlet property="plantImageView" destination="xDx-50-tSy" id="yC3-nZ-vfK"/>
                                             <outlet property="scientificNameLabel" destination="hWS-Zh-qAy" id="IzJ-Yb-Ydl"/>
-                                            <segue destination="GbP-Ua-B2p" kind="show" id="TTd-mD-LWa"/>
+                                            <segue destination="GbP-Ua-B2p" kind="show" id="IuZ-us-S17"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -690,7 +692,7 @@
                             <constraint firstItem="d9L-Sw-o0x" firstAttribute="top" secondItem="spS-qO-MLU" secondAttribute="bottom" id="vAk-m7-Idd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KcK-SR-uaV"/>
+                    <navigationItem key="navigationItem" title="식물 추천" largeTitleDisplayMode="never" style="editor" id="KcK-SR-uaV"/>
                     <connections>
                         <outlet property="recoImageView" destination="Ebd-xE-G5E" id="t98-Rf-ojo"/>
                         <outlet property="recoLabel" destination="c4g-FM-Q7C" id="PWa-31-fLY"/>
@@ -734,7 +736,6 @@
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="g9y-EL-cLT"/>
                                             <constraint firstAttribute="height" constant="24" id="kC1-kT-HVm"/>
                                         </constraints>
-                                        <color key="textColor" name="Gray3"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -828,19 +829,19 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nuk-OY-S2j">
                                                 <rect key="frame" x="0.0" y="249.33333333333331" width="393" height="950.66666666666674"/>
                                                 <subviews>
-                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qMk-D3-VV7" customClass="plant">
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qMk-D3-VV7" customClass="plant">
                                                         <rect key="frame" x="18" y="52" width="357" height="850.66666666666663"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlantTableViewCell" id="dlH-7x-Vb5" customClass="PlantTableViewCell" customModule="CommonPlant_iOS">
-                                                                <rect key="frame" x="0.0" y="50" width="357" height="108.33333587646484"/>
+                                                                <rect key="frame" x="0.0" y="50" width="357" height="108"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dlH-7x-Vb5" id="Nlw-Pg-6vY">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="357" height="108.33333587646484"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="357" height="108"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InfoPlantImg" translatesAutoresizingMaskIntoConstraints="NO" id="jaz-Ro-4KA">
-                                                                            <rect key="frame" x="10" y="10" width="114" height="88.333333333333329"/>
+                                                                            <rect key="frame" x="10" y="10" width="114" height="88"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="114" id="IOx-o8-5oU"/>
                                                                                 <constraint firstAttribute="height" constant="88" id="o3i-YM-km9"/>
@@ -853,7 +854,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지난달 100명이 검색" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhN-PT-87Y">
-                                                                            <rect key="frame" x="236" y="82.333333333333329" width="101" height="15"/>
+                                                                            <rect key="frame" x="236" y="82" width="101" height="15"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -984,7 +985,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9oL-d6-UCU"/>
+        <segue reference="IuZ-us-S17"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="InfoCategory4" width="24" height="24.333333969116211"/>
@@ -996,9 +997,6 @@
         <image name="infoSearch" width="24" height="24"/>
         <namedColor name="Gray1">
             <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Gray3">
-            <color red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Gray4">
             <color red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
