@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CW0-Eu-UBw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jpc-A1-yYj">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -13,7 +13,7 @@
         <!--Main View Controller-->
         <scene sceneID="gG4-Cn-Izh">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jpc-A1-yYj" customClass="MainViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" wantsFullScreenLayout="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jpc-A1-yYj" customClass="MainViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jPq-54-GhC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,7 +136,7 @@
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="250" height="156"/>
                                                 <connections>
-                                                    <segue destination="QBL-mf-za2" kind="show" identifier="addPlaceToMyPlace" id="AiS-s9-oVT"/>
+                                                    <segue destination="QBL-mf-za2" kind="show" identifier="addPlaceToMyPlace" id="Awr-N7-8dT"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -201,6 +201,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="mainAddBtn"/>
+                                        <connections>
+                                            <segue destination="LIB-Jl-KCr" kind="presentation" modalPresentationStyle="fullScreen" id="3tB-Ok-fcf"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfp-Fq-tgU">
                                         <rect key="frame" x="343" y="492" width="36" height="36"/>
@@ -726,6 +729,137 @@
             </objects>
             <point key="canvasLocation" x="1713.740458015267" y="406.33802816901408"/>
         </scene>
+        <!--장소 등록-->
+        <scene sceneID="aqu-Bq-aAd">
+            <objects>
+                <viewController storyboardIdentifier="AddPlaceVC" hidesBottomBarWhenPushed="YES" id="LIB-Jl-KCr" customClass="AddPlaceVC" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9UV-Cf-68U">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addPlace1stImg" translatesAutoresizingMaskIntoConstraints="NO" id="nsU-zq-zsb">
+                                <rect key="frame" x="146.66666666666666" y="93" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nsU-zq-zsb" secondAttribute="height" multiplier="1:1" id="47c-QR-178"/>
+                                    <constraint firstAttribute="width" constant="100" id="98H-Li-mKm"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addPlaceCamera" translatesAutoresizingMaskIntoConstraints="NO" id="CkN-Hj-eCL">
+                                <rect key="frame" x="216.66666666666666" y="163" width="39.999999999999972" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="NUi-Vi-TyF"/>
+                                    <constraint firstAttribute="width" constant="40" id="Y6B-UC-2Ae"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S46-Nb-dX1">
+                                <rect key="frame" x="136.66666666666666" y="83" width="119.99999999999997" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="S46-Nb-dX1" secondAttribute="height" multiplier="1:1" id="8Lr-Jd-fR8"/>
+                                    <constraint firstAttribute="width" constant="120" id="fys-Ji-e2n"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="장소의 이름을 입력해 주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ndp-M1-1Cd">
+                                <rect key="frame" x="20" y="235" width="353" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="V1p-po-fh1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTw-gt-uza">
+                                <rect key="frame" x="352" y="253" width="21" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="21" id="deg-N8-ZC6"/>
+                                    <constraint firstAttribute="height" constant="20" id="hV7-Yc-YGA"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="uCm-cq-m0R"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="14"/>
+                                <color key="textColor" name="Gray5"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooS-mD-gzb">
+                                <rect key="frame" x="342.66666666666669" y="253" width="9.3333333333333144" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="suR-kY-aMs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="14"/>
+                                <color key="textColor" name="Gray5"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41k-mr-3wT">
+                                <rect key="frame" x="20" y="339" width="31.333333333333329" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="AeT-4U-mUB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
+                                <color key="textColor" name="Gray6"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addressBtn" translatesAutoresizingMaskIntoConstraints="NO" id="43w-fi-la9">
+                                <rect key="frame" x="353" y="339" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="tYw-RQ-NC9"/>
+                                    <constraint firstAttribute="width" constant="24" id="zno-22-YVJ"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sH2-qU-wNI">
+                                <rect key="frame" x="20" y="323" width="353" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="K5s-JP-GdS"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATh-7o-RrN">
+                                <rect key="frame" x="20" y="754" width="353" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="yIC-Un-hBK"/>
+                                </constraints>
+                                <color key="tintColor" name="Gray3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="다음"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9Lo-q4-DBv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ATh-7o-RrN" firstAttribute="leading" secondItem="9Lo-q4-DBv" secondAttribute="leading" constant="20" id="41l-Ke-yM4"/>
+                            <constraint firstItem="vTw-gt-uza" firstAttribute="centerY" secondItem="Ndp-M1-1Cd" secondAttribute="centerY" id="5iY-7G-ELz"/>
+                            <constraint firstItem="9Lo-q4-DBv" firstAttribute="trailing" secondItem="43w-fi-la9" secondAttribute="trailing" constant="16" id="6YK-bD-buf"/>
+                            <constraint firstItem="vTw-gt-uza" firstAttribute="trailing" secondItem="Ndp-M1-1Cd" secondAttribute="trailing" id="7xS-pE-3WM"/>
+                            <constraint firstItem="41k-mr-3wT" firstAttribute="top" secondItem="Ndp-M1-1Cd" secondAttribute="bottom" constant="48" id="82W-qO-9YM"/>
+                            <constraint firstItem="nsU-zq-zsb" firstAttribute="centerX" secondItem="9UV-Cf-68U" secondAttribute="centerX" id="CkQ-28-6VX"/>
+                            <constraint firstItem="9Lo-q4-DBv" firstAttribute="trailing" secondItem="ATh-7o-RrN" secondAttribute="trailing" constant="20" id="FE0-ha-7Je"/>
+                            <constraint firstItem="S46-Nb-dX1" firstAttribute="centerX" secondItem="9UV-Cf-68U" secondAttribute="centerX" id="Gml-qQ-khp"/>
+                            <constraint firstItem="sH2-qU-wNI" firstAttribute="top" secondItem="Ndp-M1-1Cd" secondAttribute="bottom" constant="32" id="LvT-ms-7dy"/>
+                            <constraint firstItem="sH2-qU-wNI" firstAttribute="leading" secondItem="9Lo-q4-DBv" secondAttribute="leading" constant="20" id="N4X-ct-hGK"/>
+                            <constraint firstItem="Ndp-M1-1Cd" firstAttribute="top" secondItem="S46-Nb-dX1" secondAttribute="bottom" constant="32" id="Rte-Ve-xX3"/>
+                            <constraint firstItem="S46-Nb-dX1" firstAttribute="top" secondItem="9Lo-q4-DBv" secondAttribute="top" constant="24" id="UHn-mY-aZB"/>
+                            <constraint firstItem="nsU-zq-zsb" firstAttribute="top" secondItem="9Lo-q4-DBv" secondAttribute="top" constant="34" id="WIh-gL-26V"/>
+                            <constraint firstItem="9Lo-q4-DBv" firstAttribute="bottom" secondItem="ATh-7o-RrN" secondAttribute="bottom" constant="16" id="WzS-84-PsX"/>
+                            <constraint firstItem="9Lo-q4-DBv" firstAttribute="trailing" secondItem="Ndp-M1-1Cd" secondAttribute="trailing" constant="20" id="bCJ-yB-DDd"/>
+                            <constraint firstItem="vTw-gt-uza" firstAttribute="leading" secondItem="ooS-mD-gzb" secondAttribute="trailing" id="bae-Nu-8AT"/>
+                            <constraint firstItem="Ndp-M1-1Cd" firstAttribute="leading" secondItem="9Lo-q4-DBv" secondAttribute="leading" constant="20" id="dq6-1l-nT5"/>
+                            <constraint firstItem="ooS-mD-gzb" firstAttribute="centerY" secondItem="Ndp-M1-1Cd" secondAttribute="centerY" id="gxC-gU-sNq"/>
+                            <constraint firstItem="43w-fi-la9" firstAttribute="top" secondItem="Ndp-M1-1Cd" secondAttribute="bottom" constant="48" id="nDi-te-5OD"/>
+                            <constraint firstItem="CkN-Hj-eCL" firstAttribute="leading" secondItem="nsU-zq-zsb" secondAttribute="trailing" constant="-30" id="rUS-Ev-2OG"/>
+                            <constraint firstItem="9Lo-q4-DBv" firstAttribute="trailing" secondItem="sH2-qU-wNI" secondAttribute="trailing" constant="20" id="sKe-cg-XZ7"/>
+                            <constraint firstItem="41k-mr-3wT" firstAttribute="leading" secondItem="9Lo-q4-DBv" secondAttribute="leading" constant="20" id="x1K-TF-DdN"/>
+                            <constraint firstItem="CkN-Hj-eCL" firstAttribute="top" secondItem="9Lo-q4-DBv" secondAttribute="top" constant="104" id="zF0-XI-SDF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="장소 등록" style="editor" id="nxk-zV-sqp"/>
+                    <connections>
+                        <outlet property="addressBtn" destination="sH2-qU-wNI" id="x0s-Th-9jy"/>
+                        <outlet property="textField" destination="Ndp-M1-1Cd" id="TOO-YW-Cky"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JYe-vY-yU9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="820.61068702290072" y="-871.12676056338034"/>
+        </scene>
         <!--My Place-->
         <scene sceneID="X7L-pn-cab">
             <objects>
@@ -1042,7 +1176,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mjx-7T-l8V"/>
+        <segue reference="Fdn-yp-TjZ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Backspace" width="20.666666030883789" height="20.666666030883789"/>
@@ -1051,7 +1185,10 @@
         <image name="InfoDetailHumidity" width="24.333333969116211" height="24"/>
         <image name="InfoDetailTemp" width="24.333333969116211" height="24"/>
         <image name="addPlace" width="250" height="156"/>
+        <image name="addPlace1stImg" width="100.33333587646484" height="100.33333587646484"/>
+        <image name="addPlaceCamera" width="40.333332061767578" height="40.333332061767578"/>
         <image name="addPlant" width="164.33332824707031" height="108.33333587646484"/>
+        <image name="addressBtn" width="24.333333969116211" height="24.333333969116211"/>
         <image name="commonMom" width="36.333332061767578" height="36.333332061767578"/>
         <image name="mainAddBtn" width="36" height="36.333332061767578"/>
         <image name="mainPodImg" width="87.666664123535156" height="64"/>
@@ -1067,6 +1204,9 @@
         <image name="profile 1" width="36.333332061767578" height="36.333332061767578"/>
         <namedColor name="Gray1">
             <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Gray3">
+            <color red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Gray4">
             <color red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
