@@ -15,6 +15,7 @@ class AddPlaceVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = false
         textFieldUnderline()
         buttonUnderLine()
     }
