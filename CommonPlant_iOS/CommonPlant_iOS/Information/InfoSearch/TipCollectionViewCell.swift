@@ -19,16 +19,24 @@ class TipCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        shadowView.layer.cornerRadius = 16
-//        shadowView.layer.masksToBounds = true
+        contentView.layer.cornerRadius = 16
+        contentView.layer.borderWidth = 0.5
+        contentView.layer.borderColor = UIColor(red: 0.879, green: 0.879, blue: 0.879, alpha: 1).cgColor
+        
+        
+//        cell.shadowView.layer.cornerRadius = 16
 //
-//        shadowView.layer.cornerRadius = 16
-//        shadowView.layer.masksToBounds = false
-//
-//        shadowView.layer.shadowColor = UIColor.blue.cgColor
-//        shadowView.layer.shadowOpacity = 1
-//        shadowView.layer.shadowRadius = 4
-//        shadowView.layer.shadowOffset = CGSize(width: 0, height: 1)
+//        cell.shadowView.layer.borderWidth = 0.5
+//        cell.shadowView.layer.borderColor = UIColor(red: 0.879, green: 0.879, blue: 0.879, alpha: 1).cgColor
+
+//        cell.shadowView.layer.shadowColor = UIColor(red: 0.471, green: 0.471, blue: 0.471, alpha: 0.25).cgColor
+////        cell.shadowView.layer.shadowColor = UIColor.blue.cgColor
+//        cell.shadowView.layer.shadowOpacity = 1
+//        cell.shadowView.layer.shadowRadius = 4
+//        cell.shadowView.layer.shadowOffset = CGSize(width: 0, height: 1)
+
+//        cell.selectionStyle = .none
+        shadowView.layer.masksToBounds = true
 
     }
     

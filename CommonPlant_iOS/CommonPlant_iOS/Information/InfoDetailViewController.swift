@@ -12,17 +12,11 @@ import Alamofire
 class InfoDetailViewController: UIViewController {
     
     var textToSet: String?
-    
-    @IBOutlet weak var plantImageView: UIImageView!
-    
-    
-    @IBOutlet weak var textLabel : UILabel!
-    
-    @IBOutlet weak var tipCollectionView: UICollectionView!
     var collectionIdentifire = "infoTipCell"
     
-    
-    
+    @IBOutlet weak var plantImageView: UIImageView!
+    @IBOutlet weak var textLabel : UILabel!
+    @IBOutlet weak var tipCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,36 +39,7 @@ class InfoDetailViewController: UIViewController {
         print(textToSet)
     }
     
-    
-    
 
-    
-    
-    //========== 식물 정보 조회 API ===========
-    func setData(name: String?){
-        print("========== 식물 정보 조회 API ===========")
-        //accessToken으로 kakao 유저 데이터 가져오기
-        let url = "http://localhost:8080/hello"
-        let request = AF.request(url,
-                                 method: .get,
-//                                 parameters: ["name":"몬스테라"],
-                                 encoding: JSONEncoding.default
-//                                 headers: ["Content-Type":"application/json"]
-        )
-                        .validate()
-        print("test")
-        
-        request.responseDecodable(of: InfoDetailModel.self){(response) in
-                print(response)
-                guard let data = response.value else {return}
-                print(data)
-
-            }
-//        request.responseJSON{(response) in
-//            print(response)
-//        }
-        print("========== 식물 정보 조회 API ===========")
-    }
     
     
     //tip Model
@@ -93,8 +58,9 @@ class InfoDetailViewController: UIViewController {
 
     
 }
+//MARK: =======식물 키우기 tip========
+
 extension InfoDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource{
-    //=======식물 키우기========
     func setupCollectionView(){
         tipCollectionView.delegate = self
         tipCollectionView.dataSource = self
@@ -123,27 +89,33 @@ extension InfoDetailViewController: UICollectionViewDelegate, UICollectionViewDa
             item.content
         )
 
-        cell.contentView.layer.cornerRadius = 16
-        cell.contentView.layer.borderWidth = 0.5
-        cell.contentView.layer.borderColor = UIColor(red: 0.879, green: 0.879, blue: 0.879, alpha: 1).cgColor
-        
-        cell.shadowView.layer.cornerRadius = 16
-        
-        cell.shadowView.layer.borderWidth = 0.5
-        cell.shadowView.layer.borderColor = UIColor(red: 0.879, green: 0.879, blue: 0.879, alpha: 1).cgColor
-
-        cell.shadowView.layer.shadowColor = UIColor(red: 0.471, green: 0.471, blue: 0.471, alpha: 0.25).cgColor
-//        cell.shadowView.layer.shadowColor = UIColor.blue.cgColor
-        cell.shadowView.layer.shadowOpacity = 1
-        cell.shadowView.layer.shadowRadius = 4
-        cell.shadowView.layer.shadowOffset = CGSize(width: 0, height: 1)
-
-//        cell.selectionStyle = .none
-
-        cell.shadowView.layer.masksToBounds = true
-
         return cell
     }
     
+    //========== 식물 정보 조회 API ===========
+    func setData(name: String?){
+        print("========== 식물 정보 조회 API ===========")
+        //accessToken으로 kakao 유저 데이터 가져오기
+        let url = "http://localhost:8080/hello"
+        let request = AF.request(url,
+                                 method: .get,
+//                                 parameters: ["name":"몬스테라"],
+                                 encoding: JSONEncoding.default
+//                                 headers: ["Content-Type":"application/json"]
+        )
+                        .validate()
+        print("test")
+        
+        request.responseDecodable(of: InfoDetailModel.self){(response) in
+                print(response)
+                guard let data = response.value else {return}
+                print(data)
+
+            }
+//        request.responseJSON{(response) in
+//            print(response)
+//        }
+        print("========== 식물 정보 조회 API ===========")
+    }
     
 }

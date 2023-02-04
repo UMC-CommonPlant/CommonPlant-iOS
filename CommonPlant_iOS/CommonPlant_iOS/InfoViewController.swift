@@ -9,15 +9,15 @@ import UIKit
 
 
 
-class InfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UICollectionViewDelegate, UICollectionViewDataSource{
+class InfoViewController: UIViewController{
 
     
     var searchTextFieldIdentifire = "searchTextFieldIdentifire"
     var collectionViewCellIdentifire = "collectionViewCell"
+    
     @IBOutlet weak var popularResetTime: UILabel!
     @IBOutlet weak var popularTableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
-    
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
     
@@ -26,41 +26,6 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
         setupSearchLabel()
         setupCollectionView()
         setupTableView()
-        self.searchTextField.delegate = self
-        // Do any additional setup after loading the view.
-    }
-    
-    
-    //=======검색 후 다음 페이지로 넘김==========
-    func setupSearchLabel(){
-//        self.searchTextField.delegate=self
-    }
-    
-    var delegate: TextFieldSearchDelegate?
-    
-
-    
-    //UITextDelegate return key 이벤트 함수 -> 엔터 눌렀을 때 검색 이벤트
-    func textFieldShouldReturn(_ textField : UITextField) -> Bool{
-
-        
-        print("hello")
-        textField.resignFirstResponder()
-        
-        if textField == self.searchTextField {
-            
-            print(self.searchTextField.text)
-            guard let result = self.storyboard?.instantiateViewController(withIdentifier: "InfoSearchViewController") as? InfoSearchViewController else{
-                return true
-            }
-            print(self.searchTextField.text)
-            result.textToSet = self.searchTextField.text
-//            self.present(result, animated: false)
-            self.navigationController?.pushViewController(result, animated: true)
-        }
-        print("test")
-
-        return true
     }
 
     
@@ -94,7 +59,77 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
 
-    //=======카테고리 컬렉션 뷰========
+
+    
+    //category 데이터모델
+    let categoryData:[categoryInitialModel] = [
+        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory1"), title: "원룸", color: UIColor(named: "infoCategoryColor1")),
+        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory2"), title: "공기정화", color: UIColor(named: "infoCategoryColor2")),
+        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory3"), title: "초보집사", color: UIColor(named: "infoCategoryColor3")),
+        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory4"), title: "채광", color: UIColor(named: "infoCategoryColor4")),
+        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory5"), title: "물 좋아함", color: UIColor(named: "infoCategoryColor5")),
+        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory6"), title: "인테리어", color: UIColor(named: "infoCategoryColor6")),
+    ]
+    
+    struct categoryInitialModel{
+        let categoryImage : UIImage?
+        let title : String
+        let color : UIColor?
+    }
+    
+
+    
+    //table 데이터 모델
+    let plantInitialData:[plantInitialModel] = [
+        plantInitialModel(plantImage: UIImage(named: "plant1"), name: "몬스테라", scientificName: "Monstera", lastMonthCount: "지난달 107명이 검색"),
+        plantInitialModel(plantImage: UIImage(named: "plant2"), name: "몬스테라 델리시오사", scientificName: "Monstera", lastMonthCount: "지난달 84명이 검색"),
+        plantInitialModel(plantImage: UIImage(named: "plant3"), name: "몬스테라 알보 바리에가타", scientificName: "Monstera", lastMonthCount: "지난달 52명이 검색"),
+        plantInitialModel(plantImage: UIImage(named: "plant4"), name: "몬스테라", scientificName: "Monstera deliociosa", lastMonthCount: "지난달 100명이 검색"),
+        plantInitialModel(plantImage: UIImage(named: "plant5"), name: "델리시오사", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색")
+    ]
+    
+    //셀의 각 요소를 들고 있는 구조체
+    struct plantInitialModel{
+        let plantImage : UIImage?
+        let name : String
+        let scientificName : String
+        let lastMonthCount : String
+    }
+
+
+}
+//MARK: =======검색 후 다음 페이지로 넘김==========
+extension InfoViewController: UITextFieldDelegate{
+    func setupSearchLabel(){
+        self.searchTextField.delegate = self
+    }
+    
+    //UITextDelegate return key 이벤트 함수 -> 엔터 눌렀을 때 검색 이벤트
+    func textFieldShouldReturn(_ textField : UITextField) -> Bool{
+
+        
+        print("hello")
+        textField.resignFirstResponder()
+        
+        if textField == self.searchTextField {
+            
+            print(self.searchTextField.text)
+            guard let result = self.storyboard?.instantiateViewController(withIdentifier: "InfoSearchViewController") as? InfoSearchViewController else{
+                return true
+            }
+            print(self.searchTextField.text)
+            result.textToSet = self.searchTextField.text
+//            self.present(result, animated: false)
+            self.navigationController?.pushViewController(result, animated: true)
+        }
+        print("test")
+
+        return true
+    }
+}
+
+//MARK: =======카테고리 컬렉션 뷰========
+extension InfoViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func setupCollectionView(){
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
@@ -130,27 +165,11 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return cell
     }
-    
-    
-    let categoryData:[categoryInitialModel] = [
-        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory1"), title: "원룸", color: UIColor(named: "infoCategoryColor1")),
-        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory2"), title: "공기정화", color: UIColor(named: "infoCategoryColor2")),
-        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory3"), title: "초보집사", color: UIColor(named: "infoCategoryColor3")),
-        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory4"), title: "채광", color: UIColor(named: "infoCategoryColor4")),
-        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory5"), title: "물 좋아함", color: UIColor(named: "infoCategoryColor5")),
-        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory6"), title: "인테리어", color: UIColor(named: "infoCategoryColor6")),
-    ]
-    
-    struct categoryInitialModel{
-        let categoryImage : UIImage?
-        let title : String
-        let color : UIColor?
-    }
-    
+}
 
+//MARK: =======인기검색어 table=======
+extension InfoViewController: UITableViewDelegate, UITableViewDataSource{
     
-    
-    //=======인기검색어=======
     //인기 검색어 table view setup
     func setupTableView(){
         popularTableView.delegate = self
@@ -177,51 +196,11 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
             item.lastMonthCount
         )
         
-        cell.contentView.layer.masksToBounds = false
-
-        cell.contentView.layer.cornerRadius = 16
-        cell.contentView.layer.borderWidth = 0.5
-        cell.contentView.layer.borderColor = UIColor(red: 0.879, green: 0.879, blue: 0.879, alpha: 1).cgColor
-        
-        
-        cell.contentView.layer.shadowPath = nil
-        cell.contentView.layer.shadowColor = UIColor.blue.cgColor
-//        cell.contentView.layer.shadowOpacity = 1
-//        cell.contentView.layer.shadowRadius = 4
-//        cell.contentView.layer.shadowOffset = CGSize(width: 0, height: 1)
-        
-//        cell.contentView.layer.masksToBounds = false
-//        cell.contentView.layer.shadowColor = UIColor.gray.cgColor
-//        cell.contentView.layer.shadowOffset = CGSizeMake(0, 5)
-//        cell.contentView.layer.shadowOpacity = 0.35
-//        cell.contentView.layer.shadowPath = UIBezierPath(roundedRect: cell.contentView.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
-        
         
         cell.contentView.clipsToBounds = false
         
         cell.selectionStyle = .none
-
-        
-        
         return cell
     }
     
-    //데이터 모델
-    let plantInitialData:[plantInitialModel] = [
-        plantInitialModel(plantImage: UIImage(named: "plant1"), name: "몬스테라", scientificName: "Monstera", lastMonthCount: "지난달 107명이 검색"),
-        plantInitialModel(plantImage: UIImage(named: "plant2"), name: "몬스테라 델리시오사", scientificName: "Monstera", lastMonthCount: "지난달 84명이 검색"),
-        plantInitialModel(plantImage: UIImage(named: "plant3"), name: "몬스테라 알보 바리에가타", scientificName: "Monstera", lastMonthCount: "지난달 52명이 검색"),
-        plantInitialModel(plantImage: UIImage(named: "plant4"), name: "몬스테라", scientificName: "Monstera deliociosa", lastMonthCount: "지난달 100명이 검색"),
-        plantInitialModel(plantImage: UIImage(named: "plant5"), name: "델리시오사", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색")
-    ]
-    
-    //셀의 각 요소를 들고 있는 구조체
-    struct plantInitialModel{
-        let plantImage : UIImage?
-        let name : String
-        let scientificName : String
-        let lastMonthCount : String
-    }
-
-
 }
