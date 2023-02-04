@@ -27,6 +27,27 @@ class LoginViewController: UIViewController {
     
     //========== kakao login button==========
     @IBAction func kakaoLoginAction(_ sender: UIButton){
+        kakaoLoginAPI()
+    }
+    
+    
+    
+    
+    //========= nickname controller 전환 ============
+    @IBAction func setnickname(_ sender: Any) {
+        //로그인 화면의 storyboard ID를 참조하여 뷰 컨트롤러를 가져오기
+        guard let toset = self.storyboard?.instantiateViewController(withIdentifier: "NicknameView") else {
+            return
+        }
+        //화면 전환 애니메이션을 설정
+        toset.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        
+        //인자값으로 다음 뷰 컨트롤러를 넣고 present 메소드를 호출
+        self.present(toset, animated: true)
+    }
+}
+extension LoginViewController{
+    func kakaoLoginAPI(){
         print("kakao Login")
         //카카오 계정으로 로그인할 때
         UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
@@ -45,11 +66,11 @@ class LoginViewController: UIViewController {
                 //accessToken으로 kakao 유저 데이터 가져오기
                 let url = "https://kapi.kakao.com/v2/user/me"
                 let request = AF.request(url,
-                                   method: .get,
-                                   parameters: nil,
-                                   encoding: JSONEncoding.default,
-                           headers: ["Content-Type":"application/x-www-form-urlencoded;charset=utf-8", "Authorization":"Bearer "+accessToken])
-                            .validate(statusCode: 200..<300) //요청에 대한 유효성 검사 200<=300 상태만 허용
+                                         method: .get,
+                                         parameters: nil,
+                                         encoding: JSONEncoding.default,
+                                         headers: ["Content-Type":"application/x-www-form-urlencoded;charset=utf-8", "Authorization":"Bearer "+accessToken])
+                    .validate(statusCode: 200..<300) //요청에 대한 유효성 검사 200<=300 상태만 허용
                 
                 request.responseJSON { (response) in
                     //여기서 가져온 데이터를 자유롭게 활용하세요.
@@ -66,39 +87,20 @@ class LoginViewController: UIViewController {
                             
                             let storyboard = UIStoryboard(name: "Main", bundle: nil)
                             guard let vc = storyboard.instantiateViewController(withIdentifier: "TabBarController") as? TabBarController  else { return }
-//                            self.navigationController?.pushViewController(vc, animated: true)
-//                            self.show(vc, sender: self)
+                            //                            self.navigationController?.pushViewController(vc, animated: true)
+                            //                            self.show(vc, sender: self)
                             vc.modalPresentationStyle = .fullScreen
                             self.present(vc, animated: true, completion: nil)
-
+                            
                         }catch{
                             print(error.localizedDescription)
                         }
                     default : return
                     }
-                                
+                    
                 }
                 
             }
         }
-
-        
-        
-    }
-    
-    
-    
-    
-    //========= nickname controller 전환 ============
-    @IBAction func setnickname(_ sender: Any) {
-        //로그인 화면의 storyboard ID를 참조하여 뷰 컨트롤러를 가져오기
-        guard let toset = self.storyboard?.instantiateViewController(withIdentifier: "NicknameView") else {
-            return
-        }
-        //화면 전환 애니메이션을 설정
-        toset.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-        
-        //인자값으로 다음 뷰 컨트롤러를 넣고 present 메소드를 호출
-        self.present(toset, animated: true)
     }
 }

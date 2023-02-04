@@ -11,25 +11,51 @@ import Photos
 class NicknameViewController: UIViewController {
 
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var textCountLabel: UILabel!
 
+    @IBOutlet weak var nickNameField: UITextField!
+    
+    
+    @IBOutlet weak var nextTermsButton: UIButton!
+    @IBOutlet weak var nextTermsDoneButton: UIButton!
     
     var cnt = 0
-
     
-    @IBAction func alertBtn(_ sender: Any) {
-        actionSheetAlert()
-        
-    }
-    
-    
-    
+    var TBtn: Bool = false
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        self.nickNameField.delegate = self
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func alertBtn(_ sender: Any) {
+        actionSheetAlert()
+    }
+    
+    
+
+    var imageNM = ["checkmark.circle.fill","checkmark.circle"]
+    
+    
+    @IBAction func nextTermsCheckBtn(_ sender: Any) {
+//        print("clicked")
+//
+//        if TBtn == false {
+//            nextTermsButton.setImage(UIImage(systemName: imageNM[0]), for: .normal)
+//            TBtn = true
+//            nextTermsDoneButton.backgroundColor = UIColor.blue
+//            print("true")
+//        }else {
+//            nextTermsButton.setImage(UIImage(systemName: imageNM[1]), for: .normal)
+//            TBtn = false
+//            nextTermsDoneButton.backgroundColor = UIColor.gray
+//            print("false")
+//        }
+        
+    }
+    
     
     @IBAction func goagree(_ sender: Any) {
         //로그인 화면의 storyboard ID를 참조하여 뷰 컨트롤러를 가져오기
@@ -43,21 +69,29 @@ class NicknameViewController: UIViewController {
         self.present(agree, animated: true)
     }
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+//MARK: nickNameText
+extension NicknameViewController: UITextFieldDelegate{
 
+    //MARK: text count label
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        print("textField")
+        let currentText = nickNameField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+     
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        
+        textCountLabel.text = "\(updatedText.count)"
+        return updatedText.count < 10
+    }
+}
+
+//MARK: =========카메라 선택==========
 // UIImagePickerControllerDelegate = 카메라 롤이나 앨범에서 사진을 가져올 수 있도록 도와 주는 것
 extension NicknameViewController : UIImagePickerControllerDelegate , UINavigationControllerDelegate{
-    
+
     func actionSheetAlert(){
         
         let alert = UIAlertController(title: "선택", message: "선택", preferredStyle: .actionSheet)
@@ -130,3 +164,4 @@ extension NicknameViewController : UIImagePickerControllerDelegate , UINavigatio
         dismiss(animated: true, completion: nil)
     }
 }
+
