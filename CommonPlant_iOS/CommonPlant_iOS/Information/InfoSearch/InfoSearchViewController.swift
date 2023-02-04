@@ -11,7 +11,7 @@ protocol TextFieldSearchDelegate{
     func onChange(text: String)
 }
 
-class InfoSearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class InfoSearchViewController: UIViewController{
     
     var textToSet: String!
 
@@ -19,29 +19,22 @@ class InfoSearchViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var searchInputLabel: UITextField!
     
     let cellIdentifier: String = "infoSearchCell"
-//    let performSegueIdentifire: String = "infoSearchPerformSegue"
     
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSearchInputLabel()
+        setupTableView()
+    }
+
+    func setupSearchInputLabel(){
         //이전의 검색 텍스트 받아오기
         self.searchInputLabel.text = textToSet
-        setupTableView()
-//        performSegue(withIdentifier: self.performSegueIdentifire, sender: nil)
-        // Do any additional setup after loading the view.
     }
     
     
-//    func onChange(text: String){
-//        searchInputLabel.text = text
-//    }
-    
-    
-    
     //InfoDetailViewController의 textLabel로 데이터 넘기기
-    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         guard let nextViewController: InfoDetailViewController = segue.destination as? InfoDetailViewController else{
@@ -56,11 +49,25 @@ class InfoSearchViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
 
+    //데이터 모델
+    let plantInitialData:[plantInitialModel] = [
+        plantInitialModel(plantImage: UIImage(named: "plant1"), name: "몬스테라 델리오사", scientificName: "Monstera"),
+        plantInitialModel(plantImage: UIImage(named: "plant2"), name: "몬스테라 알보 바리에가타", scientificName: "Monstera"),
+        plantInitialModel(plantImage: UIImage(named: "plant3"), name: "몬스테라 보르시지아나", scientificName: "Monstera"),
+        plantInitialModel(plantImage: UIImage(named: "plant4"), name: "무늬 몬스테라", scientificName: "Monstera"),
+        plantInitialModel(plantImage: UIImage(named: "plant5"), name: "몬스테라 델리오사", scientificName: "Monstera"),
+    ]
     
-    
-    
-    
-    //========검색 결과 리스트 table========
+    //셀의 각 요소를 들고 있는 구조체
+    struct plantInitialModel{
+        let plantImage : UIImage?
+        let name : String
+        let scientificName : String
+    }
+}
+
+//MARK: ========검색 결과 리스트 table========
+extension InfoSearchViewController: UITableViewDelegate, UITableViewDataSource{
     func setupTableView(){
         searchTableView.delegate = self
         searchTableView.dataSource = self
@@ -83,22 +90,5 @@ class InfoSearchViewController: UIViewController, UITableViewDelegate, UITableVi
         
         cell.selectionStyle = .none
         return cell
-    }
-    
-
-    //데이터 모델
-    let plantInitialData:[plantInitialModel] = [
-        plantInitialModel(plantImage: UIImage(named: "plant1"), name: "몬스테라 델리오사", scientificName: "Monstera"),
-        plantInitialModel(plantImage: UIImage(named: "plant2"), name: "몬스테라 알보 바리에가타", scientificName: "Monstera"),
-        plantInitialModel(plantImage: UIImage(named: "plant3"), name: "몬스테라 보르시지아나", scientificName: "Monstera"),
-        plantInitialModel(plantImage: UIImage(named: "plant4"), name: "무늬 몬스테라", scientificName: "Monstera"),
-        plantInitialModel(plantImage: UIImage(named: "plant5"), name: "몬스테라 델리오사", scientificName: "Monstera"),
-    ]
-    
-    //셀의 각 요소를 들고 있는 구조체
-    struct plantInitialModel{
-        let plantImage : UIImage?
-        let name : String
-        let scientificName : String
     }
 }

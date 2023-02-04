@@ -21,8 +21,28 @@ class PlantTableViewCell: UITableViewCell {
 //    @IBOutlet weak var tableContentView : UITableViewCell!
 
     override func awakeFromNib() {
-        super.awakeFromNib()
         // Initialization code
+        super.awakeFromNib()
+        
+        contentView.layer.masksToBounds = false
+
+        contentView.layer.cornerRadius = 16
+        contentView.layer.borderWidth = 0.5
+        contentView.layer.borderColor = UIColor(red: 0.879, green: 0.879, blue: 0.879, alpha: 1).cgColor
+        
+        
+//        cell.contentView.layer.shadowPath = nil
+//        cell.contentView.layer.shadowColor = UIColor.blue.cgColor
+//        cell.contentView.layer.shadowOpacity = 1
+//        cell.contentView.layer.shadowRadius = 4
+//        cell.contentView.layer.shadowOffset = CGSize(width: 0, height: 1)
+        
+//        cell.contentView.layer.masksToBounds = false
+//        cell.contentView.layer.shadowColor = UIColor.gray.cgColor
+//        cell.contentView.layer.shadowOffset = CGSizeMake(0, 5)
+//        cell.contentView.layer.shadowOpacity = 0.35
+//        cell.contentView.layer.shadowPath = UIBezierPath(roundedRect: cell.contentView.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

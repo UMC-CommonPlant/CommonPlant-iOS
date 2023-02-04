@@ -9,20 +9,14 @@ import UIKit
 import Alamofire
 
 
-class InfoDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class InfoDetailViewController: UIViewController {
     
     var textToSet: String?
-    
-    @IBOutlet weak var plantImageView: UIImageView!
-    
-    
-    @IBOutlet weak var textLabel : UILabel!
-    
-    @IBOutlet weak var tipCollectionView: UICollectionView!
     var collectionIdentifire = "infoTipCell"
     
-    
-    
+    @IBOutlet weak var plantImageView: UIImageView!
+    @IBOutlet weak var textLabel : UILabel!
+    @IBOutlet weak var tipCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +39,28 @@ class InfoDetailViewController: UIViewController, UICollectionViewDelegate, UICo
         print(textToSet)
     }
     
+
     
     
-    //=======식물 키우기========
+    //tip Model
+    let tipData:[tipInitialModel] = [
+        tipInitialModel(title: "가울철 물주기", content: "흙을 촉촉하게 유지"),
+        tipInitialModel(title: "배치 장소", content: "거실 내측, 거실 창측"),
+        tipInitialModel(title: "관리하기", content: "수경은 물주기가 필요 없으나, 화분은 1-2주에 한번씩 충분히 관수한다.")
+    ]
+    
+    struct tipInitialModel{
+        let title : String
+        let content : String
+    }
+    
+
+
+    
+}
+//MARK: =======식물 키우기 tip========
+
+extension InfoDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func setupCollectionView(){
         tipCollectionView.delegate = self
         tipCollectionView.dataSource = self
@@ -76,24 +89,8 @@ class InfoDetailViewController: UIViewController, UICollectionViewDelegate, UICo
             item.content
         )
 
-
-//        cell.layer.masksToBounds = true
-        cell.layer.cornerRadius = 16
-        cell.layer.borderWidth = 1.0
-        cell.layer.borderColor = UIColor(named: "Gray2")?.cgColor
-        
-//        cell.layer.shadowColor = UIColor.black.cgColor
-//        cell.layer.masksToBounds = false
-//        cell.layer.shadowOpacity = 0.7
-//        cell.layer.shadowOffset = CGSize(width: -2, height: 2)
-//        cell.layer.shadowRadius = 16
-        
-
         return cell
     }
-    
-    
-    
     
     //========== 식물 정보 조회 API ===========
     func setData(name: String?){
@@ -120,29 +117,5 @@ class InfoDetailViewController: UIViewController, UICollectionViewDelegate, UICo
 //        }
         print("========== 식물 정보 조회 API ===========")
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //cell data
-    let tipData:[tipInitialModel] = [
-        tipInitialModel(title: "가울철 물주기", content: "흙을 촉촉하게 유지"),
-        tipInitialModel(title: "배치 장소", content: "거실 내측, 거실 창측"),
-        tipInitialModel(title: "관리하기", content: "수경은 물주기가 필요 없으나, 화분은 1-2주에 한번씩 충분히 관수한다.")
-    ]
-    
-    struct tipInitialModel{
-        let title : String
-        let content : String
-    }
-    
-
-
     
 }

@@ -57,6 +57,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="loginNaver"/>
+                                <connections>
+                                    <segue destination="la1-7y-QaV" kind="show" id="zee-85-KTF"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c90-HG-tYq">
                                 <rect key="frame" x="29" y="566" width="335" height="44"/>
@@ -263,15 +266,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9q9-K6-657"/>
+                    <connections>
+                        <outlet property="nextTermsDoneButton" destination="qmW-X8-k2p" id="vgh-71-37x"/>
+                        <outlet property="nickNameField" destination="Q73-uG-Ydj" id="RvJ-jf-bVc"/>
+                        <outlet property="textCountLabel" destination="irn-G2-ztD" id="Eo2-K3-dP4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ISt-ch-auq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1215" y="-68"/>
         </scene>
-        <!--View Controller-->
+        <!--Nickname View Controller-->
         <scene sceneID="7UN-Bg-c4H">
             <objects>
-                <viewController storyboardIdentifier="1-2-3 Signup" id="KlU-kG-x5f" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="1-2-3 Signup" id="KlU-kG-x5f" customClass="NicknameViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oi4-Yh-I9P">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -332,9 +340,12 @@
                                             <constraint firstAttribute="width" constant="24" id="zPc-qj-Pen"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="checkmark.circle.fill" catalog="system">
+                                        <buttonConfiguration key="configuration" style="plain" image="checkmark.circle" catalog="system">
                                             <color key="baseForegroundColor" name="Gray3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="nextTermsCheckBtn:" destination="KlU-kG-x5f" eventType="touchUpInside" id="8oD-Ik-xcb"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="동의합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAm-AP-79z">
                                         <rect key="frame" x="55.999999999999993" y="35" width="69.333333333333314" height="20"/>
@@ -368,6 +379,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SXW-lt-7md"/>
+                    <connections>
+                        <outlet property="nextTermsButton" destination="OQn-Qm-gcF" id="dct-lI-NhL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ona-09-9Be" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -376,9 +390,11 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="59U-mP-IgN"/>
+        <segue reference="Xsk-v6-Bcb"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="backBtn" width="56" height="56.333332061767578"/>
+        <image name="checkmark.circle" catalog="system" width="128" height="123"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="loginApple" width="335.33334350585938" height="44.333332061767578"/>
         <image name="loginGoogle" width="335.33334350585938" height="44.333332061767578"/>
