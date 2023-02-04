@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 
 
-class InfoDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class InfoDetailViewController: UIViewController {
     
     var textToSet: String?
     
@@ -47,52 +47,7 @@ class InfoDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     
     
     
-    //=======식물 키우기========
-    func setupCollectionView(){
-        tipCollectionView.delegate = self
-        tipCollectionView.dataSource = self
-        
-        let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        flowLayout.sectionInset = UIEdgeInsets.zero
-        flowLayout.itemSize = CGSize(width: 164, height: 121)
-        flowLayout.scrollDirection = .horizontal
-        flowLayout.minimumLineSpacing = 8.0 // <- 셀 간격 설정
-        flowLayout.minimumInteritemSpacing = 0
-        
-        tipCollectionView.collectionViewLayout = flowLayout
-    }
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tipData.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell : TipCollectionViewCell = tipCollectionView.dequeueReusableCell(withReuseIdentifier: self.collectionIdentifire, for: indexPath) as! TipCollectionViewCell
-        
-        let item = tipData[indexPath.row]
-        
-        cell.setupData(
-            item.title,
-            item.content
-        )
-
-
-//        cell.layer.masksToBounds = true
-        cell.layer.cornerRadius = 16
-        cell.layer.borderWidth = 1.0
-        cell.layer.borderColor = UIColor(named: "Gray2")?.cgColor
-        
-//        cell.layer.shadowColor = UIColor.black.cgColor
-//        cell.layer.masksToBounds = false
-//        cell.layer.shadowOpacity = 0.7
-//        cell.layer.shadowOffset = CGSize(width: -2, height: 2)
-//        cell.layer.shadowRadius = 16
-        
-
-        return cell
-    }
-    
-    
     
     
     //========== 식물 정보 조회 API ===========
@@ -122,15 +77,7 @@ class InfoDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    //cell data
+    //tip Model
     let tipData:[tipInitialModel] = [
         tipInitialModel(title: "가울철 물주기", content: "흙을 촉촉하게 유지"),
         tipInitialModel(title: "배치 장소", content: "거실 내측, 거실 창측"),
@@ -144,5 +91,59 @@ class InfoDetailViewController: UIViewController, UICollectionViewDelegate, UICo
     
 
 
+    
+}
+extension InfoDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+    //=======식물 키우기========
+    func setupCollectionView(){
+        tipCollectionView.delegate = self
+        tipCollectionView.dataSource = self
+        
+        let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        flowLayout.sectionInset = UIEdgeInsets.zero
+        flowLayout.itemSize = CGSize(width: 164, height: 121)
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.minimumLineSpacing = 8.0 // <- 셀 간격 설정
+        flowLayout.minimumInteritemSpacing = 0
+        
+        tipCollectionView.collectionViewLayout = flowLayout
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return tipData.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell : TipCollectionViewCell = tipCollectionView.dequeueReusableCell(withReuseIdentifier: self.collectionIdentifire, for: indexPath) as! TipCollectionViewCell
+        
+        let item = tipData[indexPath.row]
+        
+        cell.setupData(
+            item.title,
+            item.content
+        )
+
+        cell.contentView.layer.cornerRadius = 16
+        cell.contentView.layer.borderWidth = 0.5
+        cell.contentView.layer.borderColor = UIColor(red: 0.879, green: 0.879, blue: 0.879, alpha: 1).cgColor
+        
+        cell.shadowView.layer.cornerRadius = 16
+        
+        cell.shadowView.layer.borderWidth = 0.5
+        cell.shadowView.layer.borderColor = UIColor(red: 0.879, green: 0.879, blue: 0.879, alpha: 1).cgColor
+
+        cell.shadowView.layer.shadowColor = UIColor(red: 0.471, green: 0.471, blue: 0.471, alpha: 0.25).cgColor
+//        cell.shadowView.layer.shadowColor = UIColor.blue.cgColor
+        cell.shadowView.layer.shadowOpacity = 1
+        cell.shadowView.layer.shadowRadius = 4
+        cell.shadowView.layer.shadowOffset = CGSize(width: 0, height: 1)
+
+//        cell.selectionStyle = .none
+
+        cell.shadowView.layer.masksToBounds = true
+
+        return cell
+    }
+    
     
 }

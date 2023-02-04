@@ -177,19 +177,30 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
             item.lastMonthCount
         )
         
-        
+        cell.contentView.layer.masksToBounds = false
+
         cell.contentView.layer.cornerRadius = 16
         cell.contentView.layer.borderWidth = 0.5
         cell.contentView.layer.borderColor = UIColor(red: 0.879, green: 0.879, blue: 0.879, alpha: 1).cgColor
         
-//        cell.contentView.layer.shadowColor = UIColor(red: 0.471, green: 0.471, blue: 0.471, alpha: 0.25).cgColor
+        
+        cell.contentView.layer.shadowPath = nil
+        cell.contentView.layer.shadowColor = UIColor.blue.cgColor
 //        cell.contentView.layer.shadowOpacity = 1
 //        cell.contentView.layer.shadowRadius = 4
 //        cell.contentView.layer.shadowOffset = CGSize(width: 0, height: 1)
         
+//        cell.contentView.layer.masksToBounds = false
+//        cell.contentView.layer.shadowColor = UIColor.gray.cgColor
+//        cell.contentView.layer.shadowOffset = CGSizeMake(0, 5)
+//        cell.contentView.layer.shadowOpacity = 0.35
+//        cell.contentView.layer.shadowPath = UIBezierPath(roundedRect: cell.contentView.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
+        
+        
+        cell.contentView.clipsToBounds = false
+        
         cell.selectionStyle = .none
 
-        cell.contentView.layer.masksToBounds = false
         
         
         return cell
