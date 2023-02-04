@@ -13,6 +13,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var gradationView: UIView!
     @IBOutlet weak var addPlaceCollectionView: UICollectionView!
     @IBOutlet weak var addPlantCollectionView: UICollectionView!
+    @IBOutlet weak var addPlaceBtn: UIButton!
+    
     
     var placeImgArray = [
         UIImage(named: "place1.png"),
@@ -82,6 +84,8 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         } else {
             performSegue(withIdentifier: "myGardenToMyPlant", sender: nil)
         }
+
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
