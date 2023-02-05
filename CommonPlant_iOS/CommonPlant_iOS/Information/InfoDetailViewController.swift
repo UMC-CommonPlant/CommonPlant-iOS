@@ -59,7 +59,6 @@ class InfoDetailViewController: UIViewController {
     
 }
 //MARK: =======식물 키우기 tip========
-
 extension InfoDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func setupCollectionView(){
         tipCollectionView.delegate = self

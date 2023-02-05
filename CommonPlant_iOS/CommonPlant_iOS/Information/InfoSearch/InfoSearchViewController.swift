@@ -6,10 +6,7 @@
 //
 
 import UIKit
-
-protocol TextFieldSearchDelegate{
-    func onChange(text: String)
-}
+import Alamofire
 
 class InfoSearchViewController: UIViewController{
     
@@ -26,6 +23,7 @@ class InfoSearchViewController: UIViewController{
         super.viewDidLoad()
         setupSearchInputLabel()
         setupTableView()
+        setData(name: searchInputLabel.text)
     }
 
     func setupSearchInputLabel(){
@@ -91,4 +89,68 @@ extension InfoSearchViewController: UITableViewDelegate, UITableViewDataSource{
         cell.selectionStyle = .none
         return cell
     }
+    
+    //========== 식물 정보 조회 API ===========
+    func setData(name: String?){
+        print("========== 식물 정보 조회 API ===========")
+        //accessToken으로 kakao 유저 데이터 가져오기
+        let url = "http://localhost:8080/info/searchInfo"
+        let header : HTTPHeaders = [
+                   "Content-Type" : "application/json"
+               ]
+        
+        let queryString : Parameters = ["name":"몬스테라"]
+        
+        
+        AF.request(
+            url,
+            method: .post,
+            parameters: queryString,
+            encoding: URLEncoding.queryString,//param으로 request
+//            encoding: JSONEncoding.default,
+            headers: header
+        )
+        .validate(statusCode: 200..<300)
+        .responseData { response in
+                        switch response.result {
+                        case .success(let res):
+                            do {
+                                print("====================================success")
+                                print(res)
+                                print("응답 데이터 :: ", String(data: res, encoding: .utf8) ?? "")
+                                
+                                
+//                                let dataJson = try JSONSerialization.data(withJSONObject: res, options: .prettyPrinted)
+//                                let getData = try JSONDecoder().decode(InfoSearchModel.self, from: dataJson)
+//                                let result: String = getData.result as! String
+//                                print(getData.result)
+                                print("====================================")
+
+                                // [비동기 작업 수행]
+                                DispatchQueue.main.async {
+                                    
+                                }
+                            }
+                            catch (let err){
+                                print("")
+                                print("====================================")
+                                print("catch :: ", err.localizedDescription)
+                                print("====================================")
+                                print("")
+                            }
+                            break
+                        case .failure(let err):
+                            print("")
+                            print("====================================")
+                            print("응답 코드 :: ", response.response?.statusCode ?? 0)
+                            print("-------------------------------")
+                            print("에 러 :: ", err.localizedDescription)
+                            print("====================================")
+                            print("")
+                            break
+                        }
+                    }
+        print("========== 식물 정보 조회 API ===========")
+    }
 }
+
