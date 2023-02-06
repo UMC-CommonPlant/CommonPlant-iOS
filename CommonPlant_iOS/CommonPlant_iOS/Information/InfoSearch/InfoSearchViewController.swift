@@ -9,8 +9,8 @@ import UIKit
 import Alamofire
 
 class InfoSearchViewController: UIViewController{
-    
-    var textToSet: String!
+    let baseurl: String = "http://localhost:8080"
+    var textToSet: String?
 
     @IBOutlet weak var searchTableView: UITableView!
     @IBOutlet weak var searchInputLabel: UITextField!
@@ -22,8 +22,8 @@ class InfoSearchViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchInputLabel()
-        setupTableView()
-        setData(name: searchInputLabel.text)
+        
+        setData(name: searchInputLabel.text ?? "")
     }
 
     func setupSearchInputLabel(){
@@ -48,7 +48,7 @@ class InfoSearchViewController: UIViewController{
 
 
     //데이터 모델
-    let plantInitialData:[plantInitialModel] = [
+    var plantInitialData:[plantInitialModel] = [
         plantInitialModel(plantImage: UIImage(named: "plant1"), name: "몬스테라 델리오사", scientificName: "Monstera"),
         plantInitialModel(plantImage: UIImage(named: "plant2"), name: "몬스테라 알보 바리에가타", scientificName: "Monstera"),
         plantInitialModel(plantImage: UIImage(named: "plant3"), name: "몬스테라 보르시지아나", scientificName: "Monstera"),
@@ -91,15 +91,15 @@ extension InfoSearchViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     //========== 식물 정보 조회 API ===========
-    func setData(name: String?){
+    func setData(name: String){
         print("========== 식물 정보 조회 API ===========")
         //accessToken으로 kakao 유저 데이터 가져오기
-        let url = "http://localhost:8080/info/searchInfo"
+        let url = baseurl + "/info/searchInfo"
         let header : HTTPHeaders = [
                    "Content-Type" : "application/json"
                ]
         
-        let queryString : Parameters = ["name":"몬스테라"]
+        let queryString : Parameters = ["name" : name]
         
         
         AF.request(
@@ -117,19 +117,22 @@ extension InfoSearchViewController: UITableViewDelegate, UITableViewDataSource{
                             do {
                                 print("====================================success")
                                 print(res)
-                                print("응답 데이터 :: ", String(data: res, encoding: .utf8) ?? "")
+//                                print("응답 데이터 :: ", String(data: res, encoding: .utf8) ?? "")
                                 
                                 
-//                                let dataJson = try JSONSerialization.data(withJSONObject: res, options: .prettyPrinted)
-//                                let getData = try JSONDecoder().decode(InfoSearchModel.self, from: dataJson)
-//                                let result: String = getData.result as! String
-//                                print(getData.result)
-                                print("====================================")
-
-                                // [비동기 작업 수행]
-                                DispatchQueue.main.async {
-                                    
+                                let decoder = JSONDecoder()
+                                guard let decodedData = try? decoder.decode(InfoSearchModel.self, from: res) else {
+                                    print("decoded data test")
+                                    return
                                 }
+                                print(decodedData.result)
+                                
+                                for i in decodedData.result{
+                                    self.plantInitialData.append( plantInitialModel(plantImage: UIImage(named: "plant1"), name: i.name, scientificName: i.name))
+                                }
+                                print(self.plantInitialData)
+                                
+                                self.setupTableView()
                             }
                             catch (let err){
                                 print("")

@@ -17,5 +17,11 @@ struct InfoSearchModel: Codable{
 struct result: Codable{
     let name: String
     let imgUrl: String
-//    "scientific_name": String
+//    let scientificName: String
+    
+//    enum CodingKeys: String, CodingKey {
+//        case name = "name"
+//        case imgUrl = "imgUrl"
+//        case sientificName = "sientific_name"
+//    }
 }

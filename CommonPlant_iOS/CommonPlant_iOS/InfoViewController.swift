@@ -118,7 +118,7 @@ extension InfoViewController: UITextFieldDelegate{
                 return true
             }
             print(self.searchTextField.text)
-            result.textToSet = self.searchTextField.text
+            result.textToSet = self.searchTextField.text ?? ""
 //            self.present(result, animated: false)
             self.navigationController?.pushViewController(result, animated: true)
         }
