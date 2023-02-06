@@ -8,13 +8,23 @@
 import UIKit
 
 class AddPlaceVC: UIViewController {
-
+    
+    // MARK: - Properties
+    
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var roadAddress: UILabel!
     @IBOutlet weak var addressBtn: UIButton!
     
-    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        roadAddress.text = "왜 안바뀌냐고"
+        configureUI()
+    }
+    
+    // MARK: - UI
+    private func configureUI() {
+        addressBtn.addTarget(self, action: #selector(handleButton(_:)), for: .touchUpInside)
         navigationController?.isNavigationBarHidden = false
         textFieldUnderline()
         buttonUnderLine()
@@ -34,6 +44,11 @@ class AddPlaceVC: UIViewController {
         bottomLine.backgroundColor = UIColor(named: "Gray2")?.cgColor
         addressBtn.layer.addSublayer(bottomLine)
     }
- 
-
+    
+    // MARK: - Selectors
+    @objc
+    private func handleButton(_ sender: UIButton) {
+       let nextVC = PostcodeVC()
+        present(nextVC, animated: true)
+    }
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainVC: UIViewController {
     
     @IBOutlet weak var requestBtn: UIButton!
     @IBOutlet weak var gradationView: UIView!
@@ -68,7 +68,7 @@ class MainViewController: UIViewController {
 
 
     
-extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == addPlaceCollectionView {
