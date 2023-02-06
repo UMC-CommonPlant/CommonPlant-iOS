@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--MainVC-->
         <scene sceneID="gG4-Cn-Izh">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" wantsFullScreenLayout="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jpc-A1-yYj" customClass="MainViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" wantsFullScreenLayout="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jpc-A1-yYj" customClass="MainVC" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jPq-54-GhC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -301,7 +301,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="몬테" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOt-ev-ObP">
-                                                <rect key="frame" x="175.66666666666666" y="224" width="41.666666666666664" height="32"/>
+                                                <rect key="frame" x="175.66666666666666" y="224" width="41.666666666666657" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="pPp-F6-luh"/>
                                                 </constraints>
@@ -810,9 +810,6 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
-                                <connections>
-                                    <segue destination="3iT-8K-iSa" kind="show" id="Xfp-7o-Zy6"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATh-7o-RrN">
                                 <rect key="frame" x="20" y="754" width="353" height="48"/>
@@ -823,6 +820,12 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="다음"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcS-F3-0GT">
+                                <rect key="frame" x="175" y="579" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9Lo-q4-DBv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -835,8 +838,10 @@
                             <constraint firstItem="9Lo-q4-DBv" firstAttribute="trailing" secondItem="ATh-7o-RrN" secondAttribute="trailing" constant="20" id="FE0-ha-7Je"/>
                             <constraint firstItem="S46-Nb-dX1" firstAttribute="centerX" secondItem="9UV-Cf-68U" secondAttribute="centerX" id="Gml-qQ-khp"/>
                             <constraint firstItem="ooS-mD-gzb" firstAttribute="leading" secondItem="Ndp-M1-1Cd" secondAttribute="trailing" id="Ikz-SG-Dlt"/>
+                            <constraint firstItem="9Lo-q4-DBv" firstAttribute="trailing" secondItem="VcS-F3-0GT" secondAttribute="trailing" constant="176" id="IxQ-lB-Wfa"/>
                             <constraint firstItem="sH2-qU-wNI" firstAttribute="top" secondItem="Ndp-M1-1Cd" secondAttribute="bottom" constant="32" id="LvT-ms-7dy"/>
                             <constraint firstItem="sH2-qU-wNI" firstAttribute="leading" secondItem="9Lo-q4-DBv" secondAttribute="leading" constant="20" id="N4X-ct-hGK"/>
+                            <constraint firstItem="VcS-F3-0GT" firstAttribute="leading" secondItem="9Lo-q4-DBv" secondAttribute="leading" constant="175" id="Q0r-lj-Ji7"/>
                             <constraint firstItem="Ndp-M1-1Cd" firstAttribute="top" secondItem="S46-Nb-dX1" secondAttribute="bottom" constant="32" id="Rte-Ve-xX3"/>
                             <constraint firstItem="S46-Nb-dX1" firstAttribute="top" secondItem="9Lo-q4-DBv" secondAttribute="top" constant="24" id="UHn-mY-aZB"/>
                             <constraint firstItem="nsU-zq-zsb" firstAttribute="top" secondItem="9Lo-q4-DBv" secondAttribute="top" constant="34" id="WIh-gL-26V"/>
@@ -846,7 +851,9 @@
                             <constraint firstItem="ooS-mD-gzb" firstAttribute="centerY" secondItem="Ndp-M1-1Cd" secondAttribute="centerY" id="gxC-gU-sNq"/>
                             <constraint firstItem="43w-fi-la9" firstAttribute="top" secondItem="Ndp-M1-1Cd" secondAttribute="bottom" constant="48" id="nDi-te-5OD"/>
                             <constraint firstAttribute="trailing" secondItem="vTw-gt-uza" secondAttribute="trailing" constant="20" id="o2o-cd-rsj"/>
+                            <constraint firstItem="ATh-7o-RrN" firstAttribute="top" secondItem="VcS-F3-0GT" secondAttribute="bottom" constant="154" id="qXb-Cc-q4w"/>
                             <constraint firstItem="CkN-Hj-eCL" firstAttribute="leading" secondItem="nsU-zq-zsb" secondAttribute="trailing" constant="-30" id="rUS-Ev-2OG"/>
+                            <constraint firstItem="VcS-F3-0GT" firstAttribute="top" secondItem="sH2-qU-wNI" secondAttribute="bottom" constant="156" id="s6n-dz-vdm"/>
                             <constraint firstItem="9Lo-q4-DBv" firstAttribute="trailing" secondItem="sH2-qU-wNI" secondAttribute="trailing" constant="20" id="sKe-cg-XZ7"/>
                             <constraint firstItem="41k-mr-3wT" firstAttribute="leading" secondItem="9Lo-q4-DBv" secondAttribute="leading" constant="20" id="x1K-TF-DdN"/>
                             <constraint firstItem="CkN-Hj-eCL" firstAttribute="top" secondItem="9Lo-q4-DBv" secondAttribute="top" constant="104" id="zF0-XI-SDF"/>
@@ -855,6 +862,7 @@
                     <navigationItem key="navigationItem" title="장소 등록" style="editor" id="nxk-zV-sqp"/>
                     <connections>
                         <outlet property="addressBtn" destination="sH2-qU-wNI" id="x0s-Th-9jy"/>
+                        <outlet property="roadAddress" destination="VcS-F3-0GT" id="OfF-cx-SSN"/>
                         <outlet property="textField" destination="Ndp-M1-1Cd" id="TOO-YW-Cky"/>
                     </connections>
                 </viewController>
@@ -871,14 +879,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1n-Lw-qyD">
-                                <rect key="frame" x="0.0" y="103" width="393" height="64"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="64"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="a9a-1Z-u2I"/>
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="주소 검색" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BT7-2M-0os">
-                                <rect key="frame" x="52" y="123" width="241" height="24"/>
+                                <rect key="frame" x="52" y="79" width="241" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Lg2-IQ-dxj"/>
                                 </constraints>
@@ -886,7 +894,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="infoSearch" translatesAutoresizingMaskIntoConstraints="NO" id="0kR-WW-3qR">
-                                <rect key="frame" x="20" y="123" width="24" height="24"/>
+                                <rect key="frame" x="20" y="79" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0kR-WW-3qR" secondAttribute="height" multiplier="1:1" id="5xO-hW-jVP"/>
                                     <constraint firstAttribute="width" constant="24" id="hKf-tb-8MX"/>
