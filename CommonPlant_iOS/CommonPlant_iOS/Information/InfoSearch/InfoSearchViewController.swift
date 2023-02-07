@@ -48,11 +48,11 @@ class InfoSearchViewController: UIViewController{
 
     //데이터 모델
     var plantInitialData:[plantInitialModel] = [
-        plantInitialModel(plantImage: UIImage(named: "plant1"), name: "몬스테라 델리오사", scientificName: "Monstera"),
-        plantInitialModel(plantImage: UIImage(named: "plant2"), name: "몬스테라 알보 바리에가타", scientificName: "Monstera"),
-        plantInitialModel(plantImage: UIImage(named: "plant3"), name: "몬스테라 보르시지아나", scientificName: "Monstera"),
-        plantInitialModel(plantImage: UIImage(named: "plant4"), name: "무늬 몬스테라", scientificName: "Monstera"),
-        plantInitialModel(plantImage: UIImage(named: "plant5"), name: "몬스테라 델리오사", scientificName: "Monstera"),
+//        plantInitialModel(plantImage: UIImage(named: "plant1"), name: "몬스테라 델리오사", scientificName: "Monstera"),
+//        plantInitialModel(plantImage: UIImage(named: "plant2"), name: "몬스테라 알보 바리에가타", scientificName: "Monstera"),
+//        plantInitialModel(plantImage: UIImage(named: "plant3"), name: "몬스테라 보르시지아나", scientificName: "Monstera"),
+//        plantInitialModel(plantImage: UIImage(named: "plant4"), name: "무늬 몬스테라", scientificName: "Monstera"),
+//        plantInitialModel(plantImage: UIImage(named: "plant5"), name: "몬스테라 델리오사", scientificName: "Monstera"),
     ]
     
     //셀의 각 요소를 들고 있는 구조체
@@ -121,18 +121,19 @@ extension InfoSearchViewController: UITableViewDelegate, UITableViewDataSource{
                                     let dataJson = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                                     let jsonData = try JSONDecoder().decode(InfoSearchModel.self, from: dataJson)
                                     print(jsonData)
+                                    
+                                    for i in jsonData.result{
+                                        print(i.name)
+                                        self.plantInitialData.append(plantInitialModel(plantImage: UIImage(named: "plant1"), name: i.name, scientificName: i.scientificName))
+                                    }
+                                    self.searchTableView.reloadData()
+                                    
                                 }catch{
                                     print(error.localizedDescription)
                                 }
                             }
                             
                             
-                            
-                            self.plantInitialData.append(plantInitialModel(plantImage: UIImage(named: "plant1"), name: "test1", scientificName: "Monstera"))
-                            self.plantInitialData.append(plantInitialModel(plantImage: UIImage(named: "plant1"), name: "test2", scientificName: "Monstera"))
-                            self.plantInitialData.append(plantInitialModel(plantImage: UIImage(named: "plant1"), name: "test3", scientificName: "Monstera"))
-                            self.plantInitialData.append(plantInitialModel(plantImage: UIImage(named: "plant1"), name: "test4", scientificName: "Monstera"))
-                            self.searchTableView.reloadData()
 //                            do{
 ////                                let dataJson = try JSONSerialization.data(withJSONObject: res, options: .prettyPrinted)
 ////                                let getData = try JSONDecoder().decode(InfoSearchModel.self, from: dataJson)
