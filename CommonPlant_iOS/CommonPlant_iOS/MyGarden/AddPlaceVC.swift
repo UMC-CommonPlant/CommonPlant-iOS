@@ -7,18 +7,22 @@
 
 import UIKit
 
-class AddPlaceVC: UIViewController {
+class AddPlaceVC: UIViewController, SendDataDelegate {
+    func sendData(address: String) {
+        roadAddress.text = address
+    }
     
     // MARK: - Properties
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var roadAddress: UILabel!
     @IBOutlet weak var addressBtn: UIButton!
+ //   var road: String?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        roadAddress.text = "왜 안바뀌냐고"
+   //     roadAddress.text = road
         configureUI()
     }
     
@@ -49,6 +53,7 @@ class AddPlaceVC: UIViewController {
     @objc
     private func handleButton(_ sender: UIButton) {
        let nextVC = PostcodeVC()
+        nextVC.delegate = self
         present(nextVC, animated: true)
     }
 }

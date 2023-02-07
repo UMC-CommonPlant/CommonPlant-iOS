@@ -39,7 +39,6 @@
 		F96C9C0E2979A2A9008627FA /* AddPlantCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96C9C0C2979A2A9008627FA /* AddPlantCollectionViewCell.xib */; };
 		F96C9C11297A6A80008627FA /* MyGardenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C9C10297A6A80008627FA /* MyGardenModel.swift */; };
 		F96C9C1D297AEE04008627FA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C9C1C297AEE04008627FA /* TabBarController.swift */; };
-		F96E8CAD298B94A8005E5640 /* AddPlace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96E8CAC298B94A8005E5640 /* AddPlace.storyboard */; };
 		F96E8CAF298B9A64005E5640 /* AddPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E8CAE298B9A64005E5640 /* AddPlaceVC.swift */; };
 		F98C813C298A7BF300682C47 /* MyPlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C8138298A7BF300682C47 /* MyPlaceTableViewCell.swift */; };
 		F98C813D298A7BF300682C47 /* MyPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C8139298A7BF300682C47 /* MyPlaceVC.swift */; };
@@ -84,7 +83,6 @@
 		F96C9C0C2979A2A9008627FA /* AddPlantCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPlantCollectionViewCell.xib; sourceTree = "<group>"; };
 		F96C9C10297A6A80008627FA /* MyGardenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGardenModel.swift; sourceTree = "<group>"; };
 		F96C9C1C297AEE04008627FA /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		F96E8CAC298B94A8005E5640 /* AddPlace.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPlace.storyboard; sourceTree = "<group>"; };
 		F96E8CAE298B9A64005E5640 /* AddPlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceVC.swift; sourceTree = "<group>"; };
 		F98C8138298A7BF300682C47 /* MyPlaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlaceTableViewCell.swift; sourceTree = "<group>"; };
 		F98C8139298A7BF300682C47 /* MyPlaceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlaceVC.swift; sourceTree = "<group>"; };
@@ -224,7 +222,6 @@
 				F98C813A298A7BF300682C47 /* MyPlantCollectionViewCell.swift */,
 				F98C813B298A7BF300682C47 /* MyPlantVC.swift */,
 				F99AC6E82983D30B0009E3DE /* MyGarden.storyboard */,
-				F96E8CAC298B94A8005E5640 /* AddPlace.storyboard */,
 				F96E8CAE298B9A64005E5640 /* AddPlaceVC.swift */,
 				F9D2643C2990E45200C3D243 /* PostcodeVC.swift */,
 			);
@@ -332,7 +329,6 @@
 				F9C48C7C296D7AD200C76863 /* LaunchScreen.storyboard in Resources */,
 				626D081F2984022D00B1D782 /* UserProfile.storyboard in Resources */,
 				62B9B6BD298257AE00500155 /* Login.storyboard in Resources */,
-				F96E8CAD298B94A8005E5640 /* AddPlace.storyboard in Resources */,
 				F96C9C0E2979A2A9008627FA /* AddPlantCollectionViewCell.xib in Resources */,
 				F99AC6E92983D30B0009E3DE /* MyGarden.storyboard in Resources */,
 				F9C48C79296D7AD200C76863 /* Assets.xcassets in Resources */,
