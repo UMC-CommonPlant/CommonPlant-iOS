@@ -7,3 +7,32 @@
 
 import Foundation
 
+struct MyPlace: Codable {
+    let timeStamp: String
+    let status: Int
+    let message: String
+    let result: Result
+    let success: Bool
+}
+
+struct Result: Codable {
+    let name, address, highestTemp, minimumTemp: String
+    let humidity: String
+    let isOwner: Bool
+    let userInfoList: [UserInfoList]
+    let plantInfoList: [PlantInfoList]
+}
+
+struct PlantInfoList: Codable {
+    let name, nickname: String
+    let imgURL: String
+    let recentMemo: String
+    let remainderDate: Int
+    let wateredDate: Date
+}
+
+struct UserInfoList: Codable {
+    let nickName: String
+    let owner: Bool
+    let imgURL: String
+}
