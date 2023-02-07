@@ -83,9 +83,6 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     
     func monthCalendar(){
         calendarView.scope = .month
-        
-        
-
     }
     
     // 원하는 날짜 아래에 subtitle 지정
