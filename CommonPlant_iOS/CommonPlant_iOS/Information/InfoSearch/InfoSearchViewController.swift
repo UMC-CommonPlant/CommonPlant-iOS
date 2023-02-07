@@ -9,8 +9,6 @@ import UIKit
 import Alamofire
 
 class InfoSearchViewController: UIViewController{
-//    let baseurl: String = "http://localhost:8080"
-    let baseurl: String = "http://common-plant.shop"
     
     var textToSet: String?
     
@@ -96,10 +94,10 @@ extension InfoSearchViewController: UITableViewDelegate, UITableViewDataSource{
     func setData(name: String){
         print("========== 식물 정보 조회 API ===========")
         //accessToken으로 kakao 유저 데이터 가져오기
-        let url = baseurl + "/info/searchInfo"
+        let url = API.BASE_URL + "/info/searchInfo"
         let header : HTTPHeaders = [
-                   "Content-Type" : "application/json"
-               ]
+            "Content-Type" : "application/json"
+        ]
         
         
         let queryString : Parameters = ["name" : name]
@@ -107,58 +105,70 @@ extension InfoSearchViewController: UITableViewDelegate, UITableViewDataSource{
         MyAlamofireManager.shared
             .session
             .request(url,method : .post, parameters: queryString, encoding: URLEncoding.queryString)
-            .responseJSON(completionHandler: {response in
-                print("========== debugPrint ===========")
-                debugPrint(response)
-                print("========== 식물 정보 조회 API ===========")
-            })
-                
-        
-        
-        
-        
-//        .responseData { response in
-//                        switch response.result {
-//                        case .success(let res):
-//                            do {
-//                                print("====================================success")
-//                                print(res)
-//                                print("응답 데이터 :: ", String(data: res, encoding: .utf8) ?? "")
-//
-//
-//                                let decoder = JSONDecoder()
-//                                guard let decodedData = try? decoder.decode(InfoSearchModel.self, from: res) else {
-//                                    print("decoded data test")
-//                                    return
-//                                }
-//                                print(decodedData.result)
-//
-//                                for i in decodedData.result{
-//                                    self.plantInitialData.append( plantInitialModel(plantImage: UIImage(named: "plant1"), name: i.name, scientificName: i.name))
-//                                }
-//                                print(self.plantInitialData)
-//
+                    .responseJSON(completionHandler: {response in
+                        
+                        print("========== 식물 정보 조회 API ===========")
+                        switch response.result{
+                        case .success(let res):
+//                            let decoder = JSONDecoder()
+//                            guard let decodedData = try? decoder.decode(InfoSearchModel.self, from: res) else {
+//                                print("decoded data test")
+//                                return
 //                            }
-//                            catch (let err){
-//                                print("")
-//                                print("====================================")
-//                                print("catch :: ", err.localizedDescription)
-//                                print("====================================")
-//                                print("")
-//                            }
-//                            break
-//                        case .failure(let err):
-//                            print("")
-//                            print("====================================")
-//                            print("응답 코드 :: ", response.response?.statusCode ?? 0)
-//                            print("-------------------------------")
-//                            print("에 러 :: ", err.localizedDescription)
-//                            print("====================================")
-//                            print("")
-//                            break
+//                            print(decodedData.result)
+                            break
+                        case .failure(let err):
+                            debugPrint(err)
+                            break
+                        }
+                    })
+            }
+        
+        
+        
+//            .responseData { response in
+//                switch response.result {
+//                case .success(let res):
+//                    do {
+//                        print("====================================success")
+//                        print(res)
+//                        print("응답 데이터 :: ", String(data: res, encoding: .utf8) ?? "")
+//
+//
+//                        let decoder = JSONDecoder()
+//                        guard let decodedData = try? decoder.decode(InfoSearchModel.self, from: res) else {
+//                            print("decoded data test")
+//                            return
 //                        }
+//                        print(decodedData.result)
+//
+//                        for i in decodedData.result{
+//                            self.plantInitialData.append( plantInitialModel(plantImage: UIImage(named: "plant1"), name: i.name, scientificName: i.name))
+//                        }
+//                        print(self.plantInitialData)
+//
 //                    }
-//        print("========== 식물 정보 조회 API ===========")
-    }
+//                    catch (let err){
+//                        print("")
+//                        print("====================================")
+//                        print("catch :: ", err.localizedDescription)
+//                        print("====================================")
+//                        print("")
+//                    }
+//                    break
+//                case .failure(let err):
+//                    print("")
+//                    print("====================================")
+//                    print("응답 코드 :: ", response.response?.statusCode ?? 0)
+//                    print("-------------------------------")
+//                    print("에 러 :: ", err.localizedDescription)
+//                    print("====================================")
+//                    print("")
+//                    break
+//                }
+//            }
+//        //        print("========== 식물 정보 조회 API ===========")
+//    }
+    
 }
 
