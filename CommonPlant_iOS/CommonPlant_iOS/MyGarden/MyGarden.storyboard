@@ -762,9 +762,12 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="addPlaceImgBtn:" destination="LIB-Jl-KCr" eventType="touchUpInside" id="PFU-iC-Vn5"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="장소의 이름을 입력해 주세요" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Ndp-M1-1Cd">
-                                <rect key="frame" x="20" y="279" width="317.66666666666669" height="56"/>
+                                <rect key="frame" x="20" y="279" width="322.66666666666669" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="V1p-po-fh1"/>
                                 </constraints>
@@ -782,8 +785,8 @@
                                 <color key="textColor" name="Gray5"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooS-mD-gzb">
-                                <rect key="frame" x="337.66666666666669" y="297" width="14.333333333333314" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooS-mD-gzb">
+                                <rect key="frame" x="342.66666666666669" y="297" width="9.3333333333333144" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="suR-kY-aMs"/>
                                 </constraints>
@@ -866,7 +869,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="장소 등록" style="editor" id="nxk-zV-sqp"/>
                     <connections>
+                        <outlet property="addPlace1stImg" destination="nsU-zq-zsb" id="STB-qw-uaY"/>
                         <outlet property="addressBtn" destination="sH2-qU-wNI" id="x0s-Th-9jy"/>
+                        <outlet property="addressBtnImg" destination="43w-fi-la9" id="ktB-gf-jYE"/>
+                        <outlet property="currentTextCount" destination="ooS-mD-gzb" id="EXG-qw-nGs"/>
                         <outlet property="roadAddress" destination="DPl-BU-bFA" id="Y7D-ox-8T0"/>
                         <outlet property="textField" destination="Ndp-M1-1Cd" id="TOO-YW-Cky"/>
                     </connections>

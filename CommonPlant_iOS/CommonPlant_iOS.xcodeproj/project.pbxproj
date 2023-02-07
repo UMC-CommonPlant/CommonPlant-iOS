@@ -190,7 +190,6 @@
 			children = (
 				623CBC0B298AD36700401990 /* Calendar */,
 				48958603296E4F350035C292 /* CommonPlant_iOS.entitlements */,
-				F96C9C0F297A69EF008627FA /* Model */,
 				F9C48C85296D7DD800C76863 /* Information */,
 				F9C48C84296D7DCB00C76863 /* User */,
 				F9C48C83296D7D8D00C76863 /* MyGarden */,
@@ -212,6 +211,8 @@
 		F9C48C83296D7D8D00C76863 /* MyGarden */ = {
 			isa = PBXGroup;
 			children = (
+				F9F9AD1D299270E100E39A19 /* Network */,
+				F96C9C0F297A69EF008627FA /* Model */,
 				F9C48C862972782100C76863 /* MainVC.swift */,
 				F96C9C072979A29A008627FA /* AddPlaceCollectionViewCell.swift */,
 				F96C9C082979A29A008627FA /* AddPlaceCollectionViewCell.xib */,
@@ -251,6 +252,13 @@
 				62801544297A89A500732E21 /* PlantCollectionViewCell.swift */,
 			);
 			path = Information;
+			sourceTree = "<group>";
+		};
+		F9F9AD1D299270E100E39A19 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
