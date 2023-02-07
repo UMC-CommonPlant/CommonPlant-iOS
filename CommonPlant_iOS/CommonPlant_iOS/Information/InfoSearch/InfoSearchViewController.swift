@@ -91,7 +91,7 @@ extension InfoSearchViewController: UITableViewDelegate, UITableViewDataSource{
     
     //========== 식물 정보 조회 API ===========
     func setData(name: String){
-        print("========== 식물 정보 조회 API ===========")
+        
         //accessToken으로 kakao 유저 데이터 가져오기
         let url = API.BASE_URL + "/info/searchInfo"
         let header : HTTPHeaders = [
@@ -108,22 +108,40 @@ extension InfoSearchViewController: UITableViewDelegate, UITableViewDataSource{
                     .responseJSON(completionHandler: {response in
                         
                         switch response.result{
-                        case .success(let res):
                             
-//                            print(res)
-                            do{
-                                let dataJson = try JSONSerialization.data(withJSONObject: res, options: .prettyPrinted)
-//                                let getData = try JSONDecoder().decode(InfoSearchModel.self, from: dataJson)
-                                print("========== 식물 정보 조회 API ===========")
-                                print(dataJson)
-                                self.plantInitialData.append(plantInitialModel(plantImage: UIImage(named: "plant1"), name: "test1", scientificName: "Monstera"))
-                                self.plantInitialData.append(plantInitialModel(plantImage: UIImage(named: "plant1"), name: "test2", scientificName: "Monstera"))
-                                self.plantInitialData.append(plantInitialModel(plantImage: UIImage(named: "plant1"), name: "test3", scientificName: "Monstera"))
-                                self.plantInitialData.append(plantInitialModel(plantImage: UIImage(named: "plant1"), name: "test4", scientificName: "Monstera"))
-                                self.searchTableView.reloadData()
-                            }catch{
-                                print("========== error ===========")
+                            
+                        case .success(let obj):
+                            
+//                            print(obj)
+                            print("========== 테스트ㅡ으으으 ===========")
+
+                            if let nsDictionary = obj as? NSDictionary{
+//                                print(nsDictionary)
+                                do{
+                                    let dataJson = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
+                                    let jsonData = try JSONDecoder().decode(InfoSearchModel.self, from: dataJson)
+                                    print(jsonData)
+                                }catch{
+                                    print(error.localizedDescription)
+                                }
                             }
+                            
+                            
+                            
+                            self.plantInitialData.append(plantInitialModel(plantImage: UIImage(named: "plant1"), name: "test1", scientificName: "Monstera"))
+                            self.plantInitialData.append(plantInitialModel(plantImage: UIImage(named: "plant1"), name: "test2", scientificName: "Monstera"))
+                            self.plantInitialData.append(plantInitialModel(plantImage: UIImage(named: "plant1"), name: "test3", scientificName: "Monstera"))
+                            self.plantInitialData.append(plantInitialModel(plantImage: UIImage(named: "plant1"), name: "test4", scientificName: "Monstera"))
+                            self.searchTableView.reloadData()
+//                            do{
+////                                let dataJson = try JSONSerialization.data(withJSONObject: res, options: .prettyPrinted)
+////                                let getData = try JSONDecoder().decode(InfoSearchModel.self, from: dataJson)
+//                                print("========== 식물 정보 조회 API ===========")
+////                                print(dataJson)
+//
+//                            }catch{
+//                                print("========== error ===========")
+//                            }
                             
                             break
                         case .failure(let err):
