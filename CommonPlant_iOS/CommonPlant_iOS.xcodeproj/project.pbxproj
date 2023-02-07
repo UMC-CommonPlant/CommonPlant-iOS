@@ -20,11 +20,11 @@
 		6202487129827F9500C26F9C /* InfoRecoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6202487029827F9500C26F9C /* InfoRecoViewController.swift */; };
 		6202487329827FBB00C26F9C /* InfoRecoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6202487229827FBB00C26F9C /* InfoRecoTableViewCell.swift */; };
 		623AEFEF298ED4C1007E1133 /* InfoSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623AEFEE298ED4C1007E1133 /* InfoSearchModel.swift */; };
-		623AEFF729912066007E1133 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623AEFF629912066007E1133 /* Constraints.swift */; };
 		623AEFFB2991625B007E1133 /* MyAlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623AEFFA2991625B007E1133 /* MyAlamofireManager.swift */; };
 		623AEFFD29916310007E1133 /* BaseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623AEFFC29916310007E1133 /* BaseInterceptor.swift */; };
 		623AEFFF29924182007E1133 /* MyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623AEFFE29924182007E1133 /* MyLogger.swift */; };
 		623AF001299243F2007E1133 /* MyApiStatusLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623AF000299243F2007E1133 /* MyApiStatusLogger.swift */; };
+		623AF0092992768A007E1133 /* Contraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623AF0082992768A007E1133 /* Contraint.swift */; };
 		623CBC07298AD21A00401990 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 623CBC05298AD21A00401990 /* Calendar.storyboard */; };
 		623CBC0A298AD30E00401990 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 623CBC09298AD30E00401990 /* FSCalendar */; };
 		623CBC0D298AD38700401990 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623CBC0C298AD38700401990 /* CalendarViewController.swift */; };
@@ -70,11 +70,11 @@
 		6202487029827F9500C26F9C /* InfoRecoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRecoViewController.swift; sourceTree = "<group>"; };
 		6202487229827FBB00C26F9C /* InfoRecoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRecoTableViewCell.swift; sourceTree = "<group>"; };
 		623AEFEE298ED4C1007E1133 /* InfoSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSearchModel.swift; sourceTree = "<group>"; };
-		623AEFF629912066007E1133 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		623AEFFA2991625B007E1133 /* MyAlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAlamofireManager.swift; sourceTree = "<group>"; };
 		623AEFFC29916310007E1133 /* BaseInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInterceptor.swift; sourceTree = "<group>"; };
 		623AEFFE29924182007E1133 /* MyLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLogger.swift; sourceTree = "<group>"; };
 		623AF000299243F2007E1133 /* MyApiStatusLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiStatusLogger.swift; sourceTree = "<group>"; };
+		623AF0082992768A007E1133 /* Contraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contraint.swift; sourceTree = "<group>"; };
 		623CBC06298AD21A00401990 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Calendar.storyboard; sourceTree = "<group>"; };
 		623CBC0C298AD38700401990 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		6263F8A529755ECF002B5871 /* InfoSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSearchViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +146,14 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		623AF00729927678007E1133 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				623AF0082992768A007E1133 /* Contraint.swift */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
 		623CBC0B298AD36700401990 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,7 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				F96C9C10297A6A80008627FA /* MyGardenModel.swift */,
-				623AEFF629912066007E1133 /* Constraints.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,6 +217,7 @@
 		F9C48C6E296D7AD100C76863 /* CommonPlant_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				623AF00729927678007E1133 /* util */,
 				623AEFF929916247007E1133 /* API */,
 				623CBC0B298AD36700401990 /* Calendar */,
 				48958603296E4F350035C292 /* CommonPlant_iOS.entitlements */,
@@ -377,6 +385,7 @@
 			files = (
 				623AF001299243F2007E1133 /* MyApiStatusLogger.swift in Sources */,
 				48A5EF4E2974DCBA00779443 /* LoginViewController.swift in Sources */,
+				623AF0092992768A007E1133 /* Contraint.swift in Sources */,
 				F98C813C298A7BF300682C47 /* MyPlaceTableViewCell.swift in Sources */,
 				F96C9C092979A29A008627FA /* AddPlaceCollectionViewCell.swift in Sources */,
 				623AEFFD29916310007E1133 /* BaseInterceptor.swift in Sources */,
@@ -400,7 +409,6 @@
 				F9C48C72296D7AD100C76863 /* SceneDelegate.swift in Sources */,
 				48A5EF512974DD0E00779443 /* MyPageViewController.swift in Sources */,
 				48BD658C2976350D0062E2F6 /* NicknameViewController.swift in Sources */,
-				623AEFF729912066007E1133 /* Constraints.swift in Sources */,
 				48A5EF552974E65100779443 /* StartViewController.swift in Sources */,
 				F96C9C11297A6A80008627FA /* MyGardenModel.swift in Sources */,
 				623AEFFB2991625B007E1133 /* MyAlamofireManager.swift in Sources */,
