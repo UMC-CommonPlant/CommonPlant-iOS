@@ -7,21 +7,24 @@
 
 import Foundation
 
-struct InfoSearchModel: Codable{
+// MARK: - InfoSearchModel
+struct InfoSearchModel: Codable {
     let timeStamp: String
-    let status: String
+    let status: Int
     let message: String
-    let result: [result]
+    let result: [InfoRes]
     let success: Bool
 }
-struct result: Codable{
+
+// MARK: - Result
+struct InfoRes: Codable {
     let name: String
-    let imgUrl: String
-//    let scientificName: String
-    
-//    enum CodingKeys: String, CodingKey {
-//        case name = "name"
-//        case imgUrl = "imgUrl"
-//        case sientificName = "sientific_name"
-//    }
+    let imgURL: String
+    let scientificName: String
+
+    enum CodingKeys: String, CodingKey {
+        case name
+        case imgURL = "imgUrl"
+        case scientificName = "scientific_name"
+    }
 }
