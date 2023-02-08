@@ -16,13 +16,21 @@ class InfoDetailViewController: UIViewController {
     
     @IBOutlet weak var plantImageView: UIImageView!
     @IBOutlet weak var textLabel : UILabel!
+    
+    @IBOutlet weak var scientificNameLabel: UILabel!
+    @IBOutlet weak var waterDayLabel: UILabel!
+    @IBOutlet weak var managementLabel: UILabel!
+    @IBOutlet weak var sunlightLabel: UILabel!
+    @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
+
     @IBOutlet weak var tipCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         plantDataSetting()
         setupCollectionView()
-        setData(name: textToSet)
+        setData(name: textToSet ?? "")
         // Do any additional setup after loading the view.
     }
     
@@ -43,10 +51,10 @@ class InfoDetailViewController: UIViewController {
     
     
     //tip Model
-    let tipData:[tipInitialModel] = [
-        tipInitialModel(title: "가울철 물주기", content: "흙을 촉촉하게 유지"),
-        tipInitialModel(title: "배치 장소", content: "거실 내측, 거실 창측"),
-        tipInitialModel(title: "관리하기", content: "수경은 물주기가 필요 없으나, 화분은 1-2주에 한번씩 충분히 관수한다.")
+    var tipData:[tipInitialModel] = [
+//        tipInitialModel(title: "가울철 물주기", content: "흙을 촉촉하게 유지"),
+//        tipInitialModel(title: "배치 장소", content: "거실 내측, 거실 창측"),
+//        tipInitialModel(title: "관리하기", content: "수경은 물주기가 필요 없으나, 화분은 1-2주에 한번씩 충분히 관수한다.")
     ]
     
     struct tipInitialModel{
@@ -90,31 +98,73 @@ extension InfoDetailViewController: UICollectionViewDelegate, UICollectionViewDa
 
         return cell
     }
-    
+}
+extension InfoDetailViewController{
     //========== 식물 정보 조회 API ===========
-    func setData(name: String?){
-        print("========== 식물 정보 조회 API ===========")
-        //accessToken으로 kakao 유저 데이터 가져오기
-        let url = "http://localhost:8080/hello"
-        let request = AF.request(url,
-                                 method: .get,
-//                                 parameters: ["name":"몬스테라"],
-                                 encoding: JSONEncoding.default
-//                                 headers: ["Content-Type":"application/json"]
-        )
-                        .validate()
-        print("test")
+    func setData(name: String){
         
-        request.responseDecodable(of: InfoDetailModel.self){(response) in
-                print(response)
-                guard let data = response.value else {return}
-                print(data)
+        //accessToken으로 kakao 유저 데이터 가져오기
+        let url = API.BASE_URL + "/info/getPlantInfo"
+        let header : HTTPHeaders = [
+            "Content-Type" : "application/json"
+        ]
+        let queryString : Parameters = ["name" : name]
+        
+        MyAlamofireManager.shared
+            .session
+            .request(url,method : .post, parameters: queryString, encoding: URLEncoding.queryString)
+//            .request(url,method : .post, parameters: queryString, encoding: JSONEncoding.default)
+                    .responseJSON(completionHandler: {response in
+                        
+                        switch response.result{
+                            
+                            
+                        case .success(let obj):
+                            print("========== 테스트ㅡ으으으 ===========")
 
+                            do{
+                                let dataJson = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
+                                let jsonData = try JSONDecoder().decode(InfoDetailModel.self, from: dataJson)
+                                print(jsonData.result)
+                                
+                                //데이터 넣기
+                                let url = URL(string: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwSgA1sK_eFIcJlxDsGcQrsp94H5yV9yZ6DJDwLm7xNa-vexehUfOKIaiGIK89FRlgcMA&usqp=CAU")
+                                self.plantImageView.load(url: url!)
+                                self.managementLabel.text = jsonData.result.management
+                                self.scientificNameLabel.text = jsonData.result.scientificName
+                                self.waterDayLabel.text = String(jsonData.result.waterDay) + " Day"
+                                self.sunlightLabel.text = jsonData.result.sunlight
+                                self.tempLabel.text = String(jsonData.result.tempMin)+"~"+String(jsonData.result.tempMax)+"°C"
+                                self.humidityLabel.text = jsonData.result.humidity
+                                
+                                self.tipData.append(tipInitialModel(title: "가울철 물주기", content: jsonData.result.waterAutumn))
+                                self.tipData.append(tipInitialModel(title: "배치 장소", content: jsonData.result.place))
+                                self.tipData.append(tipInitialModel(title: "관리하기", content: jsonData.result.tip))
+                                
+                                self.tipCollectionView.reloadData()
+                                
+                            }catch{
+                                print(error.localizedDescription)
+                            }
+                        
+                            break
+                        case .failure(let err):
+                            debugPrint(err)
+                            break
+                        }
+                    })
             }
-//        request.responseJSON{(response) in
-//            print(response)
-//        }
-        print("========== 식물 정보 조회 API ===========")
+}
+extension UIImageView {
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
     }
-    
 }

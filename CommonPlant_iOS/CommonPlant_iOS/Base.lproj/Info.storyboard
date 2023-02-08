@@ -177,8 +177,8 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monstera deliciosa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcX-wt-WdI">
-                                                        <rect key="frame" x="114" y="248" width="125" height="22"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcX-wt-WdI">
+                                                        <rect key="frame" x="160.66666666666666" y="248" width="31.666666666666657" height="22"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="22" id="5k4-bT-ehK"/>
                                                         </constraints>
@@ -242,8 +242,8 @@
                                                                             <constraint firstAttribute="width" constant="24" id="gRE-Lj-wb0"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYB-Wu-yqH">
-                                                                        <rect key="frame" x="32" y="2" width="40" height="20"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYB-Wu-yqH">
+                                                                        <rect key="frame" x="32" y="2" width="27.666666666666671" height="20"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="20" id="KlM-1d-wxw"/>
                                                                         </constraints>
@@ -251,8 +251,8 @@
                                                                         <color key="textColor" name="Gray6"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="물을 좋아하나 과습에 주의하세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jte-kw-uDk">
-                                                                        <rect key="frame" x="30" y="26" width="158" height="20"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jte-kw-uDk">
+                                                                        <rect key="frame" x="30" y="26" width="23.666666666666671" height="20"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="he4-jL-huI"/>
                                                                             <constraint firstAttribute="height" constant="20" id="qfx-YE-S1L"/>
@@ -284,8 +284,8 @@
                                                                             <constraint firstAttribute="width" constant="24" id="ngh-Xd-oIF"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="밝은곳을 좋아해요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atW-be-l3R">
-                                                                        <rect key="frame" x="32" y="2" width="105" height="20"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atW-be-l3R">
+                                                                        <rect key="frame" x="32" y="2" width="27.666666666666671" height="20"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="20" id="h5d-kq-gDw"/>
                                                                         </constraints>
@@ -314,8 +314,8 @@
                                                                             <constraint firstAttribute="height" constant="24" id="Q9f-kr-bBn"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16~20C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohj-r2-9jb">
-                                                                        <rect key="frame" x="32" y="2" width="45" height="20"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohj-r2-9jb">
+                                                                        <rect key="frame" x="32" y="2" width="27.666666666666671" height="20"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="20" id="F0r-dR-sR0"/>
                                                                         </constraints>
@@ -345,8 +345,8 @@
                                                                             <constraint firstAttribute="height" constant="24" id="b3v-xe-oKE"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70% 이상" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWC-cN-C9y">
-                                                                        <rect key="frame" x="32" y="2" width="56" height="20"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWC-cN-C9y">
+                                                                        <rect key="frame" x="32" y="2" width="27.666666666666671" height="20"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="20" id="8wF-Ui-iA0"/>
                                                                         </constraints>
@@ -548,9 +548,15 @@
                     <navigationItem key="navigationItem" style="editor" id="GYE-p4-v9c"/>
                     <size key="freeformSize" width="393" height="1500"/>
                     <connections>
+                        <outlet property="humidityLabel" destination="zWC-cN-C9y" id="nzz-1y-WDx"/>
+                        <outlet property="managementLabel" destination="jte-kw-uDk" id="kGp-0g-QGD"/>
                         <outlet property="plantImageView" destination="JcS-lP-AAv" id="CHH-9x-2aP"/>
+                        <outlet property="scientificNameLabel" destination="wcX-wt-WdI" id="FsD-eE-mut"/>
+                        <outlet property="sunlightLabel" destination="atW-be-l3R" id="0JY-DL-7MI"/>
+                        <outlet property="tempLabel" destination="Ohj-r2-9jb" id="vj0-de-f2V"/>
                         <outlet property="textLabel" destination="SyL-AZ-sTY" id="zLb-v4-h9i"/>
                         <outlet property="tipCollectionView" destination="r8S-g0-Gwd" id="kZV-VC-rX1"/>
+                        <outlet property="waterDayLabel" destination="eYB-Wu-yqH" id="mlP-f1-WBt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m9f-Ra-qgA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
