@@ -6,6 +6,8 @@
 //
 
 import Foundation
+
+import Foundation
 struct kakaoLogin: Codable{
     let id: Int
     let connected_at: String
@@ -29,5 +31,4 @@ struct Profile: Codable{
     let nickname: String
     let profile_image_url: String
 }
-
 

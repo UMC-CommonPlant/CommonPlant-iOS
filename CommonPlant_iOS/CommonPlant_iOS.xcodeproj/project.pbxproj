@@ -25,6 +25,8 @@
 		623AEFFF29924182007E1133 /* MyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623AEFFE29924182007E1133 /* MyLogger.swift */; };
 		623AF001299243F2007E1133 /* MyApiStatusLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623AF000299243F2007E1133 /* MyApiStatusLogger.swift */; };
 		623AF0092992768A007E1133 /* Contraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623AF0082992768A007E1133 /* Contraint.swift */; };
+		623AF00B2993B8C5007E1133 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623AF00A2993B8C5007E1133 /* APIResult.swift */; };
+		623AF00D2993C454007E1133 /* Memo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 623AF00C2993C453007E1133 /* Memo.storyboard */; };
 		623CBC07298AD21A00401990 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 623CBC05298AD21A00401990 /* Calendar.storyboard */; };
 		623CBC0A298AD30E00401990 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 623CBC09298AD30E00401990 /* FSCalendar */; };
 		623CBC0D298AD38700401990 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623CBC0C298AD38700401990 /* CalendarViewController.swift */; };
@@ -75,6 +77,8 @@
 		623AEFFE29924182007E1133 /* MyLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLogger.swift; sourceTree = "<group>"; };
 		623AF000299243F2007E1133 /* MyApiStatusLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiStatusLogger.swift; sourceTree = "<group>"; };
 		623AF0082992768A007E1133 /* Contraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contraint.swift; sourceTree = "<group>"; };
+		623AF00A2993B8C5007E1133 /* APIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
+		623AF00C2993C453007E1133 /* Memo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Memo.storyboard; sourceTree = "<group>"; };
 		623CBC06298AD21A00401990 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Calendar.storyboard; sourceTree = "<group>"; };
 		623CBC0C298AD38700401990 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		6263F8A529755ECF002B5871 /* InfoSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSearchViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				623AF0082992768A007E1133 /* Contraint.swift */,
+				623AF00A2993B8C5007E1133 /* APIResult.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 				6202486A29827E6600C26F9C /* Info.storyboard */,
 				626D081D2984022D00B1D782 /* UserProfile.storyboard */,
 				623CBC05298AD21A00401990 /* Calendar.storyboard */,
+				623AF00C2993C453007E1133 /* Memo.storyboard */,
 			);
 			path = CommonPlant_iOS;
 			sourceTree = "<group>";
@@ -370,6 +376,7 @@
 				62B9B6BD298257AE00500155 /* Login.storyboard in Resources */,
 				F96C9C0E2979A2A9008627FA /* AddPlantCollectionViewCell.xib in Resources */,
 				F99AC6E92983D30B0009E3DE /* MyGarden.storyboard in Resources */,
+				623AF00D2993C454007E1133 /* Memo.storyboard in Resources */,
 				F9C48C79296D7AD200C76863 /* Assets.xcassets in Resources */,
 				623CBC07298AD21A00401990 /* Calendar.storyboard in Resources */,
 				F9C48C77296D7AD100C76863 /* Main.storyboard in Resources */,
@@ -410,6 +417,7 @@
 				48A5EF512974DD0E00779443 /* MyPageViewController.swift in Sources */,
 				48BD658C2976350D0062E2F6 /* NicknameViewController.swift in Sources */,
 				48A5EF552974E65100779443 /* StartViewController.swift in Sources */,
+				623AF00B2993B8C5007E1133 /* APIResult.swift in Sources */,
 				F96C9C11297A6A80008627FA /* MyGardenModel.swift in Sources */,
 				623AEFFB2991625B007E1133 /* MyAlamofireManager.swift in Sources */,
 				F96C9C1D297AEE04008627FA /* TabBarController.swift in Sources */,
