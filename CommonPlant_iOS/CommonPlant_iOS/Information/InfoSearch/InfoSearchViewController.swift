@@ -97,8 +97,6 @@ extension InfoSearchViewController: UITableViewDelegate, UITableViewDataSource{
         let header : HTTPHeaders = [
             "Content-Type" : "application/json"
         ]
-        
-        
         let queryString : Parameters = ["name" : name]
         
         MyAlamofireManager.shared
@@ -111,39 +109,33 @@ extension InfoSearchViewController: UITableViewDelegate, UITableViewDataSource{
                             
                             
                         case .success(let obj):
-                            
-//                            print(obj)
                             print("========== 테스트ㅡ으으으 ===========")
 
-                            if let nsDictionary = obj as? NSDictionary{
-//                                print(nsDictionary)
-                                do{
-                                    let dataJson = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
-                                    let jsonData = try JSONDecoder().decode(InfoSearchModel.self, from: dataJson)
-                                    print(jsonData)
-                                    
-                                    for i in jsonData.result{
-                                        print(i.name)
-                                        self.plantInitialData.append(plantInitialModel(plantImage: UIImage(named: "plant1"), name: i.name, scientificName: i.scientificName))
+                            do{
+                                let dataJson = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
+                                let jsonData = try JSONDecoder().decode(InfoSearchModel.self, from: dataJson)
+                                print(jsonData)
+                                
+                                DispatchQueue.global().async { [weak self] in
+                                for i in jsonData.result{
+                                    print(i.name)
+                                        
+                                    var imgUrl = URL(string: "https://raw.githubusercontent.com/JiSeobKim/jiseobkim.github.io/master/static/img/_posts/2018-07-21/img24.png")
+                                    var tempImg : UIImage
+                                    if let ImageData = try? Data(contentsOf: URL(string: url)!) {
+                                        tempImg = UIImage(data: ImageData)!
+                                        self?.plantInitialData.append(plantInitialModel(plantImage: UIImage(named: "plant1"), name: i.name, scientificName: i.scientificName))
                                     }
-                                    self.searchTableView.reloadData()
                                     
-                                }catch{
-                                    print(error.localizedDescription)
                                 }
+                                    print(self?.plantInitialData)
                             }
-                            
-                            
-//                            do{
-////                                let dataJson = try JSONSerialization.data(withJSONObject: res, options: .prettyPrinted)
-////                                let getData = try JSONDecoder().decode(InfoSearchModel.self, from: dataJson)
-//                                print("========== 식물 정보 조회 API ===========")
-////                                print(dataJson)
-//
-//                            }catch{
-//                                print("========== error ===========")
-//                            }
-                            
+                            self.searchTableView.reloadData()
+                                
+                            }catch{
+                                print(error.localizedDescription)
+                            }
+                        
                             break
                         case .failure(let err):
                             debugPrint(err)
