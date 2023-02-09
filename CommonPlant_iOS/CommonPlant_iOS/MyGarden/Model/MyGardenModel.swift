@@ -11,11 +11,11 @@ struct MyPlace: Codable {
     let timeStamp: String
     let status: Int
     let message: String
-    let result: Result
+    let result: MyPlaceResult
     let success: Bool
 }
 
-struct Result: Codable {
+struct MyPlaceResult: Codable {
     let name, address, highestTemp, minimumTemp: String
     let humidity: String
     let isOwner: Bool

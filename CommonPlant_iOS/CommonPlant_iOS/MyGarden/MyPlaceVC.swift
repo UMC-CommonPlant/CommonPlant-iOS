@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MyPlaceVC: UIViewController {
 
@@ -13,7 +14,7 @@ class MyPlaceVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     
-    var myPlantArray = ["몬테", "카스테라"]
+    var myPlaceArray: [MyPlaceResult] = []
     var dDayArray = ["D-3","D-5"]
     
     
@@ -24,6 +25,7 @@ class MyPlaceVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchData()
         tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 24))
         
         navigationController?.isNavigationBarHidden = false
@@ -44,7 +46,7 @@ extension MyPlaceVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return myPlantArray.count
+        return myPlaceArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,7 +59,7 @@ extension MyPlaceVC: UITableViewDelegate, UITableViewDataSource {
             cell.dDayLabel.textColor = UIColor(named: "Gray4")
         }
         
-        cell.myPlantNameLabel.text = myPlantArray[indexPath.row]
+       // cell.myPlantNameLabel.text = myPlantArray[indexPath.row]
         cell.dDayLabel.text = dDayArray[indexPath.row]
         cell.selectionStyle = .none
         
@@ -74,5 +76,16 @@ extension MyPlaceVC: UITableViewDelegate, UITableViewDataSource {
         
         cell.plantImg.layer.cornerRadius = 16
         return cell
+    }
+}
+
+extension MyPlaceVC {
+    func fetchData() {
+        AF.request(API.BASE_URL + "/place/MvGHuk")
+            .validate(statusCode: 200..<300)
+            .responseDecodable(of: MyPlaceResult.self) { response in
+                guard let data = response.value else { return }
+                print(data)
+            }
     }
 }

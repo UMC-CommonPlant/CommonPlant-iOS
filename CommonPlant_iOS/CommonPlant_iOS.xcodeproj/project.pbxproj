@@ -50,6 +50,7 @@
 		F98C813E298A7BF300682C47 /* MyPlantCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C813A298A7BF300682C47 /* MyPlantCollectionViewCell.swift */; };
 		F98C813F298A7BF300682C47 /* MyPlantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C813B298A7BF300682C47 /* MyPlantVC.swift */; };
 		F99AC6E92983D30B0009E3DE /* MyGarden.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F99AC6E82983D30B0009E3DE /* MyGarden.storyboard */; };
+		F99CE5B02992A9AC006E0972 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99CE5AF2992A9AC006E0972 /* BaseService.swift */; };
 		F9C48C70296D7AD100C76863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C48C6F296D7AD100C76863 /* AppDelegate.swift */; };
 		F9C48C72296D7AD100C76863 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C48C71296D7AD100C76863 /* SceneDelegate.swift */; };
 		F9C48C77296D7AD100C76863 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9C48C75296D7AD100C76863 /* Main.storyboard */; };
@@ -99,6 +100,7 @@
 		F98C813A298A7BF300682C47 /* MyPlantCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlantCollectionViewCell.swift; sourceTree = "<group>"; };
 		F98C813B298A7BF300682C47 /* MyPlantVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlantVC.swift; sourceTree = "<group>"; };
 		F99AC6E82983D30B0009E3DE /* MyGarden.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyGarden.storyboard; sourceTree = "<group>"; };
+		F99CE5AF2992A9AC006E0972 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		F9C48C6C296D7AD100C76863 /* CommonPlant_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommonPlant_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C48C6F296D7AD100C76863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9C48C71296D7AD100C76863 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 		F9F9AD1D299270E100E39A19 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				F99CE5AF2992A9AC006E0972 /* BaseService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				623AEFFD29916310007E1133 /* BaseInterceptor.swift in Sources */,
 				6202486E29827F2400C26F9C /* TipCollectionViewCell.swift in Sources */,
 				6263F8A629755ECF002B5871 /* InfoSearchViewController.swift in Sources */,
+				F99CE5B02992A9AC006E0972 /* BaseService.swift in Sources */,
 				F98C813E298A7BF300682C47 /* MyPlantCollectionViewCell.swift in Sources */,
 				F96C9C0D2979A2A9008627FA /* AddPlantCollectionViewCell.swift in Sources */,
 				F98C813D298A7BF300682C47 /* MyPlaceVC.swift in Sources */,
