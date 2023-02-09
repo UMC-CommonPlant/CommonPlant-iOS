@@ -72,7 +72,6 @@ extension LoginViewController{
                         
                         var userToken: String! = jsonData.result ?? ""
                         UserDefaults.standard.set(userToken!, forKey: "token")
-                        
                         //가져다쓰기~~
                         var token = UserDefaults.standard.object(forKey: "token") as! String ?? ""
                     }catch{
@@ -88,14 +87,19 @@ extension LoginViewController{
                     break
                 case .failure(let err):
                     //email과 함께 회원가입 화면으로 넘어가야함
-                    
-//                    switch loginForm{
-//                    case "kakao": print("kakaoLogin")
-////                        var email = getEmailByKakao(accessToken: accessToken)
-//                        break
-//                    case "naver": print("naverLogin")
-//                        break
-//                    }
+                    switch loginForm{
+                    case "kakao":
+                        print("kakaoLogin")
+//                        guard self.getEmailByKakao(accessToken: accessToken) != nil else { return }
+                        self.getEmailByKakao(accessToken: accessToken)
+                        break
+                    case "naver":
+                        print("naverLogin")
+                        break
+                    default:
+                        print("다른 플랫폼임")
+                        break
+                    }
                     let storyboard = UIStoryboard(name: "Login", bundle: nil)
                     guard let vc = storyboard.instantiateViewController(withIdentifier: "JoinView") as? NicknameViewController  else { return }
                     vc.modalPresentationStyle = .fullScreen
@@ -107,29 +111,32 @@ extension LoginViewController{
         
     }
     
-//    func getEmailByKakao(accessToken: String) -> String{
-//        let url = "https://kapi.kakao.com/v2/user/me"
-//        let request = AF.request(url,
-//                                 method: .get,
-//                                 parameters: nil,
-//                                 encoding: JSONEncoding.default,
-//                                 headers: ["Content-Type":"application/x-www-form-urlencoded;charset=utf-8", "Authorization":"Bearer "+accessToken])
-//            .validate(statusCode: 200..<300) //요청에 대한 유효성 검사 200<=300 상태만 허용
-//            .responseJSON { (response) in
-//                switch response.result{
-//                case .success(let obj):
-//                    do{
-//                        let dataJson = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
-//                        let getData = try JSONDecoder().decode(kakaoLogin.self, from: dataJson)
-//                        let email: String = getData.properties.Account.email as! String
-//                        print("kakaologin success ===============")
+    //MARK: 회원가입 화면으로 넘어가기
+    func getEmailByKakao(accessToken: String){
+        let url = "https://kapi.kakao.com/v2/user/me"
+        let request = AF.request(url,
+                                 method: .get,
+                                 parameters: nil,
+                                 encoding: JSONEncoding.default,
+                                 headers: ["Content-Type":"application/x-www-form-urlencoded;charset=utf-8", "Authorization":"Bearer "+accessToken])
+            .validate(statusCode: 200..<300) //요청에 대한 유효성 검사 200<=300 상태만 허용
+            .responseJSON { (response) in
+                switch response.result{
+                case .success(let obj):
+                    do{
+                        let dataJson = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
+//                        let jsonData = try JSONDecoder().decode(kakaoLogin.self, from: dataJson)
+//                        let email: String = jsonData.properties.Account.email as! String
+                        print("kakaologin success ===============")
 //                        print(email)
 //                        return email
-//                    }catch{
-//                        print(error.localizedDescription)
-//                    }
-//                default : return
-//                }
-//            }
-//    }
+                        return
+                    }catch{
+                        print(error.localizedDescription)
+                        return
+                    }
+                default : return
+                }
+            }
+    }
 }
