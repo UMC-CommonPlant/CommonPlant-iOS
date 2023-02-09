@@ -115,7 +115,6 @@ extension InfoSearchViewController: UITableViewDelegate, UITableViewDataSource{
                                 let jsonData = try JSONDecoder().decode(InfoSearchModel.self, from: dataJson)
                                 print(jsonData)
                                 
-//                                DispatchQueue.global().async { [weak self] in
                                 for i in jsonData.result{
                                     print(i.name)
                                     self.plantInitialData.append(plantInitialModel(imgUrl: i.imgURL, name: i.name, scientificName: i.scientificName))
