@@ -100,7 +100,7 @@
         <!--Nickname View Controller-->
         <scene sceneID="tKO-Db-2xs">
             <objects>
-                <viewController storyboardIdentifier="1-2-2 Login" id="la1-7y-QaV" customClass="NicknameViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JoinView" id="la1-7y-QaV" customClass="NicknameViewController" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s2c-LI-ela">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -389,8 +389,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="59U-mP-IgN"/>
-        <segue reference="Xsk-v6-Bcb"/>
+        <segue reference="zee-85-KTF"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="backBtn" width="56" height="56.333332061767578"/>

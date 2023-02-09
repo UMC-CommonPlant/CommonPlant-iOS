@@ -19,6 +19,9 @@ class NicknameViewController: UIViewController {
     @IBOutlet weak var nextTermsButton: UIButton!
     @IBOutlet weak var nextTermsDoneButton: UIButton!
     
+    var textToEmail: String?
+    var textToLoginPlatform: String?
+    
     var cnt = 0
     
     var TBtn: Bool = false
