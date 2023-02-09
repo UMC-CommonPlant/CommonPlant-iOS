@@ -117,8 +117,6 @@ extension InfoDetailViewController{
                     .responseJSON(completionHandler: {response in
                         
                         switch response.result{
-                            
-                            
                         case .success(let obj):
                             print("========== 테스트ㅡ으으으 ===========")
 
@@ -128,7 +126,7 @@ extension InfoDetailViewController{
                                 print(jsonData.result)
                                 
                                 //데이터 넣기
-                                let url = URL(string: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwSgA1sK_eFIcJlxDsGcQrsp94H5yV9yZ6DJDwLm7xNa-vexehUfOKIaiGIK89FRlgcMA&usqp=CAU")
+                                let url = URL(string: jsonData.result.imgURL)
                                 self.plantImageView.load(url: url!)
                                 self.managementLabel.text = jsonData.result.management
                                 self.scientificNameLabel.text = jsonData.result.scientificName

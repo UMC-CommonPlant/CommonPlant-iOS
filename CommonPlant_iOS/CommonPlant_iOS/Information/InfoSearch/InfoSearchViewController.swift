@@ -102,8 +102,7 @@ extension InfoSearchViewController: UITableViewDelegate, UITableViewDataSource{
         MyAlamofireManager.shared
             .session
             .request(url,method : .post, parameters: queryString, encoding: URLEncoding.queryString)
-//            .request(url,method : .post, parameters: queryString, encoding: JSONEncoding.default)
-                    .responseJSON(completionHandler: {response in
+            .responseJSON(completionHandler: {response in
                         
                         switch response.result{
                             
