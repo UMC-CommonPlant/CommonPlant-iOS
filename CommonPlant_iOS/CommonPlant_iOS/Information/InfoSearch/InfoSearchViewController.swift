@@ -57,7 +57,7 @@ class InfoSearchViewController: UIViewController{
     
     //셀의 각 요소를 들고 있는 구조체
     struct plantInitialModel{
-        let plantImage : UIImage?
+        let imgUrl : String
         let name : String
         let scientificName : String
     }
@@ -80,7 +80,7 @@ extension InfoSearchViewController: UITableViewDelegate, UITableViewDataSource{
         
         let item = plantInitialData[indexPath.row]
         cell.setupData(
-            item.plantImage,
+            item.imgUrl,
             item.name,
             item.scientificName
         )
@@ -102,8 +102,7 @@ extension InfoSearchViewController: UITableViewDelegate, UITableViewDataSource{
         MyAlamofireManager.shared
             .session
             .request(url,method : .post, parameters: queryString, encoding: URLEncoding.queryString)
-//            .request(url,method : .post, parameters: queryString, encoding: JSONEncoding.default)
-                    .responseJSON(completionHandler: {response in
+            .responseJSON(completionHandler: {response in
                         
                         switch response.result{
                             
@@ -116,21 +115,14 @@ extension InfoSearchViewController: UITableViewDelegate, UITableViewDataSource{
                                 let jsonData = try JSONDecoder().decode(InfoSearchModel.self, from: dataJson)
                                 print(jsonData)
                                 
-                                DispatchQueue.global().async { [weak self] in
+//                                DispatchQueue.global().async { [weak self] in
                                 for i in jsonData.result{
                                     print(i.name)
-                                        
-                                    var imgUrl = URL(string: "https://raw.githubusercontent.com/JiSeobKim/jiseobkim.github.io/master/static/img/_posts/2018-07-21/img24.png")
-                                    var tempImg : UIImage
-                                    if let ImageData = try? Data(contentsOf: URL(string: url)!) {
-                                        tempImg = UIImage(data: ImageData)!
-                                        self?.plantInitialData.append(plantInitialModel(plantImage: UIImage(named: "plant1"), name: i.name, scientificName: i.scientificName))
-                                    }
+                                    self.plantInitialData.append(plantInitialModel(imgUrl: i.imgURL, name: i.name, scientificName: i.scientificName))
                                     
                                 }
-                                    print(self?.plantInitialData)
-                            }
-                            self.searchTableView.reloadData()
+                                
+                                self.searchTableView.reloadData()
                                 
                             }catch{
                                 print(error.localizedDescription)

@@ -25,15 +25,19 @@ class InfoSearchTableViewCell: UITableViewCell {
     }
     
     func setupData(
-        _ plantImage: UIImage?,
+        _ imgUrl: String!,
         _ name: String,
         _ scientificName: String
     ){
-        if let plantImage = plantImage{
-            plantImageView.image = plantImage
-        }else{
-            plantImageView.image = UIImage(named: "InfoPlantImg")
-        }
+        
+        print("================이미지 적립중")
+
+        guard let imageURL = imgUrl else { return }
+        //URL에는 한글, 띄어쓰기 적용 안됨
+//        let url = URL(string: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwSgA1sK_eFIcJlxDsGcQrsp94H5yV9yZ6DJDwLm7xNa-vexehUfOKIaiGIK89FRlgcMA&usqp=CAU")
+        let url = URL(string: imgUrl)
+        plantImageView.load(url: url!)
+  
         
         nameLabel.text = name
         
@@ -42,3 +46,4 @@ class InfoSearchTableViewCell: UITableViewCell {
     }
 
 }
+
