@@ -80,12 +80,22 @@ extension MyPlaceVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension MyPlaceVC {
-    func fetchData() {
-        AF.request(API.BASE_URL + "/place/MvGHuk")
-            .validate(statusCode: 200..<300)
-            .responseDecodable(of: MyPlaceResult.self) { response in
-                guard let data = response.value else { return }
-                print(data)
-            }
+    func fetchData(){
+          //  var accessToken: String = UserDefaults.standard.object(forKey: "token") as! String ?? ""
+            var accessToken: String =  "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwMWVkYTg2Yy05ZWMxLTFmOGMtOTQyMC04YTIzMThjNDdlNjUiLCJpYXQiOjE2NzU5MzQzMTYsImV4cCI6MTY3NTk1OTUxNn0.A2Hle7DLxU3lJQKYSNIdxKX24lmhxdQW7SNtqDq9pGU"
+            print(accessToken)
+            let url = API.BASE_URL + "/place/INVZph"
+            let header : HTTPHeaders = [
+                        "Content-Type": "application/json",
+                        "X-AUTH-TOKEN": accessToken
+                    ]
+            MyAlamofireManager.shared
+                .session
+                .request(url,method : .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
+                .responseJSON(completionHandler: {response in
+                    print(response)
+                })
+
+        }
     }
-}
+
