@@ -40,11 +40,11 @@ class MainVC: UIViewController {
         setUpGradient()
         addPlaceCollectionView.delegate = self
         addPlaceCollectionView.dataSource = self
-        addPlaceCollectionView.register(UINib(nibName: "AddPlaceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AddPlaceCollectionViewCell")
+        addPlaceCollectionView.register(UINib(nibName: "MainPlaceCVC", bundle: nil), forCellWithReuseIdentifier: "MainPlaceCVC")
         
         addPlantCollectionView.delegate = self
         addPlantCollectionView.dataSource = self
-        addPlantCollectionView.register(UINib(nibName: "AddPlantCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AddPlantCollectionViewCell")
+        addPlantCollectionView.register(UINib(nibName: "MainPlantCVC", bundle: nil), forCellWithReuseIdentifier: "MainPlantCVC")
     }
     
     func setUpGradient() {
@@ -90,12 +90,12 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == addPlaceCollectionView {
-            guard let placeCell = addPlaceCollectionView.dequeueReusableCell(withReuseIdentifier: "AddPlaceCollectionViewCell", for: indexPath) as? MainPlaceCVC else { return UICollectionViewCell() }
+            guard let placeCell = addPlaceCollectionView.dequeueReusableCell(withReuseIdentifier: "MainPlaceCVC", for: indexPath) as? MainPlaceCVC else { return UICollectionViewCell() }
             placeCell.addPlaceImg.image = placeImgArray[indexPath.row]
             placeCell.placeLabel.text = placeLabel[indexPath.row]
                 return placeCell
         } else {
-            guard let plantCell = addPlantCollectionView.dequeueReusableCell(withReuseIdentifier: "AddPlantCollectionViewCell", for: indexPath) as? MainPlantCVC else { return UICollectionViewCell() }
+            guard let plantCell = addPlantCollectionView.dequeueReusableCell(withReuseIdentifier: "MainPlantCVC", for: indexPath) as? MainPlantCVC else { return UICollectionViewCell() }
             plantCell.addPlantImg.image = plantImgArray[indexPath.row]
             plantCell.myPlantLabel.text = "My Plant"
             return plantCell

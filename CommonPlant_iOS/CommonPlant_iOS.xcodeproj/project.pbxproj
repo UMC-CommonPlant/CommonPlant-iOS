@@ -287,10 +287,10 @@
 			isa = PBXGroup;
 			children = (
 				F99AC6E82983D30B0009E3DE /* MyGarden.storyboard */,
+				F96C9C0F297A69EF008627FA /* Model */,
 				F9451CE329978727008AB847 /* MyPlant */,
 				F9451CE2299786F9008AB847 /* MyPlace */,
 				F9451CE129978501008AB847 /* MainGarden */,
-				F96C9C0F297A69EF008627FA /* Model */,
 			);
 			path = MyGarden;
 			sourceTree = "<group>";
