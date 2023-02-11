@@ -168,7 +168,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddPlantCollectionViewCell" id="CmZ-xo-JvW" customClass="AddPlantCollectionViewCell" customModule="CommonPlant_iOS" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddPlantCollectionViewCell" id="CmZ-xo-JvW" customClass="MainPlantCVC" customModule="CommonPlant_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="164" height="132"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="te6-xh-s8Z">
@@ -457,7 +457,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyPlantCollectionViewCell" id="bJT-Wj-OyR" customClass="MyPlantCollectionViewCell" customModule="CommonPlant_iOS" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyPlantCollectionViewCell" id="bJT-Wj-OyR" customClass="MyPlantCVC" customModule="CommonPlant_iOS" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="3" width="250" height="174"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="h7z-q6-VVv">
@@ -894,7 +894,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyPlaceTableViewCell" rowHeight="156" id="lYm-ug-fKy" customClass="MyPlaceTableViewCell" customModule="CommonPlant_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyPlaceTableViewCell" rowHeight="156" id="lYm-ug-fKy" customClass="MyPlaceTVC" customModule="CommonPlant_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.333332061767578" width="393" height="156"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lYm-ug-fKy" id="Cvr-JD-7HE">
@@ -1479,7 +1479,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Fdn-yp-TjZ"/>
+        <segue reference="mjx-7T-l8V"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Backspace" width="20.666666030883789" height="20.666666030883789"/>
