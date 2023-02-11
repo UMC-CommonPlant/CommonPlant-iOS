@@ -40,6 +40,7 @@
 		62A2FABE2985837600CF0DAB /* InfoDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A2FABD2985837600CF0DAB /* InfoDetailModel.swift */; };
 		62A334B529746AEA007747E7 /* PlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A334B429746AEA007747E7 /* PlantTableViewCell.swift */; };
 		62B9B6BD298257AE00500155 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62B9B6BB298257AE00500155 /* Login.storyboard */; };
+		F9351E08299788E9002C79E6 /* AddPlant2ndVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9351E07299788E9002C79E6 /* AddPlant2ndVC.swift */; };
 		F96C9C092979A29A008627FA /* MainPlaceCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C9C072979A29A008627FA /* MainPlaceCVC.swift */; };
 		F96C9C0A2979A29A008627FA /* MainPlaceCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96C9C082979A29A008627FA /* MainPlaceCVC.xib */; };
 		F96C9C0D2979A2A9008627FA /* MainPlantCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C9C0B2979A2A9008627FA /* MainPlantCVC.swift */; };
@@ -92,6 +93,7 @@
 		62A2FABD2985837600CF0DAB /* InfoDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDetailModel.swift; sourceTree = "<group>"; };
 		62A334B429746AEA007747E7 /* PlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlantTableViewCell.swift; path = CommonPlant_iOS/Info/PlantTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		62B9B6BC298257AE00500155 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
+		F9351E07299788E9002C79E6 /* AddPlant2ndVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlant2ndVC.swift; sourceTree = "<group>"; };
 		F96C9C072979A29A008627FA /* MainPlaceCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPlaceCVC.swift; sourceTree = "<group>"; };
 		F96C9C082979A29A008627FA /* MainPlaceCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainPlaceCVC.xib; sourceTree = "<group>"; };
 		F96C9C0B2979A2A9008627FA /* MainPlantCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPlantCVC.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			children = (
 				F98C813A298A7BF300682C47 /* MyPlantCVC.swift */,
 				F98C813B298A7BF300682C47 /* MyPlantVC.swift */,
+				F9351E07299788E9002C79E6 /* AddPlant2ndVC.swift */,
 			);
 			path = MyPlant;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				48A5EF552974E65100779443 /* StartViewController.swift in Sources */,
 				623AF00B2993B8C5007E1133 /* APIResult.swift in Sources */,
 				F99CE5B229962630006E0972 /* MyPlantModel.swift in Sources */,
+				F9351E08299788E9002C79E6 /* AddPlant2ndVC.swift in Sources */,
 				F96C9C11297A6A80008627FA /* MyGardenModel.swift in Sources */,
 				623AEFFB2991625B007E1133 /* MyAlamofireManager.swift in Sources */,
 				F96C9C1D297AEE04008627FA /* TabBarController.swift in Sources */,
