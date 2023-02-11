@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MyPlace: Codable {
+struct MyPlaceModel: Codable {
     let timeStamp: String
     let status: Int
     let message: String
@@ -28,7 +28,7 @@ struct PlantInfoList: Codable {
     let imgURL: String
     let recentMemo: String
     let remainderDate: Int
-    let wateredDate: Date
+    let wateredDate: String
 }
 
 struct UserInfoList: Codable {

@@ -53,6 +53,7 @@
 		F98C813F298A7BF300682C47 /* MyPlantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C813B298A7BF300682C47 /* MyPlantVC.swift */; };
 		F99AC6E92983D30B0009E3DE /* MyGarden.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F99AC6E82983D30B0009E3DE /* MyGarden.storyboard */; };
 		F99CE5B02992A9AC006E0972 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99CE5AF2992A9AC006E0972 /* BaseService.swift */; };
+		F99CE5B229962630006E0972 /* MyPlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99CE5B129962630006E0972 /* MyPlantModel.swift */; };
 		F9C48C70296D7AD100C76863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C48C6F296D7AD100C76863 /* AppDelegate.swift */; };
 		F9C48C72296D7AD100C76863 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C48C71296D7AD100C76863 /* SceneDelegate.swift */; };
 		F9C48C77296D7AD100C76863 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9C48C75296D7AD100C76863 /* Main.storyboard */; };
@@ -105,6 +106,7 @@
 		F98C813B298A7BF300682C47 /* MyPlantVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlantVC.swift; sourceTree = "<group>"; };
 		F99AC6E82983D30B0009E3DE /* MyGarden.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyGarden.storyboard; sourceTree = "<group>"; };
 		F99CE5AF2992A9AC006E0972 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		F99CE5B129962630006E0972 /* MyPlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantModel.swift; sourceTree = "<group>"; };
 		F9C48C6C296D7AD100C76863 /* CommonPlant_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommonPlant_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C48C6F296D7AD100C76863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9C48C71296D7AD100C76863 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				F96C9C10297A6A80008627FA /* MyGardenModel.swift */,
+				F99CE5B129962630006E0972 /* MyPlantModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				48BD658C2976350D0062E2F6 /* NicknameViewController.swift in Sources */,
 				48A5EF552974E65100779443 /* StartViewController.swift in Sources */,
 				623AF00B2993B8C5007E1133 /* APIResult.swift in Sources */,
+				F99CE5B229962630006E0972 /* MyPlantModel.swift in Sources */,
 				F96C9C11297A6A80008627FA /* MyGardenModel.swift in Sources */,
 				623AEFFB2991625B007E1133 /* MyAlamofireManager.swift in Sources */,
 				F96C9C1D297AEE04008627FA /* TabBarController.swift in Sources */,
