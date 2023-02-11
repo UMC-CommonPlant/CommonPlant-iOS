@@ -50,7 +50,7 @@ extension MyPlaceVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyPlaceTableViewCell", for: indexPath) as! MyPlaceTableViewCell? else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyPlaceTableViewCell", for: indexPath) as! MyPlaceTVC? else {
             return UITableViewCell()
         }
         

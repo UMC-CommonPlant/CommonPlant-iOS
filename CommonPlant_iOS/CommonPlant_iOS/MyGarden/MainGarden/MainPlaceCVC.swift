@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddPlaceCollectionViewCell: UICollectionViewCell {
+class MainPlaceCVC: UICollectionViewCell {
 
     @IBOutlet weak var addPlaceImg: UIImageView!
     @IBOutlet weak var placeLabel: UILabel!

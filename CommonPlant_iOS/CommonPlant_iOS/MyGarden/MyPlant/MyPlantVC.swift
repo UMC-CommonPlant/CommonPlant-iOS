@@ -48,7 +48,7 @@ extension MyPlantVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyPlantCollectionViewCell", for: indexPath) as! MyPlantCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyPlantCollectionViewCell", for: indexPath) as! MyPlantCVC
         cell.userNameLabel.text = userNameArray[indexPath.row]
         cell.memoLabel.text = memoLabelArray[indexPath.row]
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyPlantCollectionViewCell: UICollectionViewCell {
+class MyPlantCVC: UICollectionViewCell {
     
     @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var myPlantContentView: UIView!
