@@ -112,7 +112,6 @@ extension MyPlaceVC {
                     
                 }
             })
-        
     }
 }
 

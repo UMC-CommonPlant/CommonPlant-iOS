@@ -45,9 +45,11 @@
 		F96C9C0A2979A29A008627FA /* MainPlaceCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96C9C082979A29A008627FA /* MainPlaceCVC.xib */; };
 		F96C9C0D2979A2A9008627FA /* MainPlantCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C9C0B2979A2A9008627FA /* MainPlantCVC.swift */; };
 		F96C9C0E2979A2A9008627FA /* MainPlantCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96C9C0C2979A2A9008627FA /* MainPlantCVC.xib */; };
-		F96C9C11297A6A80008627FA /* MyGardenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C9C10297A6A80008627FA /* MyGardenModel.swift */; };
+		F96C9C11297A6A80008627FA /* MyPlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C9C10297A6A80008627FA /* MyPlaceModel.swift */; };
 		F96C9C1D297AEE04008627FA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C9C1C297AEE04008627FA /* TabBarController.swift */; };
 		F96E8CAF298B9A64005E5640 /* AddPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E8CAE298B9A64005E5640 /* AddPlaceVC.swift */; };
+		F9886B432997DEBD0007B125 /* MyGardenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9886B422997DEBD0007B125 /* MyGardenModel.swift */; };
+		F9886B452997FDB10007B125 /* AddPlant2ndCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9886B442997FDB10007B125 /* AddPlant2ndCVC.swift */; };
 		F98C813C298A7BF300682C47 /* MyPlaceTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C8138298A7BF300682C47 /* MyPlaceTVC.swift */; };
 		F98C813D298A7BF300682C47 /* MyPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C8139298A7BF300682C47 /* MyPlaceVC.swift */; };
 		F98C813E298A7BF300682C47 /* MyPlantCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C813A298A7BF300682C47 /* MyPlantCVC.swift */; };
@@ -98,9 +100,11 @@
 		F96C9C082979A29A008627FA /* MainPlaceCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainPlaceCVC.xib; sourceTree = "<group>"; };
 		F96C9C0B2979A2A9008627FA /* MainPlantCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPlantCVC.swift; sourceTree = "<group>"; };
 		F96C9C0C2979A2A9008627FA /* MainPlantCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainPlantCVC.xib; sourceTree = "<group>"; };
-		F96C9C10297A6A80008627FA /* MyGardenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGardenModel.swift; sourceTree = "<group>"; };
+		F96C9C10297A6A80008627FA /* MyPlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlaceModel.swift; sourceTree = "<group>"; };
 		F96C9C1C297AEE04008627FA /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F96E8CAE298B9A64005E5640 /* AddPlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceVC.swift; sourceTree = "<group>"; };
+		F9886B422997DEBD0007B125 /* MyGardenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGardenModel.swift; sourceTree = "<group>"; };
+		F9886B442997FDB10007B125 /* AddPlant2ndCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlant2ndCVC.swift; sourceTree = "<group>"; };
 		F98C8138298A7BF300682C47 /* MyPlaceTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlaceTVC.swift; sourceTree = "<group>"; };
 		F98C8139298A7BF300682C47 /* MyPlaceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlaceVC.swift; sourceTree = "<group>"; };
 		F98C813A298A7BF300682C47 /* MyPlantCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlantCVC.swift; sourceTree = "<group>"; };
@@ -228,6 +232,7 @@
 				F98C813A298A7BF300682C47 /* MyPlantCVC.swift */,
 				F98C813B298A7BF300682C47 /* MyPlantVC.swift */,
 				F9351E07299788E9002C79E6 /* AddPlant2ndVC.swift */,
+				F9886B442997FDB10007B125 /* AddPlant2ndCVC.swift */,
 			);
 			path = MyPlant;
 			sourceTree = "<group>";
@@ -235,8 +240,9 @@
 		F96C9C0F297A69EF008627FA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F96C9C10297A6A80008627FA /* MyGardenModel.swift */,
+				F96C9C10297A6A80008627FA /* MyPlaceModel.swift */,
 				F99CE5B129962630006E0972 /* MyPlantModel.swift */,
+				F9886B422997DEBD0007B125 /* MyGardenModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -422,6 +428,7 @@
 				6263F8A629755ECF002B5871 /* InfoSearchViewController.swift in Sources */,
 				F98C813E298A7BF300682C47 /* MyPlantCVC.swift in Sources */,
 				F96C9C0D2979A2A9008627FA /* MainPlantCVC.swift in Sources */,
+				F9886B432997DEBD0007B125 /* MyGardenModel.swift in Sources */,
 				F98C813D298A7BF300682C47 /* MyPlaceVC.swift in Sources */,
 				F98C813F298A7BF300682C47 /* MyPlantVC.swift in Sources */,
 				6202487129827F9500C26F9C /* InfoRecoViewController.swift in Sources */,
@@ -442,7 +449,7 @@
 				623AF00B2993B8C5007E1133 /* APIResult.swift in Sources */,
 				F99CE5B229962630006E0972 /* MyPlantModel.swift in Sources */,
 				F9351E08299788E9002C79E6 /* AddPlant2ndVC.swift in Sources */,
-				F96C9C11297A6A80008627FA /* MyGardenModel.swift in Sources */,
+				F96C9C11297A6A80008627FA /* MyPlaceModel.swift in Sources */,
 				623AEFFB2991625B007E1133 /* MyAlamofireManager.swift in Sources */,
 				F96C9C1D297AEE04008627FA /* TabBarController.swift in Sources */,
 				62801545297A89A500732E21 /* PlantCollectionViewCell.swift in Sources */,
@@ -450,6 +457,7 @@
 				6263F8AB29783AD4002B5871 /* InfoDetailViewController.swift in Sources */,
 				F9D2643D2990E45200C3D243 /* PostcodeVC.swift in Sources */,
 				62A2FABC2985830D00CF0DAB /* kakaoLogin.swift in Sources */,
+				F9886B452997FDB10007B125 /* AddPlant2ndCVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MainVC: UIViewController {
     
@@ -35,6 +36,7 @@ class MainVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchData()
         
         navigationController?.isNavigationBarHidden = true
         setUpGradient()
@@ -67,7 +69,7 @@ class MainVC: UIViewController {
 
 
 
-    
+
 extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -84,7 +86,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         } else {
             performSegue(withIdentifier: "myGardenToMyPlant", sender: nil)
         }
-
+        
         
     }
     
@@ -93,7 +95,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             guard let placeCell = addPlaceCollectionView.dequeueReusableCell(withReuseIdentifier: "MainPlaceCVC", for: indexPath) as? MainPlaceCVC else { return UICollectionViewCell() }
             placeCell.addPlaceImg.image = placeImgArray[indexPath.row]
             placeCell.placeLabel.text = placeLabel[indexPath.row]
-                return placeCell
+            return placeCell
         } else {
             guard let plantCell = addPlantCollectionView.dequeueReusableCell(withReuseIdentifier: "MainPlantCVC", for: indexPath) as? MainPlantCVC else { return UICollectionViewCell() }
             plantCell.addPlantImg.image = plantImgArray[indexPath.row]
@@ -112,6 +114,36 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     
 }
 
-
-
+extension MainVC {
+    func fetchData(){
+        var accessToken: String = UserDefaults.standard.object(forKey: "token") as! String ?? ""
+        print(accessToken)
+        var url = API.BASE_URL + "/place/myGarden"
+        url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let header : HTTPHeaders = [
+            "Content-Type": "application/json",
+            "X-AUTH-TOKEN": accessToken
+        ]
+        MyAlamofireManager.shared
+            .session
+            .request(url,method : .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
+            .responseJSON(completionHandler: {response in
+                switch response.result {
+                case .success(let data):
+                    do {
+                        let dataJson = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+                        let jsonData = try! JSONDecoder().decode(MyGardenModel.self, from: dataJson)
+                        print("======print jsonData=========")
+                        print(jsonData)
+                        print("======printed jsonData=========")
+                        
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                case .failure(_): break
+                    
+                }
+            })
+    }
+}
 
