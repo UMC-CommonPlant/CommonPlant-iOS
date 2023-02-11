@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyPlaceTableViewCell: UITableViewCell {
+class MyPlaceTVC: UITableViewCell {
     
     @IBOutlet weak var plantImg: UIImageView!
     @IBOutlet weak var myPlaceContentView: UIView!

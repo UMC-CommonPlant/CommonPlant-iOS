@@ -90,12 +90,12 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == addPlaceCollectionView {
-            guard let placeCell = addPlaceCollectionView.dequeueReusableCell(withReuseIdentifier: "AddPlaceCollectionViewCell", for: indexPath) as? AddPlaceCollectionViewCell else { return UICollectionViewCell() }
+            guard let placeCell = addPlaceCollectionView.dequeueReusableCell(withReuseIdentifier: "AddPlaceCollectionViewCell", for: indexPath) as? MainPlaceCVC else { return UICollectionViewCell() }
             placeCell.addPlaceImg.image = placeImgArray[indexPath.row]
             placeCell.placeLabel.text = placeLabel[indexPath.row]
                 return placeCell
         } else {
-            guard let plantCell = addPlantCollectionView.dequeueReusableCell(withReuseIdentifier: "AddPlantCollectionViewCell", for: indexPath) as? AddPlantCollectionViewCell else { return UICollectionViewCell() }
+            guard let plantCell = addPlantCollectionView.dequeueReusableCell(withReuseIdentifier: "AddPlantCollectionViewCell", for: indexPath) as? MainPlantCVC else { return UICollectionViewCell() }
             plantCell.addPlantImg.image = plantImgArray[indexPath.row]
             plantCell.myPlantLabel.text = "My Plant"
             return plantCell
