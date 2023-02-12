@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MemoViewController: UIViewController {
 
@@ -17,7 +18,7 @@ class MemoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        registerXib()
+        setData(plantIdx: 4)
         setupTableView()
     }
     
@@ -28,18 +29,18 @@ class MemoViewController: UIViewController {
 //    }
     
     
-    let MemoData:[MemoModel] = [
-        MemoModel(memoImage: UIImage(named: "plant1"), userImage: UIImage(named: "plant1"), userName: "커먼플랜트", content: "오늘 잎이 좀 시들하구나 커먼아 해결책은?", createdDate: "2022.11.20"),
-        MemoModel(memoImage: nil, userImage: UIImage(named: "plant1"), userName: "커먼플랜트", content: "장마여서 물 주는 날짜를 조금 늦춤, 하지만 해는 맑구나 몬테랑 함께한 지 벌써 56일이 되었구나 요즘 잎이 갈라지니 채광이 더 드는 곳으로 자리를 옮겨야 할 것 같아.", createdDate: "2022.11.20"),
-        MemoModel(memoImage: nil, userImage: UIImage(named: "plant1"), userName: "커먼플랜트", content: "오늘 잎이 좀 시들하구나 커먼아 해결책은?", createdDate: "2022.11.20"),
-        MemoModel(memoImage: UIImage(named: "plant1"), userImage: UIImage(named: "plant1"), userName: "커먼플랜트", content: "장마여서 물 주는 날짜를 조금 늦춤, 하지만 해는 맑구나 몬테랑 함께한 지 벌써 56일이 되었구나 요즘 잎이 갈라지니 채광이 더 드는 곳으로 자리를 옮겨야 할 것 같아.", createdDate: "2022.11.20"),
-        MemoModel(memoImage: UIImage(named: "plant1"), userImage: UIImage(named: "plant1"), userName: "커먼플랜트", content: "장마여서 물 주는 날짜를 조금 늦춤, 하지만 해는 맑구나 몬테랑 함께한 지 벌써 56일이 되었구나 요즘 잎이 갈라지니 채광이 더 드는 곳으로 자리를 옮겨야 할 것 같아.", createdDate: "2022.11.20")
+    var MemoData:[MemoModel] = [
+//        MemoModel(memoImage: UIImage(named: "plant1"), userImage: UIImage(named: "plant1"), userName: "커먼플랜트", content: "오늘 잎이 좀 시들하구나 커먼아 해결책은?", createdDate: "2022.11.20"),
+//        MemoModel(memoImage: nil, userImage: UIImage(named: "plant1"), userName: "커먼플랜트", content: "장마여서 물 주는 날짜를 조금 늦춤, 하지만 해는 맑구나 몬테랑 함께한 지 벌써 56일이 되었구나 요즘 잎이 갈라지니 채광이 더 드는 곳으로 자리를 옮겨야 할 것 같아.", createdDate: "2022.11.20"),
+//        MemoModel(memoImage: nil, userImage: UIImage(named: "plant1"), userName: "커먼플랜트", content: "오늘 잎이 좀 시들하구나 커먼아 해결책은?", createdDate: "2022.11.20"),
+//        MemoModel(memoImage: UIImage(named: "plant1"), userImage: UIImage(named: "plant1"), userName: "커먼플랜트", content: "장마여서 물 주는 날짜를 조금 늦춤, 하지만 해는 맑구나 몬테랑 함께한 지 벌써 56일이 되었구나 요즘 잎이 갈라지니 채광이 더 드는 곳으로 자리를 옮겨야 할 것 같아.", createdDate: "2022.11.20"),
+//        MemoModel(memoImage: UIImage(named: "plant1"), userImage: UIImage(named: "plant1"), userName: "커먼플랜트", content: "장마여서 물 주는 날짜를 조금 늦춤, 하지만 해는 맑구나 몬테랑 함께한 지 벌써 56일이 되었구나 요즘 잎이 갈라지니 채광이 더 드는 곳으로 자리를 옮겨야 할 것 같아.", createdDate: "2022.11.20")
     ]
     
     //셀의 각 요소를 들고 있는 구조체
     struct MemoModel{
-        let memoImage : UIImage?
-        let userImage : UIImage?
+        let memoImage : String?
+        let userImage : String?
         let userName : String
         let content : String
         let createdDate : String
@@ -86,4 +87,55 @@ extension MemoViewController: UITableViewDelegate, UITableViewDataSource{
         )
         return cell
     }
+    
+    //========== 식물 정보 조회 API ===========
+    func setData(plantIdx: Int){
+        
+        //accessToken으로 kakao 유저 데이터 가져오기
+        let url = API.BASE_URL + "/plant/" + String(plantIdx) + "/memoList"
+        var token = UserDefaults.standard.object(forKey: "token") as! String ?? ""
+        let header : HTTPHeaders = [
+            "Content-Type" : "application/json",
+            "X-AUTH-TOKEN" : token
+        ]
+//        let queryString : Parameters = ["name" : name]
+        
+        MyAlamofireManager.shared
+            .session
+            .request(url,method : .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
+            .responseJSON(completionHandler: {response in
+                        
+                        switch response.result{
+                            
+                            
+                        case .success(let obj):
+                            print("========== 테스트ㅡ으으으 ===========")
+
+                            do{
+                                let dataJson = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
+                                let jsonData = try JSONDecoder().decode(MemoListModel.self, from: dataJson)
+                                print(jsonData)
+                                var cnt = 0
+                                for i in jsonData.result.memoCardDto{
+                                    var data = jsonData.result.memoCardDto[cnt][0]
+                                    self.MemoData.append(MemoModel(memoImage: data.imgURL, userImage: data.userImgURL, userName: data.userNickName, content: data.content, createdDate: data.createdAt))
+                                    cnt+=1
+                                }
+
+                                self.memoTableView.reloadData()
+
+                            }catch{
+                                print(error.localizedDescription)
+                            }
+//
+                            break
+                        case .failure(let err):
+                            debugPrint(err)
+                            break
+                        }
+                    })
+            }
+    
+    
+    
 }

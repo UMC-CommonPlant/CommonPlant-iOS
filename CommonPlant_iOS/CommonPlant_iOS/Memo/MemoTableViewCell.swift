@@ -29,14 +29,17 @@ class MemoTableViewCell: UITableViewCell {
 
     
     func setupData(
-        _ memoImage: UIImage?,
-        _ userImage: UIImage?,
+        _ memoImage: String?,
+        _ userImage: String?,
         _ userName: String,
         _ content: String,
         _ createdDate: String
     ){
         if let memoImage = memoImage{
-            memoImageView.image = memoImage
+//            memoImageView.image  = UIImage(named: "plant1")
+            print(memoImage)
+            let url = URL(string: memoImage)
+            memoImageView.load(url: url!)
             memoImageView.layer.cornerRadius = 8
         }else{
             memoImageView.isHidden = true
@@ -45,7 +48,10 @@ class MemoTableViewCell: UITableViewCell {
         }
         
         if let userImage = userImage{
-            userImageView.image = userImage
+//            userImageView.image =  UIImage(named: "plant1")
+//            print(userImage)
+            let url = URL(string: userImage)
+            userImageView.load(url: url!)
             userImageView.layer.cornerRadius = userImageView.frame.height/2
             userImageView.layer.borderWidth = 1
             userImageView.clipsToBounds = true

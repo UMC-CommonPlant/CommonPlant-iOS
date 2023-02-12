@@ -48,9 +48,6 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="loginGoogle"/>
-                                <connections>
-                                    <segue destination="rhX-Tt-a5c" kind="show" id="bRw-iP-YFs"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhw-Je-XfS">
                                 <rect key="frame" x="29" y="622" width="335" height="44"/>
@@ -389,16 +386,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ona-09-9Be" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2310.6870229007632" y="-68.309859154929583"/>
-        </scene>
-        <!--memoList-->
-        <scene sceneID="ED5-IR-NhH">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Memo" referencedIdentifier="memoList" id="rhX-Tt-a5c" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="91d-Lb-ZwD"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="In5-5l-9Wc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="624" y="120"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
