@@ -2,37 +2,34 @@
 //  MyGardenModel.swift
 //  CommonPlant_iOS
 //
-//  Created by 이예원 on 2023/01/20.
+//  Created by 이예원 on 2023/02/11.
 //
 
 import Foundation
 
-struct MyPlaceModel: Codable {
+struct MyGardenModel: Codable {
     let timeStamp: String
     let status: Int
     let message: String
-    let result: MyPlaceResult
+    let result: MyGardenResult
     let success: Bool
 }
 
-struct MyPlaceResult: Codable {
-    let name, address, highestTemp, minimumTemp: String
-    let humidity: String
-    let isOwner: Bool
-    let userInfoList: [UserInfoList]
-    let plantInfoList: [PlantInfoList]
-}
-
-struct PlantInfoList: Codable {
-    let name, nickname: String
-    let imgURL: String
-    let recentMemo: String
-    let remainderDate: Int
-    let wateredDate: String
-}
-
-struct UserInfoList: Codable {
+struct MyGardenResult: Codable {
     let nickName: String
-    let owner: Bool
-    let imgURL: String
+    let placeList: [PlaceList]
+    let plantList: [PlantList]
+}
+
+struct PlaceList: Codable {
+    let placeCode, placeName: String
+    let countUser, countPlant: Int
+    let imgURL: String?
+}
+
+struct PlantList: Codable {
+    let plantIdx: Int
+    let plantNickName, placeCode: String
+    let countUserOfPlace, remainderDate: Int
+    let imgURL: String?
 }
