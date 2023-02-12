@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 class InfoViewController: UIViewController{
 
     
@@ -27,7 +25,6 @@ class InfoViewController: UIViewController{
         setupCollectionView()
         setupTableView()
     }
-
     
     //=======collection & table 다음화면으로 데이터 넘기기=======
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -46,6 +43,7 @@ class InfoViewController: UIViewController{
             nextViewController.recoColor = cell.categoryView?.backgroundColor
             nextViewController.recoImage = cell.categoryImageView?.image
         }
+        
         //인기검색어 클릭시 info detail 화면으로 데이터 넘기기
         else{
             guard let nextViewController :InfoDetailViewController = segue.destination as? InfoDetailViewController else{
@@ -57,9 +55,6 @@ class InfoViewController: UIViewController{
             nextViewController.textToSet = cell.nameLabel?.text
         }
     }
-    
-
-
     
     //category 데이터모델
     let categoryData:[categoryInitialModel] = [
@@ -77,8 +72,6 @@ class InfoViewController: UIViewController{
         let color : UIColor?
     }
     
-
-    
     //table 데이터 모델
     let plantInitialData:[plantInitialModel] = [
         plantInitialModel(plantImage: UIImage(named: "plant1"), name: "몬스테라", scientificName: "Monstera", lastMonthCount: "지난달 107명이 검색"),
@@ -95,8 +88,7 @@ class InfoViewController: UIViewController{
         let scientificName : String
         let lastMonthCount : String
     }
-
-
+    
 }
 //MARK: =======검색 후 다음 페이지로 넘김==========
 extension InfoViewController: UITextFieldDelegate{
@@ -107,7 +99,6 @@ extension InfoViewController: UITextFieldDelegate{
     //UITextDelegate return key 이벤트 함수 -> 엔터 눌렀을 때 검색 이벤트
     func textFieldShouldReturn(_ textField : UITextField) -> Bool{
 
-        
         print("hello")
         textField.resignFirstResponder()
         
@@ -143,7 +134,6 @@ extension InfoViewController: UICollectionViewDelegate, UICollectionViewDataSour
         print("========collection view==========",width,"  ",height)
         print("========collection view bound==========",categoryCollectionView.bounds.width," ",categoryCollectionView.bounds.height)
         print("========collection==========",UIScreen.main.bounds.width,"  ",UIScreen.main.bounds.height)
-
 
         flowLayout.itemSize = CGSize(width: width, height: height)
         categoryCollectionView.collectionViewLayout = flowLayout
@@ -195,7 +185,6 @@ extension InfoViewController: UITableViewDelegate, UITableViewDataSource{
             item.scientificName,
             item.lastMonthCount
         )
-        
         
         cell.contentView.clipsToBounds = false
         
