@@ -22,6 +22,7 @@ class InfoSearchViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchInputLabel()
+        setupSearchLabel()
         self.setupTableView()
     }
 
@@ -62,7 +63,29 @@ class InfoSearchViewController: UIViewController{
         let scientificName : String
     }
 }
+//MARK: =======검색 후 다음 페이지로 넘김==========
+extension InfoSearchViewController: UITextFieldDelegate{
+    func setupSearchLabel(){
+        self.searchInputLabel.delegate = self
+    }
+    
+    //UITextDelegate return key 이벤트 함수 -> 엔터 눌렀을 때 검색 이벤트
+    func textFieldShouldReturn(_ textField : UITextField) -> Bool{
 
+        print("hello")
+        textField.resignFirstResponder()
+        
+        if textField == self.searchInputLabel {
+            self.plantInitialData.removeAll()
+            print(self.searchInputLabel.text)
+            var text: String = self.searchInputLabel.text ?? ""
+            setData(name: text)
+        }
+        print("test")
+
+        return true
+    }
+}
 //MARK: ========검색 결과 리스트 table========
 extension InfoSearchViewController: UITableViewDelegate, UITableViewDataSource{
     func setupTableView(){
