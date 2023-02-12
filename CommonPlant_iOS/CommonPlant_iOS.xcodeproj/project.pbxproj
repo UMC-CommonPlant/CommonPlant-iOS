@@ -40,6 +40,9 @@
 		62A2FABE2985837600CF0DAB /* InfoDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A2FABD2985837600CF0DAB /* InfoDetailModel.swift */; };
 		62A334B529746AEA007747E7 /* PlantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A334B429746AEA007747E7 /* PlantTableViewCell.swift */; };
 		62B9B6BD298257AE00500155 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62B9B6BB298257AE00500155 /* Login.storyboard */; };
+		62DC1057299940C400ECDE06 /* MemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DC1056299940C400ECDE06 /* MemoTableViewCell.swift */; };
+		62DC1059299940D900ECDE06 /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DC1058299940D900ECDE06 /* MemoViewController.swift */; };
+		62DC105C2999410500ECDE06 /* MemoListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DC105B2999410500ECDE06 /* MemoListModel.swift */; };
 		F9351E08299788E9002C79E6 /* AddPlant2ndVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9351E07299788E9002C79E6 /* AddPlant2ndVC.swift */; };
 		F96C9C092979A29A008627FA /* MainPlaceCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C9C072979A29A008627FA /* MainPlaceCVC.swift */; };
 		F96C9C0A2979A29A008627FA /* MainPlaceCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96C9C082979A29A008627FA /* MainPlaceCVC.xib */; };
@@ -95,6 +98,9 @@
 		62A2FABD2985837600CF0DAB /* InfoDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDetailModel.swift; sourceTree = "<group>"; };
 		62A334B429746AEA007747E7 /* PlantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlantTableViewCell.swift; path = CommonPlant_iOS/Info/PlantTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		62B9B6BC298257AE00500155 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
+		62DC1056299940C400ECDE06 /* MemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableViewCell.swift; sourceTree = "<group>"; };
+		62DC1058299940D900ECDE06 /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
+		62DC105B2999410500ECDE06 /* MemoListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListModel.swift; sourceTree = "<group>"; };
 		F9351E07299788E9002C79E6 /* AddPlant2ndVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlant2ndVC.swift; sourceTree = "<group>"; };
 		F96C9C072979A29A008627FA /* MainPlaceCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPlaceCVC.swift; sourceTree = "<group>"; };
 		F96C9C082979A29A008627FA /* MainPlaceCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainPlaceCVC.xib; sourceTree = "<group>"; };
@@ -203,6 +209,24 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		62DC10552999409500ECDE06 /* Memo */ = {
+			isa = PBXGroup;
+			children = (
+				62DC105A299940F000ECDE06 /* Model */,
+				62DC1056299940C400ECDE06 /* MemoTableViewCell.swift */,
+				62DC1058299940D900ECDE06 /* MemoViewController.swift */,
+			);
+			path = Memo;
+			sourceTree = "<group>";
+		};
+		62DC105A299940F000ECDE06 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				62DC105B2999410500ECDE06 /* MemoListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F9451CE129978501008AB847 /* MainGarden */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +290,7 @@
 		F9C48C6E296D7AD100C76863 /* CommonPlant_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				62DC10552999409500ECDE06 /* Memo */,
 				623AF00729927678007E1133 /* util */,
 				623AEFF929916247007E1133 /* API */,
 				623CBC0B298AD36700401990 /* Calendar */,
@@ -420,6 +445,7 @@
 			files = (
 				623AF001299243F2007E1133 /* MyApiStatusLogger.swift in Sources */,
 				48A5EF4E2974DCBA00779443 /* LoginViewController.swift in Sources */,
+				62DC1057299940C400ECDE06 /* MemoTableViewCell.swift in Sources */,
 				623AF0092992768A007E1133 /* Contraint.swift in Sources */,
 				F98C813C298A7BF300682C47 /* MyPlaceTVC.swift in Sources */,
 				F96C9C092979A29A008627FA /* MainPlaceCVC.swift in Sources */,
@@ -440,6 +466,7 @@
 				62A2FABE2985837600CF0DAB /* InfoDetailModel.swift in Sources */,
 				623AEFEF298ED4C1007E1133 /* InfoSearchModel.swift in Sources */,
 				6202487329827FBB00C26F9C /* InfoRecoTableViewCell.swift in Sources */,
+				62DC105C2999410500ECDE06 /* MemoListModel.swift in Sources */,
 				F96E8CAF298B9A64005E5640 /* AddPlaceVC.swift in Sources */,
 				6274C3BB296ED78C00172941 /* InfoViewController.swift in Sources */,
 				F9C48C72296D7AD100C76863 /* SceneDelegate.swift in Sources */,
@@ -449,6 +476,7 @@
 				623AF00B2993B8C5007E1133 /* APIResult.swift in Sources */,
 				F99CE5B229962630006E0972 /* MyPlantModel.swift in Sources */,
 				F9351E08299788E9002C79E6 /* AddPlant2ndVC.swift in Sources */,
+				62DC1059299940D900ECDE06 /* MemoViewController.swift in Sources */,
 				F96C9C11297A6A80008627FA /* MyPlaceModel.swift in Sources */,
 				623AEFFB2991625B007E1133 /* MyAlamofireManager.swift in Sources */,
 				F96C9C1D297AEE04008627FA /* TabBarController.swift in Sources */,

@@ -135,7 +135,30 @@ extension InfoDetailViewController{
                                 self.tempLabel.text = String(jsonData.result.tempMin)+"~"+String(jsonData.result.tempMax)+"°C"
                                 self.humidityLabel.text = jsonData.result.humidity
                                 
-                                self.tipData.append(tipInitialModel(title: "가울철 물주기", content: jsonData.result.waterAutumn))
+                                var month: String!
+                                switch jsonData.result.month{
+                                case 3,4,5:
+                                    print(jsonData.result.month)
+                                    month = "봄철 물주기"
+                                    break
+                                case 6,7,8:
+                                    print(jsonData.result.month)
+                                    month = "여름철 물주기"
+                                    break
+                                case 9,10,11:
+                                    print(jsonData.result.month)
+                                    month = "가을철 물주기"
+                                    break
+                                case 12,1,2:
+                                    print(jsonData.result.month)
+                                    month = "겨울철 물주기"
+                                    break
+                                default: break
+                                }
+                                
+                                
+                                
+                                self.tipData.append(tipInitialModel(title: month, content: jsonData.result.waterType))
                                 self.tipData.append(tipInitialModel(title: "배치 장소", content: jsonData.result.place))
                                 self.tipData.append(tipInitialModel(title: "관리하기", content: jsonData.result.tip))
                                 
