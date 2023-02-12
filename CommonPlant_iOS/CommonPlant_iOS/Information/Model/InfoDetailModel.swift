@@ -12,19 +12,19 @@ struct InfoDetailModel: Codable {
     let timeStamp: String
     let status: Int
     let message: String
-    let result: res
+    let result: InfoDetailRes
     let success: Bool
 }
 
 // MARK: - Result
-struct res: Codable {
+struct InfoDetailRes: Codable {
     let name, humidity, management, place: String
     let scientificName: String
     let waterDay: Int
     let sunlight: String
     let tempMax, tempMin: Int
-    let tip, waterSpring, waterAutumn, waterWinter: String
-    let waterSummer: String
+    let tip, waterType: String
+    let month: Int
     let imgURL: String
     let createdAt: CreatedAt
 
@@ -36,10 +36,8 @@ struct res: Codable {
         case tempMax = "temp_max"
         case tempMin = "temp_min"
         case tip
-        case waterSpring = "water_spring"
-        case waterAutumn = "water_autumn"
-        case waterWinter = "water_winter"
-        case waterSummer = "water_summer"
+        case waterType = "water_type"
+        case month
         case imgURL = "imgUrl"
         case createdAt = "created_at"
     }
