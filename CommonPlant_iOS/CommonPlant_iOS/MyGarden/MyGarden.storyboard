@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Sc-Uq-4fZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CW0-Eu-UBw">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -273,10 +273,11 @@
                     <navigationItem key="navigationItem" id="rjH-sd-sAJ"/>
                     <connections>
                         <outlet property="addPlaceBtn" destination="sdL-mE-KUr" id="Pnf-x1-lv4"/>
-                        <outlet property="addPlaceCollectionView" destination="ZXu-br-MiV" id="flc-Lb-FeS"/>
-                        <outlet property="addPlantCollectionView" destination="olN-xe-Erx" id="O2g-RO-jyM"/>
                         <outlet property="gradationView" destination="5HU-DV-GGB" id="MPn-qc-8aq"/>
+                        <outlet property="mainPlaceCollectionView" destination="ZXu-br-MiV" id="flc-Lb-FeS"/>
+                        <outlet property="mainPlantCollectionView" destination="olN-xe-Erx" id="O2g-RO-jyM"/>
                         <outlet property="requestBtn" destination="ZHv-Jh-2Ke" id="z8h-7k-zwW"/>
+                        <outlet property="userName" destination="CsD-Ml-jzN" id="Dhi-V5-FP1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GPf-qo-xdb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
