@@ -23,6 +23,7 @@ class InfoSearchViewController: UIViewController{
         super.viewDidLoad()
         setupSearchInputLabel()
         self.setupTableView()
+        setupSearchLabel()
     }
 
     func setupSearchInputLabel(){
@@ -63,6 +64,26 @@ class InfoSearchViewController: UIViewController{
     }
 }
 
+//MARK: =======검색 후 결과 불러오기==========
+extension InfoSearchViewController: UITextFieldDelegate{
+    func setupSearchLabel(){
+        self.searchInputLabel.delegate = self
+    }
+    
+    //UITextDelegate return key 이벤트 함수 -> 엔터 눌렀을 때 검색 이벤트
+    func textFieldShouldReturn(_ textField : UITextField) -> Bool{
+
+        textField.resignFirstResponder()
+        
+        if textField == self.searchInputLabel {
+            print(textField)
+            setData(name: textField.text ?? "")
+        }
+
+        return true
+    }
+}
+
 //MARK: ========검색 결과 리스트 table========
 extension InfoSearchViewController: UITableViewDelegate, UITableViewDataSource{
     func setupTableView(){
@@ -92,6 +113,7 @@ extension InfoSearchViewController: UITableViewDelegate, UITableViewDataSource{
     //========== 식물 정보 조회 API ===========
     func setData(name: String){
         
+        self.plantInitialData.removeAll()
         //accessToken으로 kakao 유저 데이터 가져오기
         let url = API.BASE_URL + "/info/searchInfo"
         let header : HTTPHeaders = [

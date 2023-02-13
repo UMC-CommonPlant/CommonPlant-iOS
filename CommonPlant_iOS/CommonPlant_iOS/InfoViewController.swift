@@ -62,7 +62,7 @@ class InfoViewController: UIViewController{
         categoryInitialModel(categoryImage: UIImage(named: "InfoCategory2"), title: "공기정화", color: UIColor(named: "infoCategoryColor2")),
         categoryInitialModel(categoryImage: UIImage(named: "InfoCategory3"), title: "초보집사", color: UIColor(named: "infoCategoryColor3")),
         categoryInitialModel(categoryImage: UIImage(named: "InfoCategory4"), title: "채광", color: UIColor(named: "infoCategoryColor4")),
-        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory5"), title: "물 좋아함", color: UIColor(named: "infoCategoryColor5")),
+        categoryInitialModel(categoryImage: UIImage(named: "InfoCategory5"), title: "물", color: UIColor(named: "infoCategoryColor5")),
         categoryInitialModel(categoryImage: UIImage(named: "InfoCategory6"), title: "인테리어", color: UIColor(named: "infoCategoryColor6")),
     ]
     
