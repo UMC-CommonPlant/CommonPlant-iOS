@@ -64,6 +64,15 @@
       }
     },
     {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/Kingfisher",
+      "state" : {
+        "revision" : "2db469112fbcfd83ff0a96c4546772d283f317f5",
+        "version" : "7.6.0"
+      }
+    },
+    {
       "identity" : "naveridlogin-sdk-ios-spm",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jaemyeong/naveridlogin-sdk-ios-spm.git",

@@ -9,7 +9,7 @@ import UIKit
 
 class MainPlaceCVC: UICollectionViewCell {
 
-    @IBOutlet weak var addPlaceImg: UIImageView!
+    @IBOutlet weak var placeImg: UIImageView!
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var placeGradationView: UIView!
     
@@ -17,7 +17,7 @@ class MainPlaceCVC: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         contentView.layer.cornerRadius = 16
-        addPlaceImg.layer.cornerRadius = 16
+        placeImg.layer.cornerRadius = 16
         placeGradationView.backgroundColor = .clear
         placeGradationView.alpha = 0.7
         

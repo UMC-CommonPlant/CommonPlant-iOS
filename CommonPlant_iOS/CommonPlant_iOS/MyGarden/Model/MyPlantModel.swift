@@ -2,7 +2,7 @@
 //  MyPlantModel.swift
 //  CommonPlant_iOS
 //
-//  Created by 이예원 on 2023/02/10.
+//  Created by 이예원 on 2023/02/11.
 //
 
 import Foundation
@@ -16,31 +16,23 @@ struct MyPlantModel: Codable {
 }
 
 struct MyPlantResult: Codable {
-    let plant: Plant
-    let memoList: MemoList
+    let name, address, highestTemp, minimumTemp: String
+    let humidity: String
+    let isOwner: Bool
+    let userInfoList: [MyPlaceUserInfoList]
+    let plantInfoList: [MyPlantInfoList]
 }
 
-struct MemoList: Codable {
-    let memoCardDto: [MemoCardDto?]
+struct MyPlantInfoList: Codable {
+    let name, nickname: String
+    let imgUrl: String
+    let recentMemo: String?
+    let remainderDate: Int
+    let wateredDate: String
 }
 
-struct MemoCardDto: Codable {
-    let memoIdx, plantIdx: Int
-    let userNickName: String
-    let userImgURL: String
-    let content: String
-    let imgURL: String
-    let createdAt: String
-}
-
-struct Plant: Codable {
-    let plantIdx: Int
-    let name, nickname, place: String
-    let imgURL: String
-    let countDate, remainderDate: Int
-    let scientificName: String
-    let waterDay: Int
-    let sunlight: String
-    let tempMin, tempMax: Int
-    let humidity, createdAt, wateredDate: String
+struct MyPlaceUserInfoList: Codable {
+    let nickName: String
+    let owner: Bool
+    let imgUrl: String
 }
