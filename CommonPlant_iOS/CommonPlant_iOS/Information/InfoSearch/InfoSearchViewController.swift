@@ -78,6 +78,8 @@ extension InfoSearchViewController: UITextFieldDelegate{
         if textField == self.searchInputLabel {
             print(textField)
             setData(name: textField.text ?? "")
+        }
+
         return true
     }
 }
