@@ -27,7 +27,6 @@ class MainVC: UIViewController {
         UIImage(named: "place4.png")
     ]
     
-    var placeLabel = ["스윗 홈_거실", "낫 스윗 회사_가든", "집_작업실", "본가_거실"]
     
     var plantImgArray = [
         UIImage(named: "plant1.png"),
@@ -41,13 +40,14 @@ class MainVC: UIViewController {
         super.viewWillAppear(animated)
         fetchData() { response in
             self.myGardenList.append(response)
-            print("============print response===========")
-            print(response)
-            print("============printed response===========")
-        }
-        setAttributes()
+            self.userName.text = self.myGardenList.first?.nickName
 
-        //print("===========\(String(describing: myGardenList.first?.nickName))============")
+            let plantImgUrl = URL(string: self.myGardenList.first?.plantList.first?.imgUrl ?? "")
+            print("==========plantImgUrl: \(plantImgUrl)=========")
+
+
+        }
+
     }
     
     override func viewDidLoad() {
@@ -64,9 +64,7 @@ class MainVC: UIViewController {
     }
     
     func setAttributes() {
-        userName.text = myGardenList.first?.nickName
-        print(userName.text)
-        print("=========\(myGardenList.first?.nickName)==============")
+        
         
         //친구요청 버튼 처리
         
@@ -94,10 +92,9 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == mainPlaceCollectionView {
-            //return placeImgArray.count
-            return myGardenList.first?.placeList.count ?? 2
+            return myGardenList.first?.placeList.count ?? 1
         } else {
-            return plantImgArray.count
+            return myGardenList.first?.plantList.count ?? 2
         }
     }
     
@@ -107,14 +104,16 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         } else {
             performSegue(withIdentifier: "myGardenToMyPlant", sender: nil)
         }
-        
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == mainPlaceCollectionView {
             guard let placeCell = mainPlaceCollectionView.dequeueReusableCell(withReuseIdentifier: "MainPlaceCVC", for: indexPath) as? MainPlaceCVC else { return UICollectionViewCell() }
-//            placeCell.addPlaceImg.image = placeImgArray[indexPath.row]
+            let placeImgUrl = URL(string: self.myGardenList.first?.placeList[indexPath.row].imgUrl ?? "https://firebasestorage.googleapis.com/v0/b/common-plant.appspot.com/o/commonPlant_plant_몬테_fSfdkw?alt=media")
+            print("***********placeImgUrl: \(placeImgUrl)***********")
+            
+    //        placeCell.addPlaceImg.load(url: placeImgUrl!)
+            
             placeCell.placeLabel.text = myGardenList.first?.placeList[indexPath.row].placeName
             
             return placeCell
@@ -155,11 +154,17 @@ extension MainVC {
                 case .success(let data):
                     do {
                         let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
-                        let myGardenData = try! JSONDecoder().decode(MyGardenModel.self, from: jsonData)
+
+                        let myGardenData = try! JSONDecoder().decode(MyGardenModel.self, from: jsonData) 
+                        print("==========myGardenData: \(myGardenData)=========")
+
+                    //    let imgUrl = URL(string: myGardenData.result.placeList.first?.imgUrl ?? "")
+                   //     print("==========imgUrl: \(imgUrl)=========")
+                        
                         self.myGardenList.append(myGardenData.result)
                         completion(myGardenData.result)
-                       // print("=======================\(self.myGardenList)======================")
-                   
+                        
+                        
                         DispatchQueue.main.async {
                             self.mainPlaceCollectionView.reloadData()
                             self.mainPlantCollectionView.reloadData()
@@ -169,8 +174,6 @@ extension MainVC {
 //                            print(jsonData)
 //                            print("======printed jsonData=========")
 //                        }
-                        
-                        
                         
                         
                     } catch {

@@ -24,12 +24,12 @@ struct MyGardenResult: Codable {
 struct PlaceList: Codable {
     let placeCode, placeName: String
     let countUser, countPlant: Int
-    let imgURL: String?
+    let imgUrl: String
 }
 
 struct PlantList: Codable {
     let plantIdx: Int
     let plantNickName, placeCode: String
     let countUserOfPlace, remainderDate: Int
-    let imgURL: String?
+    let imgUrl: String
 }
