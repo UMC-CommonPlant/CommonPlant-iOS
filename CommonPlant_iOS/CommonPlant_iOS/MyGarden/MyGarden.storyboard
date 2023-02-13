@@ -289,11 +289,11 @@
             <objects>
                 <viewController storyboardIdentifier="MyPlantVC" title="MyPlantVC" hidesBottomBarWhenPushed="YES" id="eat-J6-g9s" customClass="MyPlantVC" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AeL-zJ-uiY">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aur-OY-qdq">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="1063"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjL-5i-1Zi">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="294"/>
@@ -724,6 +724,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My plant" style="editor" id="aDB-dL-lIx"/>
+                    <size key="freeformSize" width="393" height="1200"/>
                     <connections>
                         <outlet property="memoCollectionView" destination="RZX-sC-6rr" id="4CJ-Cb-zke"/>
                         <outlet property="plantInfoView" destination="d58-6s-UoU" id="puB-Zk-d2Z"/>
@@ -731,7 +732,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cB6-FO-3rI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1105" y="-43"/>
+            <point key="canvasLocation" x="1576" y="94"/>
         </scene>
         <!--장소 등록-->
         <scene sceneID="aqu-Bq-aAd">
