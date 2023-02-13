@@ -66,7 +66,17 @@ extension InfoRecoViewController: UITableViewDelegate, UITableViewDataSource{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.recoLabel.text = self.recoText
+        switch self.recoText{
+        case "물":
+            self.recoLabel.text = "물 좋아함"
+            break
+        case "채광":
+            self.recoLabel.text = "음지식물"
+            break
+        default:
+            self.recoLabel.text = self.recoText
+        }
+//        self.recoLabel.text = self.recoText
 //        self.view.backgroundColor = UIColor(named: "infoCategoryColor1")
         self.view.backgroundColor = self.recoColor
         self.recoImageView.image = self.recoImage
