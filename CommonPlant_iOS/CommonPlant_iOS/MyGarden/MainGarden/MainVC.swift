@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import Kingfisher
 
 class MainVC: UIViewController {
     
@@ -42,8 +43,6 @@ class MainVC: UIViewController {
             self.myGardenList.append(response)
             self.userName.text = self.myGardenList.first?.nickName
 
-            let plantImgUrl = URL(string: self.myGardenList.first?.plantList.first?.imgUrl ?? "")
-            print("==========plantImgUrl: \(plantImgUrl)=========")
 
 
         }
@@ -109,18 +108,24 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == mainPlaceCollectionView {
             guard let placeCell = mainPlaceCollectionView.dequeueReusableCell(withReuseIdentifier: "MainPlaceCVC", for: indexPath) as? MainPlaceCVC else { return UICollectionViewCell() }
-            let placeImgUrl = URL(string: self.myGardenList.first?.placeList[indexPath.row].imgUrl ?? "https://firebasestorage.googleapis.com/v0/b/common-plant.appspot.com/o/commonPlant_plant_몬테_fSfdkw?alt=media")
-            print("***********placeImgUrl: \(placeImgUrl)***********")
-            
-    //        placeCell.addPlaceImg.load(url: placeImgUrl!)
-            
+
+            let placeUrl = self.myGardenList.first?.placeList[indexPath.row].imgUrl ?? ""
+            let placeImgUrl = URL(string: placeUrl)
+            placeCell.placeImg.kf.setImage(with: placeImgUrl)
             placeCell.placeLabel.text = myGardenList.first?.placeList[indexPath.row].placeName
-            
             return placeCell
         } else {
             guard let plantCell = mainPlantCollectionView.dequeueReusableCell(withReuseIdentifier: "MainPlantCVC", for: indexPath) as? MainPlantCVC else { return UICollectionViewCell() }
-//            plantCell.addPlantImg.image = plantImgArray[indexPath.row]
-//            plantCell.myPlantLabel.text = "My Plant"
+            
+            var plantUrl = self.myGardenList.first?.placeList[indexPath.row].imgUrl ?? ""
+          //  print("*********plantUrl: \(plantUrl)*************")
+            
+         //   plantUrl = plantUrl.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
+            let plantImgUrl = URL(string: plantUrl)
+          //  print("*********plantUrl: \(plantUrl)*************")
+            
+            plantCell.plantImg.kf.setImage(with: plantImgUrl)
+            plantCell.myPlantLabel.text = myGardenList.first?.plantList[indexPath.row].plantNickName
             return plantCell
         }
     }
@@ -137,7 +142,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
 
 extension MainVC {
     func fetchData(completion: @escaping (MyGardenResult) -> Void){
-        var accessToken: String = UserDefaults.standard.object(forKey: "token") as! String ?? ""
+        let accessToken: String = UserDefaults.standard.object(forKey: "token") as! String
        // let accessToken = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwMWVkYWFjMi0zNTczLTE5Y2UtYjQ3OC0zNjUyOWM3OTFiOGQiLCJpYXQiOjE2NzYxOTcwMDIsImV4cCI6MTY3NjIyMjIwMn0.LvLJBOvYrZ3i_fjDjNTgDtOpz8qQfdlbnSjfufZQhGg"
    //     print("==================accessToken: \(accessToken)===================")
         var url = API.BASE_URL + "/place/myGarden"
@@ -158,12 +163,8 @@ extension MainVC {
                         let myGardenData = try! JSONDecoder().decode(MyGardenModel.self, from: jsonData) 
                         print("==========myGardenData: \(myGardenData)=========")
 
-                    //    let imgUrl = URL(string: myGardenData.result.placeList.first?.imgUrl ?? "")
-                   //     print("==========imgUrl: \(imgUrl)=========")
-                        
                         self.myGardenList.append(myGardenData.result)
                         completion(myGardenData.result)
-                        
                         
                         DispatchQueue.main.async {
                             self.mainPlaceCollectionView.reloadData()

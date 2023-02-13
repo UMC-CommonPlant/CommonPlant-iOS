@@ -60,8 +60,8 @@
             </constraints>
             <size key="customSize" width="197" height="160"/>
             <connections>
-                <outlet property="addPlantImg" destination="7JT-Nj-cgL" id="1We-uP-aYK"/>
                 <outlet property="myPlantLabel" destination="Ttw-SY-Ah9" id="ka9-gP-nuh"/>
+                <outlet property="plantImg" destination="7JT-Nj-cgL" id="1We-uP-aYK"/>
             </connections>
             <point key="canvasLocation" x="148.09160305343511" y="35.211267605633807"/>
         </collectionViewCell>

@@ -183,7 +183,7 @@
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="164" height="132"/>
                                                 <connections>
-                                                    <outlet property="addPlantImg" destination="4i3-Qv-thJ" id="XdY-nk-d3b"/>
+                                                    <outlet property="plantImg" destination="4i3-Qv-thJ" id="XdY-nk-d3b"/>
                                                     <segue destination="eat-J6-g9s" kind="show" identifier="myGardenToMyPlant" id="Fdn-yp-TjZ"/>
                                                 </connections>
                                             </collectionViewCell>

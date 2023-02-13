@@ -9,7 +9,7 @@ import UIKit
 
 class MainPlantCVC: UICollectionViewCell {
     
-    @IBOutlet weak var addPlantImg: UIImageView!
+    @IBOutlet weak var plantImg: UIImageView!
     @IBOutlet weak var myPlantLabel: UILabel!
     
     

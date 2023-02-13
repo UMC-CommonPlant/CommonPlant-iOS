@@ -50,6 +50,7 @@
 		F96E8CAF298B9A64005E5640 /* AddPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96E8CAE298B9A64005E5640 /* AddPlaceVC.swift */; };
 		F9886B432997DEBD0007B125 /* MyGardenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9886B422997DEBD0007B125 /* MyGardenModel.swift */; };
 		F9886B452997FDB10007B125 /* AddPlant2ndCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9886B442997FDB10007B125 /* AddPlant2ndCVC.swift */; };
+		F9886B482999FE510007B125 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F9886B472999FE510007B125 /* Kingfisher */; };
 		F98C813C298A7BF300682C47 /* MyPlaceTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C8138298A7BF300682C47 /* MyPlaceTVC.swift */; };
 		F98C813D298A7BF300682C47 /* MyPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C8139298A7BF300682C47 /* MyPlaceVC.swift */; };
 		F98C813E298A7BF300682C47 /* MyPlantCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98C813A298A7BF300682C47 /* MyPlantCVC.swift */; };
@@ -127,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9886B482999FE510007B125 /* Kingfisher in Frameworks */,
 				489585FD296E4C940035C292 /* NaverThirdPartyLogin in Frameworks */,
 				489585FA296E438D0035C292 /* KakaoSDK in Frameworks */,
 				48958600296E4D280035C292 /* GoogleSignIn in Frameworks */,
@@ -348,6 +350,7 @@
 				489585FF296E4D280035C292 /* GoogleSignIn */,
 				48958601296E4D280035C292 /* GoogleSignInSwift */,
 				623CBC09298AD30E00401990 /* FSCalendar */,
+				F9886B472999FE510007B125 /* Kingfisher */,
 			);
 			productName = CommonPlant_iOS;
 			productReference = F9C48C6C296D7AD100C76863 /* CommonPlant_iOS.app */;
@@ -382,6 +385,7 @@
 				489585FB296E4C940035C292 /* XCRemoteSwiftPackageReference "naveridlogin-sdk-ios-spm" */,
 				489585FE296E4D280035C292 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				623CBC08298AD30E00401990 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				F9886B462999FE510007B125 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = F9C48C6D296D7AD100C76863 /* Products */;
 			projectDirPath = "";
@@ -761,6 +765,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		F9886B462999FE510007B125 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -788,6 +800,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 623CBC08298AD30E00401990 /* XCRemoteSwiftPackageReference "FSCalendar" */;
 			productName = FSCalendar;
+		};
+		F9886B472999FE510007B125 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F9886B462999FE510007B125 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

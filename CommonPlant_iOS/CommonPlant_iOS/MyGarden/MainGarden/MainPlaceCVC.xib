@@ -56,8 +56,8 @@
             </constraints>
             <size key="customSize" width="259" height="164"/>
             <connections>
-                <outlet property="addPlaceImg" destination="alp-VM-oXP" id="S1h-kC-ctk"/>
                 <outlet property="placeGradationView" destination="jIW-va-Qr7" id="Tnr-AV-365"/>
+                <outlet property="placeImg" destination="alp-VM-oXP" id="S1h-kC-ctk"/>
                 <outlet property="placeLabel" destination="YGw-c3-5oH" id="ih4-he-HyK"/>
             </connections>
             <point key="canvasLocation" x="225.19083969465649" y="30.281690140845072"/>
