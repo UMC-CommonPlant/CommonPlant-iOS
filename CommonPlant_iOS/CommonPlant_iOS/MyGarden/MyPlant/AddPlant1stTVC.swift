@@ -33,7 +33,6 @@ class AddPlant1stTVC: UITableViewCell {
         
         scientificNameLabel.text = scientificName
         
-        
         guard let imageURL = imgUrl else { return }
         
         //URL에는 한글, 띄어쓰기 적용 안됨

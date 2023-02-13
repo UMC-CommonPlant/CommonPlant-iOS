@@ -1503,7 +1503,7 @@
         <!--식물등록 (1/2)-->
         <scene sceneID="ftd-GY-Z41">
             <objects>
-                <viewController id="aOb-XN-Mpc" sceneMemberID="viewController">
+                <viewController id="aOb-XN-Mpc" customClass="AddPlant1stVC" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6eu-jg-x6j">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1534,7 +1534,7 @@
                                 <rect key="frame" x="0.0" y="175" width="393" height="677"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="92" id="Kwp-Op-l0Z">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="addPlantIdentifier" rowHeight="92" id="Kwp-Op-l0Z" customClass="AddPlant1stTVC" customModule="CommonPlant_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kwp-Op-l0Z" id="a7X-PS-Sgz">
@@ -1578,6 +1578,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="nameLabel" destination="gCI-5M-jng" id="IKD-1a-sPN"/>
+                                            <outlet property="plantImageView" destination="Nsf-4l-EZh" id="wTC-EC-3XU"/>
+                                            <outlet property="scientificNameLabel" destination="YWX-Nk-XpL" id="2R7-S8-Uy1"/>
                                             <segue destination="8Sc-Uq-4fZ" kind="show" id="95F-WJ-suh"/>
                                         </connections>
                                     </tableViewCell>
@@ -1602,6 +1605,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="식물등록 (1/2)" style="editor" id="OMa-RU-j7n"/>
+                    <connections>
+                        <outlet property="searchInputLabel" destination="Bx1-jc-kMq" id="1ER-85-aEu"/>
+                        <outlet property="searchTableView" destination="wVU-g0-GpF" id="rSb-iZ-bqE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIm-aG-8pN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

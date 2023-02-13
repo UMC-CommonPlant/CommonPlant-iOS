@@ -18,11 +18,12 @@ class AddPlant1stVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupSearchLabel()
+        setupTableView()
         // Do any additional setup after loading the view.
     }
     var plantData:[plantModel] = [
-        plantModel(imgUrl: "url", name: "몬스테라 델리오사", scientificName: "Monstera"),
+//        plantModel(imgUrl: "url", name: "몬스테라 델리오사", scientificName: "Monstera"),
     ]
     struct plantModel{
         let imgUrl : String
@@ -31,11 +32,32 @@ class AddPlant1stVC: UIViewController {
     }
  
 }
+
+//MARK: =======검색 후 결과 불러오기==========
+extension AddPlant1stVC: UITextFieldDelegate{
+    func setupSearchLabel(){
+        self.searchInputLabel.delegate = self
+    }
+    
+    //UITextDelegate return key 이벤트 함수 -> 엔터 눌렀을 때 검색 이벤트
+    func textFieldShouldReturn(_ textField : UITextField) -> Bool{
+
+        textField.resignFirstResponder()
+        
+        if textField == self.searchInputLabel {
+            print(textField)
+            setData(name: textField.text ?? "")
+        }
+
+        return true
+    }
+}
+
 extension AddPlant1stVC: UITableViewDelegate, UITableViewDataSource{
         func setupTableView(){
             searchTableView.delegate = self
             searchTableView.dataSource = self
-            setData(name: searchInputLabel.text ?? "")
+//            setData(name: searchInputLabel.text ?? "")
         }
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,7 +80,7 @@ extension AddPlant1stVC: UITableViewDelegate, UITableViewDataSource{
     
     
     func setData(name: String){
-        
+        self.plantData.removeAll()
         //accessToken으로 kakao 유저 데이터 가져오기
         let url = API.BASE_URL + "/info/searchInfo"
         let header : HTTPHeaders = [
@@ -85,10 +107,9 @@ extension AddPlant1stVC: UITableViewDelegate, UITableViewDataSource{
 //                                DispatchQueue.global().async { [weak self] in
                                 for i in jsonData.result{
                                     print(i.name)
-                                    self.plantData.append(plantModel(imgUrl: i.imgURL, name: i.imgURL, scientificName: i.scientificName))
-//                                    self.plantInitialData.append(plantInitialModel(imgUrl: i.imgURL, name: i.name, scientificName: i.scientificName))
-                                    
+                                    self.plantData.append(plantModel(imgUrl: i.imgURL, name: i.name, scientificName: i.scientificName))
                                 }
+                                print(self.plantData.count)
                                 
                                 self.searchTableView.reloadData()
                                 
