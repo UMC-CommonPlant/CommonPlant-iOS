@@ -44,7 +44,6 @@ class MainVC: UIViewController {
             self.userName.text = self.myGardenList.first?.nickName
 
 
-
         }
 
     }
@@ -117,14 +116,11 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         } else {
             guard let plantCell = mainPlantCollectionView.dequeueReusableCell(withReuseIdentifier: "MainPlantCVC", for: indexPath) as? MainPlantCVC else { return UICollectionViewCell() }
             
-            var plantUrl = self.myGardenList.first?.placeList[indexPath.row].imgUrl ?? ""
-          //  print("*********plantUrl: \(plantUrl)*************")
-            
-         //   plantUrl = plantUrl.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
+            let plantUrl = self.myGardenList.first?.plantList[indexPath.row].imgUrl ?? ""
+            print("*********plantUrl: \(plantUrl)*************")
             let plantImgUrl = URL(string: plantUrl)
-          //  print("*********plantUrl: \(plantUrl)*************")
-            
             plantCell.plantImg.kf.setImage(with: plantImgUrl)
+            
             plantCell.myPlantLabel.text = myGardenList.first?.plantList[indexPath.row].plantNickName
             return plantCell
         }
@@ -143,10 +139,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
 extension MainVC {
     func fetchData(completion: @escaping (MyGardenResult) -> Void){
         let accessToken: String = UserDefaults.standard.object(forKey: "token") as! String
-       // let accessToken = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwMWVkYWFjMi0zNTczLTE5Y2UtYjQ3OC0zNjUyOWM3OTFiOGQiLCJpYXQiOjE2NzYxOTcwMDIsImV4cCI6MTY3NjIyMjIwMn0.LvLJBOvYrZ3i_fjDjNTgDtOpz8qQfdlbnSjfufZQhGg"
-   //     print("==================accessToken: \(accessToken)===================")
         var url = API.BASE_URL + "/place/myGarden"
-        url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         let header : HTTPHeaders = [
             "X-AUTH-TOKEN": accessToken
         ]
@@ -161,7 +154,6 @@ extension MainVC {
                         let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
 
                         let myGardenData = try! JSONDecoder().decode(MyGardenModel.self, from: jsonData) 
-                        print("==========myGardenData: \(myGardenData)=========")
 
                         self.myGardenList.append(myGardenData.result)
                         completion(myGardenData.result)
