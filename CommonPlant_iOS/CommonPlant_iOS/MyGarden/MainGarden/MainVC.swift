@@ -9,9 +9,16 @@ import UIKit
 import Alamofire
 import Kingfisher
 
+protocol SendPlaceDataDelegate {
+    func sendPlaceData(placeCode: [String], placeImg: UIImage)
+}
+
+
 class MainVC: UIViewController {
     
-    
+    // MARK: - Properties
+    var delegate: SendPlaceDataDelegate?
+
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var requestBtn: UIButton!
     @IBOutlet weak var gradationView: UIView!
@@ -19,17 +26,19 @@ class MainVC: UIViewController {
     @IBOutlet weak var mainPlantCollectionView: UICollectionView!
     @IBOutlet weak var addPlaceBtn: UIButton!
     
+    var roadAddressInfo: String = ""
+    var mainplantIndex: Int = 0
     var myGardenList: [MyGardenResult] = []
     
+    // MARK: - Lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchData() { response in
             self.myGardenList.append(response)
             self.userName.text = self.myGardenList.first?.nickName
-
-
+            
+            
         }
-
     }
     
     override func viewDidLoad() {
@@ -46,10 +55,7 @@ class MainVC: UIViewController {
     }
     
     func setAttributes() {
-        
-        
         //친구요청 버튼 처리
-        
     }
     
     func setUpGradient() {
@@ -68,6 +74,23 @@ class MainVC: UIViewController {
         gradationView.layer.masksToBounds = true
         gradationView.layer.addSublayer(gradientLayer)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mainToMyPlace" {
+            if let vc = segue.destination as? MyPlaceVC {
+                vc.myPlaceCode = roadAddressInfo
+                print("=============vc.myPlaceCode\(vc.myPlaceCode)==============")
+            } else if segue.identifier == "mainToMyPlant" {
+                if let vc = segue.destination as? MyPlantVC {
+                    
+                   // vc.plantIndex = mainplantIndex
+                    let mainIndexString = String(mainplantIndex)
+                    vc.plantIndexString = mainIndexString
+                    print("=============vc.plantIndex\(vc.plantIndex)==============")
+                }
+            }
+        }
+    }
 }
 
 extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -82,9 +105,12 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == mainPlaceCollectionView {
-            performSegue(withIdentifier: "addPlaceToMyPlace", sender: nil)
-        } else {
-            performSegue(withIdentifier: "myGardenToMyPlant", sender: nil)
+            roadAddressInfo = (self.myGardenList.first?.placeList[indexPath.row].placeCode)!
+            performSegue(withIdentifier: "mainToMyPlace", sender: roadAddressInfo)
+        } else if collectionView == mainPlantCollectionView {
+                mainplantIndex = self.myGardenList.first?.plantList[indexPath.row].plantIdx ?? 0
+                print("========mainplantIndex: \(mainplantIndex)==========")
+                performSegue(withIdentifier: "mainToMyPlant", sender: mainplantIndex)
         }
     }
     
@@ -96,12 +122,12 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             let placeImgUrl = URL(string: placeUrl)
             placeCell.placeImg.kf.setImage(with: placeImgUrl)
             placeCell.placeLabel.text = myGardenList.first?.placeList[indexPath.row].placeName
+
             return placeCell
         } else {
             guard let plantCell = mainPlantCollectionView.dequeueReusableCell(withReuseIdentifier: "MainPlantCVC", for: indexPath) as? MainPlantCVC else { return UICollectionViewCell() }
             
             let plantUrl = self.myGardenList.first?.plantList[indexPath.row].imgUrl ?? ""
-            print("*********plantUrl: \(plantUrl)*************")
             let plantImgUrl = URL(string: plantUrl)
             plantCell.plantImg.kf.setImage(with: plantImgUrl)
             
@@ -123,7 +149,7 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
 extension MainVC {
     func fetchData(completion: @escaping (MyGardenResult) -> Void){
         let accessToken: String = UserDefaults.standard.object(forKey: "token") as! String
-        var url = API.BASE_URL + "/place/myGarden"
+        let url = API.BASE_URL + "/place/myGarden"
         let header : HTTPHeaders = [
             "X-AUTH-TOKEN": accessToken
         ]
