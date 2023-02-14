@@ -128,7 +128,7 @@ extension MyPlaceVC {
                     do {
                         let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
 
-                        let myPlaceData = try! JSONDecoder().decode(MyPlaceModel.self, from: jsonData)
+                        let myPlaceData = try JSONDecoder().decode(MyPlaceModel.self, from: jsonData)
 
                         self.myPlaceArray.append(myPlaceData.result)
                         completion(myPlaceData.result)

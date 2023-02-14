@@ -14,7 +14,7 @@ class MyPlantVC: UIViewController {
     @IBOutlet weak var plantInfoView: UIView!
   
     var plantIndexString: String = ""
-    var plantIndex: Int = 15
+    var plantIndex: Int = 17
     var myPlantList: [MyPlantResult] = []
     
     override func viewWillAppear(_ animated: Bool) {
@@ -84,7 +84,7 @@ extension MyPlantVC {
                     do {
                         let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
 
-                        let myPlantData = try! JSONDecoder().decode(MyPlantModel.self, from: jsonData)
+                        let myPlantData = try JSONDecoder().decode(MyPlantModel.self, from: jsonData)
 
                         self.myPlantList.append(myPlantData.result)
                        // print("==============myPlantData.result(myPlantData.result)==========")
