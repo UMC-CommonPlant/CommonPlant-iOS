@@ -14,9 +14,7 @@ class MyPlaceVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     
-    var myPlaceArray: [MyPlaceResult] = []
-    var dDayArray = ["D-3","D-5"]
-    
+//    var myPlaceArray: [MyPlaceResult] = []
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -25,7 +23,7 @@ class MyPlaceVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData()
+   //     fetchData(completion: <#(MyGardenResult) -> Void#>)
         tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 24))
         
         navigationController?.isNavigationBarHidden = false
@@ -46,7 +44,7 @@ extension MyPlaceVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return myPlaceArray.count
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -60,7 +58,7 @@ extension MyPlaceVC: UITableViewDelegate, UITableViewDataSource {
         }
         
         // cell.myPlantNameLabel.text = myPlantArray[indexPath.row]
-        cell.dDayLabel.text = dDayArray[indexPath.row]
+   //     cell.dDayLabel.text = dDayArray[indexPath.row]
         cell.selectionStyle = .none
         
         cell.myPlaceContentView.layer.cornerRadius = 16
@@ -80,15 +78,18 @@ extension MyPlaceVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension MyPlaceVC {
-    func fetchData(){
-        //  var accessToken: String = UserDefaults.standard.object(forKey: "token") as! String ?? ""
-        var accessToken: String =  "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwMWVkYTg2Yy05ZWMxLTFmOGMtOTQyMC04YTIzMThjNDdlNjUiLCJpYXQiOjE2NzYwMDYyMDEsImV4cCI6MTY3NjAzMTQwMX0.utfKaqaLpMfLAjyJAqU1YT1BpyOX_gAXvpIP9E3hRMA"
-        print(accessToken)
-        let url = API.BASE_URL + "/place/EmSjZs"
+
+    func fetchData(completion: @escaping (MyGardenResult) -> Void){
+        let accessToken: String = UserDefaults.standard.object(forKey: "token") as! String
+       // let accessToken = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwMWVkYWFjMi0zNTczLTE5Y2UtYjQ3OC0zNjUyOWM3OTFiOGQiLCJpYXQiOjE2NzYxOTcwMDIsImV4cCI6MTY3NjIyMjIwMn0.LvLJBOvYrZ3i_fjDjNTgDtOpz8qQfdlbnSjfufZQhGg"
+   //     print("==================accessToken: \(accessToken)===================")
+        var url = API.BASE_URL + "/place/myGarden"
+        url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         let header : HTTPHeaders = [
-            "Content-Type": "application/json",
             "X-AUTH-TOKEN": accessToken
         ]
+        
+
         MyAlamofireManager.shared
             .session
             .request(url,method : .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
@@ -96,54 +97,23 @@ extension MyPlaceVC {
                 switch response.result {
                 case .success(let data):
                     do {
-                        let dataJson = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
-                        print(dataJson)
-                        print("======printed data json =========")
-                        let jsonData = try JSONDecoder().decode(MyPlaceModel.self, from: dataJson)
 
-                        print(jsonData)
-                        print("======print jsonData=========")
+                        let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
 
+                        let myGardenData = try! JSONDecoder().decode(MyGardenModel.self, from: jsonData)
+                        print("==========myGardenData: \(myGardenData)=========")
+
+      //                  self.myGardenList.append(myGardenData.result)
+                        completion(myGardenData.result)
                         
-                    } catch {
-                        print("에러")
-                    }
-                case .failure(_): break
-                    
-                }
-            })
-    }
-}
-//
-//extension MyPlaceVC {
-//    func fetchData(completion: @escaping (MyGardenResult) -> Void){
-////        let accessToken: String = UserDefaults.standard.object(forKey: "token") as! String
-//        let accessToken = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwMWVkYWFjMi0zNTczLTE5Y2UtYjQ3OC0zNjUyOWM3OTFiOGQiLCJpYXQiOjE2NzYxOTcwMDIsImV4cCI6MTY3NjIyMjIwMn0.LvLJBOvYrZ3i_fjDjNTgDtOpz8qQfdlbnSjfufZQhGg"
-//   //     print("==================accessToken: \(accessToken)===================")
-//        var url = API.BASE_URL + "/place/myGarden"
-//        url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-//        let header : HTTPHeaders = [
-//            "X-AUTH-TOKEN": accessToken
-//        ]
-//
-//        MyAlamofireManager.shared
-//            .session
-//            .request(url,method : .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
-//            .responseJSON(completionHandler: {response in
-//                switch response.result {
-//                case .success(let data):
-//                    do {
-//                        let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
-//
-//                        let myGardenData = try! JSONDecoder().decode(MyGardenModel.self, from: jsonData)
-//                        print("==========myGardenData: \(myGardenData)=========")
-//
-//                        self.myGardenList.append(myGardenData.result)
-//                        completion(myGardenData.result)
-//
-//                        DispatchQueue.main.async {
-//                            self.mainPlaceCollectionView.reloadData()
-//                            self.mainPlantCollectionView.reloadData()
+                        DispatchQueue.main.async {
+           //                 self.mainPlaceCollectionView.reloadData()
+            //                self.mainPlantCollectionView.reloadData()
+                        }
+//                        } else {
+//                            print("======print jsonData=========")
+//                            print(jsonData)
+//                            print("======printed jsonData=========")
 //                        }
 ////                        } else {
 ////                            print("======print jsonData=========")

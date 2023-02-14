@@ -8,6 +8,13 @@
 import UIKit
 
 class AddPlant2ndCVC: UICollectionViewCell {
+    
+    
+    @IBOutlet weak var selectPlaceImg: UIImageView!
+    
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
