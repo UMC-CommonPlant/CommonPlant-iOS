@@ -23,18 +23,19 @@ class AddPlaceVC: UIViewController, SendDataDelegate {
     @IBOutlet weak var addressBtn: UIButton!
     @IBOutlet weak var currentTextCount: UILabel!
     @IBOutlet weak var addPlace1stImg: UIImageView!
+    @IBOutlet weak var nextButton: UIButton!
+    
     
     var placeImage = UIImage(named: "addPlace1stImg")
     var placeName: String = ""
     var addressRoad: String = ""
-    
+    var cnt = 0
     
     @IBAction func nextBtn(_ sender: Any) {
         print(#function)
         placeName = textField.text ?? ""
         uploadData(name: placeName, address: addressRoad, imageData: placeImage!)
         
-        print("***********placeImage: \(placeImage) ****placeName: \(placeName), **** addressRoad:\(addressRoad)******")
     }
     
     
@@ -42,7 +43,7 @@ class AddPlaceVC: UIViewController, SendDataDelegate {
         actionSheetAlert()
     }
     
-    var cnt = 0
+    
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -93,7 +94,7 @@ class AddPlaceVC: UIViewController, SendDataDelegate {
 
 extension AddPlaceVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func actionSheetAlert() {
-        let alert = UIAlertController(title: "프로필 사진 설정", message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "장소 사진 설정", message: nil, preferredStyle: .actionSheet)
         
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         
@@ -161,6 +162,7 @@ extension AddPlaceVC: UITextFieldDelegate {
     }
 }
 
+
 extension AddPlaceVC {
     func uploadData(name: String, address: String, imageData: UIImage) {
             let url = API.BASE_URL + "/place/add"
@@ -177,19 +179,33 @@ extension AddPlaceVC {
             ]
             
             AF.upload(multipartFormData: { MultipartFormData in
-                //body 추가
                 for (key, value) in parameters {
                     MultipartFormData.append("\(value)".data(using: .utf8)!, withName: key)
                 }
-                //img 추가
                 if let image = imageData.pngData() {
                     MultipartFormData.append(image, withName: "image", fileName: "test.png", mimeType: "image/png")
                 }
+                
             }, to: url, method: .post, headers: header)
-            .response{ response in
-                if let error = response.error{
+            .responseJSON { response in
+                switch response.result {
+                case .success(let data):
+                    print(data)
+                    do {
+                        let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+
+                        let myPlaceCode = try! JSONDecoder().decode(AddPlaceResult.self, from: jsonData)
+                        print("==========\(myPlaceCode)========")
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                case .failure(_):
+                    break
+                }
+                
+                if let error = response.error {
                     print(error)
-                }else{
+                } else {
                     debugPrint(response)
                 }
             }

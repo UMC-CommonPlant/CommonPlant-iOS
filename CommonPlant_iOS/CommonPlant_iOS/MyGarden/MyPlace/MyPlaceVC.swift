@@ -8,7 +8,15 @@
 import UIKit
 import Alamofire
 
-class MyPlaceVC: UIViewController {
+class MyPlaceVC: UIViewController, SendPlaceDataDelegate {
+    func sendPlaceData(placeCode: [String], placeImg: UIImage) {
+        
+    }
+    
+    func sendPlaceData() {
+        
+    }
+    
     
     @IBOutlet weak var mainTopView: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -38,7 +46,6 @@ class MyPlaceVC: UIViewController {
             self.humidityLabel.text = self.myPlaceArray.first?.humidity
         }
      
-        
         tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 24))
         
         navigationController?.isNavigationBarHidden = false
@@ -122,7 +129,6 @@ extension MyPlaceVC {
                         let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
 
                         let myPlaceData = try! JSONDecoder().decode(MyPlaceModel.self, from: jsonData)
-                        print("==========myGardenData: \(myPlaceData)=========")
 
                         self.myPlaceArray.append(myPlaceData.result)
                         completion(myPlaceData.result)

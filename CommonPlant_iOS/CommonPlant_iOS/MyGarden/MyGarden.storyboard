@@ -184,7 +184,7 @@
                                                 <size key="customSize" width="164" height="132"/>
                                                 <connections>
                                                     <outlet property="plantImg" destination="4i3-Qv-thJ" id="XdY-nk-d3b"/>
-                                                    <segue destination="eat-J6-g9s" kind="show" identifier="myGardenToMyPlant" id="Fdn-yp-TjZ"/>
+                                                    <segue destination="eat-J6-g9s" kind="show" identifier="mainToMyPlant" id="sTR-Uj-bxY"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -272,11 +272,11 @@
             <objects>
                 <viewController storyboardIdentifier="MyPlantVC" title="MyPlantVC" hidesBottomBarWhenPushed="YES" id="eat-J6-g9s" customClass="MyPlantVC" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AeL-zJ-uiY">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aur-OY-qdq">
-                                <rect key="frame" x="0.0" y="103" width="393" height="1063"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="1363"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjL-5i-1Zi">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="294"/>
@@ -707,7 +707,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My plant" style="editor" id="aDB-dL-lIx"/>
-                    <size key="freeformSize" width="393" height="1200"/>
+                    <size key="freeformSize" width="393" height="1500"/>
                     <connections>
                         <outlet property="memoCollectionView" destination="RZX-sC-6rr" id="4CJ-Cb-zke"/>
                         <outlet property="plantInfoView" destination="d58-6s-UoU" id="puB-Zk-d2Z"/>
@@ -715,7 +715,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cB6-FO-3rI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1576" y="94"/>
+            <point key="canvasLocation" x="1691" y="173"/>
         </scene>
         <!--장소 등록-->
         <scene sceneID="aqu-Bq-aAd">
@@ -812,7 +812,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="다음"/>
                                 <connections>
-                                    <action selector="nextBtn:" destination="LIB-Jl-KCr" eventType="touchUpInside" id="Sqf-03-Epr"/>
+                                    <action selector="nextBtn:" destination="LIB-Jl-KCr" eventType="touchUpInside" id="5gA-lA-RHM"/>
+                                    <segue destination="QBL-mf-za2" kind="show" id="Hpp-Lc-laC"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPl-BU-bFA">
@@ -862,6 +863,7 @@
                         <outlet property="addressBtn" destination="sH2-qU-wNI" id="x0s-Th-9jy"/>
                         <outlet property="addressBtnImg" destination="43w-fi-la9" id="ktB-gf-jYE"/>
                         <outlet property="currentTextCount" destination="ooS-mD-gzb" id="EXG-qw-nGs"/>
+                        <outlet property="nextButton" destination="ATh-7o-RrN" id="Tmi-4q-TBB"/>
                         <outlet property="roadAddress" destination="DPl-BU-bFA" id="Y7D-ox-8T0"/>
                         <outlet property="textField" destination="Ndp-M1-1Cd" id="TOO-YW-Cky"/>
                     </connections>
@@ -1184,11 +1186,11 @@
             <objects>
                 <viewController storyboardIdentifier="AddPlant2ndVC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8Sc-Uq-4fZ" customClass="AddPlant2ndVC" customModule="CommonPlant_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kIg-mQ-rSM">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggN-Sv-dQN">
-                                <rect key="frame" x="0.0" y="103" width="393" height="1063"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="1363"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iI2-cI-vJn">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="1200"/>
@@ -1410,6 +1412,9 @@
                                                             </attributedString>
                                                             <color key="baseBackgroundColor" name="SeaGreenDark2"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="registerBtn:" destination="8Sc-Uq-4fZ" eventType="touchUpInside" id="b5W-ng-Y6y"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -1477,17 +1482,21 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="식물등록 (2/2)" style="editor" id="fus-w8-mgV"/>
-                    <size key="freeformSize" width="393" height="1200"/>
+                    <size key="freeformSize" width="393" height="1500"/>
                     <connections>
+                        <outlet property="addPlantDefaultImg" destination="Coa-59-DoX" id="LoS-nI-Jdy"/>
+                        <outlet property="addPlantImgBtn" destination="Vg1-kH-ZAK" id="iQR-dh-UdQ"/>
                         <outlet property="calendar" destination="Avo-iJ-82u" id="0HB-7w-Xlx"/>
                         <outlet property="placeCollectionView" destination="GAZ-Oj-UQf" id="oEf-V7-zg0"/>
+                        <outlet property="plantNameLabel" destination="D4W-25-jly" id="ffv-JE-YPN"/>
                         <outlet property="selectDateBtn" destination="tTM-ag-6UJ" id="hMe-eT-0BX"/>
                         <outlet property="selectPlaceBtn" destination="nfv-Rj-YOY" id="dKf-XR-32i"/>
+                        <outlet property="textField" destination="APC-EH-c4a" id="O8X-Bh-NL4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j8o-en-tKd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="930.53435114503816" y="900"/>
+            <point key="canvasLocation" x="854" y="900"/>
         </scene>
         <!--식물등록 (1/2)-->
         <scene sceneID="ftd-GY-Z41">
@@ -1570,7 +1579,7 @@
                                             <outlet property="nameLabel" destination="gCI-5M-jng" id="IKD-1a-sPN"/>
                                             <outlet property="plantImageView" destination="Nsf-4l-EZh" id="wTC-EC-3XU"/>
                                             <outlet property="scientificNameLabel" destination="YWX-Nk-XpL" id="2R7-S8-Uy1"/>
-                                            <segue destination="8Sc-Uq-4fZ" kind="show" id="95F-WJ-suh"/>
+                                            <segue destination="8Sc-Uq-4fZ" kind="show" id="NUA-1A-0kz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1605,7 +1614,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Fdn-yp-TjZ"/>
+        <segue reference="Awr-N7-8dT"/>
+        <segue reference="sTR-Uj-bxY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Backspace" width="20.666666030883789" height="20.666666030883789"/>
