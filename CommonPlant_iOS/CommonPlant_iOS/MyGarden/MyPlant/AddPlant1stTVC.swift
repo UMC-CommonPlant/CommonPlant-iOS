@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class AddPlant1stTVC: UITableViewCell {
     @IBOutlet weak var plantImageView: UIImageView!
@@ -15,10 +14,13 @@ class AddPlant1stTVC: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
     }
     
     func setupData(
@@ -28,12 +30,14 @@ class AddPlant1stTVC: UITableViewCell {
     ){
         
         nameLabel.text = name
+        
         scientificNameLabel.text = scientificName
         
         guard let imageURL = imgUrl else { return }
         
         //URL에는 한글, 띄어쓰기 적용 안됨
         let url = URL(string: imgUrl)
-        plantImageView.kf.setImage(with: url)
+        plantImageView.load(url: url!)
+        
     }
 }
