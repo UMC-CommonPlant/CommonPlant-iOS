@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZNQ-Vo-UT7">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -48,9 +49,6 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="loginGoogle"/>
-                                <connections>
-                                    <segue destination="pW8-gs-1dH" kind="show" id="5I3-ux-YXT"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhw-Je-XfS">
                                 <rect key="frame" x="29" y="622" width="335" height="44"/>
@@ -60,9 +58,6 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="loginNaver"/>
-                                <connections>
-                                    <segue destination="la1-7y-QaV" kind="show" id="zee-85-KTF"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c90-HG-tYq">
                                 <rect key="frame" x="29" y="566" width="335" height="44"/>
@@ -400,19 +395,9 @@
             </objects>
             <point key="canvasLocation" x="2310.6870229007632" y="-68.309859154929583"/>
         </scene>
-        <!--memoList-->
-        <scene sceneID="yNU-Ic-HLs">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Memo" referencedIdentifier="memoList" id="pW8-gs-1dH" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="XjZ-2W-7UR"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zty-tB-26c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="605" y="138"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zee-85-KTF"/>
+        <segue reference="59U-mP-IgN"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="backBtn" width="56" height="56.333332061767578"/>

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MyPlantCVC: UICollectionViewCell {
     
@@ -20,6 +21,7 @@ class MyPlantCVC: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         contentView.layer.cornerRadius = 16
         contentView.layer.masksToBounds = true
         
@@ -37,6 +39,31 @@ class MyPlantCVC: UICollectionViewCell {
         super.layoutSubviews()
         
         layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: 16).cgPath
+    }
+    
+    
+    func setupData(
+        _ userName : String,
+        _ memo : String,
+        _ userImage : String,
+        _ plantImage : String,
+        _ date: String
+    ){
+
+        userNameLabel.text = userName
+        memoLabel.text = memo
+        dateLabel.text = date
+        
+//        var url = URL(string: userImage)
+//        userProfle.kf.setImage(with: url)
+//        print("=============="+userImage)
+
+        
+        //URL에는 한글, 띄어쓰기 적용 안됨
+        let url = URL(string: plantImage)
+        plantImg.kf.setImage(with: url)
+        plantImg.layer.cornerRadius = 16
+//        print("=============="+plantImage)
     }
     
 }

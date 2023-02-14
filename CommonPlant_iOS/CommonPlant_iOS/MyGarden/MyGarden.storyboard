@@ -427,7 +427,10 @@
                                                     <constraint firstAttribute="width" secondItem="W23-ET-ZgK" secondAttribute="height" multiplier="1:1" id="6eb-6a-nYZ"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="Backspace"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="addressBtn"/>
+                                                <connections>
+                                                    <action selector="memoBtnAction:" destination="gNH-Us-XZl" eventType="touchUpInside" id="l0z-Fe-OWT"/>
+                                                </connections>
                                             </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WFI-3a-MgC">
                                                 <rect key="frame" x="20" y="60" width="373" height="180"/>
@@ -710,8 +713,20 @@
                     <navigationItem key="navigationItem" title="My plant" style="editor" id="4Lc-Zv-LPD"/>
                     <size key="freeformSize" width="393" height="1500"/>
                     <connections>
+                        <outlet property="createdDateLabel" destination="rz6-nF-1cV" id="zX0-3Y-kSQ"/>
+                        <outlet property="humidityLabel" destination="llU-aV-EAK" id="O15-PL-U6l"/>
+                        <outlet property="manageLabel" destination="bI7-JP-zda" id="GK8-cF-AAT"/>
+                        <outlet property="meetCountLabel" destination="TRd-JY-mGv" id="IKD-5s-oVI"/>
                         <outlet property="memoCollectionView" destination="WFI-3a-MgC" id="aW2-4Q-kPc"/>
+                        <outlet property="plantImgView" destination="5oj-Lx-DLB" id="bHS-aw-0lg"/>
                         <outlet property="plantInfoView" destination="lch-MA-y69" id="X7d-b6-rf0"/>
+                        <outlet property="plantNameLabel" destination="nRk-pQ-qrm" id="d6P-Ng-vjp"/>
+                        <outlet property="plantScLabel" destination="6hs-cL-nqL" id="6Tg-Av-7d1"/>
+                        <outlet property="sunLabel" destination="0z9-gF-gfQ" id="3R3-xC-agn"/>
+                        <outlet property="tempLabel" destination="XnS-kL-lev" id="fte-KM-4B5"/>
+                        <outlet property="updatedDateLabel" destination="iv8-rX-096" id="lnc-qv-z3Q"/>
+                        <outlet property="waterDayLabel" destination="DUd-Fl-hdb" id="Mzf-s5-pQb"/>
+                        <outlet property="wateredLabel" destination="4a0-Ui-Usj" id="WTk-vf-SlZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ek1-mO-tWc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -919,7 +934,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일주일에 2번 물주는 거 잊지 않기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbu-H2-CYP">
-                                                    <rect key="frame" x="174" y="56" width="157.33333333333337" height="16"/>
+                                                    <rect key="frame" x="174" y="56" width="179" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="JkC-Sw-wrD"/>
                                                     </constraints>
@@ -973,6 +988,7 @@
                                                 <constraint firstItem="vbu-H2-CYP" firstAttribute="top" secondItem="H95-0e-XNE" secondAttribute="bottom" constant="4" id="ZjV-Zk-wbm"/>
                                                 <constraint firstAttribute="trailing" secondItem="5oT-Pn-MID" secondAttribute="trailing" constant="12" id="bda-8f-VCs"/>
                                                 <constraint firstAttribute="bottom" secondItem="5oT-Pn-MID" secondAttribute="bottom" constant="10" id="x6h-AX-Mbx"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="vbu-H2-CYP" secondAttribute="trailing" constant="20" id="xh8-L9-68g"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1615,11 +1631,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="73l-4L-OWb"/>
+        <segue reference="C0i-zj-rbr"/>
         <segue reference="UD7-mm-IXG"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="Backspace" width="20.666666030883789" height="20.666666030883789"/>
         <image name="InfoCategory4" width="24" height="24.333333969116211"/>
         <image name="InfoCategory5" width="24" height="24.333333969116211"/>
         <image name="InfoDetailHumidity" width="24.333333969116211" height="24"/>

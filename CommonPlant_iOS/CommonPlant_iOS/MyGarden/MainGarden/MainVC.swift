@@ -76,19 +76,13 @@ class MainVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "mainToMyPlace" {
-            if let vc = segue.destination as? MyPlaceVC {
-                vc.myPlaceCode = roadAddressInfo
-                print("=============vc.myPlaceCode\(vc.myPlaceCode)==============")
-            } else if segue.identifier == "mainToMyPlant" {
-                if let vc = segue.destination as? MyPlantVC {
-                    
-                   // vc.plantIndex = mainplantIndex
-                    let mainIndexString = String(mainplantIndex)
-                    vc.plantIndexString = mainIndexString
-                    print("=============vc.plantIndex\(vc.plantIndex)==============")
-                }
-            }
+        
+        if let vc = segue.destination as? MyPlaceVC {
+            vc.myPlaceCode = roadAddressInfo
+            print("=============vc.myPlaceCode\(vc.myPlaceCode)==============")
+        }else if let plantvc = segue.destination as? MyPlantVC{
+            plantvc.plantIndex = mainplantIndex
+            print("=============vc.plantIndex\(plantvc.plantIndex)==============")
         }
     }
 }

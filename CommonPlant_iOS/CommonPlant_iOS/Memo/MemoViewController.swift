@@ -14,11 +14,13 @@ class MemoViewController: UIViewController {
     var memoIdentifier: String = "memoListCell"
 //    var memoReuseIdentifier: String = "memoReuseIdentifier"
     
+    var plantToInt: Int = 4
+    
     @IBOutlet weak var memoTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setData(plantIdx: 4)
+        setData(plantIdx: plantToInt)
         setupTableView()
     }
     

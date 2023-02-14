@@ -60,6 +60,7 @@ class MyPlaceVC: UIViewController, SendPlaceDataDelegate {
         mainTopView.layer.shadowRadius = 7
         mainTopView.layer.shadowPath = UIBezierPath(rect: CGRect(x: 0, y: 199, width: mainTopView.bounds.width, height: 5)).cgPath
     }
+    
 }
 
 extension MyPlaceVC: UITableViewDelegate, UITableViewDataSource {
@@ -128,7 +129,7 @@ extension MyPlaceVC {
                     do {
                         let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
 
-                        let myPlaceData = try JSONDecoder().decode(MyPlaceModel.self, from: jsonData)
+                        let myPlaceData = try! JSONDecoder().decode(MyPlaceModel.self, from: jsonData)
 
                         self.myPlaceArray.append(myPlaceData.result)
                         completion(myPlaceData.result)

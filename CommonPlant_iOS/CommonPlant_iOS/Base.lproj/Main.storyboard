@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sNX-Ys-wFS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o5v-Fj-yKg">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -13,10 +13,10 @@
         <!--myGarden-->
         <scene sceneID="ZXe-8W-gRG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oSa-p9-n4d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="MyGarden" referencedIdentifier="myGarden" id="TgA-GP-5Cc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" selectedImage="tabBarItem:XcR-da-TEP:selectedImage" id="XcR-da-TEP"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oSa-p9-n4d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="-128"/>
         </scene>
@@ -171,6 +171,9 @@
                             <constraint firstItem="ngG-5a-0dY" firstAttribute="top" secondItem="Afx-Sh-HjI" secondAttribute="top" id="tmT-gb-pvk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="startBtn" destination="Wfl-Qf-OY8" id="PrH-wO-cOJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hwE-FP-1fv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
