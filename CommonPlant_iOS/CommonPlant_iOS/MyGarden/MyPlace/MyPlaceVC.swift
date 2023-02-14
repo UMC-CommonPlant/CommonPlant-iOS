@@ -114,51 +114,51 @@ extension MyPlaceVC {
             })
     }
 }
-
-extension MyPlaceVC {
-    func fetchData(completion: @escaping (MyGardenResult) -> Void){
-        let accessToken: String = UserDefaults.standard.object(forKey: "token") as! String
-       // let accessToken = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwMWVkYWFjMi0zNTczLTE5Y2UtYjQ3OC0zNjUyOWM3OTFiOGQiLCJpYXQiOjE2NzYxOTcwMDIsImV4cCI6MTY3NjIyMjIwMn0.LvLJBOvYrZ3i_fjDjNTgDtOpz8qQfdlbnSjfufZQhGg"
-   //     print("==================accessToken: \(accessToken)===================")
-        var url = API.BASE_URL + "/place/myGarden"
-        url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-        let header : HTTPHeaders = [
-            "X-AUTH-TOKEN": accessToken
-        ]
-        
-        MyAlamofireManager.shared
-            .session
-            .request(url,method : .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
-            .responseJSON(completionHandler: {response in
-                switch response.result {
-                case .success(let data):
-                    do {
-                        let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
-
-                        let myGardenData = try! JSONDecoder().decode(MyGardenModel.self, from: jsonData)
-                        print("==========myGardenData: \(myGardenData)=========")
-
-                        self.myGardenList.append(myGardenData.result)
-                        completion(myGardenData.result)
-                        
-                        DispatchQueue.main.async {
-                            self.mainPlaceCollectionView.reloadData()
-                            self.mainPlantCollectionView.reloadData()
-                        }
-//                        } else {
-//                            print("======print jsonData=========")
-//                            print(jsonData)
-//                            print("======printed jsonData=========")
+//
+//extension MyPlaceVC {
+//    func fetchData(completion: @escaping (MyGardenResult) -> Void){
+////        let accessToken: String = UserDefaults.standard.object(forKey: "token") as! String
+//        let accessToken = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwMWVkYWFjMi0zNTczLTE5Y2UtYjQ3OC0zNjUyOWM3OTFiOGQiLCJpYXQiOjE2NzYxOTcwMDIsImV4cCI6MTY3NjIyMjIwMn0.LvLJBOvYrZ3i_fjDjNTgDtOpz8qQfdlbnSjfufZQhGg"
+//   //     print("==================accessToken: \(accessToken)===================")
+//        var url = API.BASE_URL + "/place/myGarden"
+//        url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+//        let header : HTTPHeaders = [
+//            "X-AUTH-TOKEN": accessToken
+//        ]
+//
+//        MyAlamofireManager.shared
+//            .session
+//            .request(url,method : .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
+//            .responseJSON(completionHandler: {response in
+//                switch response.result {
+//                case .success(let data):
+//                    do {
+//                        let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+//
+//                        let myGardenData = try! JSONDecoder().decode(MyGardenModel.self, from: jsonData)
+//                        print("==========myGardenData: \(myGardenData)=========")
+//
+//                        self.myGardenList.append(myGardenData.result)
+//                        completion(myGardenData.result)
+//
+//                        DispatchQueue.main.async {
+//                            self.mainPlaceCollectionView.reloadData()
+//                            self.mainPlantCollectionView.reloadData()
 //                        }
-                        
-                        
-                    } catch {
-                        print(error.localizedDescription)
-                    }
-                case .failure(_): break
-                }
-            })
-    }
-}
-
-
+////                        } else {
+////                            print("======print jsonData=========")
+////                            print(jsonData)
+////                            print("======printed jsonData=========")
+////                        }
+//
+//
+//                    } catch {
+//                        print(error.localizedDescription)
+//                    }
+//                case .failure(_): break
+//                }
+//            })
+//    }
+//}
+//
+//
