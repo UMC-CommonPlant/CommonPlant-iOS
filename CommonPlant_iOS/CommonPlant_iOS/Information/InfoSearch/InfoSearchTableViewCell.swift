@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class InfoSearchTableViewCell: UITableViewCell {
     
@@ -35,13 +36,13 @@ class InfoSearchTableViewCell: UITableViewCell {
         guard let imageURL = imgUrl else { return }
         //URL에는 한글, 띄어쓰기 적용 안됨
         let url = URL(string: imgUrl)
-        plantImageView.load(url: url!)
-  
+//        plantImageView.load(url: url!)
+        plantImageView.kf.setImage(with: url)
+        plantImageView.layer.cornerRadius = 16
         
         nameLabel.text = name
         
         scientificNameLabel.text = scientificName
-        
     }
 
 }

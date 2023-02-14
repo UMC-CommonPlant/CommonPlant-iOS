@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import Kingfisher
 
 
 class InfoDetailViewController: UIViewController {
@@ -127,7 +128,8 @@ extension InfoDetailViewController{
                                 
                                 //데이터 넣기
                                 let url = URL(string: jsonData.result.imgURL)
-                                self.plantImageView.load(url: url!)
+//                                self.plantImageView.load(url: url!)
+                                self.plantImageView.kf.setImage(with: url)
                                 self.managementLabel.text = jsonData.result.management
                                 self.scientificNameLabel.text = jsonData.result.scientificName
                                 self.waterDayLabel.text = String(jsonData.result.waterDay) + " Day"
@@ -176,16 +178,16 @@ extension InfoDetailViewController{
                     })
             }
 }
-extension UIImageView {
-    func load(url: URL) {
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.image = image
-                    }
-                }
-            }
-        }
-    }
-}
+//extension UIImageView {
+//    func load(url: URL) {
+//        DispatchQueue.global().async { [weak self] in
+//            if let data = try? Data(contentsOf: url) {
+//                if let image = UIImage(data: data) {
+//                    DispatchQueue.main.async {
+//                        self?.image = image
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}

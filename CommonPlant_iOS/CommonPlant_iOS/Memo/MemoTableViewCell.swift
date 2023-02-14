@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MemoTableViewCell: UITableViewCell {
     
@@ -39,7 +40,8 @@ class MemoTableViewCell: UITableViewCell {
 //            memoImageView.image  = UIImage(named: "plant1")
             print(memoImage)
             let url = URL(string: memoImage)
-            memoImageView.load(url: url!)
+//            memoImageView.load(url: url!)
+            memoImageView.kf.setImage(with: url)
             memoImageView.layer.cornerRadius = 8
         }else{
             memoImageView.isHidden = true
@@ -51,7 +53,8 @@ class MemoTableViewCell: UITableViewCell {
 //            userImageView.image =  UIImage(named: "plant1")
 //            print(userImage)
             let url = URL(string: userImage)
-            userImageView.load(url: url!)
+//            userImageView.load(url: url!)
+            userImageView.kf.setImage(with: url)
             userImageView.layer.cornerRadius = userImageView.frame.height/2
             userImageView.layer.borderWidth = 1
             userImageView.clipsToBounds = true

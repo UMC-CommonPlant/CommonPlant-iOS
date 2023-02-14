@@ -209,20 +209,18 @@ extension InfoViewController: UITableViewDelegate, UITableViewDataSource{
                         
                         switch response.result{
                             
-                            
                         case .success(let obj):
+                            
                             print("========== 테스트ㅡ으으으 ===========")
-
+                            
                             do{
                                 let dataJson = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
                                 let jsonData = try JSONDecoder().decode(InfoPopularSearchModel.self, from: dataJson)
                                 print(jsonData)
                                 
-//                                DispatchQueue.global().async { [weak self] in
-                                for i in 0...5{
+                                for i in 0...4{
                                     var data = jsonData.result[i]
                                     self.plantInitialData.append(plantInitialModel(plantImage: data.imgURL, name: data.name, scientificName: data.scientificName, lastMonthCount: String(data.searchedNumber)+"명이 검색"))
-                                    
                                 }
                                 
                                 self.popularTableView.reloadData()

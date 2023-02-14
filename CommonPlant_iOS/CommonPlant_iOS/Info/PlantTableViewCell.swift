@@ -75,7 +75,8 @@ class PlantTableViewCell: UITableViewCell {
         guard let plantImage = plantImage else { return }
         //URL에는 한글, 띄어쓰기 적용 안됨
         let url = URL(string: plantImage)
-        plantImageView.load(url: url!)
+//        plantImageView.load(url: url!)
+        plantImageView.kf.setImage(with: url)
         plantImageView.layer.cornerRadius = 16
 //        print("=============="+plantImage)
     }
