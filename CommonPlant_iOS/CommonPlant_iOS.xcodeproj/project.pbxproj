@@ -47,6 +47,7 @@
 		62DC10602999DEF200ECDE06 /* AddPlant1stTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DC105F2999DEF200ECDE06 /* AddPlant1stTVC.swift */; };
 		62DC1062299A47AA00ECDE06 /* InfoPopularSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DC1061299A47AA00ECDE06 /* InfoPopularSearchModel.swift */; };
 		62DC1064299BEC4400ECDE06 /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DC1063299BEC4400ECDE06 /* UserProfileModel.swift */; };
+		62DC1068299C18B600ECDE06 /* AddPlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DC1067299C18B600ECDE06 /* AddPlaceModel.swift */; };
 		F9351E08299788E9002C79E6 /* AddPlant2ndVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9351E07299788E9002C79E6 /* AddPlant2ndVC.swift */; };
 		F96C9C092979A29A008627FA /* MainPlaceCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C9C072979A29A008627FA /* MainPlaceCVC.swift */; };
 		F96C9C0A2979A29A008627FA /* MainPlaceCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96C9C082979A29A008627FA /* MainPlaceCVC.xib */; };
@@ -110,6 +111,7 @@
 		62DC105F2999DEF200ECDE06 /* AddPlant1stTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlant1stTVC.swift; sourceTree = "<group>"; };
 		62DC1061299A47AA00ECDE06 /* InfoPopularSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPopularSearchModel.swift; sourceTree = "<group>"; };
 		62DC1063299BEC4400ECDE06 /* UserProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
+		62DC1067299C18B600ECDE06 /* AddPlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceModel.swift; sourceTree = "<group>"; };
 		F9351E07299788E9002C79E6 /* AddPlant2ndVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlant2ndVC.swift; sourceTree = "<group>"; };
 		F96C9C072979A29A008627FA /* MainPlaceCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPlaceCVC.swift; sourceTree = "<group>"; };
 		F96C9C082979A29A008627FA /* MainPlaceCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainPlaceCVC.xib; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				F96C9C10297A6A80008627FA /* MyPlaceModel.swift */,
 				F99CE5B129962630006E0972 /* MyPlantModel.swift */,
 				F9886B422997DEBD0007B125 /* MyGardenModel.swift */,
+				62DC1067299C18B600ECDE06 /* AddPlaceModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				6263F8AB29783AD4002B5871 /* InfoDetailViewController.swift in Sources */,
 				F9D2643D2990E45200C3D243 /* PostcodeVC.swift in Sources */,
 				62A2FABC2985830D00CF0DAB /* kakaoLogin.swift in Sources */,
+				62DC1068299C18B600ECDE06 /* AddPlaceModel.swift in Sources */,
 				F9886B452997FDB10007B125 /* AddPlant2ndCVC.swift in Sources */,
 				62DC1064299BEC4400ECDE06 /* UserProfileModel.swift in Sources */,
 			);
