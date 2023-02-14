@@ -21,22 +21,6 @@ class MainVC: UIViewController {
     
     var myGardenList: [MyGardenResult] = []
     
-    var placeImgArray = [
-        UIImage(named: "place1.png"),
-        UIImage(named: "place2.png"),
-        UIImage(named: "place3.png"),
-        UIImage(named: "place4.png")
-    ]
-    
-    
-    var plantImgArray = [
-        UIImage(named: "plant1.png"),
-        UIImage(named: "plant2.png"),
-        UIImage(named: "plant3.png"),
-        UIImage(named: "plant4.png"),
-        UIImage(named: "plant5.png")
-    ]
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchData() { response in
@@ -162,13 +146,6 @@ extension MainVC {
                             self.mainPlaceCollectionView.reloadData()
                             self.mainPlantCollectionView.reloadData()
                         }
-//                        } else {
-//                            print("======print jsonData=========")
-//                            print(jsonData)
-//                            print("======printed jsonData=========")
-//                        }
-                        
-                        
                     } catch {
                         print(error.localizedDescription)
                     }

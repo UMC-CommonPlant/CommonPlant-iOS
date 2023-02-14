@@ -14,9 +14,18 @@ class AddPlant2ndVC: UIViewController {
     @IBOutlet weak var selectDateBtn: UIButton!
     @IBOutlet weak var calendar: UIDatePicker!
     
+    
+    
+    
+    @IBAction func didTapSelectPlaceBtn(_ sender: Any) {
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        placeCollectionView.delegate = self
+        placeCollectionView.dataSource = self
     }
 
 }
@@ -28,7 +37,7 @@ extension AddPlant2ndVC: UICollectionViewDelegate, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             guard let cell = placeCollectionView.dequeueReusableCell(withReuseIdentifier: "AddPlant2ndCVC", for: indexPath) as? AddPlant2ndCVC else { return UICollectionViewCell() }
-
+        
             return cell
     }
     
