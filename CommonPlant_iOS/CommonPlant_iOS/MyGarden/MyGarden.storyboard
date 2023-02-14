@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LIB-Jl-KCr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CW0-Eu-UBw">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -136,7 +136,7 @@
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="250" height="156"/>
                                                 <connections>
-                                                    <segue destination="QBL-mf-za2" kind="show" identifier="addPlaceToMyPlace" id="Awr-N7-8dT"/>
+                                                    <segue destination="QBL-mf-za2" kind="show" identifier="mainToMyPlace" id="Awr-N7-8dT"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -907,7 +907,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="156"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plant2" translatesAutoresizingMaskIntoConstraints="NO" id="f36-YC-Rla">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plant2" translatesAutoresizingMaskIntoConstraints="NO" id="f36-YC-Rla">
                                                     <rect key="frame" x="30" y="14" width="136" height="128"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="108" id="Hzv-vh-310"/>
@@ -992,11 +992,14 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="dDayLabel" destination="Wj0-6t-dV9" id="oVR-h3-Qmh"/>
                                             <outlet property="myPlaceContentView" destination="Cvr-JD-7HE" id="hYZ-um-TMa"/>
+                                            <outlet property="myPlaceMemo" destination="6IK-pq-hLQ" id="Wpd-yN-IxU"/>
                                             <outlet property="myPlantNameLabel" destination="yIe-UQ-AKF" id="hbw-ie-wXR"/>
+                                            <outlet property="myPlantNicknameLabel" destination="gqJ-4E-g2X" id="Rqq-ph-WeF"/>
                                             <outlet property="plantImg" destination="f36-YC-Rla" id="HMI-Yk-gHS"/>
+                                            <outlet property="remainderDateLabel" destination="Wj0-6t-dV9" id="uYy-HJ-pUg"/>
                                             <outlet property="waterBtn" destination="Ak1-uU-M4x" id="vhW-Mg-Gvt"/>
+                                            <outlet property="wateredDateLabel" destination="jWG-v5-Izb" id="deV-og-Y0j"/>
                                             <segue destination="eat-J6-g9s" kind="show" id="mjx-7T-l8V"/>
                                         </connections>
                                     </tableViewCell>
@@ -1161,8 +1164,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="My Place" style="editor" id="IrF-cj-2Jl"/>
                     <connections>
+                        <outlet property="humidityLabel" destination="ZRW-Wv-Fgy" id="HBT-zO-Gjl"/>
                         <outlet property="mainTopView" destination="iCl-SL-AJj" id="Pjq-rB-WCR"/>
+                        <outlet property="myPlaceNameLabel" destination="44a-82-s5A" id="g9f-Ts-syi"/>
+                        <outlet property="myPlaceRoadLabel" destination="MpJ-Jz-cRf" id="7hz-Aa-Tso"/>
                         <outlet property="tableView" destination="V8U-cJ-7jF" id="LUx-RJ-3hx"/>
+                        <outlet property="tempLabel" destination="h8p-8W-Jnj" id="sKC-dt-JoD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y8h-7V-Zro" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1615,7 +1622,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Fdn-yp-TjZ"/>
+        <segue reference="mjx-7T-l8V"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Backspace" width="20.666666030883789" height="20.666666030883789"/>

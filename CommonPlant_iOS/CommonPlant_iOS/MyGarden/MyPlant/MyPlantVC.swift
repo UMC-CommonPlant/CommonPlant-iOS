@@ -82,9 +82,9 @@ extension MyPlantVC {
                         let dataJson = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
                         print(dataJson)
                         print("======printed data json =========")
-                        let jsonData = try JSONDecoder().decode(MyPlantModel.self, from: dataJson)
+                    //    let jsonData = try JSONDecoder().decode(MyPlantModel.self, from: dataJson)
 
-                        print(jsonData)
+                      //  print(jsonData)
                         print("======print jsonData=========")
 
                         
