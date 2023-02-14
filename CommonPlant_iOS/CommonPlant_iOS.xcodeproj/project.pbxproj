@@ -45,6 +45,7 @@
 		62DC105C2999410500ECDE06 /* MemoListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DC105B2999410500ECDE06 /* MemoListModel.swift */; };
 		62DC105E2999DEC100ECDE06 /* AddPlant1stVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DC105D2999DEC100ECDE06 /* AddPlant1stVC.swift */; };
 		62DC10602999DEF200ECDE06 /* AddPlant1stTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DC105F2999DEF200ECDE06 /* AddPlant1stTVC.swift */; };
+		62DC1062299A47AA00ECDE06 /* InfoPopularSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DC1061299A47AA00ECDE06 /* InfoPopularSearchModel.swift */; };
 		F9351E08299788E9002C79E6 /* AddPlant2ndVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9351E07299788E9002C79E6 /* AddPlant2ndVC.swift */; };
 		F96C9C092979A29A008627FA /* MainPlaceCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96C9C072979A29A008627FA /* MainPlaceCVC.swift */; };
 		F96C9C0A2979A29A008627FA /* MainPlaceCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96C9C082979A29A008627FA /* MainPlaceCVC.xib */; };
@@ -106,6 +107,7 @@
 		62DC105B2999410500ECDE06 /* MemoListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListModel.swift; sourceTree = "<group>"; };
 		62DC105D2999DEC100ECDE06 /* AddPlant1stVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlant1stVC.swift; sourceTree = "<group>"; };
 		62DC105F2999DEF200ECDE06 /* AddPlant1stTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlant1stTVC.swift; sourceTree = "<group>"; };
+		62DC1061299A47AA00ECDE06 /* InfoPopularSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPopularSearchModel.swift; sourceTree = "<group>"; };
 		F9351E07299788E9002C79E6 /* AddPlant2ndVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlant2ndVC.swift; sourceTree = "<group>"; };
 		F96C9C072979A29A008627FA /* MainPlaceCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPlaceCVC.swift; sourceTree = "<group>"; };
 		F96C9C082979A29A008627FA /* MainPlaceCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainPlaceCVC.xib; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			children = (
 				62A2FABD2985837600CF0DAB /* InfoDetailModel.swift */,
 				623AEFEE298ED4C1007E1133 /* InfoSearchModel.swift */,
+				62DC1061299A47AA00ECDE06 /* InfoPopularSearchModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				6263F8A829755EF1002B5871 /* InfoSearchTableViewCell.swift in Sources */,
 				F9C48C70296D7AD100C76863 /* AppDelegate.swift in Sources */,
 				623AEFFF29924182007E1133 /* MyLogger.swift in Sources */,
+				62DC1062299A47AA00ECDE06 /* InfoPopularSearchModel.swift in Sources */,
 				62A2FABE2985837600CF0DAB /* InfoDetailModel.swift in Sources */,
 				623AEFEF298ED4C1007E1133 /* InfoSearchModel.swift in Sources */,
 				6202487329827FBB00C26F9C /* InfoRecoTableViewCell.swift in Sources */,
@@ -621,7 +625,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -675,7 +679,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -691,9 +695,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CommonPlant_iOS/CommonPlant_iOS.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 58FQ6N6QGS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CommonPlant_iOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -721,9 +726,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CommonPlant_iOS/CommonPlant_iOS.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 58FQ6N6QGS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CommonPlant_iOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

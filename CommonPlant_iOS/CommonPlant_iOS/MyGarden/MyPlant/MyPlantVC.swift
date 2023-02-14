@@ -22,7 +22,7 @@ class MyPlantVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData()
+        fetchData(plantIdx: 4)
         memoCollectionView.delegate = self
         memoCollectionView.dataSource = self
         
@@ -63,11 +63,11 @@ extension MyPlantVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
 }
 
 extension MyPlantVC {
-    func fetchData(){
-        //  var accessToken: String = UserDefaults.standard.object(forKey: "token") as! String ?? ""
-        var accessToken: String =  "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwMWVkYTg2Yy05ZWMxLTFmOGMtOTQyMC04YTIzMThjNDdlNjUiLCJpYXQiOjE2NzYwMDYyMDEsImV4cCI6MTY3NjAzMTQwMX0.utfKaqaLpMfLAjyJAqU1YT1BpyOX_gAXvpIP9E3hRMA"
+    func fetchData(plantIdx: Int){
+          var accessToken: String = UserDefaults.standard.object(forKey: "token") as! String ?? ""
+//        var accessToken: String =  "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwMWVkYTg2Yy05ZWMxLTFmOGMtOTQyMC04YTIzMThjNDdlNjUiLCJpYXQiOjE2NzYwMDYyMDEsImV4cCI6MTY3NjAzMTQwMX0.utfKaqaLpMfLAjyJAqU1YT1BpyOX_gAXvpIP9E3hRMA"
         print(accessToken)
-        let url = API.BASE_URL + "/place/INVZph"
+        let url = API.BASE_URL + "/plant/card/"+String(plantIdx)
         let header : HTTPHeaders = [
             "Content-Type": "application/json",
             "X-AUTH-TOKEN": accessToken
@@ -80,7 +80,7 @@ extension MyPlantVC {
                 case .success(let data):
                     do {
                         let dataJson = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
-                        print(dataJson)
+//                        print(dataJson)
                         print("======printed data json =========")
                         let jsonData = try JSONDecoder().decode(MyPlantModel.self, from: dataJson)
 

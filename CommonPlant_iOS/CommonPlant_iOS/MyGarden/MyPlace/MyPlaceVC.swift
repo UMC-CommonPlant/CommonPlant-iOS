@@ -78,6 +78,7 @@ extension MyPlaceVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension MyPlaceVC {
+
     func fetchData(completion: @escaping (MyGardenResult) -> Void){
         let accessToken: String = UserDefaults.standard.object(forKey: "token") as! String
        // let accessToken = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwMWVkYWFjMi0zNTczLTE5Y2UtYjQ3OC0zNjUyOWM3OTFiOGQiLCJpYXQiOjE2NzYxOTcwMDIsImV4cCI6MTY3NjIyMjIwMn0.LvLJBOvYrZ3i_fjDjNTgDtOpz8qQfdlbnSjfufZQhGg"
@@ -88,6 +89,7 @@ extension MyPlaceVC {
             "X-AUTH-TOKEN": accessToken
         ]
         
+
         MyAlamofireManager.shared
             .session
             .request(url,method : .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
@@ -95,6 +97,7 @@ extension MyPlaceVC {
                 switch response.result {
                 case .success(let data):
                     do {
+
                         let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
 
                         let myGardenData = try! JSONDecoder().decode(MyGardenModel.self, from: jsonData)
@@ -112,15 +115,20 @@ extension MyPlaceVC {
 //                            print(jsonData)
 //                            print("======printed jsonData=========")
 //                        }
-                        
-                        
-                    } catch {
-                        print(error.localizedDescription)
-                    }
-                case .failure(_): break
-                }
-            })
-    }
-}
-
-
+////                        } else {
+////                            print("======print jsonData=========")
+////                            print(jsonData)
+////                            print("======printed jsonData=========")
+////                        }
+//
+//
+//                    } catch {
+//                        print(error.localizedDescription)
+//                    }
+//                case .failure(_): break
+//                }
+//            })
+//    }
+//}
+//
+//

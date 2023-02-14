@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class InfoViewController: UIViewController{
 
@@ -24,6 +25,7 @@ class InfoViewController: UIViewController{
         setupSearchLabel()
         setupCollectionView()
         setupTableView()
+        setData()
     }
     
     //=======collection & table 다음화면으로 데이터 넘기기=======
@@ -73,17 +75,17 @@ class InfoViewController: UIViewController{
     }
     
     //table 데이터 모델
-    let plantInitialData:[plantInitialModel] = [
-        plantInitialModel(plantImage: UIImage(named: "plant1"), name: "몬스테라", scientificName: "Monstera", lastMonthCount: "지난달 107명이 검색"),
-        plantInitialModel(plantImage: UIImage(named: "plant2"), name: "몬스테라 델리시오사", scientificName: "Monstera", lastMonthCount: "지난달 84명이 검색"),
-        plantInitialModel(plantImage: UIImage(named: "plant3"), name: "몬스테라 알보 바리에가타", scientificName: "Monstera", lastMonthCount: "지난달 52명이 검색"),
-        plantInitialModel(plantImage: UIImage(named: "plant4"), name: "몬스테라", scientificName: "Monstera deliociosa", lastMonthCount: "지난달 100명이 검색"),
-        plantInitialModel(plantImage: UIImage(named: "plant5"), name: "델리시오사", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색")
+    var plantInitialData:[plantInitialModel] = [
+//        plantInitialModel(plantImage: UIImage(named: "plant1"), name: "몬스테라", scientificName: "Monstera", lastMonthCount: "지난달 107명이 검색"),
+//        plantInitialModel(plantImage: UIImage(named: "plant2"), name: "몬스테라 델리시오사", scientificName: "Monstera", lastMonthCount: "지난달 84명이 검색"),
+//        plantInitialModel(plantImage: UIImage(named: "plant3"), name: "몬스테라 알보 바리에가타", scientificName: "Monstera", lastMonthCount: "지난달 52명이 검색"),
+//        plantInitialModel(plantImage: UIImage(named: "plant4"), name: "몬스테라", scientificName: "Monstera deliociosa", lastMonthCount: "지난달 100명이 검색"),
+//        plantInitialModel(plantImage: UIImage(named: "plant5"), name: "델리시오사", scientificName: "Monstera", lastMonthCount: "지난달 100명이 검색")
     ]
     
     //셀의 각 요소를 들고 있는 구조체
     struct plantInitialModel{
-        let plantImage : UIImage?
+        let plantImage : String!
         let name : String
         let scientificName : String
         let lastMonthCount : String
@@ -191,5 +193,52 @@ extension InfoViewController: UITableViewDelegate, UITableViewDataSource{
         cell.selectionStyle = .none
         return cell
     }
+    
+    func setData(){
+        self.plantInitialData.removeAll()
+        //accessToken으로 kakao 유저 데이터 가져오기
+        let url = API.BASE_URL + "/word/getWordList"
+        let header : HTTPHeaders = [
+            "Content-Type" : "application/json"
+        ]
+        
+        MyAlamofireManager.shared
+            .session
+            .request(url,method : .get, parameters: nil, encoding: URLEncoding.queryString)
+            .responseJSON(completionHandler: {response in
+                        
+                        switch response.result{
+                            
+                            
+                        case .success(let obj):
+                            print("========== 테스트ㅡ으으으 ===========")
+
+                            do{
+                                let dataJson = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
+                                let jsonData = try JSONDecoder().decode(InfoPopularSearchModel.self, from: dataJson)
+                                print(jsonData)
+                                
+//                                DispatchQueue.global().async { [weak self] in
+                                for i in 0...5{
+                                    var data = jsonData.result[i]
+                                    self.plantInitialData.append(plantInitialModel(plantImage: data.imgURL, name: data.name, scientificName: data.scientificName, lastMonthCount: String(data.searchedNumber)+"명이 검색"))
+                                    
+                                }
+                                
+                                self.popularTableView.reloadData()
+                                
+                            }catch{
+                                print(error.localizedDescription)
+                            }
+                        
+                            break
+                        case .failure(let err):
+                            debugPrint(err)
+                            break
+                        }
+                    })
+            }
+    
+    
     
 }
