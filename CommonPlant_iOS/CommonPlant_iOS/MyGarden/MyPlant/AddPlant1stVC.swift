@@ -107,9 +107,9 @@ extension AddPlant1stVC: UITableViewDelegate, UITableViewDataSource{
 //                                DispatchQueue.global().async { [weak self] in
                                 for i in jsonData.result{
                                     print(i.name)
-                                    guard let imageURL = i.imgURL else { return }
-                                    
-                                    let url = URL(string: imageURL)
+//                                    guard let imageURL = i.imgURL else { return }
+//
+//                                    let url = URL(string: imageURL)
                                     self.plantData.append(plantModel(imgUrl: i.imgURL, name: i.name, scientificName: i.scientificName))
                                 }
                                 print(self.plantData.count)
