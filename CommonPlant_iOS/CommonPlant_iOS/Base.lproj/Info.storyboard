@@ -835,20 +835,26 @@
                                                                                     </constraints>
                                                                                 </imageView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="몬스테라" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoJ-iq-Jqs">
-                                                                                    <rect key="frame" x="132" y="18" width="56" height="20"/>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                                    <rect key="frame" x="132" y="18" width="56" height="22"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="height" constant="22" id="fWt-vE-con"/>
+                                                                                    </constraints>
+                                                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="16"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지난달 100명이 검색" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhN-PT-87Y">
-                                                                                    <rect key="frame" x="244" y="78" width="101" height="15"/>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                                    <rect key="frame" x="245.33333333333334" y="78" width="99.666666666666657" height="14"/>
+                                                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monstera deliciosa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xd2-pv-7MK">
-                                                                                    <rect key="frame" x="132" y="38" width="107" height="15"/>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                                    <rect key="frame" x="132" y="40" width="93.666666666666686" height="16"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="height" constant="16" id="C2H-GO-vgF"/>
+                                                                                    </constraints>
+                                                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
                                                                                     <color key="textColor" name="Gray5"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
@@ -981,7 +987,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9oL-d6-UCU"/>
+        <segue reference="doe-OG-TRv"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="InfoCategory4" width="24" height="24.333333969116211"/>

@@ -20,6 +20,7 @@ class MyPlaceVC: UIViewController, SendPlaceDataDelegate {
     
     @IBOutlet weak var mainTopView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var myPlaceNameLabel: UILabel!
     @IBOutlet weak var myPlaceRoadLabel: UILabel!
@@ -52,6 +53,7 @@ class MyPlaceVC: UIViewController, SendPlaceDataDelegate {
         
         tableView.delegate = self
         tableView.dataSource = self
+        setupCollectionView()
     }
     
     func setUpTopView() {
@@ -59,6 +61,15 @@ class MyPlaceVC: UIViewController, SendPlaceDataDelegate {
         mainTopView.layer.shadowOpacity = 0.3
         mainTopView.layer.shadowRadius = 7
         mainTopView.layer.shadowPath = UIBezierPath(rect: CGRect(x: 0, y: 199, width: mainTopView.bounds.width, height: 5)).cgPath
+    }
+    
+    
+    var userData:[userDataModel] = []
+    
+    //셀의 각 요소를 들고 있는 구조체
+    struct userDataModel{
+        let userImage : String
+        let name : String
     }
     
 }
@@ -111,6 +122,29 @@ extension MyPlaceVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 }
+//MARK: =======카테고리 컬렉션 뷰========
+extension MyPlaceVC: UICollectionViewDelegate, UICollectionViewDataSource{
+    func setupCollectionView(){
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return userData.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell : MyPlaceCVC = collectionView.dequeueReusableCell(withReuseIdentifier: "userCollection", for: indexPath) as! MyPlaceCVC
+        
+        let item = userData[indexPath.row]
+        cell.setupData(
+            item.userImage,
+            item.name
+        )
+        
+        return cell
+    }
+}
 
 extension MyPlaceVC {
     func fetchData(completion: @escaping (MyPlaceResult) -> Void){
@@ -134,8 +168,13 @@ extension MyPlaceVC {
                         self.myPlaceArray.append(myPlaceData.result)
                         completion(myPlaceData.result)
                         
+                        for data in myPlaceData.result.userInfoList{
+                            self.userData.append(userDataModel(userImage: data.imgUrl, name: data.nickName))
+                        }
+                        
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
+                            self.collectionView.reloadData()
                         }
                     } catch {
                         print(error.localizedDescription)
