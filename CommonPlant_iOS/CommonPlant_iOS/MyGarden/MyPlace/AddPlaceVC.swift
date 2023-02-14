@@ -32,11 +32,9 @@ class AddPlaceVC: UIViewController, SendDataDelegate {
     @IBAction func nextBtn(_ sender: Any) {
         print(#function)
         placeName = textField.text ?? ""
-        uploadData(name: placeName, address: addressRoad, imageData: placeImage!) { response in
-       
-        }
+        uploadData(name: placeName, address: addressRoad, imageData: placeImage!)
         
-      //  print("***********placeImage: \(placeImage) ****placeName: \(placeName), **** addressRoad:\(addressRoad)******")
+        print("***********placeImage: \(placeImage) ****placeName: \(placeName), **** addressRoad:\(addressRoad)******")
     }
     
     
@@ -164,39 +162,37 @@ extension AddPlaceVC: UITextFieldDelegate {
 }
 
 extension AddPlaceVC {
-    func uploadData(name: String, address: String, imageData: UIImage, completion: @escaping ((Bool)-> Void)) {
-        let accessToken: String = UserDefaults.standard.object(forKey: "token") as! String
-        let url = API.BASE_URL + "/place/add"
-        let header : HTTPHeaders = ["X-AUTH-TOKEN": accessToken]
-        let parameters: [String: Any] = [
-            "place":
-                [
-                    "name": name,
-                    "address": address
-                ]
-        ]
-        
-        MyAlamofireManager.shared
-            .session
-            .upload(multipartFormData: { multipart in
+    func uploadData(name: String, address: String, imageData: UIImage) {
+            let url = API.BASE_URL + "/place/add"
+            let token = UserDefaults.standard.object(forKey: "token") as! String
+
+            let header : HTTPHeaders = [
+                "Content-Type" : "multipart/form-data",
+                "X-AUTH-TOKEN" : token
+            ]
+            
+            let parameters: [String: Any] = [
+                "name" : name,
+                "address" : address
+            ]
+            
+            AF.upload(multipartFormData: { MultipartFormData in
+                //body 추가
                 for (key, value) in parameters {
-                    multipart.append("\(value)".data(using: .utf8)!, withName: key)
+                    MultipartFormData.append("\(value)".data(using: .utf8)!, withName: key)
                 }
-                
-                multipart.append((imageData.pngData())!, withName: "image", fileName: "image", mimeType: "image/png")
-                
-            }, to: url, headers: header)
-            .responseJSON { response in
-                guard let statusCode = response.response?.statusCode else { return }
-                
-                switch statusCode {
-                case 200:
-                    print("post 성공")
-                    completion(true)
-                default:
-                    print(statusCode)
-                    print("실패")
+                //img 추가
+                if let image = imageData.pngData() {
+                    MultipartFormData.append(image, withName: "image", fileName: "test.png", mimeType: "image/png")
+                }
+            }, to: url, method: .post, headers: header)
+            .response{ response in
+                if let error = response.error{
+                    print(error)
+                }else{
+                    debugPrint(response)
                 }
             }
-    }
+            
+        }
 }

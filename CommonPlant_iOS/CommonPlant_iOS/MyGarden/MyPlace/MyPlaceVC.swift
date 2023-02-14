@@ -79,7 +79,9 @@ extension MyPlaceVC: UITableViewDelegate, UITableViewDataSource {
         
         cell.myPlantNicknameLabel.text = self.myPlaceArray.first?.plantInfoList[indexPath.row].nickname
         cell.myPlantNameLabel.text = self.myPlaceArray.first?.plantInfoList[indexPath.row].name
-       // cell.dDayLabel.text = self.myPlaceArray.first?.plantInfoList[indexPath.row].remainderDate
+        
+        let remainderDate = self.myPlaceArray.first?.plantInfoList[indexPath.row].remainderDate
+        cell.remainderDateLabel.text = "D\(remainderDate ?? 0)"
         cell.myPlaceMemo.text = self.myPlaceArray.first?.plantInfoList[indexPath.row].recentMemo
         cell.wateredDateLabel.text = self.myPlaceArray.first?.plantInfoList[indexPath.row].wateredDate
         

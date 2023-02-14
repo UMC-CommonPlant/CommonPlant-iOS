@@ -217,20 +217,6 @@
                                             <segue destination="aOb-XN-Mpc" kind="show" id="zOq-0i-ivf"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHv-Jh-2Ke">
-                                        <rect key="frame" x="239" y="236" width="96" height="36"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="96" id="IX8-bv-J6K"/>
-                                            <constraint firstAttribute="height" constant="36" id="eFC-9m-6fK"/>
-                                        </constraints>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" title="요청 5건" cornerStyle="large">
-                                            <fontDescription key="titleFontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="14"/>
-                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="baseBackgroundColor" name="SeaGreenDark1"/>
-                                        </buttonConfiguration>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -238,7 +224,6 @@
                                     <constraint firstItem="aI4-Zt-vRh" firstAttribute="leading" secondItem="arO-zV-QCL" secondAttribute="leading" id="8Fd-s5-iYl"/>
                                     <constraint firstItem="olN-xe-Erx" firstAttribute="top" secondItem="Qfp-Fq-tgU" secondAttribute="bottom" constant="10" id="Abt-HK-zEn"/>
                                     <constraint firstItem="arO-zV-QCL" firstAttribute="top" secondItem="jhQ-65-i1H" secondAttribute="bottom" constant="24" id="ElN-x0-VpT"/>
-                                    <constraint firstItem="ZHv-Jh-2Ke" firstAttribute="top" secondItem="jhQ-65-i1H" secondAttribute="bottom" constant="36" id="HFG-ca-pj7"/>
                                     <constraint firstItem="ZXu-br-MiV" firstAttribute="top" secondItem="arO-zV-QCL" secondAttribute="bottom" constant="32" id="HMI-9d-Bml"/>
                                     <constraint firstItem="sdL-mE-KUr" firstAttribute="top" secondItem="jhQ-65-i1H" secondAttribute="bottom" constant="36" id="RVy-Iv-lql"/>
                                     <constraint firstItem="arO-zV-QCL" firstAttribute="leading" secondItem="14l-sI-Vvx" secondAttribute="leading" constant="20" id="SAT-ek-hIX"/>
@@ -253,7 +238,6 @@
                                     <constraint firstItem="jhQ-65-i1H" firstAttribute="top" secondItem="e2A-a7-chz" secondAttribute="top" id="lQe-o4-7Nl"/>
                                     <constraint firstItem="olN-xe-Erx" firstAttribute="trailing" secondItem="14l-sI-Vvx" secondAttribute="trailing" id="nUM-jE-dpp"/>
                                     <constraint firstItem="ZXu-br-MiV" firstAttribute="leading" secondItem="arO-zV-QCL" secondAttribute="leading" id="ooF-pz-Pyv"/>
-                                    <constraint firstItem="sdL-mE-KUr" firstAttribute="leading" secondItem="ZHv-Jh-2Ke" secondAttribute="trailing" constant="8" id="sOP-JD-N5q"/>
                                     <constraint firstItem="aI4-Zt-vRh" firstAttribute="top" secondItem="ZXu-br-MiV" secondAttribute="bottom" constant="32" id="sPg-qR-kbD"/>
                                     <constraint firstItem="jhQ-65-i1H" firstAttribute="trailing" secondItem="14l-sI-Vvx" secondAttribute="trailing" id="w7y-SA-h4V"/>
                                 </constraints>
@@ -276,7 +260,6 @@
                         <outlet property="gradationView" destination="5HU-DV-GGB" id="MPn-qc-8aq"/>
                         <outlet property="mainPlaceCollectionView" destination="ZXu-br-MiV" id="flc-Lb-FeS"/>
                         <outlet property="mainPlantCollectionView" destination="olN-xe-Erx" id="O2g-RO-jyM"/>
-                        <outlet property="requestBtn" destination="ZHv-Jh-2Ke" id="z8h-7k-zwW"/>
                         <outlet property="userName" destination="CsD-Ml-jzN" id="Dhi-V5-FP1"/>
                     </connections>
                 </viewController>
@@ -1622,7 +1605,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mjx-7T-l8V"/>
+        <segue reference="Fdn-yp-TjZ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Backspace" width="20.666666030883789" height="20.666666030883789"/>
