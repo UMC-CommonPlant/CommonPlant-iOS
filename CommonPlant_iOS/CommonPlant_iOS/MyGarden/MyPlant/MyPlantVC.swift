@@ -71,6 +71,7 @@ extension MyPlantVC {
     func fetchData(completion: @escaping (MyPlantResult) -> Void){
         let accessToken: String = UserDefaults.standard.object(forKey: "token") as! String
         let url = API.BASE_URL + "/plant/card/" + "\(plantIndex)"
+
         let header : HTTPHeaders = [
             "X-AUTH-TOKEN": accessToken
         ]
@@ -83,6 +84,7 @@ extension MyPlantVC {
                 case .success(let data):
                     do {
                         let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
+
 
                         let myPlantData = try! JSONDecoder().decode(MyPlantModel.self, from: jsonData)
 

@@ -59,22 +59,25 @@ class PlantTableViewCell: UITableViewCell {
     
     
     func setupData(
-        _ plantImage: UIImage?,
+        _ plantImage: String!,
         _ name: String,
         _ scientificName: String,
         _ lastMonthCount: String
     ){
-        if let plantImage = plantImage{
-            plantImageView.image = plantImage
-        }else{
-            plantImageView.image = UIImage(named: "InfoPlantImg")
-        }
+
         
         nameLabel.text = name
         
         scientificNameLabel.text = scientificName
         
         lastMonthCountLabel.text = lastMonthCount
+        
+        guard let plantImage = plantImage else { return }
+        //URL에는 한글, 띄어쓰기 적용 안됨
+        let url = URL(string: plantImage)
+        plantImageView.load(url: url!)
+        plantImageView.layer.cornerRadius = 16
+//        print("=============="+plantImage)
     }
 
     

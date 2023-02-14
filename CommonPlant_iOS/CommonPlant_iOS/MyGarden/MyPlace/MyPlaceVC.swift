@@ -119,6 +119,7 @@ extension MyPlaceVC {
             "X-AUTH-TOKEN": accessToken
         ]
         
+
         MyAlamofireManager.shared
             .session
             .request(url, method : .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
@@ -126,6 +127,7 @@ extension MyPlaceVC {
                 switch response.result {
                 case .success(let data):
                     do {
+
                         let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
 
                         let myPlaceData = try! JSONDecoder().decode(MyPlaceModel.self, from: jsonData)
