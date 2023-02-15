@@ -80,7 +80,7 @@ class MainVC: UIViewController {
         if let vc = segue.destination as? MyPlaceVC {
             vc.myPlaceCode = roadAddressInfo
             print("=============vc.myPlaceCode\(vc.myPlaceCode)==============")
-        }else if let plantvc = segue.destination as? MyPlantVC{
+        }else if let plantvc = segue.destination as? MyPlantVC {
             plantvc.plantIndex = mainplantIndex
             print("=============vc.plantIndex\(plantvc.plantIndex)==============")
         }
@@ -121,9 +121,12 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         } else {
             guard let plantCell = mainPlantCollectionView.dequeueReusableCell(withReuseIdentifier: "MainPlantCVC", for: indexPath) as? MainPlantCVC else { return UICollectionViewCell() }
             
+            let processor = RoundCornerImageProcessor(cornerRadius: 16)
             let plantUrl = self.myGardenList.first?.plantList[indexPath.row].imgUrl ?? ""
             let plantImgUrl = URL(string: plantUrl)
-            plantCell.plantImg.kf.setImage(with: plantImgUrl)
+            plantCell.plantImg.kf.setImage(with: plantImgUrl, options: [.processor(processor)])
+            //imageView.kf.setImage(with: url, placeholder: nil, options: [.processor(processor)])
+
             
             plantCell.myPlantLabel.text = myGardenList.first?.plantList[indexPath.row].plantNickName
             return plantCell

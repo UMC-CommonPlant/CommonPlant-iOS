@@ -31,7 +31,7 @@ class MyPlantVC: UIViewController {
     
     
     var plantIndexString: String = ""
-    var plantIndex: Int = 17
+    var plantIndex: Int = 11
     var myPlantList: [memoListModel] = []
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,15 +54,25 @@ class MyPlantVC: UIViewController {
     }
     
     
-    @IBAction func memoBtnAction(_ sender: Any) {
+//    @IBAction func memoBtnAction(_ sender: Any) {
+//
+//        let storyboard = UIStoryboard(name: "Memo", bundle: nil)
+//        guard let vc = storyboard.instantiateViewController(withIdentifier: "memoList") as? MemoViewController  else { return }
+//        vc.modalPresentationStyle = .fullScreen
+//        vc.plantToInt = plantIndex
+//        self.present(vc, animated: true, completion: nil)
+//
+//
+//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let storyboard = UIStoryboard(name: "Memo", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "memoList") as? MemoViewController  else { return }
-        vc.modalPresentationStyle = .fullScreen
-        vc.plantToInt = plantIndex
-        self.present(vc, animated: true, completion: nil)
-        
-        
+        if let vc = segue.destination as? MemoViewController {
+            print("=============vc.myPlaceCode\(vc.plantToInt)==============")
+//            vc.modalPresentationStyle = .fullScreen
+            vc.plantToInt = plantIndex
+
+        }
     }
     
     
@@ -140,8 +150,10 @@ extension MyPlantVC {
                         
                         self.plantIndex = myPlantData.result.plant.plantIdx
                         
+//                        self.plantImgView.layer.masksToBounds = true
                         let url = URL(string: myPlantData.result.plant.imgUrl!)
                         self.plantImgView.kf.setImage(with: url)
+                        self.plantImgView.layer.cornerRadius = 16
                         self.plantNameLabel.text = myPlantData.result.plant.nickname
                         self.plantScLabel.text = myPlantData.result.plant.scientificName
                         

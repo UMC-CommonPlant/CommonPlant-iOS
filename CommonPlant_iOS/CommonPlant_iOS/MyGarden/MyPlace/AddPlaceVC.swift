@@ -86,7 +86,7 @@ class AddPlaceVC: UIViewController, SendDataDelegate {
     @objc
     private func handleButton(_ sender: UIButton) {
         let nextVC = PostcodeVC()
-        nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalPresentationStyle = .popover
         nextVC.delegate = self
         present(nextVC, animated: true)
     }

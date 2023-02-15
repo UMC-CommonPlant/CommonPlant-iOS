@@ -129,6 +129,10 @@ extension MyPlaceVC: UICollectionViewDelegate, UICollectionViewDataSource{
         collectionView.dataSource = self
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "myPlaceTomyPlant", sender: nil)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return userData.count
     }
