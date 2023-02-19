@@ -31,18 +31,13 @@ class NicknameViewController: UIViewController {
     @IBAction func testButtonAction(_ sender: Any) {
 //        addPlaceAPI()
 //        addPlantAPI()
-//        addMemoAPI()
-        joinUserAPI()
+//        joinUserAPI()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-        
-        //        self.nickNameField.delegate = self
-        // Do any additional setup after loading the view.
+        //self.nickNameField.delegate = self
     }
     
     
@@ -113,22 +108,27 @@ extension NicknameViewController : UIImagePickerControllerDelegate , UINavigatio
     
     func actionSheetAlert(){
         
-        let alert = UIAlertController(title: "선택", message: "선택", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "프로필 사진 설정", message: nil, preferredStyle: .actionSheet)
         
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-        let camera = UIAlertAction(title: "카메라", style: .default) { [weak self] (_) in
-            self?.presentCamera()
-        }
-        let album = UIAlertAction(title: "앨범", style: .default) { [weak self] (_) in
+        
+        let album = UIAlertAction(title: "앨범에서 사진 선택", style: .default) { [weak self] (_) in
             self?.presentAlbum()
+        }
+        let defaultImg = UIAlertAction(title: "기본 이미지로 변경", style: .default) { [weak self] (_) in
+            self?.setDefaultImg()
         }
         
         alert.addAction(cancel)
-        alert.addAction(camera)
         alert.addAction(album)
+        alert.addAction(defaultImg)
         
         present(alert, animated: true, completion: nil)
-        
+    }
+    
+    func setDefaultImg(){
+        print("기본이미지 넣기!!!!!! 화면에 띄워주기~~~~~")
+//        addPlace1stImg.image = UIImage(named: "plant1")
     }
     
     func presentCamera(){
@@ -184,80 +184,7 @@ extension NicknameViewController : UIImagePickerControllerDelegate , UINavigatio
     }
 }
 extension NicknameViewController{
-    func addPlaceAPI(){
-        //accessToken으로 kakao 유저 데이터 가져오기
-        let url = API.BASE_URL + "/place/add"
-        var token = UserDefaults.standard.object(forKey: "token") as! String ?? ""
 
-        let header : HTTPHeaders = [
-            "Content-Type" : "multipart/form-data",
-            "X-AUTH-TOKEN" : token
-        ]
-        let image = UIImage(named: "plant1")
-        profileImage.image = UIImage(named: "plant1")
-        
-        let parameters: [String: Any] = [
-            "name" : "name",
-            "address" : "서울시 노원구 석계로 23-18"
-        ]
-        
-        AF.upload(multipartFormData: { MultipartFormData in
-            //body 추가
-            for (key, value) in parameters {
-                MultipartFormData.append("\(value)".data(using: .utf8)!, withName: key)
-            }
-            //img 추가
-            if let image = image?.pngData() {
-                MultipartFormData.append(image, withName: "image", fileName: "test.png", mimeType: "image/png")
-            }
-        }, to: url, method: .post, headers: header)
-        .response{ response in
-            if let error = response.error{
-                print(error)
-            }else{
-                debugPrint(response)
-            }
-        }
-        
-    }
-    func addPlantAPI(){
-        //accessToken으로 kakao 유저 데이터 가져오기
-        let url = API.BASE_URL + "/plant/add"
-        var token = UserDefaults.standard.object(forKey: "token") as! String ?? ""
-
-        let header : HTTPHeaders = [
-            "Content-Type" : "multipart/form-data",
-            "X-AUTH-TOKEN" : token
-        ]
-        let image = UIImage(named: "plant1")
-        profileImage.image = UIImage(named: "plant1")
-        
-        let parameters: [String: Any] = [
-            "name" : "name",
-            "nickname" : "몬",
-            "place" : "QgrUHy",
-            "wateredDate" : "2023-02-07"
-        ]
-        
-        AF.upload(multipartFormData: { MultipartFormData in
-            //body 추가
-            for (key, value) in parameters {
-                MultipartFormData.append("\(value)".data(using: .utf8)!, withName: key)
-            }
-            //img 추가
-            if let image = image?.pngData() {
-                MultipartFormData.append(image, withName: "image", fileName: "test.png", mimeType: "image/png")
-            }
-        }, to: url, method: .post, headers: header)
-        .response{ response in
-            if let error = response.error{
-                print(error)
-            }else{
-                debugPrint(response)
-            }
-        }
-        
-    }
     func addMemoAPI(){
         //accessToken으로 kakao 유저 데이터 가져오기
         let url = API.BASE_URL + "/memo/add/17"//+plantIdx
@@ -293,7 +220,7 @@ extension NicknameViewController{
         }
         
     }
-    func joinUserAPI(){
+    func joinUserAPI(email: String, nickname: String, loginType: String){
         //accessToken으로 kakao 유저 데이터 가져오기
         let url = API.BASE_URL + "/users/join"
 
@@ -304,9 +231,9 @@ extension NicknameViewController{
         profileImage.image = UIImage(named: "plant1")
         
         let parameters: [String: Any] = [
-            "email":"userteset@gmail.com",
-            "nickName":"testuser",
-            "loginType":"kakao"
+            "email":email,
+            "nickName":nickname,
+            "loginType":loginType
         ]
         
         AF.upload(multipartFormData: { MultipartFormData in

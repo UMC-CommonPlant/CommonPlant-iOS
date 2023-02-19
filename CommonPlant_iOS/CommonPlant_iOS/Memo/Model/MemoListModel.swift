@@ -15,13 +15,11 @@ struct MemoListModel: Codable {
     let result: MemoRes
     let success: Bool
 }
-//
-// MARK: - Result
+
 struct MemoRes: Codable {
     let memoCardDto: [[MemoDto]]
 }
 
-// MARK: - MemoCardDto
 struct MemoDto: Codable {
     let memoIdx, plantIdx: Int
     let userNickName: String

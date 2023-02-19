@@ -10,19 +10,41 @@ import Alamofire
 
 class MyPlantVC: UIViewController {
     
-    
-    var userNameArray = ["커먼플랜트", "커먼맘", "커먼맘", "커먼 파파"]
-    var memoLabelArray = ["장마여서 물주는 날짜를 조금 늦춤 하지만 해는 맑구나 몬테랑 함께 즐거운시간", "오늘은 잎이 조금 시들하구나 커먼아 해결책은?", "오늘은 잎의 상태가 매우 좋다 커먼아 앱에서 알려준 물주기의 주기를 참고하렴", "오늘도 맑음"]
-    
-    
     @IBOutlet weak var memoCollectionView: UICollectionView!
     @IBOutlet weak var plantInfoView: UIView!
+  
+    @IBOutlet weak var plantImgView: UIImageView!
+    @IBOutlet weak var plantNameLabel: UILabel!
+    @IBOutlet weak var plantScLabel: UILabel!
+    
+    @IBOutlet weak var meetCountLabel: UILabel!
+    @IBOutlet weak var waterDayLabel: UILabel!
+    @IBOutlet weak var createdDateLabel: UILabel!
+    @IBOutlet weak var updatedDateLabel: UILabel!
+    
+    @IBOutlet weak var wateredLabel: UILabel!
+    @IBOutlet weak var manageLabel: UILabel!
+    @IBOutlet weak var sunLabel: UILabel!
+    @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
     
     
+    
+    var plantIndexString: String = ""
+    var plantIndex: Int = 11
+    var myPlantList: [memoListModel] = []
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("***********plantIndexString: \(plantIndexString)*************")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData(plantIdx: 4)
+        fetchData { response in
+            print("===============Plant response\(response)==========")
+        }
+        
         memoCollectionView.delegate = self
         memoCollectionView.dataSource = self
         
@@ -30,6 +52,39 @@ class MyPlantVC: UIViewController {
         plantInfoView.layer.cornerRadius = 16
         
     }
+    
+    
+//    @IBAction func memoBtnAction(_ sender: Any) {
+//
+//        let storyboard = UIStoryboard(name: "Memo", bundle: nil)
+//        guard let vc = storyboard.instantiateViewController(withIdentifier: "memoList") as? MemoViewController  else { return }
+//        vc.modalPresentationStyle = .fullScreen
+//        vc.plantToInt = plantIndex
+//        self.present(vc, animated: true, completion: nil)
+//
+//
+//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let vc = segue.destination as? MemoViewController {
+            print("=============vc.myPlaceCode\(vc.plantToInt)==============")
+//            vc.modalPresentationStyle = .fullScreen
+            vc.plantToInt = plantIndex
+
+        }
+    }
+    
+    
+    struct memoListModel{
+        let userName : String
+        let memo : String
+        let userProfile : String
+        let plantImg : String
+        let dateLabel: String
+    }
+    
+    
     
 }
 
@@ -44,14 +99,21 @@ extension MyPlantVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return userNameArray.count
+        return myPlantList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyPlantCollectionViewCell", for: indexPath) as! MyPlantCVC
-        cell.userNameLabel.text = userNameArray[indexPath.row]
-        cell.memoLabel.text = memoLabelArray[indexPath.row]
-
+       // cell.userNameLabel.text = userNameArray[indexPath.row]
+       // cell.memoLabel.text = memoLabelArray[indexPath.row]
+        let item = myPlantList[indexPath.row]
+        cell.setupData(
+            item.userName,
+            item.memo,
+            item.userProfile,
+            item.plantImg,
+            item.dateLabel
+        )
         return cell
     }
     
@@ -63,15 +125,14 @@ extension MyPlantVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
 }
 
 extension MyPlantVC {
-    func fetchData(plantIdx: Int){
-          var accessToken: String = UserDefaults.standard.object(forKey: "token") as! String ?? ""
-//        var accessToken: String =  "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwMWVkYTg2Yy05ZWMxLTFmOGMtOTQyMC04YTIzMThjNDdlNjUiLCJpYXQiOjE2NzYwMDYyMDEsImV4cCI6MTY3NjAzMTQwMX0.utfKaqaLpMfLAjyJAqU1YT1BpyOX_gAXvpIP9E3hRMA"
-        print(accessToken)
-        let url = API.BASE_URL + "/plant/card/"+String(plantIdx)
+    func fetchData(completion: @escaping (MyPlantResult) -> Void){
+        self.myPlantList.removeAll()
+        let accessToken: String = UserDefaults.standard.object(forKey: "token") as! String
+        let url = API.BASE_URL + "/plant/card/" + "\(plantIndex)"
         let header : HTTPHeaders = [
-            "Content-Type": "application/json",
             "X-AUTH-TOKEN": accessToken
         ]
+
         MyAlamofireManager.shared
             .session
             .request(url,method : .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
@@ -79,23 +140,50 @@ extension MyPlantVC {
                 switch response.result {
                 case .success(let data):
                     do {
-                        let dataJson = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
-//                        print(dataJson)
-                        print("======printed data json =========")
-                        let jsonData = try JSONDecoder().decode(MyPlantModel.self, from: dataJson)
+                        let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
 
-                        print(jsonData)
-                        print("======print jsonData=========")
+                        let myPlantData = try! JSONDecoder().decode(MyPlantModel.self, from: jsonData)
 
+//                        self.myPlantList.append(myPlantData.result)
+                       // print("==============myPlantData.result(myPlantData.result)==========")
+                        completion(myPlantData.result)
                         
+                        self.plantIndex = myPlantData.result.plant.plantIdx
+                        
+//                        self.plantImgView.layer.masksToBounds = true
+                        let url = URL(string: myPlantData.result.plant.imgUrl!)
+                        self.plantImgView.kf.setImage(with: url)
+                        self.plantImgView.layer.cornerRadius = 16
+                        self.plantNameLabel.text = myPlantData.result.plant.nickname
+                        self.plantScLabel.text = myPlantData.result.plant.scientificName
+                        
+                        self.meetCountLabel.text = myPlantData.result.plant.nickname + "와 함께한지 \(myPlantData.result.plant.countDate)일이 지났어요!"
+                        self.waterDayLabel.text = "D-\(-myPlantData.result.plant.remainderDate)"
+                        self.createdDateLabel.text = myPlantData.result.plant.createdAt
+                        self.updatedDateLabel.text = myPlantData.result.plant.wateredDate
+                        
+                        self.wateredLabel.text = "\(myPlantData.result.plant.waterDay) Day"
+                        self.sunLabel.text = myPlantData.result.plant.sunlight
+                        self.tempLabel.text = "\(myPlantData.result.plant.tempMin)~\(myPlantData.result.plant.tempMax)°C"
+                        self.humidityLabel.text = myPlantData.result.plant.humidity
+                        
+                        var cnt=0
+                        for i in myPlantData.result.memoList.memoCardDto{
+                            var data = myPlantData.result.memoList.memoCardDto[cnt]![0]
+                            self.myPlantList.append(memoListModel(userName: data.userNickName, memo: data.content, userProfile: data.userImgURL ?? "", plantImg: data.imgUrl ?? "", dateLabel: data.createdAt))
+
+                            cnt+=1
+                        }
+
+                        DispatchQueue.main.async {
+                            self.memoCollectionView.reloadData()
+                        }
                     } catch {
-                        print("에러")
+                        print(error.localizedDescription)
                     }
                 case .failure(_): break
-                    
                 }
             })
-        
     }
 }
 

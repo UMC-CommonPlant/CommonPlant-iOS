@@ -1,29 +1,27 @@
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
 //
-//  MyPlantModel.swift
-//  CommonPlant_iOS
-//
-//  Created by 이예원 on 2023/02/11.
-//
+//   let myPlaceModel = try? JSONDecoder().decode(MyPlaceModel.self, from: jsonData)
 
 import Foundation
 
-struct MyPlantModel: Codable {
+struct MyPlaceModel: Codable {
     let timeStamp: String
     let status: Int
     let message: String
-    let result: MyPlantResult
+    let result: MyPlaceResult
     let success: Bool
 }
 
-struct MyPlantResult: Codable {
+struct MyPlaceResult: Codable {
     let name, address, highestTemp, minimumTemp: String
     let humidity: String
     let isOwner: Bool
-    let userInfoList: [MyPlaceUserInfoList]
-    let plantInfoList: [MyPlantInfoList]
+    let userInfoList: [UserInfoList]
+    let plantInfoList: [PlantInfoList]
 }
 
-struct MyPlantInfoList: Codable {
+struct PlantInfoList: Codable {
     let name, nickname: String
     let imgUrl: String
     let recentMemo: String?
@@ -31,7 +29,7 @@ struct MyPlantInfoList: Codable {
     let wateredDate: String
 }
 
-struct MyPlaceUserInfoList: Codable {
+struct UserInfoList: Codable {
     let nickName: String
     let owner: Bool
     let imgUrl: String

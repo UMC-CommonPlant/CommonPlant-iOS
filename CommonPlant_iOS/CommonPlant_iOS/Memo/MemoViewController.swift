@@ -14,11 +14,13 @@ class MemoViewController: UIViewController {
     var memoIdentifier: String = "memoListCell"
 //    var memoReuseIdentifier: String = "memoReuseIdentifier"
     
+    var plantToInt: Int = 4
+    
     @IBOutlet weak var memoTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setData(plantIdx: 4)
+        setData(plantIdx: plantToInt)
         setupTableView()
     }
     
@@ -29,13 +31,7 @@ class MemoViewController: UIViewController {
 //    }
     
     
-    var MemoData:[MemoModel] = [
-//        MemoModel(memoImage: UIImage(named: "plant1"), userImage: UIImage(named: "plant1"), userName: "커먼플랜트", content: "오늘 잎이 좀 시들하구나 커먼아 해결책은?", createdDate: "2022.11.20"),
-//        MemoModel(memoImage: nil, userImage: UIImage(named: "plant1"), userName: "커먼플랜트", content: "장마여서 물 주는 날짜를 조금 늦춤, 하지만 해는 맑구나 몬테랑 함께한 지 벌써 56일이 되었구나 요즘 잎이 갈라지니 채광이 더 드는 곳으로 자리를 옮겨야 할 것 같아.", createdDate: "2022.11.20"),
-//        MemoModel(memoImage: nil, userImage: UIImage(named: "plant1"), userName: "커먼플랜트", content: "오늘 잎이 좀 시들하구나 커먼아 해결책은?", createdDate: "2022.11.20"),
-//        MemoModel(memoImage: UIImage(named: "plant1"), userImage: UIImage(named: "plant1"), userName: "커먼플랜트", content: "장마여서 물 주는 날짜를 조금 늦춤, 하지만 해는 맑구나 몬테랑 함께한 지 벌써 56일이 되었구나 요즘 잎이 갈라지니 채광이 더 드는 곳으로 자리를 옮겨야 할 것 같아.", createdDate: "2022.11.20"),
-//        MemoModel(memoImage: UIImage(named: "plant1"), userImage: UIImage(named: "plant1"), userName: "커먼플랜트", content: "장마여서 물 주는 날짜를 조금 늦춤, 하지만 해는 맑구나 몬테랑 함께한 지 벌써 56일이 되었구나 요즘 잎이 갈라지니 채광이 더 드는 곳으로 자리를 옮겨야 할 것 같아.", createdDate: "2022.11.20")
-    ]
+    var MemoData:[MemoModel] = []
     
     //셀의 각 요소를 들고 있는 구조체
     struct MemoModel{

@@ -23,6 +23,7 @@ class PostcodeVC: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = false
         self.configureUI()
     }
     

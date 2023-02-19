@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import Kingfisher
 
 class AddPlant1stVC: UIViewController {
 
@@ -68,6 +69,7 @@ extension AddPlant1stVC: UITableViewDelegate, UITableViewDataSource{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as? AddPlant1stTVC else {return UITableViewCell()}
             
             let item = plantData[indexPath.row]
+            
             cell.setupData(
                 item.imgUrl,
                 item.name,
@@ -81,7 +83,6 @@ extension AddPlant1stVC: UITableViewDelegate, UITableViewDataSource{
     
     func setData(name: String){
         self.plantData.removeAll()
-        //accessToken으로 kakao 유저 데이터 가져오기
         let url = API.BASE_URL + "/info/searchInfo"
         let header : HTTPHeaders = [
             "Content-Type" : "application/json"
@@ -107,9 +108,6 @@ extension AddPlant1stVC: UITableViewDelegate, UITableViewDataSource{
 //                                DispatchQueue.global().async { [weak self] in
                                 for i in jsonData.result{
                                     print(i.name)
-//                                    guard let imageURL = i.imgURL else { return }
-//
-//                                    let url = URL(string: imageURL)
                                     self.plantData.append(plantModel(imgUrl: i.imgURL, name: i.name, scientificName: i.scientificName))
                                 }
                                 print(self.plantData.count)

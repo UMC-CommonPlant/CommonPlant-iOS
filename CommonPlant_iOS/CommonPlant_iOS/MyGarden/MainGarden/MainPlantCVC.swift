@@ -15,6 +15,8 @@ class MainPlantCVC: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        contentView.layer.cornerRadius = 16
+        plantImg.layer.cornerRadius = 16
     }
 
 }

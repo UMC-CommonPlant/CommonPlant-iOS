@@ -8,13 +8,29 @@
 import UIKit
 import Alamofire
 
-class MyPlaceVC: UIViewController {
+class MyPlaceVC: UIViewController, SendPlaceDataDelegate {
+    func sendPlaceData(placeCode: [String], placeImg: UIImage) {
+        
+    }
+    
+    func sendPlaceData() {
+        
+    }
+    
     
     @IBOutlet weak var mainTopView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var myPlaceNameLabel: UILabel!
+    @IBOutlet weak var myPlaceRoadLabel: UILabel!
     
-//    var myPlaceArray: [MyPlaceResult] = []
+    @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
+    
+    var myPlaceCode: String = ""
+
+    var myPlaceArray: [MyPlaceResult] = []
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -23,13 +39,21 @@ class MyPlaceVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-   //     fetchData(completion: <#(MyGardenResult) -> Void#>)
+        fetchData { response in
+            self.myPlaceArray.append(response)
+            self.myPlaceNameLabel.text = self.myPlaceArray.first?.name
+            self.myPlaceRoadLabel.text = self.myPlaceArray.first?.address
+            self.tempLabel.text = "\(self.myPlaceArray.first?.highestTemp ?? "9.3") / \(self.myPlaceArray.first?.minimumTemp ?? "5")"
+            self.humidityLabel.text = self.myPlaceArray.first?.humidity
+        }
+     
         tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 24))
         
         navigationController?.isNavigationBarHidden = false
         
         tableView.delegate = self
         tableView.dataSource = self
+        setupCollectionView()
     }
     
     func setUpTopView() {
@@ -38,13 +62,23 @@ class MyPlaceVC: UIViewController {
         mainTopView.layer.shadowRadius = 7
         mainTopView.layer.shadowPath = UIBezierPath(rect: CGRect(x: 0, y: 199, width: mainTopView.bounds.width, height: 5)).cgPath
     }
+    
+    
+    var userData:[userDataModel] = []
+    
+    //셀의 각 요소를 들고 있는 구조체
+    struct userDataModel{
+        let userImage : String
+        let name : String
+    }
+    
 }
 
 extension MyPlaceVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 3
+        return self.myPlaceArray.first?.plantInfoList.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,11 +88,23 @@ extension MyPlaceVC: UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.row != 0 {
             cell.waterBtn.layer.isHidden = true
-            cell.dDayLabel.textColor = UIColor(named: "Gray4")
+            cell.remainderDateLabel.textColor = UIColor(named: "Gray4")
         }
         
-        // cell.myPlantNameLabel.text = myPlantArray[indexPath.row]
-   //     cell.dDayLabel.text = dDayArray[indexPath.row]
+        let myPlaceUrl = self.myPlaceArray.first?.plantInfoList[indexPath.row].imgUrl
+        let myPlaceImgUrl = URL(string: myPlaceUrl!)
+        cell.plantImg.kf.setImage(with: myPlaceImgUrl)
+        
+        
+        cell.myPlantNicknameLabel.text = self.myPlaceArray.first?.plantInfoList[indexPath.row].nickname
+        cell.myPlantNameLabel.text = self.myPlaceArray.first?.plantInfoList[indexPath.row].name
+        
+        let remainderDate = self.myPlaceArray.first?.plantInfoList[indexPath.row].remainderDate
+        cell.remainderDateLabel.text = "D\(remainderDate ?? 0)"
+        cell.myPlaceMemo.text = self.myPlaceArray.first?.plantInfoList[indexPath.row].recentMemo
+        cell.wateredDateLabel.text = self.myPlaceArray.first?.plantInfoList[indexPath.row].wateredDate
+        
+        
         cell.selectionStyle = .none
         
         cell.myPlaceContentView.layer.cornerRadius = 16
@@ -76,59 +122,71 @@ extension MyPlaceVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 }
+//MARK: =======카테고리 컬렉션 뷰========
+extension MyPlaceVC: UICollectionViewDelegate, UICollectionViewDataSource{
+    func setupCollectionView(){
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "myPlaceTomyPlant", sender: nil)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return userData.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell : MyPlaceCVC = collectionView.dequeueReusableCell(withReuseIdentifier: "userCollection", for: indexPath) as! MyPlaceCVC
+        
+        let item = userData[indexPath.row]
+        cell.setupData(
+            item.userImage,
+            item.name
+        )
+        
+        return cell
+    }
+}
 
 extension MyPlaceVC {
-
-    func fetchData(completion: @escaping (MyGardenResult) -> Void){
+    func fetchData(completion: @escaping (MyPlaceResult) -> Void){
         let accessToken: String = UserDefaults.standard.object(forKey: "token") as! String
-       // let accessToken = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwMWVkYWFjMi0zNTczLTE5Y2UtYjQ3OC0zNjUyOWM3OTFiOGQiLCJpYXQiOjE2NzYxOTcwMDIsImV4cCI6MTY3NjIyMjIwMn0.LvLJBOvYrZ3i_fjDjNTgDtOpz8qQfdlbnSjfufZQhGg"
-   //     print("==================accessToken: \(accessToken)===================")
-        var url = API.BASE_URL + "/place/myGarden"
-        url = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let url = API.BASE_URL + "/place/" + myPlaceCode
         let header : HTTPHeaders = [
             "X-AUTH-TOKEN": accessToken
         ]
         
-
         MyAlamofireManager.shared
             .session
-            .request(url,method : .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
+            .request(url, method : .get, parameters: nil, encoding: JSONEncoding.default, headers: header)
             .responseJSON(completionHandler: {response in
                 switch response.result {
                 case .success(let data):
                     do {
-
                         let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
 
-                        let myGardenData = try! JSONDecoder().decode(MyGardenModel.self, from: jsonData)
-                        print("==========myGardenData: \(myGardenData)=========")
+                        let myPlaceData = try! JSONDecoder().decode(MyPlaceModel.self, from: jsonData)
 
-      //                  self.myGardenList.append(myGardenData.result)
-                        completion(myGardenData.result)
+                        self.myPlaceArray.append(myPlaceData.result)
+                        completion(myPlaceData.result)
+                        
+                        for data in myPlaceData.result.userInfoList{
+                            self.userData.append(userDataModel(userImage: data.imgUrl, name: data.nickName))
+                        }
                         
                         DispatchQueue.main.async {
-           //                 self.mainPlaceCollectionView.reloadData()
-            //                self.mainPlantCollectionView.reloadData()
+                            self.tableView.reloadData()
+                            self.collectionView.reloadData()
                         }
-//                        } else {
-//                            print("======print jsonData=========")
-//                            print(jsonData)
-//                            print("======printed jsonData=========")
-//                        }
-////                        } else {
-////                            print("======print jsonData=========")
-////                            print(jsonData)
-////                            print("======printed jsonData=========")
-////                        }
-//
-//
-//                    } catch {
-//                        print(error.localizedDescription)
-//                    }
-//                case .failure(_): break
-//                }
-//            })
-//    }
-//}
-//
-//
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                case .failure(_): break
+                }
+            })
+    }
+}
+
+
