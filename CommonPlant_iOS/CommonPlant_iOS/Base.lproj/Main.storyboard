@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -39,22 +38,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBH-IG-OlP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-965" y="-128"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="m7s-tR-bKN">
-            <objects>
-                <viewController id="een-YQ-69M" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="b2Q-Tz-IP1">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="2Be-tw-Xg3"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="NVh-Ki-ejx"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KEC-By-zZN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1413" y="470"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AFq-ge-nZj">
@@ -1372,8 +1355,5 @@ BzMAAQc2AAEHOwABB0MAAAAAAAAEAQAAAAAAAABoAAAAAAAAAAAAAAAAAAEHRg
         <namedColor name="startViewColor">
             <color red="0.95294117647058818" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
