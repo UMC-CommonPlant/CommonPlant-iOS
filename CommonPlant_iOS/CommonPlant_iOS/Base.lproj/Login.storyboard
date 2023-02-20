@@ -58,6 +58,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="loginNaver"/>
+                                <connections>
+                                    <action selector="naverLoginAction:" destination="ZNQ-Vo-UT7" eventType="touchUpInside" id="xav-Dj-euf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c90-HG-tYq">
                                 <rect key="frame" x="29" y="566" width="335" height="44"/>
