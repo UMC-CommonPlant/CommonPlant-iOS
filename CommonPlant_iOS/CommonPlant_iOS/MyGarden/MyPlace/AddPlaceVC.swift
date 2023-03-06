@@ -30,19 +30,24 @@ class AddPlaceVC: UIViewController, SendDataDelegate {
     var placeName: String = ""
     var addressRoad: String = ""
     var cnt = 0
+    var placeCode = ""
     
     @IBAction func nextBtn(_ sender: Any) {
         print(#function)
         placeName = textField.text ?? ""
-        uploadData(name: placeName, address: addressRoad, imageData: placeImage!)
-        
+        uploadData(name: placeName, address: addressRoad, imageData: placeImage!) { response in
+            self.placeCode = response.result
+            print("*******placeCode?? \(self.placeCode)************")
+            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "MyPlaceViewController") as? MyPlaceVC else { return }
+            vc.myPlaceCode = self.placeCode
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true)
+        }
     }
-    
     
     @IBAction func addPlaceImgBtn(_ sender: Any) {
         actionSheetAlert()
     }
-    
     
     
     // MARK: - Lifecycle
@@ -60,8 +65,7 @@ class AddPlaceVC: UIViewController, SendDataDelegate {
     
     // MARK: - UI
     private func configureUI() {
-        addressBtn.addTarget(self, action: #selector(handleButton(_:)), for: .touchUpInside)
-        
+        addressBtn.addTarget(self, action: #selector(addressButton(_:)), for: .touchUpInside)
         navigationController?.isNavigationBarHidden = false
         textFieldUnderline()
         buttonUnderLine()
@@ -84,7 +88,7 @@ class AddPlaceVC: UIViewController, SendDataDelegate {
     
     // MARK: - Selectors
     @objc
-    private func handleButton(_ sender: UIButton) {
+    private func addressButton(_ sender: UIButton) {
         let nextVC = PostcodeVC()
         nextVC.modalPresentationStyle = .popover
         nextVC.delegate = self
@@ -164,7 +168,7 @@ extension AddPlaceVC: UITextFieldDelegate {
 
 
 extension AddPlaceVC {
-    func uploadData(name: String, address: String, imageData: UIImage) {
+    func uploadData(name: String, address: String, imageData: UIImage, completion: @escaping (AddPlaceResult) -> Void) {
             let url = API.BASE_URL + "/place/add"
             let token = UserDefaults.standard.object(forKey: "token") as! String
 
@@ -194,8 +198,9 @@ extension AddPlaceVC {
                     do {
                         let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
 
-                        let myPlaceCode = try! JSONDecoder().decode(AddPlaceResult.self, from: jsonData)
-                        print("==========\(myPlaceCode)========")
+                        let addPlaceData = try! JSONDecoder().decode(AddPlaceResult.self, from: jsonData)
+                        completion(addPlaceData)
+                        print("==========myPlaceCode: \(addPlaceData)========")
                     } catch {
                         print(error.localizedDescription)
                     }

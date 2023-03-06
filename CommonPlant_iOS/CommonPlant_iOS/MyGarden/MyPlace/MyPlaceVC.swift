@@ -151,7 +151,7 @@ extension MyPlaceVC: UICollectionViewDelegate, UICollectionViewDataSource{
 }
 
 extension MyPlaceVC {
-    func fetchData(completion: @escaping (MyPlaceResult) -> Void){
+    func fetchData(completion: @escaping (MyPlaceResult) -> Void) {
         let accessToken: String = UserDefaults.standard.object(forKey: "token") as! String
         let url = API.BASE_URL + "/place/" + myPlaceCode
         let header : HTTPHeaders = [

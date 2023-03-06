@@ -829,7 +829,6 @@
                                 <buttonConfiguration key="configuration" style="gray" title="다음"/>
                                 <connections>
                                     <action selector="nextBtn:" destination="iIn-IZ-VL6" eventType="touchUpInside" id="bdK-Iy-DAX"/>
-                                    <segue destination="ukI-9W-q3r" kind="show" id="73l-4L-OWb"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eir-RZ-QI3">
@@ -1771,7 +1770,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="73l-4L-OWb"/>
         <segue reference="UD7-mm-IXG"/>
     </inferredMetricsTieBreakers>
     <resources>

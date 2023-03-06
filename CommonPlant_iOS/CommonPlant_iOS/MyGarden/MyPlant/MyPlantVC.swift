@@ -71,7 +71,6 @@ class MyPlantVC: UIViewController {
             print("=============vc.myPlaceCode\(vc.plantToInt)==============")
 //            vc.modalPresentationStyle = .fullScreen
             vc.plantToInt = plantIndex
-
         }
     }
     
@@ -120,7 +119,6 @@ extension MyPlantVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 250, height: 174)
     }
-    
     
 }
 

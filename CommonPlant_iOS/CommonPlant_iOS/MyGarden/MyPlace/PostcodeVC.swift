@@ -80,11 +80,7 @@ extension PostcodeVC: WKScriptMessageHandler {
             print(self.address)
         }
         self.delegate?.sendData(address: address)
-
         self.dismiss(animated: true, completion: nil)
-
-        
-        
     }
 }
 

@@ -125,9 +125,6 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             let plantUrl = self.myGardenList.first?.plantList[indexPath.row].imgUrl ?? ""
             let plantImgUrl = URL(string: plantUrl)
             plantCell.plantImg.kf.setImage(with: plantImgUrl, options: [.processor(processor)])
-            //imageView.kf.setImage(with: url, placeholder: nil, options: [.processor(processor)])
-
-            
             plantCell.myPlantLabel.text = myGardenList.first?.plantList[indexPath.row].plantNickName
             return plantCell
         }

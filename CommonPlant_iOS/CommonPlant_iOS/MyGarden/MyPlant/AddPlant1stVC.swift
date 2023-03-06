@@ -21,11 +21,9 @@ class AddPlant1stVC: UIViewController {
         super.viewDidLoad()
         setupSearchLabel()
         setupTableView()
-        // Do any additional setup after loading the view.
     }
-    var plantData:[plantModel] = [
-//        plantModel(imgUrl: "url", name: "몬스테라 델리오사", scientificName: "Monstera"),
-    ]
+    var plantData:[plantModel] = [ ]
+    
     struct plantModel{
         let imgUrl : String
         let name : String
@@ -35,13 +33,13 @@ class AddPlant1stVC: UIViewController {
 }
 
 //MARK: =======검색 후 결과 불러오기==========
-extension AddPlant1stVC: UITextFieldDelegate{
-    func setupSearchLabel(){
+extension AddPlant1stVC: UITextFieldDelegate {
+    func setupSearchLabel() {
         self.searchInputLabel.delegate = self
     }
     
     //UITextDelegate return key 이벤트 함수 -> 엔터 눌렀을 때 검색 이벤트
-    func textFieldShouldReturn(_ textField : UITextField) -> Bool{
+    func textFieldShouldReturn(_ textField : UITextField) -> Bool {
 
         textField.resignFirstResponder()
         
@@ -54,11 +52,10 @@ extension AddPlant1stVC: UITextFieldDelegate{
     }
 }
 
-extension AddPlant1stVC: UITableViewDelegate, UITableViewDataSource{
+extension AddPlant1stVC: UITableViewDelegate, UITableViewDataSource {
         func setupTableView(){
             searchTableView.delegate = self
             searchTableView.dataSource = self
-//            setData(name: searchInputLabel.text ?? "")
         }
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,9 +81,6 @@ extension AddPlant1stVC: UITableViewDelegate, UITableViewDataSource{
     func setData(name: String){
         self.plantData.removeAll()
         let url = API.BASE_URL + "/info/searchInfo"
-        let header : HTTPHeaders = [
-            "Content-Type" : "application/json"
-        ]
         let queryString : Parameters = ["name" : name]
         
         MyAlamofireManager.shared
@@ -105,7 +99,6 @@ extension AddPlant1stVC: UITableViewDelegate, UITableViewDataSource{
                                 let jsonData = try JSONDecoder().decode(InfoSearchModel.self, from: dataJson)
                                 print(jsonData)
                                 
-//                                DispatchQueue.global().async { [weak self] in
                                 for i in jsonData.result{
                                     print(i.name)
                                     self.plantData.append(plantModel(imgUrl: i.imgURL, name: i.name, scientificName: i.scientificName))
